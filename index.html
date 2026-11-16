@@ -2940,17 +2940,17 @@ figure.anim{background:var(--panel);padding:8px}
 <tbody>
 <tr>
 <td><strong>1（现在做）</strong></td>
-<td><strong>P-007</strong></td>
-<td>高达双武装：步枪 4.5 远程 + 贴身换军刀</td>
-<td><a href="#task-007">TASK-007</a> 全部</td>
-<td>解决“全是近战”的第一步</td>
+<td><strong>P-014A</strong></td>
+<td>AI 两路都用、会攒一波进攻；保留旧 AI 开关</td>
+<td><a href="#task-014">TASK-014</a> 全部</td>
+<td>种子 1 里 80 台机体全走右路；卫星炮做完后再改 AI，AI 才知道怎么用它</td>
 </tr>
 <tr>
 <td>2</td>
-<td><strong>P-013S</strong></td>
-<td>录像工具收尾：先把另一个 Agent 做的录像工具改动（P-013R，还在工作区）核对后提交；关键事件加 1080×1080 特写截图；五个验收场景用特写镜头各录一段</td>
-<td><a href="#task-013">TASK-013</a> 末尾“第二份交付之后的反馈”</td>
-<td>录像工具不提交就可能丢；特写出来后策划端能直接看图验收，少占 Aoi 的时间</td>
+<td><strong>P-010</strong></td>
+<td>桥上堵车：碰撞绕开、出手单位少被推、过桥错开</td>
+<td><a href="#task-010">TASK-010</a> 全部</td>
+<td>AI 用两路之后堵车会少一些，这时再修更容易看出效果</td>
 </tr>
 <tr>
 <td>3</td>
@@ -2961,52 +2961,38 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 <tr>
 <td>4</td>
-<td><strong>P-009</strong></td>
-<td>高达X 卫星炮</td>
-<td><a href="#task-009">TASK-009</a> 全部</td>
-<td>种子 1 整局没拆掉一座塔，攻城手段必须补上</td>
-</tr>
-<tr>
-<td>5</td>
-<td><strong>P-014A</strong></td>
-<td>AI 两路都用、会攒一波进攻；保留旧 AI 开关</td>
-<td><a href="#task-014">TASK-014</a> 全部</td>
-<td>种子 1 里 80 台机体全走右路；卫星炮做完后再改 AI，AI 才知道怎么用它</td>
-</tr>
-<tr>
-<td>6</td>
-<td><strong>P-010</strong></td>
-<td>桥上堵车：碰撞绕开、出手单位少被推、过桥错开</td>
-<td><a href="#task-010">TASK-010</a> 全部</td>
-<td>AI 用两路之后堵车会少一些，这时再修更容易看出效果</td>
-</tr>
-<tr>
-<td>7</td>
 <td><strong>P-008A</strong></td>
 <td>钢加农、力天使高达的资源核对；现有 6 张卡头像核对（自由缺头像）。只读</td>
 <td><a href="#task-008">TASK-008</a> 第 0 节</td>
 <td>只读，随时可以插队；最晚在 P-008B 之前做完</td>
 </tr>
 <tr>
-<td>8</td>
+<td>5</td>
 <td><strong>P-008B + P-008C</strong></td>
 <td>实现两台远程机体；两套卡组配置和切换，批量对局支持指定卡组</td>
 <td>TASK-008 第 1~4 节</td>
 <td>卡池从 8 张扩到 10 张</td>
 </tr>
 <tr>
-<td>9</td>
+<td>6</td>
 <td><strong>P-011</strong></td>
 <td>对拼矩阵加“双方都先站好”的跑法，矩阵自动扩成 N×N</td>
 <td><a href="#task-011">TASK-011</a> 全部</td>
 <td>机体和机制都齐了再做，矩阵一次跑到位</td>
 </tr>
 <tr>
-<td>10</td>
+<td>7</td>
 <td><strong>P-015</strong></td>
 <td>重跑两种对拼矩阵 + 100 局基线，和 10 文档 4.4 节逐格对比；录种子 1、2、3 各一局</td>
 <td>任务单待写</td>
 <td>这一轮的总验收，之后进入调数值</td>
+</tr>
+<tr>
+<td>另排</td>
+<td><strong>P-013S</strong></td>
+<td>录像工具收尾（提交工作区里的录像工具改动、特写截图、验收场景录像）。由做录像工具的那个 Agent 负责，不在本队列里；本队列的 Agent 不要动这些文件</td>
+<td><a href="#task-013">TASK-013</a> 末尾</td>
+<td>Aoi 2026-11-16 定：录像工具不归串行队列的 Agent 管</td>
 </tr>
 </tbody>
 </table></div>
@@ -3065,6 +3051,18 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td>TASK-005 三台机体 v2.0 数值、粒子耗尽、对拼矩阵工具、桥上堵车评估（原 P-005A/B/C/D）。已提交 e402aca7356</td>
 <td><a href="#report-005">REPORT-005</a></td>
+</tr>
+<tr>
+<td>P-007 高达双武装。100 局基线：加时 75 局、拆侧塔 50 座、平均 216 秒、卡死报告 0</td>
+<td>回报全文待 Aoi 上传</td>
+</tr>
+<tr>
+<td>P-009 高达X 卫星炮（提交 e659d31cf6f）。100 局：加时 75→57、拆侧塔 50→77、平均 216→206 秒。没人管的高达X 过桥后 22.4 秒拆掉侧塔。蓄力只有 44% 打出来，42% 蓄力中被打死，13% 被打断。画面待 Aoi 确认</td>
+<td>回报全文待 Aoi 上传</td>
+</tr>
+<tr>
+<td>界面：血条换成 Codex 出的图（提交 6b7e0ac35ed）；选卡界面的 26 张图、效果图和两份说明已入库，还没接代码</td>
+<td>—</td>
 </tr>
 </tbody>
 </table></div><div class="pager"><a href="#anim-spec">← 技能动画分镜</a><a href="#workflow">协作流程 →</a></div></article><article id="doc-workflow"><h1>协作流程（策划端 ⇄ 本地开发端）</h1>
@@ -3333,7 +3331,7 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td><a href="#task-007">TASK-007</a></td>
 <td>高达：光束步枪 4.5 远程 + 贴身换军刀</td>
-<td>待开发</td>
+<td>完成（P-007），回报待传</td>
 <td>开发端执行</td>
 <td>—</td>
 </tr>
@@ -3375,14 +3373,14 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td><a href="#task-009">TASK-009</a></td>
 <td>高达X 卫星炮</td>
-<td>待开发</td>
+<td>完成（P-009，e659d31cf6f），画面待 Aoi 看</td>
 <td>见派工表</td>
 <td>—</td>
 </tr>
 <tr>
 <td><a href="#task-014">TASK-014</a></td>
 <td>AI 两路都用、会组织进攻</td>
-<td>待开发</td>
+<td>现在做（P-014A）</td>
 <td>见派工表</td>
 <td>—</td>
 </tr>
@@ -3485,6 +3483,14 @@ figure.anim{background:var(--panel);padding:8px}
 <li><strong>AI 偷塔门槛（REPORT-006A）</strong>：能量 ≥9 才扔渣古偏保守，但先不动，放到 P-014A 一起改（偷塔门槛降到能量 ≥6，且对方手里刚用掉战术卡时优先扔）。已写进 TASK-014。</li>
 <li><strong>满血也显示血条（REPORT-006B）</strong>：同意。CR 里满血不显示血条，但这里标签挂在血条上，定位标签更重要。P-012B 做血条错开时一起看挤不挤。</li>
 </ol>
+<h2>策划端对 P-009 摘要的答复（2026-11-16，回报全文未到）</h2>
+<ol>
+<li><strong>结果认可</strong>：加时 75→57、拆塔 50→77，卫星炮起到了攻城的作用。数值先不动。</li>
+<li><strong>蓄力 42% 被打死</strong>：符合设计（蓄力受伤 +30% 就是让对面集火）。等 P-014A 的 AI 会给高达X 配前排之后再看这个比例，目标是打出来的比例到 55% 左右。</li>
+<li><strong>后手打断不了蓄力（自由首次冷却 4.5 秒来不及）</strong>：这是个真缺口。CR 里电火花车靠“电击法术重置蓄力”来解，这里对应的是 2 费的飞弹齐射。策划端建议给飞弹齐射加 0.5 秒击晕，<strong>等 Aoi 拍板</strong>（见下面“等 Aoi 拍板”）。拍板前 AI 不用专门去打断。自由的首次冷却不改。</li>
+<li><strong>卡死检测把施放中算作活动</strong>：同意。</li>
+<li><strong>高达X 单挑全输</strong>：符合定位（只打建筑），不改。直线上的机体吃 240 是给它的唯一反制手段。</li>
+</ol>
 <h2>策划端看种子 1 录像的结论（2026-11-16）</h2>
 <p>来源：<code>GundamCR_Exchange/recordings/seed1/</code> 的整局、精彩片段、日志、截图。</p>
 <ol>
@@ -3497,6 +3503,8 @@ figure.anim{background:var(--panel);padding:8px}
 </ol>
 <h2>等 Aoi 做的事</h2>
 <ul>
+<li>上传 REPORT-007、REPORT-009 到 <code>GundamCR_Exchange/reports/</code>（或直接贴回）。</li>
+<li>Unity 里看卫星炮：出一台高达X，走到离塔约 7 米，看反射板、天上的光柱、头顶蓄力条、地面预警线、光束和震屏。同一局顺便看新血条。</li>
 <li>Unity 重新编译后，打开「工具/MS战线对决/表现验收」把五个场景各点一次；进一局看血条上的定位标签和新尺寸。</li>
 <li>看完后告诉策划端：自由展开动作看不看得出来；定位标签在竖屏下看不看得清；能天使粒子耗尽变不变暗。再把对局日志里六台机体“显示尺寸”那几行贴回来。</li>
 <li>~~上传 REPORT-006A、REPORT-012、REPORT-006B~~：2026-11-16 已贴回并存档。</li>
@@ -3522,6 +3530,11 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>飞弹齐射要不要加 0.5 秒击晕（用来打断卫星炮蓄力）</td>
+<td>加。像 CR 的电击法术，2 费、伤害低、能重置蓄力</td>
+<td>高达X 的反制；改动小，一个小包</td>
+</tr>
 <tr>
 <td>新系统开发顺序</td>
 <td>状态+技能（TASK-002）→ 组卡 → 过河寻路 → 建筑 → 空中</td>
