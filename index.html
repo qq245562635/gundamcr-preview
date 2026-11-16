@@ -80,11 +80,12 @@ figure.anim{background:var(--panel);padding:8px}
   h1{font-size:23px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>完成</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>完成</span></a></li><li><a href="#task-004">TASK-004 自由全弹发射<span>待开发</span></a></li><li><a href="#task-005">TASK-005 v2 数值与对拼<span>待开发</span></a></li><li><a href="#task-006">TASK-006 渣古全场与标签<span>待开发</span></a></li><li><a href="#task-007">TASK-007 高达双武装<span>待开发</span></a></li><li><a href="#task-008">TASK-008 两台远程机体<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#report-002">REPORT-002 状态与技能<span>已回</span></a></li><li><a href="#report-003">REPORT-003 改名尺寸降下<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
+</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#dispatch">派工表<span>多 Agent 调度</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>完成</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>完成</span></a></li><li><a href="#task-004">TASK-004 自由全弹发射<span>待开发</span></a></li><li><a href="#task-005">TASK-005 v2 数值与对拼<span>待开发</span></a></li><li><a href="#task-006">TASK-006 渣古全场与标签<span>待开发</span></a></li><li><a href="#task-007">TASK-007 高达双武装<span>待开发</span></a></li><li><a href="#task-008">TASK-008 两台远程机体<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#report-002">REPORT-002 状态与技能<span>已回</span></a></li><li><a href="#report-003">REPORT-003 改名尺寸降下<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
 <p>内部策划文档仓库（私有）。只放策划方案，不放代码和受版权保护的原作图片。</p>
 <h2>两边协作</h2>
 <p>策划端（云端）写方案和任务单，本地开发 AI 改代码并写回报单，通过这个文件夹来回交接。</p>
 <ul>
+<li><a href="#dispatch">50 派工表</a>：多 Agent 分工，现在可以开工的包</li>
 <li><a href="#workflow">协作流程</a>：角色、循环、规则</li>
 <li><a href="#status">任务看板 STATUS</a>：现在卡在谁那里</li>
 <li><a href="#agents">给本地 AI 的说明 AGENTS</a></li>
@@ -2842,8 +2843,223 @@ figure.anim{background:var(--panel);padding:8px}
 <li>每个技能拆成“前摇 / 生效 / 后摇”三段事件，表现层订阅事件播特效，逻辑层不等特效。</li>
 <li>先做占位特效（颜色光柱、圆环、飘字），机制验收通过后再换正式特效。</li>
 <li>原作名称字样（TRANS-AM、月面微波等）上屏前要过 BNE 监修<span class="tag t-sup">推测·监修</span>。</li>
-</ul><div class="pager"><a href="#deck-spec">← 选卡界面规格</a><a href="#workflow">协作流程 →</a></div></article><article id="doc-workflow"><h1>协作流程（策划端 ⇄ 本地开发端）</h1>
+</ul><div class="pager"><a href="#deck-spec">← 选卡界面规格</a><a href="#dispatch">派工表 →</a></div></article><article id="doc-dispatch"><h1>50 派工表（多 Agent 并行）</h1>
+<blockquote>
+<p>2026-11-16 起，内网不再由一个 AI 包办，而是<strong>多个 Agent 各做各的功能</strong>。策划端（网页版 Claude）负责写策划案、拆包、调度；每个 Agent 做完<strong>必须写回报单</strong>交回策划端。本页是调度的唯一依据，任务单（TASK-xxx）是包的详细说明。</p>
+<p>Agent 可以随时读公开页拿最新文档。内网的事（代码、资源、Unity）由 Agent 自己查，查不到的写进回报单的“问题”。</p>
+</blockquote>
+<h2>1. 工位</h2>
+<p>按“会改哪些文件”分工位，同一工位的包<strong>串行</strong>，不同工位的包<strong>并行</strong>。</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>工位</th>
+<th>负责</th>
+<th>主要改的文件</th>
+<th>不碰</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>机制 A</strong></td>
+<td>战斗规则、卡表数值、技能和状态</td>
+<td><code>DuelDefs.cs</code>、<code>DuelWorld.cs</code>、<code>DuelUnit.cs</code>、<code>DuelSkill.cs</code>、<code>DuelStatus.cs</code></td>
+<td>表现层、HUD</td>
+</tr>
+<tr>
+<td><strong>机制 B</strong></td>
+<td>同上（第二个机制工位，和 A 各做不同机体）</td>
+<td>同上，但<strong>只改自己那台机体的卡表行和技能</strong></td>
+<td>A 正在做的机体</td>
+</tr>
+<tr>
+<td><strong>表现</strong></td>
+<td>血条、头顶标签、状态图标、飘字、特效占位</td>
+<td><code>DuelPresentation.cs</code>、<code>DuelHud.cs</code>、尺寸表</td>
+<td>战斗规则和数值</td>
+</tr>
+<tr>
+<td><strong>工具</strong></td>
+<td>批量对局、对拼矩阵、卡组配置、AI</td>
+<td><code>DuelHeadlessRunner</code>、<code>DuelMatch</code>、<code>DuelAI.cs</code>、编辑器菜单</td>
+<td>战斗规则和数值</td>
+</tr>
+<tr>
+<td><strong>调查</strong></td>
+<td>只读：资源核对、方案评估</td>
+<td>不改代码</td>
+<td>一切代码</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>机制 A 和机制 B 会同时改卡表和 <code>DuelWorld</code>，所以各自开分支（或 worktree），合并前先同步主干；卡表里只动自己机体那几行。</li>
+<li>表现工位需要的新事件 / 新字段，如果机制工位还没做，先用占位数据，回报里写“依赖 xx 包”。</li>
+</ul>
+<h2>2. 现在可以开工的包</h2>
+<p>依赖都已满足（TASK-002/003 已完成并经 Aoi 实机确认）。<strong>同一行的工位现在就能开一个 Agent。</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>包</th>
+<th>工位</th>
+<th>内容</th>
+<th>任务单位置</th>
+<th>依赖</th>
+<th>回报单</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P-006A</strong></td>
+<td>机制 A</td>
+<td>渣古降下改回全场可投；己方半场 1.2s、对方半场 1.8s；AI 恢复投塔下</td>
+<td><a href="#task-006">TASK-006</a> 第 1 节</td>
+<td>无</td>
+<td>REPORT-006A</td>
+</tr>
+<tr>
+<td><strong>P-004A</strong></td>
+<td>机制 B</td>
+<td>自由：普攻改单体、全弹发射（扇形、5 目标、瘫痪 0.5s）、状态规则；AI 和卡牌文案</td>
+<td><a href="#task-004">TASK-004</a> 第 1、2、3、5 节</td>
+<td>无</td>
+<td>REPORT-004A</td>
+</tr>
+<tr>
+<td><strong>P-006B</strong></td>
+<td>表现</td>
+<td>血条上的定位标签（卡表加定位字段 + 头顶显示）</td>
+<td><a href="#task-006">TASK-006</a> 第 2 节</td>
+<td>无。卡表只加“定位”一个字段</td>
+<td>REPORT-006B</td>
+</tr>
+<tr>
+<td><strong>P-005B</strong></td>
+<td>工具</td>
+<td>1 对 1 对拼矩阵工具（36 格），先用现有数值跑一版</td>
+<td><a href="#task-005">TASK-005</a> B 节</td>
+<td>无</td>
+<td>REPORT-005B</td>
+</tr>
+<tr>
+<td><strong>P-008A</strong></td>
+<td>调查</td>
+<td>钢加农、力天使高达的模型 / 动画 / 头像核对，缺的话提替补</td>
+<td><a href="#task-008">TASK-008</a> 第 0 节</td>
+<td>无</td>
+<td>REPORT-008A</td>
+</tr>
+</tbody>
+</table></div>
+<h2>3. 排队中的包（前一个做完自动轮到）</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>包</th>
+<th>工位</th>
+<th>内容</th>
+<th>任务单位置</th>
+<th>依赖</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P-005A</strong></td>
+<td>机制 A</td>
+<td>夏亚渣古 / 渣古降下 / 能天使的 v2.0 数值，冲锋按距离触发，粒子耗尽</td>
+<td>TASK-005 A 节</td>
+<td>P-006A 合并后</td>
+</tr>
+<tr>
+<td><strong>P-007</strong></td>
+<td>机制 B</td>
+<td>高达双武装：步枪 4.5 远程 + 贴身换军刀</td>
+<td><a href="#task-007">TASK-007</a> 全部</td>
+<td>P-004A 合并后</td>
+</tr>
+<tr>
+<td><strong>P-004B</strong></td>
+<td>表现</td>
+<td>状态图标上 HUD（按 BuffId 读正式 Buff 表）；全弹发射的展开和光束占位；瘫痪 / 冲锋中断飘字</td>
+<td>TASK-004 第 4 节</td>
+<td>P-006B 之后（同一块头顶区域）；瘫痪图标要等 P-004A</td>
+</tr>
+<tr>
+<td><strong>P-008C</strong></td>
+<td>工具</td>
+<td>两套卡组配置 + 切换菜单；批量对局支持指定双方卡组</td>
+<td>TASK-008 第 3 节</td>
+<td>P-005B 之后。可以先用现有 8 张卡做机制</td>
+</tr>
+<tr>
+<td><strong>P-005C</strong></td>
+<td>工具</td>
+<td>用 v2.0 数值重跑对拼矩阵 + 100 局基线，和 10 文档 4.1 节逐格对比</td>
+<td>TASK-005 “需要回报的信息”1~3</td>
+<td>P-005A、P-004A、P-007 都合并后</td>
+</tr>
+<tr>
+<td><strong>P-005D</strong></td>
+<td>调查</td>
+<td>桥上堵车：现在是硬碰撞还是能挤开；改成“己方互相挤开”要动哪里（只评估）</td>
+<td>TASK-005 “需要回报的信息”4</td>
+<td>P-008A 之后</td>
+</tr>
+<tr>
+<td><strong>P-008B</strong></td>
+<td>机制 A</td>
+<td>实现钢加农、力天使高达两台远程；AI 站位</td>
+<td>TASK-008 第 1、2、4 节</td>
+<td>P-008A 的核对结果；P-005A 之后</td>
+</tr>
+<tr>
+<td><strong>P-009</strong></td>
+<td>机制 B</td>
+<td>高达X 卫星炮</td>
+<td>任务单待写</td>
+<td>P-007 之后</td>
+</tr>
+</tbody>
+</table></div>
+<h2>4. 规矩</h2>
+<ol>
+<li><strong>领包</strong>：Aoi 对某个 Agent 说“你是〔工位〕，做 P-xxx”。一个 Agent 一次只做一个包。</li>
+<li><strong>开工前</strong>：重新抓一次公开页，读本页、对应任务单的指定小节、<code>AGENTS.md</code>。</li>
+<li><strong>只做包里写的</strong>。发现要动别的工位的文件，停下来写进回报，不要自己改。</li>
+<li><strong>做完必须回报</strong>：写 <code>reports/REPORT-xxx.md</code>（编号和包一致，如 REPORT-006A），交给 Aoi 贴回策划端。<strong>没有回报单的包视为没做完</strong>，后面的包不会放行。</li>
+<li><strong>回报单开头多写两行</strong>：工位、分支名 / 是否已合并。其余照模板。不贴源码。</li>
+<li><strong>合并顺序</strong>：同一工位按排队顺序合并；不同工位谁先做完谁先合，后合的负责解决冲突并重跑“同种子 20 局”自检。</li>
+<li><strong>有问题</strong>：设计上的问题写进回报单，策划端在看板上答复；内网的问题（编译、资源、权限）找 Aoi。</li>
+<li>策划端每收到一份回报，会更新本页：把做完的包移到“已完成”，放行后面的包，必要时改任务单。</li>
+</ol>
+<h2>5. 已完成</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>包 / 任务</th>
+<th>回报</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TASK-001 现状盘点</td>
+<td><a href="#report-001">REPORT-001</a></td>
+</tr>
+<tr>
+<td>TASK-002 状态系统 + 技能框架</td>
+<td><a href="#report-002">REPORT-002</a></td>
+</tr>
+<tr>
+<td>TASK-003 卡表 ID、改名、尺寸、渣古降下、高达盾</td>
+<td><a href="#report-003">REPORT-003</a></td>
+</tr>
+</tbody>
+</table></div><div class="pager"><a href="#anim-spec">← 技能动画分镜</a><a href="#workflow">协作流程 →</a></div></article><article id="doc-workflow"><h1>协作流程（策划端 ⇄ 本地开发端）</h1>
 <p>两边分开工作，靠 <code>DesignDocs/</code> 文件夹里的文件来回交接。策划端看不到内网代码，开发端不改策划案；两边只通过<strong>任务单</strong>和<strong>回报单</strong>对话。</p>
+<blockquote>
+<p><strong>2026-11-16 起改为多 Agent 并行</strong>：开发端不止一个 AI，按工位分工，由策划端调度。谁做什么、现在能做什么，看 <a href="#dispatch">50 派工表</a>。下面的角色、循环和规则对每个 Agent 都适用；“任务单”可以换成派工表里的“包”。</p>
+</blockquote>
 <h2>角色</h2>
 <div class="tbl"><table>
 <thead>
@@ -2858,13 +3074,13 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td>策划端</td>
 <td>Claude（云端）</td>
-<td>写策划案、拆任务单、读回报后改方案</td>
+<td>写策划案、拆任务单、<strong>调度</strong>（派工表）、读回报后改方案</td>
 <td><code>DesignDocs/</code> 下除 <code>reports/</code> 以外的文件</td>
 </tr>
 <tr>
 <td>开发端</td>
-<td>本地 AI（codex 等）</td>
-<td>按任务单改 Unity 代码，写回报单</td>
+<td>多个本地 Agent，各占一个工位（机制 A / 机制 B / 表现 / 工具 / 调查）</td>
+<td>按派工表领包，改 Unity 代码，<strong>做完必须写回报单</strong></td>
 <td>Unity 工程 + <code>DesignDocs/reports/</code></td>
 </tr>
 <tr>
@@ -2909,6 +3125,10 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="#dispatch">50_派工表.md</a></td>
+<td>多 Agent 调度：工位、现在可开工的包、排队的包、规矩</td>
+</tr>
 <tr>
 <td><a href="#status">STATUS.md</a></td>
 <td>任务看板：每张任务的状态，一眼看到卡在谁那里</td>
@@ -2968,9 +3188,16 @@ figure.anim{background:var(--panel);padding:8px}
 <td>—</td>
 </tr>
 </tbody>
-</table></div><div class="pager"><a href="#anim-spec">← 技能动画分镜</a><a href="#agents">给本地 AI 的说明 →</a></div></article><article id="doc-agents"><h1>给本地开发 AI 的说明</h1>
+</table></div><div class="pager"><a href="#dispatch">← 派工表</a><a href="#agents">给本地 AI 的说明 →</a></div></article><article id="doc-agents"><h1>给本地开发 AI 的说明</h1>
 <p>你是 MS战线对决（高达题材 CR 式对战）的<strong>开发端</strong>。策划端在另一个环境，看不到你的代码；你们只通过这个文件夹里的任务单和回报单交流。完整规则见 <a href="#workflow">协作流程.md</a>。</p>
-<h2>每次接到“做 TASK-xxx”时</h2>
+<h2>多 Agent 分工（2026-11-16 起）</h2>
+<ul>
+<li>你是多个 Agent 之一。Aoi 会告诉你“你是〔工位〕，做 P-xxx”。工位和包的定义在 <a href="#dispatch">50 派工表</a>。</li>
+<li>只改自己工位的文件，只做包里指定的任务单小节。</li>
+<li><strong>做完必须写回报单</strong> <code>reports/REPORT-xxx.md</code>（编号和包一致），开头写明工位和分支。没有回报，策划端不会放行后面的包。</li>
+<li>你可以随时重新抓公开页拿最新的策划案和派工表。内网的事自己查，查不到写进回报的“问题”。</li>
+</ul>
+<h2>每次接到“做 TASK-xxx / P-xxx”时</h2>
 <ol>
 <li>读 <code>DesignDocs/tasks/TASK-xxx_*.md</code>，再读它“依据”一节列出的策划案。</li>
 <li>只做任务单“范围”里的事。“不做”一节列出的东西不要碰。</li>
@@ -3005,6 +3232,9 @@ figure.anim{background:var(--panel);padding:8px}
 - 不修改 DesignDocs/ 中 reports/ 以外的文件；回报里不贴源码。
 </code></pre><div class="pager"><a href="#workflow">← 协作流程</a><a href="#status">任务看板 →</a></div></article><article id="doc-status"><h1>任务看板</h1>
 <p>状态定义和流程见 <a href="#workflow">协作流程.md</a>。球在谁手里，看“下一步”。</p>
+<blockquote>
+<p><strong>2026-11-16 起改为多 Agent 并行。谁现在能做什么，看 <a href="#dispatch">50 派工表</a>。</strong> 本页只记任务单总状态、拍板记录和策划端答复。</p>
+</blockquote>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -5243,8 +5473,9 @@ figure.anim{background:var(--panel);padding:8px}
 <li>除验收结果外，策划端还想知道的事（数值现状、实现方式选择等）。</li>
 </ul><div class="pager"><a href="#report-003">← REPORT-003 改名尺寸降下</a><a href="#tpl-report">回报单模板 →</a></div></article><article id="doc-tpl-report"><h1>REPORT-xxx 对应 TASK-xxx</h1>
 <ul>
+<li>包 / 工位：（如 P-006A / 机制 A）</li>
 <li>日期：</li>
-<li>分支 / 提交：</li>
+<li>分支 / 提交 / 是否已合并：</li>
 <li>结果：完成 / 部分完成 / 未开始（原因）</li>
 </ul>
 <h2>做了什么</h2>
@@ -7123,7 +7354,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>待确认：现有 高达X 模型是否带可动的卫星炮和反射板。</li>
 </ul><div class="pager"><a href="#freedom">← 自由</a><span></span></div></article></main></div><script>
 (function(){
-  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'task-004', 'task-005', 'task-006', 'task-007', 'task-008', 'report-001', 'report-002', 'report-003', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
+  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'dispatch', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'task-004', 'task-005', 'task-006', 'task-007', 'task-008', 'report-001', 'report-002', 'report-003', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
   function show(){
     var h=(location.hash||'').slice(1); if(ids.indexOf(h)<0) h=ids[0];
     ids.forEach(function(i){
