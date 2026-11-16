@@ -3022,9 +3022,9 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 <tr>
 <td><a href="#task-002">TASK-002</a></td>
-<td>通用状态系统 + 技能框架，迁移冲锋和 TRANS-AM（不改数值）</td>
-<td>待开发</td>
-<td>开发端执行</td>
+<td>通用状态系统 + 技能框架，迁移冲锋和 TRANS-AM（不改数值）。v2 按折中方案：结构对齐正式 Buff 体系，表现读现有 Buff 表</td>
+<td>待拍板</td>
+<td>Aoi 定“Demo 是原型还是正式版起点”</td>
 <td>—</td>
 </tr>
 <tr>
@@ -3091,6 +3091,11 @@ figure.anim{background:var(--panel);padding:8px}
 </thead>
 <tbody>
 <tr>
+<td><strong>对决 Demo 定位：原型 / 正式版起点</strong></td>
+<td>先当原型，TASK-002 走 v2 折中方案</td>
+<td>决定 TASK-002 做不做、怎么做；选“正式版起点”则改发合并评估单</td>
+</tr>
+<tr>
 <td>新系统开发顺序</td>
 <td>状态+技能（TASK-002）→ 组卡 → 过河寻路 → 建筑 → 空中</td>
 <td>后续任务排序</td>
@@ -3112,6 +3117,13 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 </tbody>
 </table></div>
+<h2>内网已有体系（来自开发端 2026-11-16 说明）</h2>
+<ul>
+<li>对决 Demo 约 5 千行：float、连续坐标、两路桥塔、配置写在代码里、只有血量和伤害。</li>
+<li>正式战斗约 12 万行（Buff 约 6 万、技能约 4 万）：定点数、帧同步和回放、六边形格子、完整 Buff（层数/分组/驱散/表现、眩晕/击退/击倒）、每台机体自有技能和词条、Luban 表（Buff/Affix/Skill）、完整属性（攻防、暴击、命中）、PvE 规划器 AI。</li>
+<li>BattleLogic 基础类在 CLAUDE.md 里禁止修改。</li>
+<li>进度文件曾记“正式版改六边形格子 + 定点数，为了真人 PvP”，未确认。</li>
+</ul>
 <h2>计划中的任务（TASK-002/003 回来后细化）</h2>
 <ul>
 <li>TASK-004：按 v2.0 上机制。高达双武装、夏亚渣古冲锋改为 2.5 米 / ×2、能天使倍率和粒子耗尽、自由全弹发射（同时普攻改单体）、高达X 卫星炮</li>
@@ -3169,18 +3181,26 @@ figure.anim{background:var(--panel);padding:8px}
 <h2>需要回报的信息</h2>
 <ul>
 <li>以上全部。另外请说明：如果按 <code>20_全系列卡池设计</code> 第一批 21 张来做，你估计最先卡住的是哪个系统。</li>
-</ul><div class="pager"><a href="#status">← 任务看板</a><a href="#task-002">TASK-002 状态与技能 →</a></div></article><article id="doc-task-002"><h1>TASK-002 通用状态系统 + 简单技能框架（纯重构，不改数值）</h1>
+</ul><div class="pager"><a href="#status">← 任务看板</a><a href="#task-002">TASK-002 状态与技能 →</a></div></article><article id="doc-task-002"><h1>TASK-002 通用状态系统 + 简单技能框架（纯重构，不改数值）· v2 折中方案</h1>
 <ul>
-<li>状态：待开发</li>
+<li>状态：待开发（v2，2026-11-16 按开发端的折中方案改写；前提是 Aoi 定“对决 Demo 先当原型”，见 STATUS）</li>
 <li>依据：<a href="#report-001">REPORT-001</a> 第 3 项和“最先卡住的系统”；<a href="#counter">10 克制体系</a> 2.2 节；<a href="#anim-spec">40 技能动画分镜</a> 末节“给 Unity 实现的建议”；各单机案 5.0 节（了解后续要承载什么）</li>
 <li>预计改动：<code>DuelUnit.cs</code>、<code>DuelWorld.cs</code>，可能新增状态和技能相关的类；以开发端判断为准</li>
 </ul>
 <h2>目标</h2>
 <p>把现在“冲锋、TRANS-AM 各写一个专用计时器”的做法，换成<strong>一套通用的状态系统和技能框架</strong>。这一单<strong>只搭框架、迁移现有两个机制</strong>，游戏表现和数值完全不变。之后的高达双武装、自由全弹发射、高达X 卫星炮、能天使粒子耗尽都在这套框架上加。</p>
+<h2>总原则（v2 新增）</h2>
+<p>内网正式战斗已有完整的 Buff / Affix / Skill 体系（Luban 表），但它绑定六边形格子单位，对决不直接复用战斗逻辑。本单的做法是：</p>
+<ul>
+<li><strong>战斗模拟留在对决代码里</strong>，不改 BattleLogic 基础类。</li>
+<li><strong>数据结构照正式体系的形状设计</strong>：状态用 Buff ID 区分；效果类型对应 Affix（词条）类型；叠加、分组、驱散规则照搬正式 Buff 系统。以后决定并进正式战斗时，对决的状态和技能能一一对应过去。</li>
+<li><strong>表现和配置尽量复用</strong>：状态图标、飘字、出现/消失特效直接读现有 Buff 表；技能动画继续复用现有技能配置。</li>
+<li>对决里新建的状态如果在正式 Buff 表里有同类（眩晕、击退、加速等），<strong>优先借用那条的 ID 和表现</strong>，回报里列出对应关系。</li>
+</ul>
 <h2>范围</h2>
 <h3>A. 状态系统</h3>
 <ol>
-<li>单位身上可以挂多个状态，每个状态有：类型、剩余时间、来源、数值参数。</li>
+<li>单位身上可以挂多个状态，每个状态有：Buff ID、效果类型（对应 Affix 类型）、剩余时间、来源、层数、分组、数值参数。叠加和分组规则照正式 Buff 系统。</li>
 <li>先支持这些类型（数据结构里都要有，本单只有前两个真正用上）：</li>
 <li>移速倍率、攻速倍率（同类叠乘）</li>
 <li>击晕：不移动、不攻击、打断当前前摇和技能</li>
@@ -3223,7 +3243,12 @@ figure.anim{background:var(--panel);padding:8px}
 </ul>
 <h2>需要回报的信息</h2>
 <ol>
-<li>状态和技能的数据放在哪里（代码里的表，还是已经能走 Luban）。</li>
+<li>
+<p>对决状态 / 技能 和正式 Buff / Affix / Skill 的对应表：哪些字段一致、哪些对决没用到、哪些对决多出来。复用了哪些现有 Buff 表条目（ID + 用途）。</p>
+</li>
+<li>
+<p>状态和技能的数据放在哪里（代码里的表，还是已经能走 Luban）。</p>
+</li>
 <li>加一个新技能大概要改几处。用“自由全弹发射”举例说明，下一单就是它。</li>
 <li>部署延迟 / 落地硬直最后是怎么处理的。</li>
 <li>批量对局跑 100 局的耗时，以及双方 AI 都用当前 8 张卡时的胜率和平均对局时长（给后续调数值做基线）。</li>
