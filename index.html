@@ -80,7 +80,7 @@ figure.anim{background:var(--panel);padding:8px}
   h1{font-size:23px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#dispatch">派工表<span>串行队列</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>完成</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>完成</span></a></li><li><a href="#task-004">TASK-004 自由全弹发射<span>完成</span></a></li><li><a href="#task-005">TASK-005 v2 数值与对拼<span>完成</span></a></li><li><a href="#task-006">TASK-006 渣古全场与标签<span>待开发</span></a></li><li><a href="#task-007">TASK-007 高达双武装<span>待开发</span></a></li><li><a href="#task-008">TASK-008 两台远程机体<span>待开发</span></a></li><li><a href="#task-009">TASK-009 高达X 卫星炮<span>待开发</span></a></li><li><a href="#task-010">TASK-010 桥上堵车<span>待开发</span></a></li><li><a href="#task-011">TASK-011 矩阵双方就位<span>待开发</span></a></li><li><a href="#task-012">TASK-012 表现验收场景<span>待开发</span></a></li><li><a href="#task-013">TASK-013 AI 对打录像<span>待开发</span></a></li><li><a href="#task-014">TASK-014 AI 双路与进攻<span>待开发</span></a></li><li><a href="#task-016">TASK-016 飞弹齐射击晕<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#report-002">REPORT-002 状态与技能<span>已回</span></a></li><li><a href="#report-003">REPORT-003 改名尺寸降下<span>已回</span></a></li><li><a href="#report-004">REPORT-004 自由全弹发射<span>已回</span></a></li><li><a href="#report-005">REPORT-005 数值与对拼<span>已回</span></a></li><li><a href="#report-006a">REPORT-006A 渣古全场可投<span>已回</span></a></li><li><a href="#report-012">REPORT-012 表现验收场景<span>已回</span></a></li><li><a href="#report-006b">REPORT-006B 定位标签<span>已回</span></a></li><li><a href="#report-009">REPORT-009 高达X 卫星炮<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
+</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#dispatch">派工表<span>串行队列</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>完成</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>完成</span></a></li><li><a href="#task-004">TASK-004 自由全弹发射<span>完成</span></a></li><li><a href="#task-005">TASK-005 v2 数值与对拼<span>完成</span></a></li><li><a href="#task-006">TASK-006 渣古全场与标签<span>待开发</span></a></li><li><a href="#task-007">TASK-007 高达双武装<span>待开发</span></a></li><li><a href="#task-008">TASK-008 两台远程机体<span>待开发</span></a></li><li><a href="#task-009">TASK-009 高达X 卫星炮<span>待开发</span></a></li><li><a href="#task-010">TASK-010 桥上堵车<span>待开发</span></a></li><li><a href="#task-011">TASK-011 矩阵双方就位<span>待开发</span></a></li><li><a href="#task-012">TASK-012 表现验收场景<span>待开发</span></a></li><li><a href="#task-013">TASK-013 AI 对打录像<span>待开发</span></a></li><li><a href="#task-014">TASK-014 AI 双路与进攻<span>待开发</span></a></li><li><a href="#task-016">TASK-016 飞弹齐射击晕<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#report-002">REPORT-002 状态与技能<span>已回</span></a></li><li><a href="#report-003">REPORT-003 改名尺寸降下<span>已回</span></a></li><li><a href="#report-004">REPORT-004 自由全弹发射<span>已回</span></a></li><li><a href="#report-005">REPORT-005 数值与对拼<span>已回</span></a></li><li><a href="#report-006a">REPORT-006A 渣古全场可投<span>已回</span></a></li><li><a href="#report-012">REPORT-012 表现验收场景<span>已回</span></a></li><li><a href="#report-006b">REPORT-006B 定位标签<span>已回</span></a></li><li><a href="#report-009">REPORT-009 高达X 卫星炮<span>已回</span></a></li><li><a href="#report-014a">REPORT-014A AI 双路与进攻<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
 <p>内部策划文档仓库（私有）。只放策划方案，不放代码和受版权保护的原作图片。</p>
 <h2>两边协作</h2>
 <p>策划端（云端）写方案和任务单，本地开发 AI 改代码并写回报单，通过这个文件夹来回交接。</p>
@@ -2945,55 +2945,48 @@ figure.anim{background:var(--panel);padding:8px}
 <tbody>
 <tr>
 <td><strong>1（现在做）</strong></td>
-<td><strong>P-014A</strong></td>
-<td>AI 两路都用、会攒一波进攻；保留旧 AI 开关</td>
-<td><a href="#task-014">TASK-014</a> 全部</td>
-<td>种子 1 里 80 台机体全走右路；卫星炮做完后再改 AI，AI 才知道怎么用它</td>
-</tr>
-<tr>
-<td>2</td>
 <td><strong>P-016</strong></td>
 <td>飞弹齐射命中后击晕 0.5 秒，可以打断卫星炮蓄力；AI 会用它打断</td>
 <td><a href="#task-016">TASK-016</a> 全部</td>
 <td>Aoi 2026-11-16 拍板。卫星炮现在后手打断不了，要尽快补上反制；AI 改完再加，规则写在新 AI 上</td>
 </tr>
 <tr>
-<td>3</td>
+<td>2</td>
 <td><strong>P-010</strong></td>
 <td>桥上堵车：碰撞绕开、出手单位少被推、过桥错开</td>
 <td><a href="#task-010">TASK-010</a> 全部</td>
 <td>AI 用两路之后堵车会少一些，这时再修更容易看出效果</td>
 </tr>
 <tr>
-<td>4</td>
+<td>3</td>
 <td><strong>P-012B</strong></td>
 <td>P-012 的补充项里还没做的：状态图标放大到约 44 像素、同屏只显示最重要的一个；血条上下错开不重叠；血量最低的敌方单位血条加亮边。另加一个“卫星炮”验收场景（高达X 对一座不开火的塔，线上放一台靶子；再加一个被自由打断的版本）。已经在 P-012 里做了的跳过，回报里说明</td>
 <td><a href="#task-012">TASK-012</a> 2.5 节</td>
 <td>2.5 节是 P-012 开工后才加的，可能没赶上</td>
 </tr>
 <tr>
-<td>5</td>
+<td>4</td>
 <td><strong>P-008A</strong></td>
 <td>钢加农、力天使高达的资源核对；现有 6 张卡头像核对（自由缺头像）。只读</td>
 <td><a href="#task-008">TASK-008</a> 第 0 节</td>
 <td>只读，随时可以插队；最晚在 P-008B 之前做完</td>
 </tr>
 <tr>
-<td>6</td>
+<td>5</td>
 <td><strong>P-008B + P-008C</strong></td>
 <td>实现两台远程机体；两套卡组配置和切换，批量对局支持指定卡组</td>
 <td>TASK-008 第 1~4 节</td>
 <td>卡池从 8 张扩到 10 张</td>
 </tr>
 <tr>
-<td>7</td>
+<td>6</td>
 <td><strong>P-011</strong></td>
 <td>对拼矩阵加“双方都先站好”的跑法，矩阵自动扩成 N×N</td>
 <td><a href="#task-011">TASK-011</a> 全部</td>
 <td>机体和机制都齐了再做，矩阵一次跑到位</td>
 </tr>
 <tr>
-<td>8</td>
+<td>7</td>
 <td><strong>P-015</strong></td>
 <td>重跑两种对拼矩阵 + 100 局基线，和 10 文档 4.4 节逐格对比；录种子 1、2、3 各一局</td>
 <td>任务单待写</td>
@@ -3002,7 +2995,7 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td>另排</td>
 <td><strong>P-013S</strong></td>
-<td>录像工具收尾（提交工作区里的录像工具改动、特写截图、验收场景录像）。由做录像工具的那个 Agent 负责，不在本队列里；本队列的 Agent 不要动这些文件</td>
+<td>录像工具收尾（提交工作区里的录像工具改动、特写截图、验收场景录像；用新 AI 录种子 1、2、3 各一局，种子 1 再用 <code>duelai old</code> 录一局旧 AI 做对比）。由做录像工具的那个 Agent 负责，不在本队列里；本队列的 Agent 不要动这些文件</td>
 <td><a href="#task-013">TASK-013</a> 末尾</td>
 <td>Aoi 2026-11-16 定：录像工具不归串行队列的 Agent 管</td>
 </tr>
@@ -3071,6 +3064,10 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td>P-009 高达X 卫星炮（提交 e659d31cf6f）。100 局：加时 75→57、拆侧塔 50→77、平均 216→206 秒。没人管的高达X 过桥后 22.4 秒拆掉侧塔。蓄力只有 44% 打出来，42% 蓄力中被打死，13% 被打断。画面待 Aoi 确认</td>
 <td><a href="#report-009">REPORT-009</a></td>
+</tr>
+<tr>
+<td>P-014A AI 双路与进攻（提交 f07989ea33b）。新 AI 对新 AI 100 局：拆侧塔 77→130 座、至少拆一座塔的局 74→95、加时 57→45、单局几乎只走一路 51→7（共 200 方次）、渣古投到对方塔区 19%→71%；新 AI 对旧 AI 胜率 60.5%。旧 AI 保留，<code>duelai old/new</code> 切换</td>
+<td><a href="#report-014a">REPORT-014A</a></td>
 </tr>
 <tr>
 <td>界面：血条换成 Codex 出的图（提交 6b7e0ac35ed）；选卡界面的 26 张图、效果图和两份说明已入库，还没接代码</td>
@@ -3392,14 +3389,14 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td><a href="#task-014">TASK-014</a></td>
 <td>AI 两路都用、会组织进攻</td>
-<td>现在做（P-014A）</td>
+<td>完成（P-014A，f07989ea33b），手感待 Aoi 试玩</td>
 <td>见派工表</td>
 <td>—</td>
 </tr>
 <tr>
 <td><a href="#task-016">TASK-016</a></td>
 <td>飞弹齐射加 0.5 秒击晕，打断卫星炮蓄力</td>
-<td>待开发</td>
+<td>现在做（P-016）</td>
 <td>见派工表（P-016）</td>
 <td>—</td>
 </tr>
@@ -3507,6 +3504,16 @@ figure.anim{background:var(--panel);padding:8px}
 <li><strong>AI 偷塔门槛（REPORT-006A）</strong>：能量 ≥9 才扔渣古偏保守，但先不动，放到 P-014A 一起改（偷塔门槛降到能量 ≥6，且对方手里刚用掉战术卡时优先扔）。已写进 TASK-014。</li>
 <li><strong>满血也显示血条（REPORT-006B）</strong>：同意。CR 里满血不显示血条，但这里标签挂在血条上，定位标签更重要。P-012B 做血条错开时一起看挤不挤。</li>
 </ol>
+<h2>策划端对 REPORT-014A 的答复（2026-11-16）</h2>
+<p>结果认可：种子 1 录像里“只走右路、整局不拆塔”两个问题都解决了，仗打到了对方塔下。</p>
+<ol>
+<li><strong>己方侧塔算 2.5 费防守</strong>：同意，保持 2.5。CR 里放单张小牌给塔处理本来就是正常打法，而且现在的首要问题是加时太多。Aoi 试玩后如果觉得 AI“不防守、像送塔”，再调到 2.0，不用回到 1.5。</li>
+<li><strong>对方侧塔低于 60% 就不换路</strong>：同意。盯着残血塔打完是对的。</li>
+<li><strong>攒一波门槛 8 费、换路每局 0.6 次</strong>：都保持。</li>
+<li><strong>种子 1 新 AI 的录像</strong>：归 P-013S（做录像工具的 Agent），已写进派工表和 TASK-013。日志版 <code>REPORT-014A_seed1_新AI.txt</code> 请 Aoi 传到 <code>GundamCR_Exchange/reports/</code>。</li>
+<li><strong>提醒 P-016</strong>：新 AI 的飞弹齐射规则是“一发能打死小队才用”。P-016 要在新 AI 上加“打断卫星炮蓄力”这条，优先级高于清小队。</li>
+<li><strong>后面要看的</strong>：新 AI 对旧 AI 时“我方”胜 65、“敌方”胜 56，先手方仍有约 5 个点的优势，P-015 重跑时留意。各卡出牌次数里能天使、高达X 最少（2.2 次/局），是 5、6 费卡的正常现象，不调。</li>
+</ol>
 <h2>策划端对 REPORT-009 的答复（2026-11-16）</h2>
 <ol>
 <li><strong>结果认可</strong>：加时 75→57、拆塔 50→77，卫星炮起到了攻城的作用。数值先不动。</li>
@@ -3530,6 +3537,8 @@ figure.anim{background:var(--panel);padding:8px}
 </ol>
 <h2>等 Aoi 做的事</h2>
 <ul>
+<li>试玩一局新 AI（默认就是）：看它会不会先放高达再跟后排、会不会往你塔下扔渣古；觉得太凶或太蠢都告诉策划端。<code>duelai old</code> 可以切回旧 AI 对比。</li>
+<li>上传 <code>REPORT-014A_seed1_新AI.txt</code>。</li>
 <li>上传 REPORT-007 到（REPORT-009 已收到） <code>GundamCR_Exchange/reports/</code>（或直接贴回）。</li>
 <li>Unity 里看卫星炮：出一台高达X，走到离塔约 7 米，看反射板、天上的光柱、头顶蓄力条、地面预警线、光束和震屏。同一局顺便看新血条。</li>
 <li>Unity 重新编译后，打开「工具/MS战线对决/表现验收」把五个场景各点一次；进一局看血条上的定位标签和新尺寸。</li>
@@ -4670,6 +4679,13 @@ figure.anim{background:var(--panel);padding:8px}
 <ol>
 <li><strong>截图要看得清细节。</strong> 现在截图是 540×1170 的全场画面，单位只有几十个像素，看不出机体有没有变色、图标是哪个。每个关键事件请出两张：一张全场（现有），一张<strong>以事件单位为中心、裁出约 6 米见方的区域、输出 1080×1080</strong> 的特写。截图渲染分辨率可以比视频高。</li>
 <li><strong>验收场景的录像用特写镜头。</strong> TASK-012 的验收场景录像，镜头拉近到只拍那几台机体，不用拍全场。</li>
+</ol>
+<h2>P-014A 之后要补录的（2026-11-16）</h2>
+<p>AI 已换成新版（两路都用、会攒一波，见 <a href="#report-014a">REPORT-014A</a>）。P-013S 里加录：</p>
+<ol>
+<li>新 AI 对新 AI：种子 1、2、3 各一整局 + 精彩片段。</li>
+<li>旧 AI 对旧 AI：种子 1 一整局（先输 <code>duelai old</code>），放在 <code>recordings/seed1_oldAI/</code>，用来和新 AI 对比。</li>
+<li>每局的日志和事件索引照旧。</li>
 </ol><div class="pager"><a href="#task-012">← TASK-012 表现验收场景</a><a href="#task-014">TASK-014 AI 双路与进攻 →</a></div></article><article id="doc-task-014"><h1>TASK-014 AI：两路都用、会组织进攻</h1>
 <ul>
 <li>状态：待开发（工位：工具，负责 <code>DuelAI.cs</code>）</li>
@@ -8234,7 +8250,261 @@ figure.anim{background:var(--panel);padding:8px}
 <li>被自由的全弹发射瘫痪时，上面这些全部消失，0.5 秒后重新展开。</li>
 <li>长按高达X 卡牌，详情里有【卫星炮】说明。</li>
 <li>验收场景里暂时没有卫星炮专用的一项，需要的话可以加。</li>
-</ul><div class="pager"><a href="#report-006b">← REPORT-006B 定位标签</a><a href="#tpl-task">任务单模板 →</a></div></article><article id="doc-tpl-task"><h1>TASK-xxx 标题</h1>
+</ul><div class="pager"><a href="#report-006b">← REPORT-006B 定位标签</a><a href="#report-014a">REPORT-014A AI 双路与进攻 →</a></div></article><article id="doc-report-014a"><h1>REPORT-014A 对应 P-014A（TASK-014 全部）</h1>
+<ul>
+<li>工位：AI（单 Agent 串行队列）</li>
+<li>分支：<code>feature/frontline-duel</code>，单独一个提交，提交说明以 P-014A 开头</li>
+<li>日期：2026-11-16</li>
+<li>结果：完成。逻辑已离线验证。有画面的对局现在默认用新 AI，Aoi 可以在 Unity 里打一局看看手感</li>
+</ul>
+<h2>做了什么</h2>
+<h3>新旧 AI 并存，可切换</h3>
+<ul>
+<li>旧 AI 原样保留：只把选卡、部署、降下应对这些两边都要用的部分抽成共用的一层，旧 AI 的出牌逻辑一行没改。</li>
+<li>核对方法：旧 AI 对旧 AI 跑 100 局，和 P-009 提交时的结果逐局对比，日志和全精度状态都完全一样。</li>
+<li>新 AI 是另一份规则，下面详述。</li>
+<li>切换方式：</li>
+<li><strong>批量对局</strong>：可以给我方、敌方分别指定新 / 旧 AI。编辑器菜单「批量对局」下新增三项：旧 AI 对旧 AI、新 AI（我方）对旧 AI（敌方）、旧 AI（我方）对新 AI（敌方），各 100 局。原来的“20 局”“100 局”用当前默认（新 AI）。</li>
+<li><strong>有画面的对局</strong>：默认新 AI。GM 指令 <code>duelai old</code> / <code>duelai new</code> 切换，下一局生效；不带参数显示当前设置。</li>
+<li>批量对局的汇总里新增三行：左右路出牌比例（分我方 / 敌方）、拆塔数和拆掉至少一座塔的局数、机体阵亡位置分布。</li>
+</ul>
+<h3>新 AI 的规则</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>选路</td>
+<td>开局随机选一条主攻路</td>
+</tr>
+<tr>
+<td>换路</td>
+<td>主攻路的桥区（离河中线 3.7 米内、离桥中心横向 3 米内）双方都 ≥2 台机体时算僵持，每次思考有 35% 概率换到另一路；两次换路至少隔 8 秒。主攻路的对方侧塔已经打到 60% 以下就不换，继续压</td>
+</tr>
+<tr>
+<td>防守</td>
+<td>在对方进攻的那一路出牌。比较那一路双方的兵力：按“卡费 ÷ 台数 × 剩余血量比例”合计，己方侧塔还在时塔算 2.5 费。己方不够才出牌，挑费用最接近缺口的一张；对方是小队时优先用清群机体（自由）</td>
+</tr>
+<tr>
+<td>攒一波</td>
+<td>能量 ≥8（双倍能量时 ≥7）时，在主攻路己方侧塔正后方 2 米放前排：高达优先，没有高达就放 HP ≥900、会打机体的单台机体（能天使）。前排走到离河中线 6.2 米以内（己方一侧）时，在它身后 2.5 米跟后排：清群（自由）、攻城（高达X）、其他远程优先，没有就跟别的机体。能量还够就再跟一张。前排阵亡或 15 秒没跟上就算这一波结束</td>
+</tr>
+<tr>
+<td>不单张扔桥</td>
+<td>手里没有前排时不进攻，等能量到 9.5 才在塔后放一张最贵的机体，免得能量溢出</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td>能量 ≥6 就投对方血量比例较低的侧塔脚下（两次至少隔 10 秒）。对方 4 秒内用过战术卡、或 4 秒内花了 ≥5 费时，只要打得起就马上投</td>
+</tr>
+<tr>
+<td>飞弹齐射（便宜的战术卡）</td>
+<td>同一小队 ≥2 台挤在半径内、且一发能打死时才用</td>
+</tr>
+<tr>
+<td>米加粒子炮击（贵的战术卡）</td>
+<td>对方侧塔血量 ≤ 它对建筑的伤害（182）时补刀；或者 ≥2 台机体挤在半径内时用</td>
+</tr>
+<tr>
+<td>战术卡的距离</td>
+<td>只打己方半场和桥区附近（离河中线不超过对方一侧 4.2 米）的机体，对方后场的不打（落地前就走散了）</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>防守的兵力比较是这次调出来的。第一版“有威胁就出牌”沿用旧 AI 的做法，每方每局防守出牌 19 次，能量一直攒不到 8，一波只出 2.7 次，拆塔反而比旧 AI 少。改成“不够才补”之后，防守出牌降到 8.8 次，一波 4.6 次。</li>
+<li>只调了 AI 自己的参数（塔算几费、后排什么时候跟），没改战斗规则和数值。</li>
+</ul>
+<h3>改动的文件</h3>
+<ul>
+<li><code>DuelAI.cs</code>：共用层 + 旧 AI（逻辑不变）。</li>
+<li><code>DuelWaveAI.cs</code>（新增）：新 AI。</li>
+<li><code>DuelMatch.cs</code>：双方分别指定 AI 种类，默认新 AI。</li>
+<li><code>DuelHeadlessRunner.cs</code>：批量对局指定 AI、汇总的新统计。</li>
+<li><code>DuelWorld.cs</code>：出牌事件带落点（只用于统计左右路，不参与战斗）。</li>
+<li><code>DuelShowcase.cs</code>：GM 指令 <code>duelai</code>。</li>
+<li>编辑器 <code>FrontlineDuelBatchMenu.cs</code>：三个新菜单项。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[x] <strong>100 局里左右两路的出牌比例都不低于 25%</strong>：新 AI 对新 AI 100 局，左 47.9%、右 52.1%（我方左 50.4%，敌方左 45.5%）。</li>
+<li>[x] <strong>拆掉至少一座塔的局数明显多于现在</strong>：旧 AI 74 局，新 AI 95 局。侧塔共 77 座 → 130 座。详见下表。</li>
+<li>[x] <strong>旧 AI 可切换</strong>：批量对局按方指定、GM 指令 <code>duelai old</code>。旧 AI 的结果和 P-009 逐局一致。</li>
+<li>[x] <strong>回报单里没有源码</strong></li>
+<li><strong>编译</strong>：改动的文件都用工程的程序集离线编译过（运行时和编辑器两套），0 错误。</li>
+<li><strong>自检</strong>：之前各包的自检全部通过（自检场景不跑 AI，不受影响）。</li>
+</ul>
+<h2>回报的信息</h2>
+<h3>1. 新旧 AI 各 100 局（双方同一种 AI，种子 1～100）</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>旧 AI</th>
+<th>新 AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左右路出牌（左 / 右）</td>
+<td>49.9% / 50.1%</td>
+<td>47.9% / 52.1%</td>
+</tr>
+<tr>
+<td>每方每局“少用的那一路”占比，中位数</td>
+<td>21%</td>
+<td>37%</td>
+</tr>
+<tr>
+<td>每方每局几乎只用一路（少用的那一路 &lt;5%）</td>
+<td>51 / 200</td>
+<td>7 / 200</td>
+</tr>
+<tr>
+<td>侧塔被拆（合计）</td>
+<td>77 座</td>
+<td><strong>130 座</strong></td>
+</tr>
+<tr>
+<td>旗舰被拆</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>拆掉至少一座塔的局</td>
+<td>74（常规时间内 43）</td>
+<td><strong>95（常规时间内 55）</strong></td>
+</tr>
+<tr>
+<td>进入加时</td>
+<td>57 局</td>
+<td><strong>45 局</strong></td>
+</tr>
+<tr>
+<td>平均时长</td>
+<td>205.9s</td>
+<td>197.2s</td>
+</tr>
+<tr>
+<td>疑似卡死</td>
+<td>2 次</td>
+<td>0 次</td>
+</tr>
+<tr>
+<td>渣古降下投到对方塔区的比例</td>
+<td>19%</td>
+<td><strong>71%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>旧 AI 在 100 局合计里左右也是各一半，因为它每次进攻都随机挑血量较低的一路。但单局看，四分之一的方次几乎只走一路，种子 1 就是这样。新 AI 单局里两路也都会用。</li>
+<li>种子 1 对比：旧 AI 双方 110 次出场全在右路；新 AI 我方左 9 / 右 35，敌方左 15 / 右 32，敌方拆掉我方右塔，加时 202.6 秒结束。</li>
+</ul>
+<p>机体阵亡位置（按阵亡机体自己的方向算；“对方塔区”= 离河中线 7 米以上的对方半场，侧塔在 11.5 米）：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>位置</th>
+<th>旧 AI</th>
+<th>新 AI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自己半场和塔区</td>
+<td>41.7%</td>
+<td>30.0%</td>
+</tr>
+<tr>
+<td>河道 / 桥</td>
+<td>20.7%</td>
+<td>8.5%</td>
+</tr>
+<tr>
+<td>对方半场</td>
+<td>22.4%</td>
+<td>19.1%</td>
+</tr>
+<tr>
+<td>对方塔区</td>
+<td>15.3%</td>
+<td><strong>42.4%</strong></td>
+</tr>
+<tr>
+<td>每局阵亡台数</td>
+<td>65.3</td>
+<td>59.4</td>
+</tr>
+</tbody>
+</table></div>
+<p>新 AI 的仗大多打到了对方塔下，桥上对撞（河道 / 桥阵亡）从五分之一降到不到十分之一。</p>
+<p>新 AI 每方每局的出牌构成：防守 8.8 次、战术卡 2.9、降下偷塔 3.9（其中对方刚花完能量时 2.0）、开一波 4.6、跟后排 3.5、一波没跟上就散了 1.0、能量溢出出牌 0.3、换路 0.6。</p>
+<p>各卡每局出牌（新 AI，我方 / 敌方）：高达 4.38 / 4.39，夏亚渣古 3.64 / 3.51，渣古降下 5.41 / 5.50，能天使 2.23 / 2.67，自由 3.34 / 3.17，高达X 2.23 / 2.20，米加粒子炮击 2.24 / 1.94，飞弹齐射 3.63 / 3.64。</p>
+<h3>2. 新 AI 对旧 AI 的胜率</h3>
+<p>为了排除先后手的影响，两边各跑 100 局：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>我方</th>
+<th>敌方</th>
+<th>新 AI 胜</th>
+<th>旧 AI 胜</th>
+<th>平</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新 AI</td>
+<td>旧 AI</td>
+<td>65</td>
+<td>35</td>
+<td>0</td>
+</tr>
+<tr>
+<td>旧 AI</td>
+<td>新 AI</td>
+<td>56</td>
+<td>43</td>
+<td>1</td>
+</tr>
+<tr>
+<td>合计 200 局</td>
+<td></td>
+<td><strong>121（60.5%）</strong></td>
+<td>78</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<h3>3. 用新 AI 录一局种子 1</h3>
+<ul>
+<li>无画面的整局日志已生成：<code>reports/REPORT-014A_seed1_新AI.txt</code>（种子 1，新 AI 对新 AI，敌方加时 202.6 秒拆掉我方右塔获胜）。</li>
+<li>视频没录：录像工具（P-013S）归另一个 Agent，本队列不碰那些文件。Aoi 在 Unity 里用录像工具录种子 1 即可，现在默认就是新 AI；要录旧 AI 对比，先输 <code>duelai old</code>。</li>
+<li>注意：有画面的对局帧时间不固定，同种子录出来的过程和这份日志不会完全一样。</li>
+</ul>
+<h2>和策划案不一致的地方</h2>
+<p>没有。</p>
+<h2>问题（需要策划端回答）</h2>
+<p>没有影响下一个包的问题。以下几点供参考：</p>
+<ol>
+<li><strong>“攒一波”的门槛按任务单写的能量 ≥8</strong>。调参的早期版本上试过 ≥9，拆塔反而更少（99 座 → 81 座），攒得太久，对方先压过来了。</li>
+<li><strong>新 AI 现在偏进攻</strong>：防守时把己方侧塔算作 2.5 费的兵力，所以对方单张小牌冲过来常常只靠塔守。试过算 1.5 费：拆塔少一些（110 座、87 局），新 AI 当我方对旧 AI 胜 60 局（现在是 65 局）。如果策划端觉得现在攻得太凶、不像真人，这个数可以调回去。</li>
+<li><strong>换路不多</strong>：每方每局 0.6 次。两路都用主要靠防守跟着对方走、开局随机主攻路。主攻路的对方侧塔打到 60% 以下就不换，是因为早期版本上试过“僵持就换”不管塔血量，拆塔从 102 座掉到 93 座，攻击被分散了。</li>
+</ol>
+<h2>需要 Aoi 在 Unity 里看的</h2>
+<ul>
+<li>正常对局（默认新 AI）里敌方 AI 的出牌：</li>
+<li>先在侧塔后面放高达，等它走到桥前再跟自由或高达X。</li>
+<li>渣古降下多半扔到我方侧塔脚下。我方刚放完战术卡时，它会马上扔。</li>
+<li>我方单张小牌过河时，它常常不补牌，靠塔守。</li>
+<li>GM 指令 <code>duelai old</code> 后再开一局，对比旧 AI。</li>
+<li>编辑器菜单「工具/MS战线对决/批量对局（AI 对 AI）」下的三个新菜单项。</li>
+</ul><div class="pager"><a href="#report-009">← REPORT-009 高达X 卫星炮</a><a href="#tpl-task">任务单模板 →</a></div></article><article id="doc-tpl-task"><h1>TASK-xxx 标题</h1>
 <ul>
 <li>状态：待开发</li>
 <li>依据：（列出要读的策划案和章节）</li>
@@ -8259,7 +8529,7 @@ figure.anim{background:var(--panel);padding:8px}
 <h2>需要回报的信息</h2>
 <ul>
 <li>除验收结果外，策划端还想知道的事（数值现状、实现方式选择等）。</li>
-</ul><div class="pager"><a href="#report-009">← REPORT-009 高达X 卫星炮</a><a href="#tpl-report">回报单模板 →</a></div></article><article id="doc-tpl-report"><h1>REPORT-xxx 对应 TASK-xxx</h1>
+</ul><div class="pager"><a href="#report-014a">← REPORT-014A AI 双路与进攻</a><a href="#tpl-report">回报单模板 →</a></div></article><article id="doc-tpl-report"><h1>REPORT-xxx 对应 TASK-xxx</h1>
 <ul>
 <li>包 / 工位：（如 P-006A / 机制 A）</li>
 <li>日期：</li>
@@ -10141,7 +10411,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>待确认：现有 高达X 模型是否带可动的卫星炮和反射板。</li>
 </ul><div class="pager"><a href="#freedom">← 自由</a><span></span></div></article></main></div><script>
 (function(){
-  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'dispatch', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'task-004', 'task-005', 'task-006', 'task-007', 'task-008', 'task-009', 'task-010', 'task-011', 'task-012', 'task-013', 'task-014', 'task-016', 'report-001', 'report-002', 'report-003', 'report-004', 'report-005', 'report-006a', 'report-012', 'report-006b', 'report-009', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
+  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'dispatch', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'task-004', 'task-005', 'task-006', 'task-007', 'task-008', 'task-009', 'task-010', 'task-011', 'task-012', 'task-013', 'task-014', 'task-016', 'report-001', 'report-002', 'report-003', 'report-004', 'report-005', 'report-006a', 'report-012', 'report-006b', 'report-009', 'report-014a', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
   function show(){
     var h=(location.hash||'').slice(1); if(ids.indexOf(h)<0) h=ids[0];
     ids.forEach(function(i){
