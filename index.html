@@ -80,14 +80,14 @@ figure.anim{background:var(--panel);padding:8px}
   h1{font-size:23px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
+</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>待开发</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
 <p>内部策划文档仓库（私有）。只放策划方案，不放代码和受版权保护的原作图片。</p>
 <h2>两边协作</h2>
 <p>策划端（云端）写方案和任务单，本地开发 AI 改代码并写回报单，通过这个文件夹来回交接。</p>
 <ul>
-<li><a href="协作流程.md">协作流程</a>：角色、循环、规则</li>
-<li><a href="STATUS.md">任务看板 STATUS</a>：现在卡在谁那里</li>
-<li><a href="AGENTS.md">给本地 AI 的说明 AGENTS</a></li>
+<li><a href="#workflow">协作流程</a>：角色、循环、规则</li>
+<li><a href="#status">任务看板 STATUS</a>：现在卡在谁那里</li>
+<li><a href="#agents">给本地 AI 的说明 AGENTS</a></li>
 <li><code>tasks/</code> 任务单，<code>reports/</code> 回报单</li>
 </ul>
 <h2>目录</h2>
@@ -193,7 +193,7 @@ figure.anim{background:var(--panel);padding:8px}
 <td>TRANS-AM 三段式</td>
 <td>粒子耗尽后减速</td>
 <td>迷你皮卡、冠军技能</td>
-<td>是（状态系统；手动发动需 UI）</td>
+<td>是（状态系统；半血自动发动）</td>
 </tr>
 <tr>
 <td>自由</td>
@@ -223,7 +223,7 @@ figure.anim{background:var(--panel);padding:8px}
 <ol>
 <li>模型尺寸方案 A（按原作比例，推荐）/ B（分档但同框架同大小）/ C（维持现状）。</li>
 <li>渣古降下的投放范围：A 己方半场（推荐）/ B 拆塔后扩展 / C 全场。</li>
-<li>能天使 TRANS-AM 发动方式：A 手动花 1 费（推荐）/ B 半血自动。</li>
+<li>~~能天使 TRANS-AM 发动方式~~：已定 B 半血自动。</li>
 <li>阵营标签按“所属作品”还是“剧中势力”。</li>
 <li>战术卡是否绑定具体战舰。</li>
 </ol>
@@ -2725,12 +2725,12 @@ figure.anim{background:var(--panel);padding:8px}
 <tbody>
 <tr>
 <td>0–3.2s</td>
-<td>GN 剑近战，绿色刃光；2.6s 出现“点击卡头像发动”提示</td>
-<td>方案 A：手动发动，花 1 能量，每台限 1 次</td>
+<td>GN 剑近战，绿色刃光；能天使受到伤害，头顶 HP 条降到一半</td>
+<td>方案 B（已拍板）：HP 首次低于 50% 自动发动，每台限 1 次</td>
 </tr>
 <tr>
 <td>3.2–9s</td>
-<td>机体变红、3 个残影、刃光变红，快速切换目标连斩</td>
+<td>飘字“HP 50% → TRANS-AM”，机体变红、3 个残影、刃光变红，快速切换目标连斩</td>
 <td>移速 ×1.4，攻速 ×1.6，持续 6 秒</td>
 </tr>
 <tr>
@@ -2829,7 +2829,345 @@ figure.anim{background:var(--panel);padding:8px}
 <li>每个技能拆成“前摇 / 生效 / 后摇”三段事件，表现层订阅事件播特效，逻辑层不等特效。</li>
 <li>先做占位特效（颜色光柱、圆环、飘字），机制验收通过后再换正式特效。</li>
 <li>原作名称字样（TRANS-AM、月面微波等）上屏前要过 BNE 监修<span class="tag t-sup">推测·监修</span>。</li>
-</ul><div class="pager"><a href="#deck-spec">← 选卡界面规格</a><a href="#gundam">高达 →</a></div></article><article id="doc-gundam"><h1>01 高达（RX-78-2）· 机体策划案 v0.1</h1>
+</ul><div class="pager"><a href="#deck-spec">← 选卡界面规格</a><a href="#workflow">协作流程 →</a></div></article><article id="doc-workflow"><h1>协作流程（策划端 ⇄ 本地开发端）</h1>
+<p>两边分开工作，靠 <code>DesignDocs/</code> 文件夹里的文件来回交接。策划端看不到内网代码，开发端不改策划案；两边只通过<strong>任务单</strong>和<strong>回报单</strong>对话。</p>
+<h2>角色</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>角色</th>
+<th>谁</th>
+<th>负责</th>
+<th>只改</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>策划端</td>
+<td>Claude（云端）</td>
+<td>写策划案、拆任务单、读回报后改方案</td>
+<td><code>DesignDocs/</code> 下除 <code>reports/</code> 以外的文件</td>
+</tr>
+<tr>
+<td>开发端</td>
+<td>本地 AI（codex 等）</td>
+<td>按任务单改 Unity 代码，写回报单</td>
+<td>Unity 工程 + <code>DesignDocs/reports/</code></td>
+</tr>
+<tr>
+<td>搬运</td>
+<td>grok bot / Aoi</td>
+<td>把 <code>DesignDocs/</code> 搬进内网；把 <code>reports/</code> 新文件搬回 GitHub</td>
+<td>不改内容</td>
+</tr>
+<tr>
+<td>拍板</td>
+<td>Aoi</td>
+<td>选方案、批数值、决定做哪个任务</td>
+<td><code>STATUS.md</code> 里的“拍板”列（也可口头告诉策划端）</td>
+</tr>
+</tbody>
+</table></div>
+<h2>一次循环</h2>
+<pre><code>① 策划端写 tasks/TASK-xxx.md，STATUS.md 标“待开发”，推到 GitHub
+② grok bot 把 DesignDocs/ 整个搬进内网工程
+③ Aoi 对本地 AI 说：“做 DesignDocs/tasks/TASK-xxx”
+④ 本地 AI 读任务单 + 相关策划案 → 改代码 → 写 reports/REPORT-xxx.md
+⑤ grok bot / Aoi 把 reports/REPORT-xxx.md 搬回 GitHub（只搬这个文件）
+⑥ Aoi 告诉策划端“REPORT-xxx 回来了”
+⑦ 策划端读回报 → 改策划案 / 回答问题 / 开下一张任务单 → 回到 ①
+</code></pre>
+<h2>规则</h2>
+<ol>
+<li><strong>先改案，再改码。</strong> 数值和机制以策划案为准。开发端发现方案不合理，写进回报单的“问题”一节，不要自己改数值。</li>
+<li><strong>一张任务单 = 一个可验收的改动。</strong> 每张都写清楚“改什么、不改什么、怎么验收”。</li>
+<li><strong>回报单只写事实和问题，不贴源码。</strong> 可以写文件名、类名、函数名、数值、截图描述、日志结论。内网代码不出内网。</li>
+<li><strong>开发端只往 <code>reports/</code> 写新文件。</strong> 不改 <code>tasks/</code>、不改策划案。搬回 GitHub 时只搬 <code>reports/</code> 里新增的文件，避免覆盖策划端的改动。</li>
+<li><strong>编号对应。</strong> <code>TASK-003</code> 的回报叫 <code>REPORT-003.md</code>；同一任务第二次回报叫 <code>REPORT-003b.md</code>。</li>
+<li><strong>问题要能回答。</strong> 回报单里的问题写成选择题或带推荐答案，策划端在下一版任务单或策划案里回答，并在 <code>STATUS.md</code> 标出。</li>
+<li><strong>截图和录像</strong>带水印或含内网信息的不进仓库，只在回报里用文字描述（或由 Aoi 单独发给策划端）。</li>
+</ol>
+<h2>文件</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>文件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#status">STATUS.md</a></td>
+<td>任务看板：每张任务的状态，一眼看到卡在谁那里</td>
+</tr>
+<tr>
+<td><a href="#agents">AGENTS.md</a></td>
+<td>给本地 AI 的说明（开发端第一个读的文件）</td>
+</tr>
+<tr>
+<td><a href="#tpl-report">tasks/_模板.md</a></td>
+<td>任务单模板</td>
+</tr>
+<tr>
+<td><a href="#tpl-report">reports/_模板.md</a></td>
+<td>回报单模板</td>
+</tr>
+</tbody>
+</table></div>
+<h2>状态定义</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义</th>
+<th>球在谁手里</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>待拍板</td>
+<td>方案有选项没定</td>
+<td>Aoi</td>
+</tr>
+<tr>
+<td>待开发</td>
+<td>任务单已写好</td>
+<td>开发端</td>
+</tr>
+<tr>
+<td>开发中</td>
+<td>本地 AI 正在做</td>
+<td>开发端</td>
+</tr>
+<tr>
+<td>待回顾</td>
+<td>回报已搬回</td>
+<td>策划端</td>
+</tr>
+<tr>
+<td>需返工</td>
+<td>策划端看完回报，要求补改</td>
+<td>开发端</td>
+</tr>
+<tr>
+<td>完成</td>
+<td>验收通过，策划案已同步</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div><div class="pager"><a href="#anim-spec">← 技能动画分镜</a><a href="#agents">给本地 AI 的说明 →</a></div></article><article id="doc-agents"><h1>给本地开发 AI 的说明</h1>
+<p>你是 MS战线对决（高达题材 CR 式对战）的<strong>开发端</strong>。策划端在另一个环境，看不到你的代码；你们只通过这个文件夹里的任务单和回报单交流。完整规则见 <a href="#workflow">协作流程.md</a>。</p>
+<h2>每次接到“做 TASK-xxx”时</h2>
+<ol>
+<li>读 <code>DesignDocs/tasks/TASK-xxx_*.md</code>，再读它“依据”一节列出的策划案。</li>
+<li>只做任务单“范围”里的事。“不做”一节列出的东西不要碰。</li>
+<li>数值、机制以策划案为准。觉得方案有问题、做不了、或者代码现状和策划案的描述对不上，<strong>不要自己改设计</strong>，记到回报单的“问题”里，能做的部分照做。</li>
+<li>做完写 <code>DesignDocs/reports/REPORT-xxx.md</code>（用 <a href="#tpl-report">reports/_模板.md</a>）。</li>
+<li>回报单里<strong>不要贴源码</strong>，只写文件名、类名、函数名、数值、现象和结论。</li>
+<li>不要修改 <code>DesignDocs/</code> 里除 <code>reports/</code> 以外的任何文件。</li>
+</ol>
+<h2>怎么拿到和交回</h2>
+<ul>
+<li><strong>拿：</strong> 公开预览页 https://qq245562635.github.io/gundamcr-preview/ 是整个 DesignDocs 的合订本（WebFetch 能抓到全部文字，动画和选卡原型需要 JS，抓不到，以 md 文字版为准）。也可能由 grok bot 直接搬进工程。</li>
+<li><strong>交：</strong> 回报单写好后，由 Aoi 贴给策划端，或搬回私有仓库的 <code>DesignDocs/reports/</code>。</li>
+<li>内网已有的 <code>机体策划案.md</code>、<code>进度.md</code> 可以继续用；和策划端文档冲突时，在回报里列出来，由 Aoi 拍板后两边同步。</li>
+</ul>
+<h2>工程位置（策划端已知信息，以你看到的为准）</h2>
+<ul>
+<li>Unity 工程，分支 <code>feature/frontline-duel</code></li>
+<li>代码：<code>Assets/Scripts/GameLogic/FrontlineDuel/</code>（DuelDefs.cs 卡表；DuelWorld.cs、DuelUnit.cs 战斗逻辑；DuelPresentation.cs、DuelHud.cs 表现；DuelAI.cs）</li>
+<li>以上若已过时，请在回报里更正。</li>
+</ul>
+<h2>术语</h2>
+<ul>
+<li>机体译名以配置表为准：渣古、高达X（GX-9900）等。</li>
+<li><span class="tag t-set">待确认·设定</span>= 原作数据待 BNE 资料复核；<span class="tag t-sup">推测·监修</span>= 对监修规则的推测；<span class="tag t-new">新系统</span>= 需要新开发的系统。遇到这些标记，按文档写的先做，回报里注明。</li>
+</ul>
+<hr />
+<h2>贴进 Unity 工程根目录 AGENTS.md 的片段</h2>
+<p>（Aoi 可以把下面这段加到工程自己的 AGENTS.md 里，这样本地 AI 每次都会先读策划文档。）</p>
+<pre><code>## 策划协作
+- 策划文档在 DesignDocs/（由外部同步，只读）。说明见 DesignDocs/AGENTS.md。
+- 收到“做 TASK-xxx”时，按 DesignDocs/tasks/ 里的任务单执行，完成后写 DesignDocs/reports/REPORT-xxx.md。
+- 不修改 DesignDocs/ 中 reports/ 以外的文件；回报里不贴源码。
+</code></pre><div class="pager"><a href="#workflow">← 协作流程</a><a href="#status">任务看板 →</a></div></article><article id="doc-status"><h1>任务看板</h1>
+<p>状态定义和流程见 <a href="#workflow">协作流程.md</a>。球在谁手里，看“下一步”。</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>任务</th>
+<th>状态</th>
+<th>下一步</th>
+<th>回报</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#task-001">TASK-001</a></td>
+<td>现状盘点：代码 vs 策划案（只读）</td>
+<td>待开发</td>
+<td>开发端执行</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h2>等 Aoi 拍板（会影响后续任务单）</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>推荐</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型尺寸方案 A/B/C</td>
+<td>A 按原作比例</td>
+<td>表现层任务</td>
+</tr>
+<tr>
+<td>渣古降下投放范围</td>
+<td>A 己方半场</td>
+<td>渣古降下任务</td>
+</tr>
+<tr>
+<td>高达的盾：挡一击 / 盾值</td>
+<td>盾值</td>
+<td>状态系统</td>
+</tr>
+<tr>
+<td>新系统开发顺序</td>
+<td>状态 → 建筑 → 空中 → 伤害类型</td>
+<td>后续所有任务的排序</td>
+</tr>
+<tr>
+<td>第一批卡池名单</td>
+<td>见 20 文档第一批 21 张</td>
+<td>卡表任务</td>
+</tr>
+</tbody>
+</table></div>
+<h2>已拍板</h2>
+<ul>
+<li>能天使 TRANS-AM：HP 首次低于 50% 自动发动（方案 B）。</li>
+</ul>
+<h2>计划中的任务（TASK-001 回来后细化）</h2>
+<ul>
+<li>状态效果系统（击晕/减速/瘫痪/护盾）</li>
+<li>六台机体按策划案补齐机制</li>
+<li>建筑卡</li>
+<li>空中层</li>
+</ul><div class="pager"><a href="#agents">← 给本地 AI 的说明</a><a href="#task-001">TASK-001 现状盘点 →</a></div></article><article id="doc-task-001"><h1>TASK-001 现状盘点（只读，不改代码）</h1>
+<ul>
+<li>状态：待开发</li>
+<li>依据：<code>units/01</code>–<code>06</code> 六份单机方案；<code>10_克制体系设计_v0.1.md</code>；<code>20_全系列卡池设计_v0.2.md</code> 第 1、5 节（新系统清单）</li>
+<li>预计改动：无。只读代码，写回报。</li>
+</ul>
+<h2>目标</h2>
+<p>策划端看不到代码，现有方案里有不少内容是凭 11-14 的旧反馈和 Unity 截图推的。先把<strong>代码现状</strong>和<strong>策划案</strong>对一遍，后面的任务单才能写准。</p>
+<h2>范围</h2>
+<ol>
+<li><strong>卡表现状。</strong> 按 DuelDefs.cs（或实际卡表）列出当前所有卡：卡名、费用、血量、伤害、攻速、移速、射程、目标类型（地面/建筑/全部）、数量、特殊机制。用表格。</li>
+<li><strong>六台机体对照。</strong> 对 <code>units/01</code>–<code>06</code> 每一份，逐条列出“策划案写的机制”在代码里是：已实现 / 部分实现（差什么）/ 未实现。重点：</li>
+<li>高达：步枪/军刀切换、盾（挡一击还是盾值）</li>
+<li>夏亚渣古：冲锋加速、首击加倍</li>
+<li>渣古降下：投放范围、落地冲击</li>
+<li>能天使：TRANS-AM 发动方式和三段效果</li>
+<li>自由：多目标锁定的目标数、是否有瘫痪/减速</li>
+<li>高达X：蓄力、直线贯穿、只打建筑</li>
+<li><strong>系统盘点。</strong> 以下系统各自是：有 / 部分有 / 没有。有的话写在哪个类、大概怎么工作：</li>
+<li>状态效果（击晕、减速、瘫痪、加速、护盾）</li>
+<li>手动技能按钮（花费用发动）</li>
+<li>建筑卡（放置后不动、有存活时间）</li>
+<li>空中单位 / 高度层</li>
+<li>召唤（单位生成其他单位）、形态切换、隐身</li>
+<li>伤害类型（光束/实弹/范围）或护甲</li>
+<li>冠军位或卡组限制</li>
+<li><strong>对局参数。</strong> 圣水上限、回复速度、双倍/三倍圣水时间、对局时长、加时规则、塔血量和伤害、手牌数量。</li>
+<li><strong>数据与工具。</strong> 有没有对局日志或统计（胜率、出卡次数）；Unity 桥接 / 自动测试现在能不能跑。</li>
+<li>
+<p><strong>配置表映射。</strong> 当前 6 张卡分别对应机体配置表里的哪个 ID（策划端手里有 MobileSuit 配置表）。</p>
+</li>
+<li>
+<p><strong>本地策划文档同步。</strong> 内网有自己的 <code>机体策划案.md</code>（v2.0）和 <code>进度.md</code>，策划端看不到。请列出：</p>
+</li>
+<li>机体策划案 v2.0 里已拍板、但和本仓库 <code>units/</code>、<code>10</code>、<code>20</code> 文档不一致的决定（例：能天使已定半血自动，策划端已同步）</li>
+<li>当前卡池的 8 张卡是哪 8 张</li>
+<li>本地给新文档的编号（如 30 选卡界面、40 动画分镜），策划端以后沿用</li>
+</ol>
+<h2>不做</h2>
+<ul>
+<li>不改任何代码和数值。</li>
+<li>不评价策划案好坏（有意见写进“问题”即可）。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[ ] 第 1–6 项都有回答，答不了的写“不确定”和原因</li>
+<li>[ ] 回报单里没有源码片段</li>
+</ul>
+<h2>需要回报的信息</h2>
+<ul>
+<li>以上全部。另外请说明：如果按 <code>20_全系列卡池设计</code> 第一批 21 张来做，你估计最先卡住的是哪个系统。</li>
+</ul><div class="pager"><a href="#status">← 任务看板</a><a href="#tpl-task">任务单模板 →</a></div></article><article id="doc-tpl-task"><h1>TASK-xxx 标题</h1>
+<ul>
+<li>状态：待开发</li>
+<li>依据：（列出要读的策划案和章节）</li>
+<li>预计改动：（涉及的文件/模块，策划端的猜测，以实际为准）</li>
+</ul>
+<h2>目标</h2>
+<p>一两句话：做完之后游戏里能看到什么变化。</p>
+<h2>范围</h2>
+<ol>
+<li>…</li>
+<li>…</li>
+</ol>
+<h2>不做</h2>
+<ul>
+<li>…</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[ ] …</li>
+<li>[ ] …</li>
+</ul>
+<h2>需要回报的信息</h2>
+<ul>
+<li>除验收结果外，策划端还想知道的事（数值现状、实现方式选择等）。</li>
+</ul><div class="pager"><a href="#task-001">← TASK-001 现状盘点</a><a href="#tpl-report">回报单模板 →</a></div></article><article id="doc-tpl-report"><h1>REPORT-xxx 对应 TASK-xxx</h1>
+<ul>
+<li>日期：</li>
+<li>分支 / 提交：</li>
+<li>结果：完成 / 部分完成 / 未开始（原因）</li>
+</ul>
+<h2>做了什么</h2>
+<ul>
+<li>（按任务单“范围”逐条写；写文件名、类名、函数名，不贴源码）</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[x] …</li>
+<li>[ ] …（没过的写原因）</li>
+</ul>
+<h2>和策划案不一致的地方</h2>
+<ul>
+<li>策划案写的是 A，代码现状 / 实际做成的是 B，原因 …</li>
+</ul>
+<h2>问题（需要策划端回答）</h2>
+<ol>
+<li>问题……</li>
+<li>选项 A：…（推荐 / 不推荐，理由）</li>
+<li>选项 B：…</li>
+</ol>
+<h2>回报的信息</h2>
+<ul>
+<li>任务单“需要回报的信息”逐条回答。</li>
+</ul>
+<h2>建议的下一步</h2>
+<ul>
+<li>…</li>
+</ul><div class="pager"><a href="#tpl-task">← 任务单模板</a><a href="#gundam">高达 →</a></div></article><article id="doc-gundam"><h1>01 高达（RX-78-2）· 机体策划案 v0.1</h1>
 <blockquote>
 <p>日期：2026-11-15　状态：草案<br />
 上级文档：<a href="#ip-plan">机体 IP 还原设计方案</a><br />
@@ -3093,7 +3431,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>卡名、武装名的中文译名。</li>
 <li>出场语音的使用。</li>
 <li>待确认：盾面标志的准确图案；名场面集数；入场是否允许出现白色基地。</li>
-</ul><div class="pager"><a href="#anim-spec">← 技能动画分镜</a><a href="#char">夏亚专用渣古 →</a></div></article><article id="doc-char"><h1>02 夏亚专用渣古（MS-06S 渣古 II 指挥官机）· 机体策划案 v0.1</h1>
+</ul><div class="pager"><a href="#tpl-report">← 回报单模板</a><a href="#char">夏亚专用渣古 →</a></div></article><article id="doc-char"><h1>02 夏亚专用渣古（MS-06S 渣古 II 指挥官机）· 机体策划案 v0.1</h1>
 <blockquote>
 <p>日期：2026-11-15　状态：草案<br />
 上级文档：<a href="#ip-plan">机体 IP 还原设计方案</a><br />
@@ -3622,7 +3960,7 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 <tr>
 <td>改动摘要</td>
-<td>TRANS-AM 做成“通常 → 爆发 → 粒子耗尽”三段式；推荐玩家手动发动（类似 CR 冠军技能）</td>
+<td>TRANS-AM 做成“通常 → 爆发 → 粒子耗尽”三段式；HP 首次低于 50% 时自动发动（Aoi 已拍板）</td>
 </tr>
 </tbody>
 </table></div>
@@ -3741,7 +4079,7 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 </tbody>
 </table></div>
-<h3>5.2 TRANS-AM（需 Aoi 拍板发动方式）</h3>
+<h3>5.2 TRANS-AM（发动方式：已定方案 B 半血自动）</h3>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -3769,8 +4107,8 @@ figure.anim{background:var(--panel);padding:8px}
 </tbody>
 </table></div>
 <p>发动方式：<br />
-- <strong>方案 A（推荐）</strong>：玩家手动。能天使在场时卡位上出现技能按钮，点击消耗 1 点能量发动。优点是有操作感、TRANS-AM 成为“时机选择”。缺点是要做新 UI。<br />
-- <strong>方案 B</strong>：自动。HP 首次低于 50% 时发动。不需新 UI，可以先做 B，以后升级到 A。</p>
+- <strong>方案 A（未采用，留作以后升级）</strong>：玩家手动。能天使在场时卡位上出现技能按钮，点击消耗 1 点能量发动。优点是有操作感、TRANS-AM 成为“时机选择”。缺点是要做新 UI。<br />
+- <strong>方案 B（Aoi 已拍板采用）</strong>：自动。HP 首次低于 50% 时发动，每台限 1 次。不需新 UI。</p>
 <h3>5.3 克制关系</h3>
 <p>完整矩阵见<a href="#counter">克制体系设计</a>。</p>
 <ul>
@@ -3847,12 +4185,12 @@ figure.anim{background:var(--panel);padding:8px}
 <td>需要状态系统（带时长的属性修正）</td>
 </tr>
 <tr>
-<td>手动发动（方案 A）</td>
+<td>手动发动（方案 A，未采用）</td>
 <td>新功能</td>
 <td>技能按钮 UI + 能量扣除</td>
 </tr>
 <tr>
-<td>自动发动（方案 B）</td>
+<td>自动发动（方案 B，已采用）</td>
 <td>小改</td>
 <td>血量阈值触发</td>
 </tr>
@@ -4434,7 +4772,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>待确认：现有 高达X 模型是否带可动的卫星炮和反射板。</li>
 </ul><div class="pager"><a href="#freedom">← 自由</a><span></span></div></article></main></div><script>
 (function(){
-  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
+  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'workflow', 'agents', 'status', 'task-001', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
   function show(){
     var h=(location.hash||'').slice(1); if(ids.indexOf(h)<0) h=ids[0];
     ids.forEach(function(i){
@@ -4960,10 +5298,11 @@ figure.anim{background:var(--panel);padding:8px}
     var col = mode === 'ta' ? '#e02b2b' : mode === 'dep' ? '#8a8f96' : '#2f8a5f';
     S.unit(X[0], X[1], 0.55, col, '能天使');
     all.forEach(function (h) { if (t >= h && t < h + 0.28) { var g = tgtOf(h), tg = g === 's1' ? s1 : g === 's2' ? s2 : E; S.slash(X[0], X[1], 1.0, -Math.atan2(tg[1] - X[1], tg[0] - X[0]), mode === 'ta' ? '#ff3b3b' : mode === 'dep' ? '#b5bac0' : '#3ddc84', (t - h) / 0.28); } });
-    var used = t >= 3.2;
-    S.button(used ? '已发动' : 'TRANS-AM  -1', used ? '#9aa3ad' : '#e02b2b', t >= 3.0 && t < 3.4, (t >= 2.7 && t < 3.4) ? (t - 2.7) / 0.7 : -1);
+    var xhp = t < 3.2 ? 1 - 0.5 * (t / 3.2) : Math.max(0.3, 0.5 - 0.02 * (t - 3.2));
+    S.bars(X[0], X[1], 0.55, xhp);
+    S.popup(X[0] + 1.8, X[1] + 0.6, 'HP 50% → TRANS-AM', 3.2, t, '#e02b2b');
     S.phaseBar([['通常', 3.2, '#2f8a5f'], ['TRANS-AM', 5.8, '#e02b2b'], ['粒子耗尽', 4, '#8a8f96'], ['恢复', 2, '#2f8a5f']], t);
-    if (mode === 'n' && t < 3.2) S.caption('通常：GN 剑近战', t > 2.6 ? '玩家点击卡头像发动 TRANS-AM（消耗 1 点能量）' : '方案 A：手动发动，每台限 1 次');
+    if (mode === 'n' && t < 3.2) S.caption('通常：GN 剑近战，受到伤害', 'HP 首次低于 50% 时自动发动 TRANS-AM（每台限 1 次）');
     else if (mode === 'ta') S.caption('TRANS-AM：移速 ×1.4，攻速 ×1.6，红光与残影', '6 秒内快速切换目标');
     else if (mode === 'dep') S.caption('粒子耗尽：移速、攻速 ×0.7（4 秒）', '还原原作设定，也是对手反打的窗口');
     else S.caption('恢复通常状态', '本局这台能天使不能再发动');
