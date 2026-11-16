@@ -80,7 +80,7 @@ figure.anim{background:var(--panel);padding:8px}
   h1{font-size:23px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>待开发</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
+</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>待开发</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
 <p>内部策划文档仓库（私有）。只放策划方案，不放代码和受版权保护的原作图片。</p>
 <h2>两边协作</h2>
 <p>策划端（云端）写方案和任务单，本地开发 AI 改代码并写回报单，通过这个文件夹来回交接。</p>
@@ -218,11 +218,11 @@ figure.anim{background:var(--panel);padding:8px}
 <p>克制循环（示意）：渣古降下 拖住 夏亚渣古/能天使 → 自由 克 渣古降下、打断冲锋和蓄力 → 能天使/夏亚渣古 切入克 自由 → 能天使 克 高达/高达X 等坦克。</p>
 <h2>模型高度</h2>
 <figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc3NjAnIGhlaWdodD0nMzYwJyB2aWV3Qm94PScwIDAgNzYwIDM2MCc+CjxyZWN0IHdpZHRoPSc3NjAnIGhlaWdodD0nMzYwJyBmaWxsPSd3aGl0ZScvPgo8dGV4dCB4PScyMC4wJyB5PScyNi4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxNScgZmlsbD0nIzIyMicgdGV4dC1hbmNob3I9J3N0YXJ0JyBmb250LXdlaWdodD0nYm9sZCc+5qih5Z6L55uu5qCH6auY5bqm77ya5b2T5YmNIHZzIOaMieWOn+S9nOavlOS+i++8iOS7pemrmOi+viAyLjUg5Li65Z+65YeG77yJPC90ZXh0Pgo8cmVjdCB4PSc3MCcgeT0nMTI1LjAnIHdpZHRoPSczNCcgaGVpZ2h0PScxNzUuMCcgZmlsbD0nI2Q4NDQzYycvPgo8cmVjdCB4PScxMDgnIHk9JzEyNS4wJyB3aWR0aD0nMzQnIGhlaWdodD0nMTc1LjAnIGZpbGw9JyMyZjZmZGYnLz4KPHRleHQgeD0nODcuMCcgeT0nMTE5LjAnIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzExJyBmaWxsPScjZDg0NDNjJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LXdlaWdodD0nbm9ybWFsJz4yLjU8L3RleHQ+Cjx0ZXh0IHg9JzEyNS4wJyB5PScxMTkuMCcgZm9udC1mYW1pbHk9J1BpbmdGYW5nIFNDLCBNaWNyb3NvZnQgWWFIZWksIE5vdG8gU2FucyBDSksgU0MsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTEnIGZpbGw9JyMyZjZmZGYnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPjIuNTwvdGV4dD4KPHRleHQgeD0nMTA2LjAnIHk9JzMyMC4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMicgZmlsbD0nIzIyMicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J2JvbGQnPumrmOi+vjwvdGV4dD4KPHRleHQgeD0nMTA2LjAnIHk9JzMzOC4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMCcgZmlsbD0nIzY2NicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J25vcm1hbCc+5Y6f5L2cIDE4LjBtPC90ZXh0Pgo8cmVjdCB4PScxODInIHk9JzEyNS4wJyB3aWR0aD0nMzQnIGhlaWdodD0nMTc1LjAnIGZpbGw9JyNkODQ0M2MnLz4KPHJlY3QgeD0nMjIwJyB5PScxMjUuMCcgd2lkdGg9JzM0JyBoZWlnaHQ9JzE3NS4wJyBmaWxsPScjMmY2ZmRmJy8+Cjx0ZXh0IHg9JzE5OS4wJyB5PScxMTkuMCcgZm9udC1mYW1pbHk9J1BpbmdGYW5nIFNDLCBNaWNyb3NvZnQgWWFIZWksIE5vdG8gU2FucyBDSksgU0MsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTEnIGZpbGw9JyNkODQ0M2MnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPjIuNTwvdGV4dD4KPHRleHQgeD0nMjM3LjAnIHk9JzExOS4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMScgZmlsbD0nIzJmNmZkZicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J25vcm1hbCc+Mi41PC90ZXh0Pgo8dGV4dCB4PScyMTguMCcgeT0nMzIwLjAnIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzEyJyBmaWxsPScjMjIyJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LXdlaWdodD0nYm9sZCc+6Ieq55SxPC90ZXh0Pgo8dGV4dCB4PScyMTguMCcgeT0nMzM4LjAnIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzEwJyBmaWxsPScjNjY2JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LXdlaWdodD0nbm9ybWFsJz7ljp/kvZwgMTguMDNtPC90ZXh0Pgo8cmVjdCB4PScyOTQnIHk9JzExOC4wJyB3aWR0aD0nMzQnIGhlaWdodD0nMTgyLjAnIGZpbGw9JyNkODQ0M2MnLz4KPHJlY3QgeD0nMzMyJyB5PScxMjIuMTk5OTk5OTk5OTk5OTknIHdpZHRoPSczNCcgaGVpZ2h0PScxNzcuOCcgZmlsbD0nIzJmNmZkZicvPgo8dGV4dCB4PSczMTEuMCcgeT0nMTEyLjAnIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzExJyBmaWxsPScjZDg0NDNjJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LXdlaWdodD0nbm9ybWFsJz4yLjY8L3RleHQ+Cjx0ZXh0IHg9JzM0OS4wJyB5PScxMTYuMicgZm9udC1mYW1pbHk9J1BpbmdGYW5nIFNDLCBNaWNyb3NvZnQgWWFIZWksIE5vdG8gU2FucyBDSksgU0MsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTEnIGZpbGw9JyMyZjZmZGYnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPjIuNTQ8L3RleHQ+Cjx0ZXh0IHg9JzMzMC4wJyB5PSczMjAuMCcgZm9udC1mYW1pbHk9J1BpbmdGYW5nIFNDLCBNaWNyb3NvZnQgWWFIZWksIE5vdG8gU2FucyBDSksgU0MsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTInIGZpbGw9JyMyMjInIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtd2VpZ2h0PSdib2xkJz7og73lpKnkvb88L3RleHQ+Cjx0ZXh0IHg9JzMzMC4wJyB5PSczMzguMCcgZm9udC1mYW1pbHk9J1BpbmdGYW5nIFNDLCBNaWNyb3NvZnQgWWFIZWksIE5vdG8gU2FucyBDSksgU0MsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTAnIGZpbGw9JyM2NjYnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPuWOn+S9nCAxOC4zbTwvdGV4dD4KPHJlY3QgeD0nNDA2JyB5PScxMzkuMCcgd2lkdGg9JzM0JyBoZWlnaHQ9JzE2MS4wJyBmaWxsPScjZDg0NDNjJy8+CjxyZWN0IHg9JzQ0NCcgeT0nMTI5Ljg5OTk5OTk5OTk5OTk4JyB3aWR0aD0nMzQnIGhlaWdodD0nMTcwLjEwMDAwMDAwMDAwMDAyJyBmaWxsPScjMmY2ZmRmJy8+Cjx0ZXh0IHg9JzQyMy4wJyB5PScxMzMuMCcgZm9udC1mYW1pbHk9J1BpbmdGYW5nIFNDLCBNaWNyb3NvZnQgWWFIZWksIE5vdG8gU2FucyBDSksgU0MsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTEnIGZpbGw9JyNkODQ0M2MnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPjIuMzwvdGV4dD4KPHRleHQgeD0nNDYxLjAnIHk9JzEyMy45JyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMScgZmlsbD0nIzJmNmZkZicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J25vcm1hbCc+Mi40MzwvdGV4dD4KPHRleHQgeD0nNDQyLjAnIHk9JzMyMC4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMicgZmlsbD0nIzIyMicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J2JvbGQnPuWkj+S6mua4o+WPpDwvdGV4dD4KPHRleHQgeD0nNDQyLjAnIHk9JzMzOC4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMCcgZmlsbD0nIzY2NicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J25vcm1hbCc+5Y6f5L2cIDE3LjVtPC90ZXh0Pgo8cmVjdCB4PSc1MTgnIHk9JzE4MS4wJyB3aWR0aD0nMzQnIGhlaWdodD0nMTE5LjAnIGZpbGw9JyNkODQ0M2MnLz4KPHJlY3QgeD0nNTU2JyB5PScxMjkuODk5OTk5OTk5OTk5OTgnIHdpZHRoPSczNCcgaGVpZ2h0PScxNzAuMTAwMDAwMDAwMDAwMDInIGZpbGw9JyMyZjZmZGYnLz4KPHRleHQgeD0nNTM1LjAnIHk9JzE3NS4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMScgZmlsbD0nI2Q4NDQzYycgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J25vcm1hbCc+MS43PC90ZXh0Pgo8dGV4dCB4PSc1NzMuMCcgeT0nMTIzLjknIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzExJyBmaWxsPScjMmY2ZmRmJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LXdlaWdodD0nbm9ybWFsJz4yLjQzPC90ZXh0Pgo8dGV4dCB4PSc1NTQuMCcgeT0nMzIwLjAnIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzEyJyBmaWxsPScjMjIyJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LXdlaWdodD0nYm9sZCc+5rij5Y+kPC90ZXh0Pgo8dGV4dCB4PSc1NTQuMCcgeT0nMzM4LjAnIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzEwJyBmaWxsPScjNjY2JyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyBmb250LXdlaWdodD0nbm9ybWFsJz7ljp/kvZwgMTcuNW08L3RleHQ+CjxyZWN0IHg9JzYzMCcgeT0nOTAuMCcgd2lkdGg9JzM0JyBoZWlnaHQ9JzIxMC4wJyBmaWxsPScjZDg0NDNjJy8+CjxyZWN0IHg9JzY2OCcgeT0nMTMzLjQnIHdpZHRoPSczNCcgaGVpZ2h0PScxNjYuNicgZmlsbD0nIzJmNmZkZicvPgo8dGV4dCB4PSc2NDcuMCcgeT0nODQuMCcgZm9udC1mYW1pbHk9J1BpbmdGYW5nIFNDLCBNaWNyb3NvZnQgWWFIZWksIE5vdG8gU2FucyBDSksgU0MsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTEnIGZpbGw9JyNkODQ0M2MnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPjMuMDwvdGV4dD4KPHRleHQgeD0nNjg1LjAnIHk9JzEyNy40JyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMScgZmlsbD0nIzJmNmZkZicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J25vcm1hbCc+Mi4zODwvdGV4dD4KPHRleHQgeD0nNjY2LjAnIHk9JzMyMC4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMicgZmlsbD0nIzIyMicgdGV4dC1hbmNob3I9J21pZGRsZScgZm9udC13ZWlnaHQ9J2JvbGQnPumrmOi+vlg8L3RleHQ+Cjx0ZXh0IHg9JzY2Ni4wJyB5PSczMzguMCcgZm9udC1mYW1pbHk9J1BpbmdGYW5nIFNDLCBNaWNyb3NvZnQgWWFIZWksIE5vdG8gU2FucyBDSksgU0MsIHNhbnMtc2VyaWYnIGZvbnQtc2l6ZT0nMTAnIGZpbGw9JyM2NjYnIHRleHQtYW5jaG9yPSdtaWRkbGUnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPuWOn+S9nCAxNy4xbTwvdGV4dD4KPGxpbmUgeDE9JzUwJyB5MT0nNzYuMCcgeDI9Jzc0MCcgeTI9Jzc2LjAnIHN0cm9rZT0nIzg4OCcgc3Ryb2tlLWRhc2hhcnJheT0nNSA0Jy8+Cjx0ZXh0IHg9JzczOC4wJyB5PSc3MC4wJyBmb250LWZhbWlseT0nUGluZ0ZhbmcgU0MsIE1pY3Jvc29mdCBZYUhlaSwgTm90byBTYW5zIENKSyBTQywgc2Fucy1zZXJpZicgZm9udC1zaXplPScxMCcgZmlsbD0nIzY2NicgdGV4dC1hbmNob3I9J2VuZCcgZm9udC13ZWlnaHQ9J25vcm1hbCc+5L6n5aGUIDMuMjwvdGV4dD4KPGxpbmUgeDE9JzUwJyB5MT0nMzAwJyB4Mj0nNzQwJyB5Mj0nMzAwJyBzdHJva2U9JyMzMzMnLz4KPHJlY3QgeD0nNTMwJyB5PSc0MCcgd2lkdGg9JzEyJyBoZWlnaHQ9JzEyJyBmaWxsPScjZDg0NDNjJy8+PHRleHQgeD0nNTQ4LjAnIHk9JzUxLjAnIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzExJyBmaWxsPScjMjIyJyB0ZXh0LWFuY2hvcj0nc3RhcnQnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPuW9k+WJjTwvdGV4dD4KPHJlY3QgeD0nNjAwJyB5PSc0MCcgd2lkdGg9JzEyJyBoZWlnaHQ9JzEyJyBmaWxsPScjMmY2ZmRmJy8+PHRleHQgeD0nNjE4LjAnIHk9JzUxLjAnIGZvbnQtZmFtaWx5PSdQaW5nRmFuZyBTQywgTWljcm9zb2Z0IFlhSGVpLCBOb3RvIFNhbnMgQ0pLIFNDLCBzYW5zLXNlcmlmJyBmb250LXNpemU9JzExJyBmaWxsPScjMjIyJyB0ZXh0LWFuY2hvcj0nc3RhcnQnIGZvbnQtd2VpZ2h0PSdub3JtYWwnPuaMieWOn+S9nOavlOS+izwvdGV4dD4KPC9zdmc+" alt="模型高度对比"></figure>
-<p>推荐按原作比例统一（详见 00 文档第 5 节），等 Aoi 拍板。</p>
+<p>已定方案 A：按原作比例统一（详见 00 文档第 5 节，实现见 TASK-003）。</p>
 <h2>需要 Aoi 拍板的问题</h2>
 <ol>
-<li>模型尺寸方案 A（按原作比例，推荐）/ B（分档但同框架同大小）/ C（维持现状）。</li>
-<li>渣古降下的投放范围：A 己方半场（推荐）/ B 拆塔后扩展 / C 全场。</li>
+<li>~~模型尺寸~~：已定方案 A，按原作比例统一。</li>
+<li>~~渣古降下的投放范围~~：已定方案 A，己方半场。</li>
 <li>~~能天使 TRANS-AM 发动方式~~：已定 B 半血自动。</li>
 <li>阵营标签按“所属作品”还是“剧中势力”。</li>
 <li>战术卡是否绑定具体战舰。</li>
@@ -590,9 +590,9 @@ figure.anim{background:var(--panel);padding:8px}
 <li><strong>大小顺序颠倒</strong>：高达X 在设定上偏矮，现在是全场最大。</li>
 <li>原因是之前为了“看清单位”放大了模型，并用尺寸来暗示强度（高费更大）。皇室战争式游戏常用这种做法，但在授权 IP 里，<strong>用尺寸表达强度会和设定冲突</strong>。</li>
 </ul>
-<h3>5.3 方案（需要 Aoi 选择）</h3>
+<h3>5.3 方案（已定方案 A，2026-11-16）</h3>
 <ul>
-<li><strong>方案 A：按原作比例统一（推荐）</strong>。所有 18 米级机体都放到约 2.4～2.55 之间，按上表比例。强度和稀有度改用其他手段表达：脚下光圈、描边、入场特效、卡框。渣古 ×3 因为数量多，可以靠阵型而不是缩小来区分。缺点是全场机体大小接近，可读性要靠美术补足。</li>
+<li><strong>方案 A：按原作比例统一（Aoi 已拍板采用）</strong>。所有 18 米级机体都放到约 2.4～2.55 之间，按上表比例。强度和稀有度改用其他手段表达：脚下光圈、描边、入场特效、卡框。渣古 ×3 因为数量多，可以靠阵型而不是缩小来区分。缺点是全场机体大小接近，可读性要靠美术补足。</li>
 <li><strong>方案 B：分档但同框架同大小</strong>。允许“主角机略放大”，但同一框架（渣古和夏亚渣古）必须一样大，大小顺序不和设定矛盾（高达X 不能大于高达）。比 A 自由一点，但仍需要监修确认是否接受。<span class="tag t-sup">推测·监修</span></li>
 <li><strong>方案 C：维持现状</strong>。风险最高，不建议。</li>
 </ul>
@@ -1032,6 +1032,16 @@ figure.anim{background:var(--panel);padding:8px}
 <td>脆皮远程吃不住重击；同费交换</td>
 </tr>
 <tr>
+<td>米加粒子炮击 → 高达</td>
+<td>不划算</td>
+<td>盾溢出规则（2026-11-16 拍板）下，520 打满盾的高达只扣 330 盾 + 190 本体，约占有效血量 1280 的 40%；4 费换 4 费的一部分，不如留给自由或小队</td>
+</tr>
+<tr>
+<td>飞弹齐射 → 高达</td>
+<td>无效</td>
+<td>240 全被 330 盾吸收</td>
+</tr>
+<tr>
 <td>米加粒子炮击 → 蓄力中的 高达X</td>
 <td>有效</td>
 <td>蓄力时站桩，必中，并吃到 +30%</td>
@@ -1171,9 +1181,9 @@ figure.anim{background:var(--panel);padding:8px}
 <tbody>
 <tr>
 <td>高达的盾</td>
-<td>“护盾挡一击”</td>
+<td>“护盾挡一击”（代码实际是 300 盾值、单次不溢出）</td>
 <td>盾值（约本体 35%），可吸收多次</td>
-<td>需 Aoi 定。挡一击更简单，也更克制夏亚渣古的首击 ×2 和米加粒子炮击；盾值更克制持续火力。矩阵两种都成立，高达 vs 夏亚渣古在“挡一击”下优势更大</td>
+<td><strong>已拍板：盾值 330，溢出扣本体，战术卡也先扣盾</strong>（2026-11-16）。原分析：挡一击更简单，也更克制夏亚渣古的首击 ×2 和米加粒子炮击；盾值更克制持续火力。矩阵两种都成立，高达 vs 夏亚渣古在“挡一击”下优势更大</td>
 </tr>
 <tr>
 <td>高达卡名</td>
@@ -1183,9 +1193,9 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 <tr>
 <td>6 费机体</td>
-<td>“高达X”</td>
+<td>“高达X”（游戏内从角色表取名；代码文案、日志仍写“高达DX”）</td>
 <td>原先写成高达DX</td>
-<td>已按配置表确认是高达X（GX-9900，单管卫星炮），机体案和动画已改</td>
+<td>已按配置表确认是高达X（GX-9900，单管卫星炮），代码文案在 TASK-003 改</td>
 </tr>
 <tr>
 <td>渣古卡名</td>
@@ -1209,7 +1219,7 @@ figure.anim{background:var(--panel);padding:8px}
 </table></div>
 <h2>8. 需要 Aoi 拍板</h2>
 <ol>
-<li>高达的盾：挡一击，还是盾值？</li>
+<li>~~高达的盾：挡一击，还是盾值？~~ 已定：盾值，溢出扣本体。</li>
 <li>渣古降下偏强的处理方向：补一台便宜的范围机体，还是给高达军刀加横扫？（建议前者）</li>
 <li>新系统的开发顺序。建议：状态系统 → 建筑卡 → 空中层 → 伤害类型。</li>
 </ol><div class="pager"><a href="#ip-plan">← IP 还原总方案</a><a href="#pool">全系列卡池 →</a></div></article><article id="doc-pool"><h1>全系列卡池设计 v0.2</h1>
@@ -2456,7 +2466,7 @@ figure.anim{background:var(--panel);padding:8px}
 })();
 </script><div class="pager"><a href="#pool">← 全系列卡池</a><a href="#deck-spec">选卡界面规格 →</a></div></article><article id="doc-deck-spec"><h1>选卡界面 v0.1（CR 式卡组编辑）</h1>
 <blockquote>
-<p>交互原型在 <a href="../preview.html"><code>../preview.html</code></a>，打开后左侧点“选卡界面”（或地址加 <code>#deck</code>）。本文是原型的文字版规格，给 Unity 实现用。原型是网页，不代表最终美术。</p>
+<p>交互原型在 <a href="preview.html"><code>preview.html</code></a>，打开后左侧点“选卡界面”（或地址加 <code>#deck</code>）。本文是原型的文字版规格，给 Unity 实现用。原型是网页，不代表最终美术。</p>
 <p>卡池数据来自 <a href="#pool">20 全系列卡池设计</a>（61 张）；稀有度取自机体配置表的 Rarity 字段。</p>
 </blockquote>
 <h2>1. 布局（竖屏，从上到下）</h2>
@@ -2614,7 +2624,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>多套卡组切换（CR 有 5 个卡组槽位），原型只有 1 套。</li>
 </ul><div class="pager"><a href="#deck">← 选卡界面</a><a href="#anim-spec">技能动画分镜 →</a></div></article><article id="doc-anim-spec"><h1>技能动画分镜 v0.1（六台机体）</h1>
 <blockquote>
-<p>可播放的 WebGL 演示在 <a href="../preview.html"><code>../preview.html</code></a>，打开对应机体页（或地址加 <code>#gundam</code> <code>#char</code> <code>#zaku</code> <code>#exia</code> <code>#freedom</code> <code>#dx</code>），页面第 7 节自动循环播放，可暂停和重播。单机案里的 <code>&lt;!-- anim:xxx --&gt;</code> 就是这段演示的位置。</p>
+<p>可播放的 WebGL 演示在 <a href="preview.html"><code>preview.html</code></a>，打开对应机体页（或地址加 <code>#gundam</code> <code>#char</code> <code>#zaku</code> <code>#exia</code> <code>#freedom</code> <code>#dx</code>），页面第 7 节自动循环播放，可暂停和重播。单机案里的 <code>&lt;!-- anim:xxx --&gt;</code> 就是这段演示的位置。</p>
 <p>本文是演示的文字版分镜。演示的目的是<strong>说明机制和时序</strong>，不是最终特效。数值以各单机案为准，这里有出入时以单机案为准。演示用的场地按内网 Unity 截图的风格搭（红蓝半场、青色河道、六边形塔基）。</p>
 </blockquote>
 <p>通用约定：<br />
@@ -3006,13 +3016,71 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td><a href="#task-001">TASK-001</a></td>
 <td>现状盘点：代码 vs 策划案（只读）</td>
+<td>完成</td>
+<td>—</td>
+<td><a href="#report-001">REPORT-001</a></td>
+</tr>
+<tr>
+<td><a href="#task-002">TASK-002</a></td>
+<td>通用状态系统 + 技能框架，迁移冲锋和 TRANS-AM（不改数值）</td>
 <td>待开发</td>
 <td>开发端执行</td>
 <td>—</td>
 </tr>
+<tr>
+<td><a href="#task-003">TASK-003</a></td>
+<td>卡表 ID、改名、尺寸方案 A、渣古降下、高达盾溢出</td>
+<td>待开发</td>
+<td>开发端执行（可与 002 并行）</td>
+<td>—</td>
+</tr>
 </tbody>
 </table></div>
-<h2>等 Aoi 拍板（会影响后续任务单）</h2>
+<h2>已拍板</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>日期</th>
+<th>问题</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-15</td>
+<td>模型尺寸</td>
+<td>方案 A，按原作比例统一</td>
+</tr>
+<tr>
+<td>2026-11-15</td>
+<td>渣古降下投放范围</td>
+<td>方案 A，己方半场</td>
+</tr>
+<tr>
+<td>2026-11-15</td>
+<td>高达的盾</td>
+<td>盾值 330（约 HP 35%），溢出扣本体，战术卡也先扣盾</td>
+</tr>
+<tr>
+<td>2026-11-15</td>
+<td>能天使 TRANS-AM</td>
+<td>HP 首次 ≤50% 自动发动，6s 后接 4s 粒子耗尽</td>
+</tr>
+<tr>
+<td>2026-11-16</td>
+<td>六台机体数值</td>
+<td>采用本地 <code>机体策划案.md</code> v2.0 的数字，写进各单机案 5.0 节</td>
+</tr>
+</tbody>
+</table></div>
+<h2>策划端对 REPORT-001 问题的答复（2026-11-16）</h2>
+<ol>
+<li><strong>自由的普攻多重锁定</strong>：选 A。全弹发射上线前保持现状，全弹发射上线时同一单把普攻改成单体。</li>
+<li><strong>盾溢出后的克制</strong>：选 A，已重新评估。米加粒子炮击打满盾高达 = 330 盾 + 190 本体，飞弹齐射全被盾吃掉，两张卡对高达都不划算，矩阵结论不变。已更新 10 文档 4.1 节和单机案 01 的 5.2、5.3 节。</li>
+<li><strong>卡表主键</strong>：选 A。卡表写 MobileSuit ID；渣古降下用角色 100001 并单独标记，不改正式配置表。已写进 TASK-003。</li>
+<li><strong>文档编号</strong>：沿用本地。选卡界面 = 30，动画分镜 = 40，新文档从 50 开始。</li>
+</ol>
+<h2>等 Aoi 拍板</h2>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -3023,42 +3091,33 @@ figure.anim{background:var(--panel);padding:8px}
 </thead>
 <tbody>
 <tr>
-<td>模型尺寸方案 A/B/C</td>
-<td>A 按原作比例</td>
-<td>表现层任务</td>
-</tr>
-<tr>
-<td>渣古降下投放范围</td>
-<td>A 己方半场</td>
-<td>渣古降下任务</td>
-</tr>
-<tr>
-<td>高达的盾：挡一击 / 盾值</td>
-<td>盾值</td>
-<td>状态系统</td>
-</tr>
-<tr>
 <td>新系统开发顺序</td>
-<td>状态 → 建筑 → 空中 → 伤害类型</td>
-<td>后续所有任务的排序</td>
+<td>状态+技能（TASK-002）→ 组卡 → 过河寻路 → 建筑 → 空中</td>
+<td>后续任务排序</td>
 </tr>
 <tr>
 <td>第一批卡池名单</td>
 <td>见 20 文档第一批 21 张</td>
-<td>卡表任务</td>
+<td>扩卡池任务</td>
+</tr>
+<tr>
+<td>阵营标签</td>
+<td>按所属作品</td>
+<td>卡面</td>
+</tr>
+<tr>
+<td>战术卡是否绑定战舰</td>
+<td>不绑定</td>
+<td>战术卡命名</td>
 </tr>
 </tbody>
 </table></div>
-<h2>已拍板</h2>
+<h2>计划中的任务（TASK-002/003 回来后细化）</h2>
 <ul>
-<li>能天使 TRANS-AM：HP 首次低于 50% 自动发动（方案 B）。</li>
-</ul>
-<h2>计划中的任务（TASK-001 回来后细化）</h2>
-<ul>
-<li>状态效果系统（击晕/减速/瘫痪/护盾）</li>
-<li>六台机体按策划案补齐机制</li>
-<li>建筑卡</li>
-<li>空中层</li>
+<li>TASK-004：按 v2.0 上机制。高达双武装、夏亚渣古冲锋改为 2.5 米 / ×2、能天使倍率和粒子耗尽、自由全弹发射（同时普攻改单体）、高达X 卫星炮</li>
+<li>组卡：Demo 版卡组配置，之后按 30 选卡界面做 UI</li>
+<li>过河寻路（龟霸、魔蟹）</li>
+<li>建筑卡、空中层</li>
 </ul><div class="pager"><a href="#agents">← 给本地 AI 的说明</a><a href="#task-001">TASK-001 现状盘点 →</a></div></article><article id="doc-task-001"><h1>TASK-001 现状盘点（只读，不改代码）</h1>
 <ul>
 <li>状态：待开发</li>
@@ -3110,7 +3169,763 @@ figure.anim{background:var(--panel);padding:8px}
 <h2>需要回报的信息</h2>
 <ul>
 <li>以上全部。另外请说明：如果按 <code>20_全系列卡池设计</code> 第一批 21 张来做，你估计最先卡住的是哪个系统。</li>
-</ul><div class="pager"><a href="#status">← 任务看板</a><a href="#tpl-task">任务单模板 →</a></div></article><article id="doc-tpl-task"><h1>TASK-xxx 标题</h1>
+</ul><div class="pager"><a href="#status">← 任务看板</a><a href="#task-002">TASK-002 状态与技能 →</a></div></article><article id="doc-task-002"><h1>TASK-002 通用状态系统 + 简单技能框架（纯重构，不改数值）</h1>
+<ul>
+<li>状态：待开发</li>
+<li>依据：<a href="#report-001">REPORT-001</a> 第 3 项和“最先卡住的系统”；<a href="#counter">10 克制体系</a> 2.2 节；<a href="#anim-spec">40 技能动画分镜</a> 末节“给 Unity 实现的建议”；各单机案 5.0 节（了解后续要承载什么）</li>
+<li>预计改动：<code>DuelUnit.cs</code>、<code>DuelWorld.cs</code>，可能新增状态和技能相关的类；以开发端判断为准</li>
+</ul>
+<h2>目标</h2>
+<p>把现在“冲锋、TRANS-AM 各写一个专用计时器”的做法，换成<strong>一套通用的状态系统和技能框架</strong>。这一单<strong>只搭框架、迁移现有两个机制</strong>，游戏表现和数值完全不变。之后的高达双武装、自由全弹发射、高达X 卫星炮、能天使粒子耗尽都在这套框架上加。</p>
+<h2>范围</h2>
+<h3>A. 状态系统</h3>
+<ol>
+<li>单位身上可以挂多个状态，每个状态有：类型、剩余时间、来源、数值参数。</li>
+<li>先支持这些类型（数据结构里都要有，本单只有前两个真正用上）：</li>
+<li>移速倍率、攻速倍率（同类叠乘）</li>
+<li>击晕：不移动、不攻击、打断当前前摇和技能</li>
+<li>瘫痪：不移动、打断当前攻击 0.5s 这一类短控（规则同击晕，但可以单独配图标和时长上限）</li>
+<li>受伤倍率（如高达X 蓄力 +30%）</li>
+<li>状态的开始、结束、被打断要发事件，供表现层订阅（头顶图标、发光）。</li>
+<li>部署延迟和落地硬直可以保留现有计时器，也可以迁成“击晕类状态”，由开发端决定，回报里说明。</li>
+</ol>
+<h3>B. 技能框架</h3>
+<ol>
+<li>一台机体可以有：一个普攻 + 0~N 个技能。</li>
+<li>技能字段：冷却、出场首次冷却、触发条件（如“射程内有建筑”“HP 首次 ≤50%”“连续直行 X 米”）、前摇 / 生效 / 后摇三段时长、目标选择方式、效果列表（伤害、加状态）。</li>
+<li>三段各发一个事件；前摇中被击晕/瘫痪 → 技能取消，发“被打断”事件，冷却是否重置由技能配置。</li>
+<li>表现层只订阅事件播特效，逻辑层不等特效。</li>
+</ol>
+<h3>C. 迁移</h3>
+<ol>
+<li>夏亚渣古冲锋 → 用“触发条件 + 加速状态 + 首击倍率”表达。<strong>保留现有规则</strong>（连续移动 2 秒、×1.75），不要改成 2.5 米 / ×2。</li>
+<li>能天使 TRANS-AM → 用“HP 首次 ≤50% 触发 + 移速/攻速状态 6s”表达。<strong>保留现有倍率</strong>（×1.5 / ×1.67），先不加粒子耗尽。</li>
+<li>删除原来的两个专用计时器。</li>
+</ol>
+<h3>D. 测试工具（为验收服务）</h3>
+<ol>
+<li>对局随机种子可以指定（命令行参数、菜单或 GM 指令，任选一种）。</li>
+<li>一个无界面批量对局入口（AI 对 AI），能跑 N 局并输出每局日志的摘要。可以只在编辑器里用。</li>
+</ol>
+<h2>不做</h2>
+<ul>
+<li>不改任何数值，不做新机制（粒子耗尽、全弹发射、卫星炮、双武装都在后续任务）。</li>
+<li>不做技能按钮 UI（能天使已定自动发动，暂时没有手动技能）。</li>
+<li>不做空中层、建筑卡。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[ ] 冲锋和 TRANS-AM 走新框架，原来的专用计时器已删除</li>
+<li>[ ] 指定同一个种子，改动前后各跑 20 局，<strong>对局日志逐位一致</strong>（或只有新增的事件行不同，回报里说明差在哪）</li>
+<li>[ ] 状态开始/结束/打断、技能前摇/生效/后摇/打断事件都能在日志里看到</li>
+<li>[ ] 种子可指定；批量对局入口能跑</li>
+<li>[ ] 回报单里没有源码</li>
+</ul>
+<h2>需要回报的信息</h2>
+<ol>
+<li>状态和技能的数据放在哪里（代码里的表，还是已经能走 Luban）。</li>
+<li>加一个新技能大概要改几处。用“自由全弹发射”举例说明，下一单就是它。</li>
+<li>部署延迟 / 落地硬直最后是怎么处理的。</li>
+<li>批量对局跑 100 局的耗时，以及双方 AI 都用当前 8 张卡时的胜率和平均对局时长（给后续调数值做基线）。</li>
+</ol><div class="pager"><a href="#task-001">← TASK-001 现状盘点</a><a href="#task-003">TASK-003 改名尺寸降下 →</a></div></article><article id="doc-task-003"><h1>TASK-003 不依赖新系统的改动：改名、尺寸、渣古降下、高达盾、卡表 ID</h1>
+<ul>
+<li>状态：待开发（可以和 TASK-002 并行，两单改的地方基本不重叠）</li>
+<li>依据：各单机案 5.0 节；<a href="#ip-plan">00 IP 还原方案</a> 第 5 节；<a href="#report-001">REPORT-001</a> 第 2、6 项</li>
+<li>预计改动：<code>DuelDefs.cs</code>、<code>DuelAssetProvider.cs</code>、<code>DuelWorld.cs</code>、<code>DuelPresentation.cs</code></li>
+</ul>
+<h2>目标</h2>
+<p>把已经拍板、而且不需要状态系统就能做的几项先做掉。</p>
+<h2>范围</h2>
+<h3>1. 卡表用 MobileSuit ID 做主键（解决“木桩-元祖”）</h3>
+<ul>
+<li>卡表每张机体卡直接写 MobileSuit ID，名字和头像按 ID 取，不再按模型资源名反查。</li>
+<li>高达 10001、夏亚专用渣古Ⅱ 10010、能天使高达 10038、自由高达 10045、高达X 10032。</li>
+<li>渣古降下不在 MobileSuit 表里：用角色 100001，在卡表里加标记说明“非 MobileSuit，取角色表”。<strong>不要改正式配置表。</strong></li>
+</ul>
+<h3>2. 改名</h3>
+<ul>
+<li>代码里的兜底名、日志、卡牌详情、HUD 文案统一：扎古 → <strong>渣古</strong>，夏亚专用扎古 → <strong>夏亚专用渣古Ⅱ</strong>，扎古降下舱 → <strong>渣古降下</strong>，高达DX → <strong>高达X</strong>。</li>
+<li>能搜到的旧名都改掉，回报里列出改了哪些地方。</li>
+</ul>
+<h3>3. 模型尺寸方案 A（按原作比例）</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>机体</th>
+<th>目标高度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高达</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>自由高达</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>能天使高达</td>
+<td>2.54</td>
+</tr>
+<tr>
+<td>夏亚专用渣古Ⅱ</td>
+<td>2.43</td>
+</tr>
+<tr>
+<td>渣古降下（每台）</td>
+<td>2.43</td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>2.38</td>
+</tr>
+<tr>
+<td>侧塔</td>
+<td>3.2（不变）</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>只改显示高度，不改碰撞半径和数值。</li>
+<li>改完如果渣古 ×3 挤在一起穿模，可以把三台的阵型间距拉开，不要缩小模型。回报里说明。</li>
+</ul>
+<h3>4. 渣古降下</h3>
+<ul>
+<li>投放范围：<strong>只能放己方半场</strong>（和普通机体相同，包括拆塔后可放进对方靠河 5 米内的规则）。</li>
+<li>飞行时间 1.8s → <strong>1.2s</strong>；预警圈保留。</li>
+<li>新增<strong>落地冲击</strong>：落点半径 1.6 米，伤害 60，只打机体，不打建筑。一张卡只结算一次（不是三台各一次）。</li>
+<li>起身 0.6s → <strong>0.5s</strong>。</li>
+</ul>
+<h3>5. 高达的盾</h3>
+<ul>
+<li>盾值 300 → <strong>330</strong>。</li>
+<li>规则改为<strong>溢出扣本体</strong>：一次伤害大于剩余盾值时，盾归零，多出的部分扣 HP。战术卡也先扣盾。</li>
+<li>破盾事件保留。</li>
+</ul>
+<h2>不做</h2>
+<ul>
+<li>不做高达步枪/军刀双武装、夏亚渣古冲锋规则调整、能天使粒子耗尽、自由全弹发射、高达X 卫星炮（这些等 TASK-002 的框架）。</li>
+<li>不改其他机体数值。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[ ] 6 张机体卡名字、头像都正确，高达不再显示“木桩-元祖”</li>
+<li>[ ] 全工程搜不到“扎古”“高达DX”（第三方资源名除外，回报里列出）</li>
+<li>[ ] 尺寸按上表，同框架的夏亚渣古和渣古降下一样高，高达X 不比高达高</li>
+<li>[ ] 渣古降下不能投到对方半场；落地冲击在日志里能看到，一张卡只结算一次</li>
+<li>[ ] 米加粒子炮击打满盾高达：盾 330 归零，本体扣 190（日志验证）</li>
+<li>[ ] 回报单里没有源码</li>
+</ul>
+<h2>需要回报的信息</h2>
+<ol>
+<li>尺寸改完后的实机观感：机体之间能否分清、渣古 ×3 是否穿模。如果 Aoi 方便，可以单独发截图给策划端（不入库）。</li>
+<li>落地冲击加上后，渣古降下对小队（如果有）和对夏亚渣古的对拼结果。</li>
+</ol><div class="pager"><a href="#task-002">← TASK-002 状态与技能</a><a href="#report-001">REPORT-001 现状盘点 →</a></div></article><article id="doc-report-001"><!-- Aoi 于 2026-11-16 贴回，策划端存档，内容未改动。策划端的答复见 STATUS.md 和 TASK-002 / TASK-003。 -->
+
+<h1>REPORT-001 对应 TASK-001</h1>
+<ul>
+<li>日期：2026-11-15</li>
+<li>分支 / 提交：<code>feature/frontline-duel</code>，最新提交 <code>46787030a5f</code>，另有未提交的显示放大和长按详情改动（不影响战斗逻辑，同种子对局逐位一致）</li>
+<li>结果：完成。只读代码，没有改代码和数值</li>
+</ul>
+<h2>做了什么</h2>
+<ul>
+<li>读了卡表 <code>DuelDefs.cs</code>（<code>DuelRules.Cards</code>、<code>DuelCatalog</code>、<code>DuelArena</code>），战斗逻辑 <code>DuelWorld.cs</code>、<code>DuelUnit.cs</code>，对局流程 <code>DuelGame.cs</code>、<code>DuelPlayerState.cs</code>，<code>DuelAI.cs</code>，<code>DuelBattleLog.cs</code>，资源与名字查找 <code>DuelAssetProvider.cs</code>。</li>
+<li>按 <code>ActorRoleId.cs</code> 和 Luban 二进制表 <code>tbperformance</code>、<code>tbmobilesuit</code> 核对了 6 张机体卡的配置表 ID。</li>
+<li>本地策划文档已同步：公开页的协作流程、TASK-001、选卡界面、动画分镜，还有能天使改为半血自动，都存进了本地的 <code>Docs/FrontlineDuel/DesignDocs/</code>。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[x] 第 1–6 项都有回答。答不了的已注明“不确定”和原因</li>
+<li>[x] 回报单里没有源码片段</li>
+</ul>
+<h2>回报的信息</h2>
+<h3>1. 卡表现状（代码里的 v1.1 数值）</h3>
+<p>距离单位米，时间单位秒。射程不含双方碰撞半径，实际出手距离 = 射程 + 双方半径。所有机体视野 5.5。</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>代码卡名</th>
+<th>费</th>
+<th>数量</th>
+<th>HP</th>
+<th>伤害</th>
+<th>攻击间隔</th>
+<th>前摇</th>
+<th>射程</th>
+<th>移速</th>
+<th>半径</th>
+<th>目标</th>
+<th>特殊机制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>高达</td>
+<td>4</td>
+<td>1</td>
+<td>950</td>
+<td>150</td>
+<td>1.2</td>
+<td>0.35</td>
+<td>1.2 近战</td>
+<td>1.1</td>
+<td>0.55</td>
+<td>全部</td>
+<td>护盾 300</td>
+</tr>
+<tr>
+<td>2</td>
+<td>夏亚专用扎古</td>
+<td>3</td>
+<td>1</td>
+<td>600</td>
+<td>115</td>
+<td>0.9</td>
+<td>0.3</td>
+<td>1.0 近战</td>
+<td>1.6</td>
+<td>0.5</td>
+<td>全部</td>
+<td>冲锋</td>
+</tr>
+<tr>
+<td>3</td>
+<td>扎古降下舱</td>
+<td>3</td>
+<td>3</td>
+<td>170/台</td>
+<td>60</td>
+<td>0.9</td>
+<td>0.25</td>
+<td>0.8 近战</td>
+<td>1.4</td>
+<td>0.4</td>
+<td>全部</td>
+<td>空投</td>
+</tr>
+<tr>
+<td>4</td>
+<td>能天使高达</td>
+<td>5</td>
+<td>1</td>
+<td>1050</td>
+<td>230</td>
+<td>1.4</td>
+<td>0.4</td>
+<td>1.2 近战</td>
+<td>1.2</td>
+<td>0.55</td>
+<td>全部</td>
+<td>半血 TRANS-AM</td>
+</tr>
+<tr>
+<td>5</td>
+<td>自由高达</td>
+<td>4</td>
+<td>1</td>
+<td>620</td>
+<td>125</td>
+<td>1.6</td>
+<td>0.35</td>
+<td>5.5 远程</td>
+<td>1.0</td>
+<td>0.55</td>
+<td>全部</td>
+<td>多重锁定 ×4</td>
+</tr>
+<tr>
+<td>6</td>
+<td>高达DX</td>
+<td>6</td>
+<td>1</td>
+<td>2400</td>
+<td>380</td>
+<td>3.2</td>
+<td>1.0</td>
+<td>4.0 远程</td>
+<td>0.8</td>
+<td>0.75</td>
+<td>只打建筑</td>
+<td>无</td>
+</tr>
+<tr>
+<td>7</td>
+<td>米加粒子炮击</td>
+<td>4</td>
+<td>—</td>
+<td>—</td>
+<td>520</td>
+<td>—</td>
+<td>飞行 0.9</td>
+<td>半径 2.5，全场可投</td>
+<td>—</td>
+<td>—</td>
+<td>全部，对建筑 35%</td>
+<td>战术卡</td>
+</tr>
+<tr>
+<td>8</td>
+<td>飞弹齐射</td>
+<td>2</td>
+<td>—</td>
+<td>—</td>
+<td>240</td>
+<td>—</td>
+<td>飞行 0.6</td>
+<td>半径 3.0，全场可投</td>
+<td>—</td>
+<td>—</td>
+<td>全部，对建筑 35%</td>
+<td>战术卡</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>远程攻击是追踪弹，弹速 16，不会落空。</li>
+<li>代码里还没有“空中”目标类型，所以表里的“全部”就是地面机体加建筑。</li>
+<li>代码卡名只是兜底名。游戏里显示的名字和头像取自角色表，详见第 6 项。</li>
+</ul>
+<h3>2. 六台机体对照</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>机体</th>
+<th>策划案写的机制</th>
+<th>代码现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高达</td>
+<td>光束步枪 4.5 远程，贴身 1.0 换军刀</td>
+<td><strong>未实现</strong>。只有一套近战攻击，射程 1.2。每台机体只有一套攻击参数，要加第二套武装和按距离切换</td>
+</tr>
+<tr>
+<td>高达</td>
+<td>盾值约 35%，溢出扣本体</td>
+<td><strong>部分实现</strong>。有护盾 300，约 HP 的 32%，护盾条和破盾事件也有。但规则是<strong>整次吸收、不溢出</strong>：盾还剩 1 点也能吃掉一发 520 的战术卡。这不是“挡一击”，是“盾值 + 不溢出”</td>
+</tr>
+<tr>
+<td>夏亚渣古</td>
+<td>直线移动 2.5 米进入冲锋，速度 ×2</td>
+<td><strong>部分实现</strong>。按<strong>连续移动时间 2 秒</strong>计，不按距离；速度 ×1.75。停下、出手、没有目标都会清零</td>
+</tr>
+<tr>
+<td>夏亚渣古</td>
+<td>首击 ×2</td>
+<td><strong>已实现</strong>，首击 230</td>
+</tr>
+<tr>
+<td>夏亚渣古</td>
+<td>被击退 / 击晕中断</td>
+<td><strong>未实现</strong>，没有击退和击晕</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td>投放范围限己方半场</td>
+<td><strong>不一致</strong>。现在全场可投，包括对方塔下</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td>飞行 1.2s，落点预警</td>
+<td><strong>部分实现</strong>。飞行 1.8s，有双方可见的预警圈，半径 1.2</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td>落地冲击 1.6 米</td>
+<td><strong>未实现</strong>。落地没有伤害</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td>起身 0.5s</td>
+<td><strong>已实现</strong>，但时长是 0.6s</td>
+</tr>
+<tr>
+<td>能天使</td>
+<td>HP 首次 ≤ 50% 自动发动</td>
+<td><strong>已实现</strong>。每台一次，一击打死不触发</td>
+</tr>
+<tr>
+<td>能天使</td>
+<td>TRANS-AM 6s：移速 ×1.4，攻速 ×1.6</td>
+<td><strong>部分实现</strong>。时长 6s，但移速 ×1.5、攻速约 ×1.67</td>
+</tr>
+<tr>
+<td>能天使</td>
+<td>粒子耗尽 4s：移速、攻速 ×0.7</td>
+<td><strong>未实现</strong>。6 秒后直接恢复正常</td>
+</tr>
+<tr>
+<td>自由</td>
+<td>全弹发射：冷却 4.5s，扇形 100°、半径 6，最多 5 目标，优先机体</td>
+<td><strong>不一致</strong>。没有独立技能，是<strong>每次普攻</strong>都同时打主目标 + 射程内最近 3 个敌人，共 4 发，每发全额伤害，建筑也算目标，没有扇形限制</td>
+</tr>
+<tr>
+<td>自由</td>
+<td>瘫痪 0.5s，打断冲锋和蓄力</td>
+<td><strong>未实现</strong></td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>只打建筑</td>
+<td><strong>已实现</strong></td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>展开 1s + 蓄力 4s，受伤 +30%，可被打断</td>
+<td><strong>未实现</strong>。只有普攻自带 1 秒前摇，叫“蓄力”只是文案</td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>直线贯穿光束，路径单位 30%</td>
+<td><strong>未实现</strong>。是单体追踪弹</td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>卫星炮冷却 12s，平时用步枪</td>
+<td><strong>未实现</strong>。只有一种攻击：3.2 秒一发 380</td>
+</tr>
+</tbody>
+</table></div>
+<h3>3. 系统盘点</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>系统</th>
+<th>现状</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>状态效果：护盾</td>
+<td>有</td>
+<td><code>DuelUnit</code> 的护盾字段，伤害结算时先扣。只用于高达</td>
+</tr>
+<tr>
+<td>状态效果：加速 / 攻速提升</td>
+<td>部分有</td>
+<td>冲锋和 TRANS-AM 是<strong>各写各的专用计时器</strong>，不是通用状态。移速和攻击间隔在 <code>DuelUnit</code> 里按这两个计时器临时乘倍率</td>
+</tr>
+<tr>
+<td>状态效果：击晕、瘫痪、减速、击退、受伤倍率</td>
+<td>没有</td>
+<td>唯一接近的是部署延迟和落地硬直：同一个计时器，期间不移动、不攻击</td>
+</tr>
+<tr>
+<td>手动技能按钮</td>
+<td>没有</td>
+<td>HUD 只有手牌和出牌拖拽，没有场上单位的技能按钮</td>
+</tr>
+<tr>
+<td>建筑卡</td>
+<td>没有</td>
+<td>建筑只有开局固定的 2 座侧塔和 1 座旗舰，没有存活时间。主塔被打或侧塔被拆后才激活</td>
+</tr>
+<tr>
+<td>空中单位 / 高度层</td>
+<td>没有</td>
+<td>只有地面一层。高度只用于弹道起点和模型显示</td>
+</tr>
+<tr>
+<td>召唤</td>
+<td>没有</td>
+<td>降下舱落地生成 3 台，是部署时生成，不是单位召唤单位</td>
+</tr>
+<tr>
+<td>形态切换、隐身</td>
+<td>没有</td>
+<td></td>
+</tr>
+<tr>
+<td>伤害类型 / 护甲</td>
+<td>没有</td>
+<td>伤害就是一个数。溅射半径字段还在，但现在没有卡用</td>
+</tr>
+<tr>
+<td>冠军位 / 卡组限制</td>
+<td>没有</td>
+<td>卡组固定为全部 8 张，双方相同。手牌 4 张，轮换出牌。没有组卡界面</td>
+</tr>
+<tr>
+<td>寻路</td>
+<td>有</td>
+<td>只走两座桥。不支持过河，龟霸、魔蟹需要改</td>
+</tr>
+<tr>
+<td>卡表</td>
+<td>代码里</td>
+<td>卡表写在代码里，还没迁到 Luban</td>
+</tr>
+</tbody>
+</table></div>
+<h3>4. 对局参数</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能量上限</td>
+<td>10</td>
+</tr>
+<tr>
+<td>开局能量</td>
+<td>5</td>
+</tr>
+<tr>
+<td>回复速度</td>
+<td>每 2.8 秒 1 点</td>
+</tr>
+<tr>
+<td>双倍能量</td>
+<td>最后 60 秒，加时期间也是双倍</td>
+</tr>
+<tr>
+<td>三倍能量</td>
+<td>没有</td>
+</tr>
+<tr>
+<td>对局时长</td>
+<td>180 秒 + 出场倒计时 3 秒</td>
+</tr>
+<tr>
+<td>加时规则</td>
+<td>常规时间击破数相同则加时 60 秒，先击破者胜。加时结束仍相同，比较双方存活建筑里血量比例最低的那座，高者胜；再相同判平局</td>
+</tr>
+<tr>
+<td>胜利条件</td>
+<td>击破旗舰立即获胜，计 3 冠。拆侧塔各 1 冠，不会提前结束，时间到按击破数比较</td>
+</tr>
+<tr>
+<td>侧塔</td>
+<td>HP 2400，伤害 90，间隔 0.8 秒，射程 7，半径 1.1</td>
+</tr>
+<tr>
+<td>旗舰</td>
+<td>HP 3600，伤害 110，间隔 1.0 秒，射程 7.5，半径 1.5。旗舰挨打或己方侧塔被拆后才开火</td>
+</tr>
+<tr>
+<td>手牌 / 卡组</td>
+<td>4 / 8</td>
+</tr>
+<tr>
+<td>部署延迟</td>
+<td>1 秒</td>
+</tr>
+<tr>
+<td>场地</td>
+<td>18 × 32 米。河道宽 2.4 米，两座桥宽 2.8 米，位于 x = ±5.5</td>
+</tr>
+<tr>
+<td>部署范围</td>
+<td>机体只能放己方半场。拆掉对方某路侧塔后，可以放进该路对方半场靠河 5 米内。战术卡和降下舱全场可投</td>
+</tr>
+</tbody>
+</table></div>
+<h3>5. 数据与工具</h3>
+<ul>
+<li><strong>对局日志</strong>：有，<code>DuelBattleLog</code>。每局一个文件，保留 30 局。内容包括出牌、攻击、伤害、死亡、特性触发、每秒全场快照、模型显示尺寸，还有“疑似卡死”检测（机体连续不动、不打、不掉血就报警）。</li>
+<li><strong>统计</strong>：没有。胜率、出卡次数、换血都没有汇总，要从日志里自己数。</li>
+<li><strong>数值模拟</strong>：有一个 Python 一维模拟脚本，只模拟 1v1 对拼和单卡推塔，还是 v1.1 的数值。</li>
+<li><strong>自动测试</strong>：工程里没有 FrontlineDuel 的单元测试，也没有无界面批量对局工具。之前验证“同种子 20 局逐位一致”用的是临时脚本，没留在工程里。对局随机种子现在取系统时间，不能指定。</li>
+<li><strong>Unity 桥接</strong>：不确定。这次只读代码，没有接 Unity 编辑器跑。Demo 入口是 Unity 菜单「工具/MS战线对决/在空场景运行 Demo」，可免登录。游戏内 GM 指令 <code>duel</code> 也能进，但要登录，还没测过。</li>
+</ul>
+<h3>6. 配置表映射</h3>
+<p>模型资源名 → Performance 表 → 角色 / 机体 ID：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>卡</th>
+<th>模型资源</th>
+<th>Performance ID</th>
+<th>MobileSuit / 角色 ID</th>
+<th>MobileSuit 表里的名字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高达</td>
+<td><code>1GgndA1</code></td>
+<td>1010001（另有 6245「木桩-元祖」共用此模型）</td>
+<td><strong>10001</strong></td>
+<td>高达 RX-78-2</td>
+</tr>
+<tr>
+<td>夏亚专用渣古Ⅱ</td>
+<td><code>1GczkA1</code></td>
+<td>1010010</td>
+<td><strong>10010</strong></td>
+<td>夏亚专用渣古Ⅱ MS-06S</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td><code>1Gzk2B1</code></td>
+<td>10100001「绿渣古」</td>
+<td>角色 100001。<strong>不在 MobileSuit 表里</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>能天使高达</td>
+<td><code>00exaA1</code></td>
+<td>1010038</td>
+<td><strong>10038</strong></td>
+<td>能天使高达 GN-001</td>
+</tr>
+<tr>
+<td>自由高达</td>
+<td><code>GSfdmA1</code></td>
+<td>1010045</td>
+<td><strong>10045</strong></td>
+<td>自由高达 ZGMF-X10A</td>
+</tr>
+<tr>
+<td>高达X</td>
+<td><code>GXgdxA1</code></td>
+<td>1010032</td>
+<td><strong>10032</strong></td>
+<td>高达X GX-9900</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>规律：Performance ID = 1000000 + 机体 ID。MobileSuit ID 和代码里的角色 ID 常量一致。</li>
+<li><strong>截图里的“木桩-元祖”是 Demo 的 bug，不是测试卡名。</strong> 游戏里按模型资源名反查角色表，取第一个有名字的角色作为卡名和头像。高达的模型同时被测试用的木桩角色使用，结果取到了木桩。正式做法应该是卡表直接写 MobileSuit ID。</li>
+<li>渣古降下用的是怪物 / NPC 用的绿渣古模型。MobileSuit 表里没有量产渣古Ⅱ。</li>
+</ul>
+<h2>和策划案不一致的地方</h2>
+<p>除第 2 项的机制差异外，还有：</p>
+<ul>
+<li>10 文档第 7 节说高达是“护盾挡一击”。实际是 300 点护盾、单次伤害不溢出，见第 2 项。</li>
+<li>10 文档第 7 节说 6 费卡显示“高达X”。代码里写的是“高达DX”，只是游戏里从角色表取到了正确的“高达X”。代码文案、日志、卡牌详情里还是“高达DX”和“扎古”。</li>
+<li>内网 <code>机体策划案.md</code> 还写着自由“原 5 费”、v1 塔加强等历史。v2.0 已改写，见第 7 项。</li>
+</ul>
+<h2>第 7 项：本地策划文档同步</h2>
+<h3>7.1 已拍板、和策划端文档可能不一致的决定</h3>
+<p>Aoi 在本地会话里拍板了以下 4 项（2026-11-15）。STATUS 里前三项还挂在“等 Aoi 拍板”，请移到“已拍板”：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>拍板结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型尺寸</td>
+<td><strong>方案 A</strong>，按原作比例统一</td>
+</tr>
+<tr>
+<td>渣古降下投放范围</td>
+<td><strong>方案 A</strong>，己方半场</td>
+</tr>
+<tr>
+<td>高达的盾</td>
+<td><strong>盾值</strong>，约 HP 35%，<strong>溢出部分扣本体</strong>，战术卡也先扣盾。取消现在的“不溢出”</td>
+</tr>
+<tr>
+<td>能天使 TRANS-AM</td>
+<td>方案 B 半血自动 + 4s 粒子耗尽，策划端已同步</td>
+</tr>
+</tbody>
+</table></div>
+<p>“新系统开发顺序”和“第一批卡池名单”<strong>没有拍板</strong>。</p>
+<p>本地 <code>机体策划案.md</code> v2.0 把单机案的“档位”填成了具体数字，下面这些是本地补的，请确认或改到 units 文档里：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>机体</th>
+<th>本地 v2.0 的数字</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高达</td>
+<td>HP 950，盾值 330；步枪 130 / 1.5s / 射程 4.5；军刀 180 / 1.1s / 1.0</td>
+</tr>
+<tr>
+<td>夏亚渣古</td>
+<td>HP 600，伤害 115，间隔 1.2，移速 1.6，冲锋距离 2.5，冲锋速度 ×2</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td>单台 HP 170，伤害 60，间隔 1.1；飞行 1.2s；落地冲击半径 1.6、伤害 60、只打机体；起身 0.5s</td>
+</tr>
+<tr>
+<td>能天使</td>
+<td>HP 1050，伤害 230，间隔 1.3</td>
+</tr>
+<tr>
+<td>自由</td>
+<td>HP 620；步枪 125 / 1.4s；全弹发射每目标 100（普攻 0.8 倍）</td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>HP 2400，移速 0.8；步枪 140 / 1.7s / 射程 5；卫星炮对建筑 800，路径机体 240</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>卫星炮 800 约等于侧塔血量的三分之一，是本地估的。单机案没给这个数。</li>
+<li>本地还加了一条：卫星炮蓄力被打断后冷却不重置，会马上重新展开。单机案也是这么写的，这里只是确认。</li>
+</ul>
+<h3>7.2 当前卡池的 8 张</h3>
+<p>高达、夏亚专用渣古Ⅱ、渣古降下、能天使高达、自由高达、高达X、米加粒子炮击、飞弹齐射。这 8 张就是卡组，双方相同。</p>
+<h3>7.3 本地文档编号</h3>
+<p>本地 <code>Docs/FrontlineDuel/DesignDocs/</code> 就是策划端 DesignDocs 的副本，目录结构相同。新增的两份文档编号如下：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>文件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30</td>
+<td><code>30_选卡界面_v0.1.md</code></td>
+</tr>
+<tr>
+<td>40</td>
+<td><code>40_技能动画分镜_v0.1.md</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>本地另有两份不编号的文件，在 DesignDocs 的上一级目录，不和策划端同步：<code>机体策划案.md</code> 是本地实现用的数值总表，现为 v2.0；<code>进度.md</code> 是开发进度。建议策划端以后的新文档从 50 开始编号。</p>
+<h2>问题（需要策划端回答）</h2>
+<ol>
+<li><strong>自由的普攻多重锁定要不要保留到全弹发射做好之前？</strong></li>
+<li>选项 A（推荐）：状态系统和全弹发射一起上线，之前保持现状。改一半会让自由变成纯单体，对小队没有解法。</li>
+<li>选项 B：先把普攻改成单体。</li>
+<li><strong>高达的盾改成溢出扣本体后，飞弹齐射和米加粒子炮击对高达的克制会变。</strong> 要不要在 10 文档的矩阵里重新评估“米加粒子炮击 vs 高达”？</li>
+<li>选项 A（推荐）：重新评估，并按新规则更新单机案 01 的 5.3 节。</li>
+<li>选项 B：不变。</li>
+<li><strong>卡表正式化时用 MobileSuit ID 做主键吗？</strong> 渣古降下不在 MobileSuit 表里，需要决定挂哪个 ID。</li>
+<li>选项 A（推荐）：卡表直接写 MobileSuit ID；渣古降下用角色 100001，在卡表里单独标记。</li>
+<li>选项 B：在 MobileSuit 表里补一条量产渣古Ⅱ。这要改正式配置表，需要配置负责人同意。</li>
+</ol>
+<h2>第一批 21 张最先卡住的系统</h2>
+<p>按顺序估计如下：</p>
+<ol>
+<li><strong>通用状态系统。</strong> 自由、能天使、高达X、老虎、巴巴托斯都要用，而且现有的冲锋和 TRANS-AM 也要先迁过去。这是第一个瓶颈。</li>
+<li><strong>一台机体多套攻击或技能。</strong> 高达的步枪 / 军刀、自由的全弹发射、高达X 的卫星炮都超出了“每台一套攻击参数”。这需要一个简单的技能框架：冷却、触发条件、前摇 / 生效 / 后摇事件。建议和状态系统一起设计。</li>
+<li><strong>过河寻路。</strong> 龟霸小队和魔蟹不走桥。现在的寻路写死了两座桥，要加“可以过河”的单位标记。</li>
+<li><strong>组卡。</strong> 现在卡组固定 8 张、双方相同。21 张机体加战术卡就要有选卡界面，至少要一个 Demo 版的卡组配置。</li>
+<li>模型和动画资源：第一批的机体在角色表里大多有模型。但每台都要单独确认动画片段齐不齐。还没逐台核对，<strong>不确定</strong>。</li>
+</ol>
+<h2>建议的下一步</h2>
+<ul>
+<li>TASK-002：通用状态系统 + 简单技能框架，不改任何机体数值，用现有的冲锋和 TRANS-AM 做迁移验收，要求同种子对局结果不变。</li>
+<li>TASK-003：不依赖新系统的三项。分别是改名（扎古 → 渣古，高达DX → 高达X）、尺寸方案 A、渣古降下改为己方半场 + 落地冲击。</li>
+<li>之后再按机体逐台上 v2.0 机制。</li>
+</ul><div class="pager"><a href="#task-003">← TASK-003 改名尺寸降下</a><a href="#tpl-task">任务单模板 →</a></div></article><article id="doc-tpl-task"><h1>TASK-xxx 标题</h1>
 <ul>
 <li>状态：待开发</li>
 <li>依据：（列出要读的策划案和章节）</li>
@@ -3135,7 +3950,7 @@ figure.anim{background:var(--panel);padding:8px}
 <h2>需要回报的信息</h2>
 <ul>
 <li>除验收结果外，策划端还想知道的事（数值现状、实现方式选择等）。</li>
-</ul><div class="pager"><a href="#task-001">← TASK-001 现状盘点</a><a href="#tpl-report">回报单模板 →</a></div></article><article id="doc-tpl-report"><h1>REPORT-xxx 对应 TASK-xxx</h1>
+</ul><div class="pager"><a href="#report-001">← REPORT-001 现状盘点</a><a href="#tpl-report">回报单模板 →</a></div></article><article id="doc-tpl-report"><h1>REPORT-xxx 对应 TASK-xxx</h1>
 <ul>
 <li>日期：</li>
 <li>分支 / 提交：</li>
@@ -3284,6 +4099,46 @@ figure.anim{background:var(--panel);padding:8px}
 </table></div>
 <p>一句话：<strong>黑暗王子的盾 + 短射程火枪手的普攻 + 近身换刀</strong>。</p>
 <h2>5. 玩法方案</h2>
+<h3>5.0 定稿数值（v2.0，2026-11-16 与本地同步）</h3>
+<blockquote>
+<p>本节是实现用的数字，以本节为准；下面 5.1 起是初版档位和理由。数字来自本地 <code>机体策划案.md</code> v2.0，策划端已确认。“代码现状”来自 <a href="#report-001">REPORT-001</a>。</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>定稿</th>
+<th>代码现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP / 盾值</td>
+<td>950 / 330</td>
+<td>950 / 300</td>
+</tr>
+<tr>
+<td>盾规则</td>
+<td><strong>溢出扣本体</strong>，战术卡也先扣盾（Aoi 已拍板）</td>
+<td>整次吸收、不溢出</td>
+</tr>
+<tr>
+<td>光束步枪</td>
+<td>130 伤害 / 1.5s / 射程 4.5</td>
+<td>无（只有近战 150 / 1.2s / 1.2）</td>
+</tr>
+<tr>
+<td>光束军刀</td>
+<td>180 伤害 / 1.1s / 1.0，敌人进入 1.0 米自动切换</td>
+<td>—</td>
+</tr>
+<tr>
+<td>移速</td>
+<td>1.1</td>
+<td>1.1</td>
+</tr>
+</tbody>
+</table></div>
 <h3>5.1 属性建议（初版）</h3>
 <div class="tbl"><table>
 <thead>
@@ -3328,14 +4183,15 @@ figure.anim{background:var(--panel);padding:8px}
 </table></div>
 <h3>5.2 盾的规则</h3>
 <ul>
-<li>简化版（推荐先做）：所有伤害先扣盾值，盾值归零后扣本体。</li>
+<li>简化版（先做）：所有伤害（含战术卡）先扣盾值，<strong>一次伤害超过剩余盾值时，多出的部分扣本体</strong>。盾值归零后全部扣本体。</li>
 <li>完整版：只有来自正面 ±60° 的伤害先扣盾，背后伤害直接扣本体。需要朝向判定，算是小型新功能。</li>
 <li>盾破时播放盾牌脱落动作，模型切换为不持盾，之后普攻和军刀照常。</li>
 </ul>
 <h3>5.3 克制关系</h3>
 <p>完整矩阵见<a href="#counter">克制体系设计</a>。</p>
 <ul>
-<li><strong>克</strong>：单体远程（盾能吃掉第一波伤害）、冲锋单位（首击被盾吸收）、自由这类低伤害的控制型。</li>
+<li><strong>克</strong>：单体远程（盾能吃掉第一波伤害）、冲锋单位（夏亚渣古首击 230 被 330 盾值吃下）、自由这类低伤害的控制型。</li>
+<li><strong>战术卡</strong>：盾溢出规则下，米加粒子炮击（520）打满盾的高达是 330 盾 + 190 本体，飞弹齐射（240）全被盾吃掉。两张都不该专门用来打高达，矩阵结论不变（见 10 文档 4.1）。</li>
 <li><strong>被克</strong>：高爆发近战（如能天使）、小队单位包围（如渣古降下，一次只能打一台）。</li>
 <li>理由都是通用游戏规则，不涉及跨作品设定对抗。</li>
 </ul>
@@ -3548,6 +4404,51 @@ figure.anim{background:var(--panel);padding:8px}
 </table></div>
 <p>一句话：<strong>3 费的轻量版王子</strong>，用速度换血量。</p>
 <h2>5. 玩法方案</h2>
+<h3>5.0 定稿数值（v2.0，2026-11-16 与本地同步）</h3>
+<blockquote>
+<p>本节是实现用的数字，以本节为准；下面 5.1 起是初版档位和理由。数字来自本地 <code>机体策划案.md</code> v2.0，策划端已确认。“代码现状”来自 <a href="#report-001">REPORT-001</a>。</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>定稿</th>
+<th>代码现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP / 伤害 / 间隔</td>
+<td>600 / 115 / 1.2s</td>
+<td>600 / 115 / 0.9s</td>
+</tr>
+<tr>
+<td>移速</td>
+<td>1.6</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>进入冲锋</td>
+<td>连续直行 <strong>2.5 米</strong></td>
+<td>连续移动 2 秒</td>
+</tr>
+<tr>
+<td>冲锋速度</td>
+<td>×2</td>
+<td>×1.75</td>
+</tr>
+<tr>
+<td>首击</td>
+<td>×2（230）</td>
+<td>已实现</td>
+</tr>
+<tr>
+<td>中断</td>
+<td>停下、出手、被击晕/击退/瘫痪</td>
+<td>停下、出手、无目标（无击晕系统）</td>
+</tr>
+</tbody>
+</table></div>
 <h3>5.1 属性建议（初版）</h3>
 <div class="tbl"><table>
 <thead>
@@ -3794,9 +4695,49 @@ figure.anim{background:var(--panel);padding:8px}
 </table></div>
 <p>一句话：<strong>哥布林飞桶的出场方式，但投放范围收窄，落地有冲击</strong>。</p>
 <h2>5. 玩法方案</h2>
-<h3>5.1 投放范围（需 Aoi 拍板）</h3>
+<h3>5.0 定稿数值（v2.0，2026-11-16 与本地同步）</h3>
+<blockquote>
+<p>本节是实现用的数字，以本节为准；下面 5.1 起是初版档位和理由。数字来自本地 <code>机体策划案.md</code> v2.0，策划端已确认。“代码现状”来自 <a href="#report-001">REPORT-001</a>。</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>定稿</th>
+<th>代码现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单台 HP / 伤害 / 间隔</td>
+<td>170 / 60 / 1.1s</td>
+<td>170 / 60 / 0.9s</td>
+</tr>
+<tr>
+<td>投放范围</td>
+<td><strong>己方半场</strong>（Aoi 已拍板方案 A）</td>
+<td>全场</td>
+</tr>
+<tr>
+<td>飞行时间</td>
+<td>1.2s，落点预警圈</td>
+<td>1.8s，预警圈半径 1.2</td>
+</tr>
+<tr>
+<td>落地冲击</td>
+<td>半径 1.6，伤害 60，只打机体</td>
+<td>无</td>
+</tr>
+<tr>
+<td>起身</td>
+<td>0.5s</td>
+<td>0.6s</td>
+</tr>
+</tbody>
+</table></div>
+<h3>5.1 投放范围（已定方案 A：己方半场）</h3>
 <ul>
-<li><strong>方案 A（推荐）</strong>：只能投放到己方半场（与普通出兵相同），优点是空投演出依然有，平衡风险低。</li>
+<li><strong>方案 A（Aoi 已拍板采用）</strong>：只能投放到己方半场（与普通出兵相同），优点是空投演出依然有，平衡风险低。</li>
 <li><strong>方案 B</strong>：在方案 A 基础上，拆掉对方某侧侧塔后可以投到那侧的对方半场。这与 CR 普通单位的规则一致。</li>
 <li><strong>方案 C</strong>：全场任意投放（等同 CR 飞桶）。不推荐，“降下作战”是战略行为，越过敌方防线直接空投到塔下在原作逻辑上也比较牵强。</li>
 </ul>
@@ -4052,6 +4993,41 @@ figure.anim{background:var(--panel);padding:8px}
 </table></div>
 <p>一句话：<strong>迷你皮卡的定位 + 冠军技能的发动方式 + 原作专属的耗尽后效</strong>。</p>
 <h2>5. 玩法方案</h2>
+<h3>5.0 定稿数值（v2.0，2026-11-16 与本地同步）</h3>
+<blockquote>
+<p>本节是实现用的数字，以本节为准；下面 5.1 起是初版档位和理由。数字来自本地 <code>机体策划案.md</code> v2.0，策划端已确认。“代码现状”来自 <a href="#report-001">REPORT-001</a>。</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>定稿</th>
+<th>代码现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP / 伤害 / 间隔</td>
+<td>1050 / 230 / 1.3s</td>
+<td>1050 / 230 / 1.4s</td>
+</tr>
+<tr>
+<td>发动</td>
+<td>HP 首次 ≤50% 自动，每台 1 次（Aoi 已拍板）</td>
+<td>已实现</td>
+</tr>
+<tr>
+<td>TRANS-AM</td>
+<td>6s，移速 ×1.4，攻速 ×1.6</td>
+<td>6s，×1.5 / ×1.67</td>
+</tr>
+<tr>
+<td>粒子耗尽</td>
+<td>4s，移速、攻速 ×0.7</td>
+<td>无</td>
+</tr>
+</tbody>
+</table></div>
 <h3>5.1 属性建议（初版）</h3>
 <div class="tbl"><table>
 <thead>
@@ -4329,6 +5305,41 @@ figure.anim{background:var(--panel);padding:8px}
 </table></div>
 <p>一句话：<strong>4 费电法师的定位，周期性放一次 5 目标全弹发射</strong>。</p>
 <h2>5. 玩法方案</h2>
+<h3>5.0 定稿数值（v2.0，2026-11-16 与本地同步）</h3>
+<blockquote>
+<p>本节是实现用的数字，以本节为准；下面 5.1 起是初版档位和理由。数字来自本地 <code>机体策划案.md</code> v2.0，策划端已确认。“代码现状”来自 <a href="#report-001">REPORT-001</a>。</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>定稿</th>
+<th>代码现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP</td>
+<td>620</td>
+<td>620</td>
+</tr>
+<tr>
+<td>普攻（光束步枪）</td>
+<td><strong>单体</strong> 125 / 1.4s / 射程 5.5</td>
+<td>每次普攻打 4 个目标，125 / 1.6s</td>
+</tr>
+<tr>
+<td>全弹发射</td>
+<td>冷却 4.5s，前方 100° 扇形半径 6，最多 5 目标，优先机体，每目标 100 + 瘫痪 0.5s</td>
+<td>无</td>
+</tr>
+<tr>
+<td>过渡</td>
+<td>全弹发射上线前<strong>保持现在的普攻多目标</strong>，两者同一任务切换</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
 <h3>5.1 属性建议（初版）</h3>
 <div class="tbl"><table>
 <thead>
@@ -4603,6 +5614,51 @@ figure.anim{background:var(--panel);padding:8px}
 </table></div>
 <p>一句话：<strong>皇家巨人的定位 + Sparky 式可被打断的蓄力大招</strong>。</p>
 <h2>5. 玩法方案</h2>
+<h3>5.0 定稿数值（v2.0，2026-11-16 与本地同步）</h3>
+<blockquote>
+<p>本节是实现用的数字，以本节为准；下面 5.1 起是初版档位和理由。数字来自本地 <code>机体策划案.md</code> v2.0，策划端已确认。“代码现状”来自 <a href="#report-001">REPORT-001</a>。</p>
+</blockquote>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>定稿</th>
+<th>代码现状</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HP / 移速</td>
+<td>2400 / 0.8</td>
+<td>2400 / 0.8</td>
+</tr>
+<tr>
+<td>目标</td>
+<td>只打建筑</td>
+<td>已实现</td>
+</tr>
+<tr>
+<td>平时</td>
+<td>高功率光束步枪 140 / 1.7s / 射程 5</td>
+<td>单体 380 / 3.2s / 射程 4</td>
+</tr>
+<tr>
+<td>卫星炮</td>
+<td>射程 7；展开 1s + 蓄力 4s（受伤 +30%）；宽 1.6 米直线贯穿；建筑 800，路径机体 240；冷却 12s</td>
+<td>无</td>
+</tr>
+<tr>
+<td>打断</td>
+<td>蓄力中被击晕/击退/瘫痪：清零，冷却不重置，马上重新展开</td>
+<td>—</td>
+</tr>
+<tr>
+<td>备注</td>
+<td>800 约为侧塔的 1/3，是本地估值，等对局日志验证【待实测】</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
 <h3>5.1 属性建议（初版）</h3>
 <div class="tbl"><table>
 <thead>
@@ -4772,7 +5828,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>待确认：现有 高达X 模型是否带可动的卫星炮和反射板。</li>
 </ul><div class="pager"><a href="#freedom">← 自由</a><span></span></div></article></main></div><script>
 (function(){
-  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'workflow', 'agents', 'status', 'task-001', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
+  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'report-001', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
   function show(){
     var h=(location.hash||'').slice(1); if(ids.indexOf(h)<0) h=ids[0];
     ids.forEach(function(i){
