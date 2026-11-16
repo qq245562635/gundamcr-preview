@@ -4600,7 +4600,9 @@ figure.anim{background:var(--panel);padding:8px}
 <p>种子 1 的整局、日志和事件索引已收到，时间能对上，很好用。请补三处：</p>
 <ol>
 <li><strong>事件索引加这几类</strong>：状态开始（瘫痪、粒子耗尽、冲锋）、冲锋被打断、塔受击（合并成“某塔在 xx 秒内掉了多少血”）、塔被摧毁、战术卡命中。“降下落地”写明是哪一方投的。</li>
-<li><strong>视频要能传得动</strong>：策划端这边单个文件上限约 10 MB。整局请输出一个 <strong>低码率版</strong>（540×1170、15 帧、约 300 kbps，一局约 8~10 MB），高清版留在本地。精彩片段每段控制在 10 MB 以内。</li>
+<li><strong>视频要能传得动</strong>（以这一条为准，覆盖上面“视频规格”一节）：策划端单个文件上限 10 MB。录像工具<strong>默认</strong>输出：宽 540（竖屏 540×1170）、15 帧、单文件 <strong>≤9 MB</strong>；超了就按约 60 秒自动切段。高清版可以另存在本地，不用发。</li>
+<li>命名：<code>FrontlineDuel_seed&lt;种子&gt;_&lt;full|hl&gt;_part&lt;NN&gt;_&lt;开始秒&gt;-&lt;结束秒&gt;s.mp4</code>。<code>full</code> 是整局，<code>hl</code> 是精彩片段；开始秒和结束秒是<strong>对局时间</strong>（和日志时间戳一致，不是视频时间）。例：<code>FrontlineDuel_seed1_full_part03_120-180s.mp4</code>。</li>
+<li>日志和事件索引的文件名用同样的前缀：<code>FrontlineDuel_seed&lt;种子&gt;_&lt;full|hl&gt;.log</code>、<code>.events.txt</code>。</li>
 <li><strong>每个关键事件自动截一张图</strong>（PNG，事件发生后 0.3 秒），放进同目录的 <code>shots/</code>，文件名带对局时间和事件名。视频传不了的时候，截图也够看。</li>
 </ol>
 <h2>不做</h2>
