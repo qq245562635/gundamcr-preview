@@ -2922,7 +2922,7 @@ figure.anim{background:var(--panel);padding:8px}
 <h2>1. 现在的做法：一个 Agent 串行（2026-11-16 Aoi 定）</h2>
 <p>不再多 Agent 并行。<strong>一个 Agent 按下面的队列从上往下做，一次一个包，做完交回报单再做下一个。</strong> 包可以连着做，不用等策划端答复；只有回报里的问题影响到下一个包时才停下来等。</p>
 <ul>
-<li>分支：直接在 <code>feature/frontline-duel</code> 上做，从 <code>e402aca7356</code> 之后继续。每个包单独提交，提交说明写包编号。</li>
+<li>分支：直接在 <code>feature/frontline-duel</code> 上做，在 <code>c82248242d1</code> 之后继续。每个包单独提交，提交说明写包编号。</li>
 <li>每个包做完：离线编译 0 错误、相关自检通过、写 <code>REPORT-&lt;包号&gt;.md</code>。需要 Aoi 在 Unity 里看的，回报里列清楚看什么。</li>
 <li>回报单和录像放 Google 云端硬盘 <code>GundamCR_Exchange/</code>（见 <a href="#workflow">协作流程</a>）。</li>
 </ul>
@@ -2940,83 +2940,69 @@ figure.anim{background:var(--panel);padding:8px}
 <tbody>
 <tr>
 <td><strong>1（现在做）</strong></td>
-<td><strong>P-006A</strong></td>
-<td>渣古降下改回全场可投；己方半场 1.2s、对方半场 1.8s；AI 恢复投塔下</td>
-<td><a href="#task-006">TASK-006</a> 第 1 节</td>
-<td>改动最小，Aoi 点名要的，做完马上能看到</td>
-</tr>
-<tr>
-<td>2</td>
-<td><strong>P-012</strong></td>
-<td>表现验收场景和通用调试指令；排查自由展开、粒子耗尽变灰、冲锋中断；全弹发射扇形提示（展开和开火要分得开）；状态图标放大、血条错开；显示尺寸按头顶高度对齐（能天使实测 3.04，目标 2.54）</td>
-<td><a href="#task-012">TASK-012</a> 全部</td>
-<td>后面所有表现都靠这套验收场景来确认，先把它搭好</td>
-</tr>
-<tr>
-<td>3</td>
-<td><strong>P-013S</strong></td>
-<td>录像工具收尾：关键事件加 1080×1080 特写截图；验收场景用特写镜头各录一段（三处补充已随 P-013R 交付，策划端已看过）</td>
-<td><a href="#task-013">TASK-013</a> 末尾“第二份交付之后的反馈”</td>
-<td>特写截图出来之后，后面每个包的表现都能直接看图验收，少占 Aoi 的时间</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>P-006B</strong></td>
-<td>血条上的定位标签（卡表加定位字段 + 头顶显示，放在状态图标左侧）</td>
-<td><a href="#task-006">TASK-006</a> 第 2 节</td>
-<td>Aoi 点名要的；紧接着表现相关的两个包，上下文连着</td>
-</tr>
-<tr>
-<td>5</td>
 <td><strong>P-007</strong></td>
 <td>高达双武装：步枪 4.5 远程 + 贴身换军刀</td>
 <td><a href="#task-007">TASK-007</a> 全部</td>
 <td>解决“全是近战”的第一步</td>
 </tr>
 <tr>
-<td>6</td>
+<td>2</td>
+<td><strong>P-013S</strong></td>
+<td>录像工具收尾：先把另一个 Agent 做的录像工具改动（P-013R，还在工作区）核对后提交；关键事件加 1080×1080 特写截图；五个验收场景用特写镜头各录一段</td>
+<td><a href="#task-013">TASK-013</a> 末尾“第二份交付之后的反馈”</td>
+<td>录像工具不提交就可能丢；特写出来后策划端能直接看图验收，少占 Aoi 的时间</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>P-012B</strong></td>
+<td>P-012 的补充项里还没做的：状态图标放大到约 44 像素、同屏只显示最重要的一个；血条上下错开不重叠；血量最低的敌方单位血条加亮边。已经在 P-012 里做了的跳过，回报里说明</td>
+<td><a href="#task-012">TASK-012</a> 2.5 节</td>
+<td>2.5 节是 P-012 开工后才加的，可能没赶上</td>
+</tr>
+<tr>
+<td>4</td>
 <td><strong>P-009</strong></td>
 <td>高达X 卫星炮</td>
 <td><a href="#task-009">TASK-009</a> 全部</td>
 <td>种子 1 整局没拆掉一座塔，攻城手段必须补上</td>
 </tr>
 <tr>
-<td>7</td>
+<td>5</td>
 <td><strong>P-014A</strong></td>
 <td>AI 两路都用、会攒一波进攻；保留旧 AI 开关</td>
 <td><a href="#task-014">TASK-014</a> 全部</td>
 <td>种子 1 里 80 台机体全走右路；卫星炮做完后再改 AI，AI 才知道怎么用它</td>
 </tr>
 <tr>
-<td>8</td>
+<td>6</td>
 <td><strong>P-010</strong></td>
 <td>桥上堵车：碰撞绕开、出手单位少被推、过桥错开</td>
 <td><a href="#task-010">TASK-010</a> 全部</td>
 <td>AI 用两路之后堵车会少一些，这时再修更容易看出效果</td>
 </tr>
 <tr>
-<td>9</td>
+<td>7</td>
 <td><strong>P-008A</strong></td>
 <td>钢加农、力天使高达的资源核对；现有 6 张卡头像核对（自由缺头像）。只读</td>
 <td><a href="#task-008">TASK-008</a> 第 0 节</td>
 <td>只读，随时可以插队；最晚在 P-008B 之前做完</td>
 </tr>
 <tr>
-<td>10</td>
+<td>8</td>
 <td><strong>P-008B + P-008C</strong></td>
 <td>实现两台远程机体；两套卡组配置和切换，批量对局支持指定卡组</td>
 <td>TASK-008 第 1~4 节</td>
 <td>卡池从 8 张扩到 10 张</td>
 </tr>
 <tr>
-<td>11</td>
+<td>9</td>
 <td><strong>P-011</strong></td>
 <td>对拼矩阵加“双方都先站好”的跑法，矩阵自动扩成 N×N</td>
 <td><a href="#task-011">TASK-011</a> 全部</td>
 <td>机体和机制都齐了再做，矩阵一次跑到位</td>
 </tr>
 <tr>
-<td>12</td>
+<td>10</td>
 <td><strong>P-015</strong></td>
 <td>重跑两种对拼矩阵 + 100 局基线，和 10 文档 4.4 节逐格对比；录种子 1、2、3 各一局</td>
 <td>任务单待写</td>
@@ -3059,6 +3045,18 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td>TASK-004 自由全弹发射 + 状态图标（原 P-004A、P-004B）。已提交 e402aca7356</td>
 <td><a href="#report-004">REPORT-004</a></td>
+</tr>
+<tr>
+<td>P-006A 渣古降下全场可投（提交 2696ab93541）。没人管的一次降下打掉满血塔 420 血、落地后存活 4.4 秒；100 局拆塔数 36→44，卡死报告 16→2</td>
+<td>回报全文待 Aoi 上传</td>
+</tr>
+<tr>
+<td>P-012 表现验收场景、调试指令、三项表现排查、尺寸修正（提交 5200f1e7059）。画面待 Aoi 在 Unity 里点五个场景确认</td>
+<td>回报全文待 Aoi 上传</td>
+</tr>
+<tr>
+<td>P-006B 血条定位标签（提交 c82248242d1）。画面待 Aoi 确认</td>
+<td>回报全文待 Aoi 上传</td>
 </tr>
 <tr>
 <td>P-013R 录像工具（整局 / 精彩片段 / 分段 / 事件索引 / 截图）。回报单未收到，交付物已收到并看过</td>
@@ -3328,9 +3326,9 @@ figure.anim{background:var(--panel);padding:8px}
 <tr>
 <td><a href="#task-006">TASK-006</a></td>
 <td>渣古降下改回全场可投；血条上的定位标签</td>
-<td>待开发</td>
-<td>开发端执行（改动小，建议最先做）</td>
-<td>—</td>
+<td>完成（2696ab93541、c82248242d1）。标签画面待 Aoi 确认</td>
+<td>回报全文待上传</td>
+<td>REPORT-006A、006B</td>
 </tr>
 <tr>
 <td><a href="#task-007">TASK-007</a></td>
@@ -3362,10 +3360,10 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 <tr>
 <td><a href="#task-012">TASK-012</a></td>
-<td>表现验收场景 + 排查自由展开、粒子耗尽变灰、冲锋中断飘字</td>
-<td>待开发</td>
-<td>见派工表（表现工位第一个）</td>
-<td>—</td>
+<td>表现验收场景 + 排查自由展开、粒子耗尽变灰、冲锋中断飘字 + 尺寸修正</td>
+<td>完成（5200f1e7059）。原因：展开动作被压得太短；冲锋中断那局没触发；变灰是 bug（着色器颜色属性是 <code>_MainColor</code>），已修。2.5 节补充项转 P-012B</td>
+<td>Aoi 在 Unity 里点“表现验收”五个场景确认</td>
+<td>REPORT-012</td>
 </tr>
 <tr>
 <td><a href="#task-013">TASK-013</a></td>
@@ -3490,6 +3488,11 @@ figure.anim{background:var(--panel);padding:8px}
 </ol>
 <h2>等 Aoi 做的事</h2>
 <ul>
+<li>Unity 重新编译后，打开「工具/MS战线对决/表现验收」把五个场景各点一次；进一局看血条上的定位标签和新尺寸。</li>
+<li>把 REPORT-006A、REPORT-012、REPORT-006B 上传到 <code>GundamCR_Exchange/reports/</code>（本地 AI 那台机器同步不了云端硬盘）。</li>
+<li>
+<p>清理四个空分支：<code>feature/frontline-duel-p006a</code>、<code>-p007</code>、<code>-p012</code>、<code>-p008a</code>（可以让本地 AI 删）。</p>
+</li>
 <li>
 <p>~~实机看 TASK-004/005~~：2026-11-16 已看。只看到“瘫痪”飘字；自由展开、冲锋中断、能天使变灰没看到，开了 TASK-012。TASK-004/005 可以提交。</p>
 </li>
