@@ -80,7 +80,7 @@ figure.anim{background:var(--panel);padding:8px}
   h1{font-size:23px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#dispatch">派工表<span>串行队列</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>完成</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>完成</span></a></li><li><a href="#task-004">TASK-004 自由全弹发射<span>完成</span></a></li><li><a href="#task-005">TASK-005 v2 数值与对拼<span>完成</span></a></li><li><a href="#task-006">TASK-006 渣古全场与标签<span>待开发</span></a></li><li><a href="#task-007">TASK-007 高达双武装<span>待开发</span></a></li><li><a href="#task-008">TASK-008 两台远程机体<span>待开发</span></a></li><li><a href="#task-009">TASK-009 高达X 卫星炮<span>待开发</span></a></li><li><a href="#task-010">TASK-010 桥上堵车<span>待开发</span></a></li><li><a href="#task-011">TASK-011 矩阵双方就位<span>待开发</span></a></li><li><a href="#task-012">TASK-012 表现验收场景<span>待开发</span></a></li><li><a href="#task-013">TASK-013 AI 对打录像<span>待开发</span></a></li><li><a href="#task-014">TASK-014 AI 双路与进攻<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#report-002">REPORT-002 状态与技能<span>已回</span></a></li><li><a href="#report-003">REPORT-003 改名尺寸降下<span>已回</span></a></li><li><a href="#report-004">REPORT-004 自由全弹发射<span>已回</span></a></li><li><a href="#report-005">REPORT-005 数值与对拼<span>已回</span></a></li><li><a href="#report-006a">REPORT-006A 渣古全场可投<span>已回</span></a></li><li><a href="#report-012">REPORT-012 表现验收场景<span>已回</span></a></li><li><a href="#report-006b">REPORT-006B 定位标签<span>已回</span></a></li><li><a href="#report-009">REPORT-009 高达X 卫星炮<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
+</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#dispatch">派工表<span>串行队列</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>完成</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>完成</span></a></li><li><a href="#task-004">TASK-004 自由全弹发射<span>完成</span></a></li><li><a href="#task-005">TASK-005 v2 数值与对拼<span>完成</span></a></li><li><a href="#task-006">TASK-006 渣古全场与标签<span>待开发</span></a></li><li><a href="#task-007">TASK-007 高达双武装<span>待开发</span></a></li><li><a href="#task-008">TASK-008 两台远程机体<span>待开发</span></a></li><li><a href="#task-009">TASK-009 高达X 卫星炮<span>待开发</span></a></li><li><a href="#task-010">TASK-010 桥上堵车<span>待开发</span></a></li><li><a href="#task-011">TASK-011 矩阵双方就位<span>待开发</span></a></li><li><a href="#task-012">TASK-012 表现验收场景<span>待开发</span></a></li><li><a href="#task-013">TASK-013 AI 对打录像<span>待开发</span></a></li><li><a href="#task-014">TASK-014 AI 双路与进攻<span>待开发</span></a></li><li><a href="#task-016">TASK-016 飞弹齐射击晕<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#report-002">REPORT-002 状态与技能<span>已回</span></a></li><li><a href="#report-003">REPORT-003 改名尺寸降下<span>已回</span></a></li><li><a href="#report-004">REPORT-004 自由全弹发射<span>已回</span></a></li><li><a href="#report-005">REPORT-005 数值与对拼<span>已回</span></a></li><li><a href="#report-006a">REPORT-006A 渣古全场可投<span>已回</span></a></li><li><a href="#report-012">REPORT-012 表现验收场景<span>已回</span></a></li><li><a href="#report-006b">REPORT-006B 定位标签<span>已回</span></a></li><li><a href="#report-009">REPORT-009 高达X 卫星炮<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
 <p>内部策划文档仓库（私有）。只放策划方案，不放代码和受版权保护的原作图片。</p>
 <h2>两边协作</h2>
 <p>策划端（云端）写方案和任务单，本地开发 AI 改代码并写回报单，通过这个文件夹来回交接。</p>
@@ -1029,6 +1029,11 @@ figure.anim{background:var(--panel);padding:8px}
 <td>飞弹齐射 → 渣古降下</td>
 <td>硬克</td>
 <td>2 费清掉 3 费</td>
+</tr>
+<tr>
+<td>飞弹齐射 → 高达X</td>
+<td>反制</td>
+<td>2026-11-16 拍板：命中击晕 0.5 秒，打断卫星炮蓄力（TASK-016，待实现）</td>
 </tr>
 <tr>
 <td>米加粒子炮击 → 自由</td>
@@ -2947,41 +2952,48 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 <tr>
 <td>2</td>
+<td><strong>P-016</strong></td>
+<td>飞弹齐射命中后击晕 0.5 秒，可以打断卫星炮蓄力；AI 会用它打断</td>
+<td><a href="#task-016">TASK-016</a> 全部</td>
+<td>Aoi 2026-11-16 拍板。卫星炮现在后手打断不了，要尽快补上反制；AI 改完再加，规则写在新 AI 上</td>
+</tr>
+<tr>
+<td>3</td>
 <td><strong>P-010</strong></td>
 <td>桥上堵车：碰撞绕开、出手单位少被推、过桥错开</td>
 <td><a href="#task-010">TASK-010</a> 全部</td>
 <td>AI 用两路之后堵车会少一些，这时再修更容易看出效果</td>
 </tr>
 <tr>
-<td>3</td>
+<td>4</td>
 <td><strong>P-012B</strong></td>
 <td>P-012 的补充项里还没做的：状态图标放大到约 44 像素、同屏只显示最重要的一个；血条上下错开不重叠；血量最低的敌方单位血条加亮边。另加一个“卫星炮”验收场景（高达X 对一座不开火的塔，线上放一台靶子；再加一个被自由打断的版本）。已经在 P-012 里做了的跳过，回报里说明</td>
 <td><a href="#task-012">TASK-012</a> 2.5 节</td>
 <td>2.5 节是 P-012 开工后才加的，可能没赶上</td>
 </tr>
 <tr>
-<td>4</td>
+<td>5</td>
 <td><strong>P-008A</strong></td>
 <td>钢加农、力天使高达的资源核对；现有 6 张卡头像核对（自由缺头像）。只读</td>
 <td><a href="#task-008">TASK-008</a> 第 0 节</td>
 <td>只读，随时可以插队；最晚在 P-008B 之前做完</td>
 </tr>
 <tr>
-<td>5</td>
+<td>6</td>
 <td><strong>P-008B + P-008C</strong></td>
 <td>实现两台远程机体；两套卡组配置和切换，批量对局支持指定卡组</td>
 <td>TASK-008 第 1~4 节</td>
 <td>卡池从 8 张扩到 10 张</td>
 </tr>
 <tr>
-<td>6</td>
+<td>7</td>
 <td><strong>P-011</strong></td>
 <td>对拼矩阵加“双方都先站好”的跑法，矩阵自动扩成 N×N</td>
 <td><a href="#task-011">TASK-011</a> 全部</td>
 <td>机体和机制都齐了再做，矩阵一次跑到位</td>
 </tr>
 <tr>
-<td>7</td>
+<td>8</td>
 <td><strong>P-015</strong></td>
 <td>重跑两种对拼矩阵 + 100 局基线，和 10 文档 4.4 节逐格对比；录种子 1、2、3 各一局</td>
 <td>任务单待写</td>
@@ -3384,6 +3396,13 @@ figure.anim{background:var(--panel);padding:8px}
 <td>见派工表</td>
 <td>—</td>
 </tr>
+<tr>
+<td><a href="#task-016">TASK-016</a></td>
+<td>飞弹齐射加 0.5 秒击晕，打断卫星炮蓄力</td>
+<td>待开发</td>
+<td>见派工表（P-016）</td>
+<td>—</td>
+</tr>
 </tbody>
 </table></div>
 <h2>已拍板</h2>
@@ -3438,6 +3457,11 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 <tr>
 <td>2026-11-16</td>
+<td>卫星炮后手打断不了</td>
+<td>飞弹齐射命中后击晕 0.5 秒（TASK-016）。自由首次冷却不改</td>
+</tr>
+<tr>
+<td>2026-11-16</td>
 <td>六台机体数值</td>
 <td>采用本地 <code>机体策划案.md</code> v2.0 的数字，写进各单机案 5.0 节</td>
 </tr>
@@ -3487,7 +3511,7 @@ figure.anim{background:var(--panel);padding:8px}
 <ol>
 <li><strong>结果认可</strong>：加时 75→57、拆塔 50→77，卫星炮起到了攻城的作用。数值先不动。</li>
 <li><strong>蓄力 42% 被打死</strong>：符合设计（蓄力受伤 +30% 就是让对面集火）。等 P-014A 的 AI 会给高达X 配前排之后再看这个比例，目标是打出来的比例到 55% 左右。</li>
-<li><strong>后手打断不了蓄力（自由首次冷却 4.5 秒来不及）</strong>：这是个真缺口。CR 里电火花车靠“电击法术重置蓄力”来解，这里对应的是 2 费的飞弹齐射。策划端建议给飞弹齐射加 0.5 秒击晕，<strong>等 Aoi 拍板</strong>（见下面“等 Aoi 拍板”）。拍板前 AI 不用专门去打断。自由的首次冷却不改。</li>
+<li><strong>后手打断不了蓄力（自由首次冷却 4.5 秒来不及）</strong>：这是个真缺口。CR 里电火花车靠“电击法术重置蓄力”来解，这里对应的是 2 费的飞弹齐射。策划端建议给飞弹齐射加 0.5 秒击晕，Aoi 已拍板加（TASK-016）。自由的首次冷却不改。</li>
 <li><strong>卡死检测把施放中算作活动</strong>：同意。</li>
 <li><strong>打断后重新展开不保留进度</strong>：同意，就按完整的展开 1 秒 + 蓄力 4 秒重来。</li>
 <li><strong>卫星炮验收场景</strong>：要，加进 P-012B。</li>
@@ -3533,11 +3557,6 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>飞弹齐射要不要加 0.5 秒击晕（用来打断卫星炮蓄力）</td>
-<td>加。像 CR 的电击法术，2 费、伤害低、能重置蓄力</td>
-<td>高达X 的反制；改动小，一个小包</td>
-</tr>
 <tr>
 <td>新系统开发顺序</td>
 <td>状态+技能（TASK-002）→ 组卡 → 过河寻路 → 建筑 → 空中</td>
@@ -4712,7 +4731,51 @@ figure.anim{background:var(--panel);padding:8px}
 <li>新旧 AI 各 100 局：两路出牌比例、拆塔数、加时局数、平均时长、阵亡位置分布。</li>
 <li>新 AI 对旧 AI 的 100 局胜率。</li>
 <li>用新 AI 录一局种子 1，交给 Aoi 发给策划端。</li>
-</ol><div class="pager"><a href="#task-013">← TASK-013 AI 对打录像</a><a href="#report-001">REPORT-001 现状盘点 →</a></div></article><article id="doc-report-001"><!-- Aoi 于 2026-11-16 贴回，策划端存档，内容未改动。策划端的答复见 STATUS.md 和 TASK-002 / TASK-003。 -->
+</ol><div class="pager"><a href="#task-013">← TASK-013 AI 对打录像</a><a href="#task-016">TASK-016 飞弹齐射击晕 →</a></div></article><article id="doc-task-016"><h1>TASK-016 飞弹齐射加 0.5 秒击晕</h1>
+<ul>
+<li>状态：待开发</li>
+<li>包号：P-016（排在 P-014A 后面，见 <a href="#dispatch">50 派工表</a>）</li>
+<li>依据：Aoi 2026-11-16 拍板；<a href="#report-009">REPORT-009</a>“问题”第 1 条</li>
+<li>预计改动：卡表、战术卡结算、AI、卡牌文案（策划端的猜测，以实际为准）</li>
+</ul>
+<h2>目标</h2>
+<p>对方高达X 开始蓄力卫星炮时，花 2 费扔一发飞弹齐射就能打断它。参考皇室战争里用电击法术重置电火花车的蓄力。</p>
+<h2>范围</h2>
+<ol>
+<li><strong>击晕</strong>：飞弹齐射命中范围内的所有敌方机体，在结算伤害的同时挂 0.5 秒击晕。</li>
+<li>击晕和瘫痪用同一套规则（REPORT-002/003 的答复）：不能移动、不能攻击、打断前摇和冲锋。</li>
+<li>建筑也吃击晕（塔停火 0.5 秒），和“塔可以被瘫痪”一致。</li>
+<li>伤害、范围、费用、飞行时间都不变。</li>
+<li><strong>对卫星炮</strong>：走已有的打断逻辑，不用新写。展开或蓄力中被击晕就取消，击晕结束后重新完整展开。</li>
+<li><strong>AI</strong>：对方高达X 进入展开或蓄力、手里有飞弹齐射、能量够时，把飞弹齐射扔到它身上。</li>
+<li>要算飞行时间：落地时间必须早于发射时间，来不及就不扔。</li>
+<li>这条优先级高于“飞弹齐射清小队”。</li>
+<li>新旧 AI 都加（P-014A 做完后以新 AI 为准）。</li>
+<li><strong>文案</strong>：卡牌详情加一句“命中的机体和建筑被击晕 0.5 秒，可以打断蓄力”。</li>
+<li><strong>表现</strong>：被击晕的单位头顶出击晕图标和“击晕”飘字，规格和“瘫痪”一样。</li>
+</ol>
+<h2>不做</h2>
+<ul>
+<li>不改自由全弹发射的首次冷却。</li>
+<li>不改卫星炮的数值。</li>
+<li>不给米加粒子炮击加控制。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[ ] 飞弹齐射命中的机体被击晕 0.5 秒，日志有“击晕 开始 / 移除”</li>
+<li>[ ] 蓄力中的高达X 被飞弹齐射命中：卫星炮取消，日志有“卫星炮 打断”，0.5 秒后重新展开</li>
+<li>[ ] 冲锋中的夏亚渣古被命中：冲锋中断</li>
+<li>[ ] 侧塔被命中：停火 0.5 秒</li>
+<li>[ ] AI 会用飞弹齐射打断蓄力（100 局里给出次数）</li>
+<li>[ ] 回报单里没有源码</li>
+</ul>
+<h2>需要回报的信息</h2>
+<ol>
+<li>100 局基线，和本包之前对比：加时局数、拆塔数、卫星炮“发射 / 被打断 / 蓄力中被打死”三个比例。</li>
+<li>飞弹齐射从出牌到落地要多久；对方在卫星炮前摇的第几秒之前出牌才来得及打断。</li>
+<li>飞弹齐射每局出牌次数的变化，其中多少次是用来打断的。</li>
+<li>策划端的预期是卫星炮发射比例从 44% 降到 35% 左右、拆塔数略降但仍明显高于 P-007 之后的 50 座。如果拆塔数掉回 55 座以下，在回报里标出来，策划端会调（候选：击晕缩到 0.3 秒，或打断后保留一半蓄力进度）。</li>
+</ol><div class="pager"><a href="#task-014">← TASK-014 AI 双路与进攻</a><a href="#report-001">REPORT-001 现状盘点 →</a></div></article><article id="doc-report-001"><!-- Aoi 于 2026-11-16 贴回，策划端存档，内容未改动。策划端的答复见 STATUS.md 和 TASK-002 / TASK-003。 -->
 
 <h1>REPORT-001 对应 TASK-001</h1>
 <ul>
@@ -5316,7 +5379,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>TASK-002：通用状态系统 + 简单技能框架，不改任何机体数值，用现有的冲锋和 TRANS-AM 做迁移验收，要求同种子对局结果不变。</li>
 <li>TASK-003：不依赖新系统的三项。分别是改名（扎古 → 渣古，高达DX → 高达X）、尺寸方案 A、渣古降下改为己方半场 + 落地冲击。</li>
 <li>之后再按机体逐台上 v2.0 机制。</li>
-</ul><div class="pager"><a href="#task-014">← TASK-014 AI 双路与进攻</a><a href="#report-002">REPORT-002 状态与技能 →</a></div></article><article id="doc-report-002"><!-- Aoi 于 2026-11-16 贴回，策划端存档，内容未改动。策划端的答复见 STATUS.md。 -->
+</ul><div class="pager"><a href="#task-016">← TASK-016 飞弹齐射击晕</a><a href="#report-002">REPORT-002 状态与技能 →</a></div></article><article id="doc-report-002"><!-- Aoi 于 2026-11-16 贴回，策划端存档，内容未改动。策划端的答复见 STATUS.md。 -->
 
 <h1>REPORT-002 对应 TASK-002（v2 折中方案）</h1>
 <ul>
@@ -10078,7 +10141,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>待确认：现有 高达X 模型是否带可动的卫星炮和反射板。</li>
 </ul><div class="pager"><a href="#freedom">← 自由</a><span></span></div></article></main></div><script>
 (function(){
-  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'dispatch', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'task-004', 'task-005', 'task-006', 'task-007', 'task-008', 'task-009', 'task-010', 'task-011', 'task-012', 'task-013', 'task-014', 'report-001', 'report-002', 'report-003', 'report-004', 'report-005', 'report-006a', 'report-012', 'report-006b', 'report-009', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
+  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'dispatch', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'task-004', 'task-005', 'task-006', 'task-007', 'task-008', 'task-009', 'task-010', 'task-011', 'task-012', 'task-013', 'task-014', 'task-016', 'report-001', 'report-002', 'report-003', 'report-004', 'report-005', 'report-006a', 'report-012', 'report-006b', 'report-009', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
   function show(){
     var h=(location.hash||'').slice(1); if(ids.indexOf(h)<0) h=ids[0];
     ids.forEach(function(i){
