@@ -80,7 +80,7 @@ figure.anim{background:var(--panel);padding:8px}
   h1{font-size:23px}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
-</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#dispatch">派工表<span>串行队列</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>完成</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>完成</span></a></li><li><a href="#task-004">TASK-004 自由全弹发射<span>完成</span></a></li><li><a href="#task-005">TASK-005 v2 数值与对拼<span>完成</span></a></li><li><a href="#task-006">TASK-006 渣古全场与标签<span>待开发</span></a></li><li><a href="#task-007">TASK-007 高达双武装<span>待开发</span></a></li><li><a href="#task-008">TASK-008 两台远程机体<span>待开发</span></a></li><li><a href="#task-009">TASK-009 高达X 卫星炮<span>待开发</span></a></li><li><a href="#task-010">TASK-010 桥上堵车<span>待开发</span></a></li><li><a href="#task-011">TASK-011 矩阵双方就位<span>待开发</span></a></li><li><a href="#task-012">TASK-012 表现验收场景<span>待开发</span></a></li><li><a href="#task-013">TASK-013 AI 对打录像<span>待开发</span></a></li><li><a href="#task-014">TASK-014 AI 双路与进攻<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#report-002">REPORT-002 状态与技能<span>已回</span></a></li><li><a href="#report-003">REPORT-003 改名尺寸降下<span>已回</span></a></li><li><a href="#report-004">REPORT-004 自由全弹发射<span>已回</span></a></li><li><a href="#report-005">REPORT-005 数值与对拼<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
+</style></head><body><div class="wrap"><nav aria-label="文档目录"><div class="brand">MS战线对决<small>机体策划案 · 内部资料</small></div><ul><li class="grp">文档</li><li><a href="#overview">总览</a></li><li><a href="#ip-plan">IP 还原总方案</a></li><li><a href="#counter">克制体系</a></li><li><a href="#pool">全系列卡池</a></li><li class="grp">机体策划案</li><li><a href="#deck">选卡界面<span>交互原型</span></a></li><li><a href="#deck-spec">选卡界面规格<span>文字版</span></a></li><li><a href="#anim-spec">技能动画分镜<span>文字版</span></a></li><li><a href="#dispatch">派工表<span>串行队列</span></a></li><li><a href="#workflow">协作流程<span>两边协作</span></a></li><li><a href="#agents">给本地 AI 的说明<span>AGENTS</span></a></li><li><a href="#status">任务看板<span>STATUS</span></a></li><li><a href="#task-001">TASK-001 现状盘点<span>完成</span></a></li><li><a href="#task-002">TASK-002 状态与技能<span>完成</span></a></li><li><a href="#task-003">TASK-003 改名尺寸降下<span>完成</span></a></li><li><a href="#task-004">TASK-004 自由全弹发射<span>完成</span></a></li><li><a href="#task-005">TASK-005 v2 数值与对拼<span>完成</span></a></li><li><a href="#task-006">TASK-006 渣古全场与标签<span>待开发</span></a></li><li><a href="#task-007">TASK-007 高达双武装<span>待开发</span></a></li><li><a href="#task-008">TASK-008 两台远程机体<span>待开发</span></a></li><li><a href="#task-009">TASK-009 高达X 卫星炮<span>待开发</span></a></li><li><a href="#task-010">TASK-010 桥上堵车<span>待开发</span></a></li><li><a href="#task-011">TASK-011 矩阵双方就位<span>待开发</span></a></li><li><a href="#task-012">TASK-012 表现验收场景<span>待开发</span></a></li><li><a href="#task-013">TASK-013 AI 对打录像<span>待开发</span></a></li><li><a href="#task-014">TASK-014 AI 双路与进攻<span>待开发</span></a></li><li><a href="#report-001">REPORT-001 现状盘点<span>已回</span></a></li><li><a href="#report-002">REPORT-002 状态与技能<span>已回</span></a></li><li><a href="#report-003">REPORT-003 改名尺寸降下<span>已回</span></a></li><li><a href="#report-004">REPORT-004 自由全弹发射<span>已回</span></a></li><li><a href="#report-005">REPORT-005 数值与对拼<span>已回</span></a></li><li><a href="#report-006a">REPORT-006A 渣古全场可投<span>已回</span></a></li><li><a href="#report-012">REPORT-012 表现验收场景<span>已回</span></a></li><li><a href="#report-006b">REPORT-006B 定位标签<span>已回</span></a></li><li><a href="#tpl-task">任务单模板</a></li><li><a href="#tpl-report">回报单模板</a></li><li><a href="#gundam">高达<span>RX-78-2 · 4 费</span></a></li><li><a href="#char">夏亚专用渣古<span>MS-06S · 3 费</span></a></li><li><a href="#zaku">渣古降下<span>MS-06 ×3 · 3 费</span></a></li><li><a href="#exia">能天使<span>GN-001 · 5 费</span></a></li><li><a href="#freedom">自由<span>ZGMF-X10A · 4 费</span></a></li><li><a href="#dx">高达X<span>GX-9900 · 6 费</span></a></li></ul><div class="legend"><div><span class="tag t-set">待确认·设定</span> 对照官方资料</div><div><span class="tag t-sup">推测·监修</span> 向 BNE 确认</div><div><span class="tag t-new">新系统</span> 需新开发</div></div></nav><main><article id="doc-overview"><h1>MS战线对决 · 策划文档</h1>
 <p>内部策划文档仓库（私有）。只放策划方案，不放代码和受版权保护的原作图片。</p>
 <h2>两边协作</h2>
 <p>策划端（云端）写方案和任务单，本地开发 AI 改代码并写回报单，通过这个文件夹来回交接。</p>
@@ -3048,15 +3048,15 @@ figure.anim{background:var(--panel);padding:8px}
 </tr>
 <tr>
 <td>P-006A 渣古降下全场可投（提交 2696ab93541）。没人管的一次降下打掉满血塔 420 血、落地后存活 4.4 秒；100 局拆塔数 36→44，卡死报告 16→2</td>
-<td>回报全文待 Aoi 上传</td>
+<td><a href="#report-006a">REPORT-006A</a></td>
 </tr>
 <tr>
 <td>P-012 表现验收场景、调试指令、三项表现排查、尺寸修正（提交 5200f1e7059）。画面待 Aoi 在 Unity 里点五个场景确认</td>
-<td>回报全文待 Aoi 上传</td>
+<td><a href="#report-012">REPORT-012</a></td>
 </tr>
 <tr>
 <td>P-006B 血条定位标签（提交 c82248242d1）。画面待 Aoi 确认</td>
-<td>回报全文待 Aoi 上传</td>
+<td><a href="#report-006b">REPORT-006B</a></td>
 </tr>
 <tr>
 <td>P-013R 录像工具（整局 / 精彩片段 / 分段 / 事件索引 / 截图）。回报单未收到，交付物已收到并看过</td>
@@ -3476,6 +3476,15 @@ figure.anim{background:var(--panel);padding:8px}
 4. <strong>“双方都先站好”的跑法</strong>：选 A，加，见 <a href="#task-011">TASK-011</a>。<br />
 - 观察项（先不动数值）：能天使没有机体克制（靠 TASK-008 和后续小队卡来补）；夏亚渣古正面偏弱（等有塔的数据）；粒子耗尽只有约五分之一的 TRANS-AM 能撑到（能天使多数在 TRANS-AM 里被集火打死，属正常）。<br />
 - 编号提醒：REPORT-004/005 里说的“TASK-006 高达双武装、TASK-007 卫星炮”是旧编号。现在高达双武装是 <strong>TASK-007</strong>，卫星炮是 <strong>TASK-009</strong>，TASK-006 是渣古全场可投 + 定位标签。</p>
+<h2>策划端对 REPORT-006A / 012 / 006B 问题的答复（2026-11-16）</h2>
+<p>三份回报已存档，没有和策划案不一致的地方。</p>
+<ol>
+<li><strong>自由的展开动作用哪个（REPORT-012）</strong>：选 A。先保持 1 技能动作，等 Aoi 在「表现验收/全弹发射」里看过再定。判断标准：展开那 0.6 秒里能看出“自由停下、张开翅膀/武器”就不换；看着像抽搐或和开火连成一片，就换 StarPrepare（0.77 秒，接近原速）。ChangeAB 只有 0.40 秒，太短，不考虑。扇形提示保留。</li>
+<li><strong>定位标签要不要换正式职业图标（REPORT-006B）</strong>：选 A，而且定为<strong>不借</strong>。继续用文字色块。原因：正式的 6 种职业和对决的 9 个定位对不上，硬借会让玩家把“突击”职业和“突击”定位弄混；两个汉字在 IP 机体上比图标更直接。以后要图标，单独画一套对决用的。</li>
+<li><strong>高度修正系数（REPORT-012）</strong>：同意按日志标定。Aoi 进一局后把日志里“显示尺寸”那几行贴回来，误差超过 0.05 的再调。</li>
+<li><strong>AI 偷塔门槛（REPORT-006A）</strong>：能量 ≥9 才扔渣古偏保守，但先不动，放到 P-014A 一起改（偷塔门槛降到能量 ≥6，且对方手里刚用掉战术卡时优先扔）。已写进 TASK-014。</li>
+<li><strong>满血也显示血条（REPORT-006B）</strong>：同意。CR 里满血不显示血条，但这里标签挂在血条上，定位标签更重要。P-012B 做血条错开时一起看挤不挤。</li>
+</ol>
 <h2>策划端看种子 1 录像的结论（2026-11-16）</h2>
 <p>来源：<code>GundamCR_Exchange/recordings/seed1/</code> 的整局、精彩片段、日志、截图。</p>
 <ol>
@@ -3489,7 +3498,8 @@ figure.anim{background:var(--panel);padding:8px}
 <h2>等 Aoi 做的事</h2>
 <ul>
 <li>Unity 重新编译后，打开「工具/MS战线对决/表现验收」把五个场景各点一次；进一局看血条上的定位标签和新尺寸。</li>
-<li>把 REPORT-006A、REPORT-012、REPORT-006B 上传到 <code>GundamCR_Exchange/reports/</code>（本地 AI 那台机器同步不了云端硬盘）。</li>
+<li>看完后告诉策划端：自由展开动作看不看得出来；定位标签在竖屏下看不看得清；能天使粒子耗尽变不变暗。再把对局日志里六台机体“显示尺寸”那几行贴回来。</li>
+<li>~~上传 REPORT-006A、REPORT-012、REPORT-006B~~：2026-11-16 已贴回并存档。</li>
 <li>
 <p>清理四个空分支：<code>feature/frontline-duel-p006a</code>、<code>-p007</code>、<code>-p012</code>、<code>-p008a</code>（可以让本地 AI 删）。</p>
 </li>
@@ -4665,7 +4675,7 @@ figure.anim{background:var(--panel);padding:8px}
 <ol>
 <li><strong>选路</strong>：开局随机选主攻路。防守时在对方进攻的那一路出牌；进攻时如果一路僵持（桥上双方单位数都 ≥2），有一定概率换另一路开新战线。</li>
 <li><strong>攒一波</strong>：能量 ≥8 时，在己方塔后先放前排（高达），等它走到桥头再跟后排（自由 / 高达X）。不要能量一够就单张往桥上扔。</li>
-<li><strong>渣古降下</strong>：全场可投之后（TASK-006），进攻时投到对方血量较低的侧塔下，最好是对方刚花掉大量能量的时候。</li>
+<li><strong>渣古降下</strong>：全场可投之后（TASK-006），进攻时投到对方血量较低的侧塔下，最好是对方刚花掉大量能量的时候。现在的门槛是能量 ≥9（双倍时 ≥7）才偷塔，偏保守（REPORT-006A：每局降下约 5.9 次，只有 18% 扔到对方塔下）。改为能量 ≥6 就可以偷塔，对方刚用掉战术卡时优先扔。</li>
 <li><strong>战术卡</strong>：飞弹齐射优先打小队；米加粒子炮击优先打 2 台以上挤在一起的机体，或给残血塔补刀。</li>
 <li><strong>难度开关</strong>：保留一个“旧 AI”选项，批量对局可以指定双方用哪种 AI，方便对比。</li>
 </ol>
@@ -7229,7 +7239,610 @@ figure.anim{background:var(--panel);padding:8px}
 <li>也看一下 REPORT-004 里自由的部分。</li>
 <li>没问题就和 TASK-004 一起提交。</li>
 <li>策划端定了第 1 项之后，再决定先做 TASK-006（高达双武装）还是数值调整单。</li>
-</ul><div class="pager"><a href="#report-004">← REPORT-004 自由全弹发射</a><a href="#tpl-task">任务单模板 →</a></div></article><article id="doc-tpl-task"><h1>TASK-xxx 标题</h1>
+</ul><div class="pager"><a href="#report-004">← REPORT-004 自由全弹发射</a><a href="#report-006a">REPORT-006A 渣古全场可投 →</a></div></article><article id="doc-report-006a"><h1>REPORT-006A 对应 P-006A（TASK-006 第 1 节）</h1>
+<ul>
+<li>工位：机制 A（单 Agent 串行队列第 1 个包）</li>
+<li>分支：<code>feature/frontline-duel</code>，单独一个提交，提交说明以 P-006A 开头（提交号见 Aoi 转交时的说明）</li>
+<li>日期：2026-11-16</li>
+<li>结果：完成。逻辑已离线验证。拖卡时的全场部署显示、对方半场 1.8s 的飞行画面要 Aoi 在 Unity 里看</li>
+</ul>
+<h2>做了什么</h2>
+<ul>
+<li><strong>全场可投</strong>：渣古降下改为和战术卡一样按落点投放，全场都能投。TASK-003 的“只能投己方半场”撤销。普通机体仍然只能投己方半场。</li>
+<li><strong>飞行时间按落点分</strong>：</li>
+<li>卡表加了“落在对方半场时的飞行时间”字段。</li>
+<li>渣古降下：落在己方半场 1.2s，越过河道中线落在对方半场 1.8s。</li>
+<li>飞行中的降下记下这次的飞行总时长，表现层按它算降下舱的飞行进度。</li>
+<li><strong>保留不变</strong>：落地冲击（半径 1.6、伤害 60、只打机体、一张卡结算一次）、起身 0.5s、预警圈半径 1.6。预警圈本来就是双方都能看到。</li>
+<li><strong>AI</strong>：</li>
+<li>进攻：恢复“投到对方血量比例最低的侧塔脚下”。落点在塔边缘朝河一侧 0.9 米。这是 TASK-003 删掉的那段，原样恢复。</li>
+<li>防守：降下仍可以投在己方半场拦截，和普通机体用同一个防守点。</li>
+<li>应对对方降下的逻辑不变：落点靠近己方建筑时，用战术卡卡落地时机，或者在后方出清群机体。</li>
+<li><strong>拖卡时的部署区域</strong>：降下又按战术卡处理，拖卡时不再画己方半场的部署区。预览圈画的是落地冲击范围。这部分沿用现有逻辑，没有改代码。</li>
+<li><strong>文案</strong>：卡牌详情改为“全场可投，能直接扔到对方塔下。落在己方半场飞行 1.2 秒、对方半场 1.8 秒……”。打法提示改为“直接扔到对方侧塔脚下偷塔，或投在己方半场拦截小队”。</li>
+</ul>
+<p>改动的文件：</p>
+<ul>
+<li>卡表 <code>DuelDefs.cs</code>、<code>DuelUnit.cs</code>（飞行中降下的时长字段）、<code>DuelWorld.cs</code>（出牌时按落点取飞行时间）。</li>
+<li><code>DuelAI.cs</code>：AI 属于工具工位的文件，但本单第 1 节要求改 AI，串行做时一并改了。</li>
+<li><code>DuelPresentation.cs</code>：一行，飞行进度改读这次的飞行时长。</li>
+<li><code>DuelCardInfo.cs</code>、<code>DuelText.cs</code>：文案。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[x] <strong>渣古降下能投到对方塔下；己方半场 1.2s、对方半场 1.8s 落地</strong>：</li>
+<li>对方侧塔脚下、对方半场、己方半场都判为可投。普通机体仍不能投到对方半场。</li>
+<li>双方各自投己方半场都是 1.2s，投对方半场都是 1.8s。</li>
+<li>投到对方塔脚下后实测 1.8s 落地。</li>
+<li>[x] <strong>对方塔下落地后，日志里能看到落地冲击和渣古攻击侧塔</strong>：有“降下落地 … 落地冲击 半径 1.6 伤害 60 命中 0 台”，之后是三台渣古“出手 … -&gt; E#4左塔”。</li>
+<li>[x] <strong>回报单里没有源码</strong></li>
+<li><strong>编译</strong>：改动的文件都用工程的程序集离线编译过，0 错误。Unity 还没刷新编译。</li>
+<li><strong>自检</strong>：TASK-002～005 的自检和本包新写的自检全部通过。TASK-003 自检里“不能投到对方塔下 / 对方半场”两项已按新规则改为“能投”。</li>
+</ul>
+<h2>和策划案不一致的地方</h2>
+<p>没有。</p>
+<h2>回报的信息</h2>
+<h3>1. 三台渣古投到满血侧塔下、没人管</h3>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>实测</th>
+<th>预期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打掉塔的血</td>
+<td>420（侧塔 2400 的 17.5%）</td>
+<td>400 多</td>
+</tr>
+<tr>
+<td>落地后被塔点完</td>
+<td>4.4 秒</td>
+<td>约 5 秒</td>
+</tr>
+<tr>
+<td>出牌到全灭</td>
+<td>6.2 秒（含 1.8s 飞行）</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>条件：塔正常开火，主塔没被激活，没有其他机体。</p>
+<h3>2. 批量对局 100 局新基线</h3>
+<p>种子 1–100，双方 AI，当前 8 张卡：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项</th>
+<th>REPORT-002（TASK-002 后）</th>
+<th>REPORT-003（只投己方半场）</th>
+<th>REPORT-005（TASK-004/005 后）</th>
+<th>本包后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进入加时</td>
+<td>63 局</td>
+<td>85 局</td>
+<td>79 局</td>
+<td>81 局</td>
+</tr>
+<tr>
+<td>渣古降下每局出牌（我方 / 敌方）</td>
+<td>约 2.5</td>
+<td>约 5.6</td>
+<td>5.46 / 5.54</td>
+<td>5.89 / 5.92</td>
+</tr>
+<tr>
+<td>平均对局时长</td>
+<td>211.6s</td>
+<td>228.8s</td>
+<td>223.1s</td>
+<td>222.0s</td>
+</tr>
+<tr>
+<td>疑似卡死报告</td>
+<td>6 次</td>
+<td>14 次</td>
+<td>16 次</td>
+<td>2 次</td>
+</tr>
+<tr>
+<td>胜率（我方 / 敌方 / 平）</td>
+<td>52 / 48 / 0</td>
+<td>44 / 52 / 4</td>
+<td>54 / 45 / 1</td>
+<td>49 / 51 / 0</td>
+</tr>
+</tbody>
+</table></div>
+<p>降下投在哪里、打塔多少：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>项（100 局合计）</th>
+<th>REPORT-005</th>
+<th>本包后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>降下次数</td>
+<td>1100</td>
+<td>1181</td>
+</tr>
+<tr>
+<td>落在对方塔脚下</td>
+<td>0</td>
+<td>211（18%）</td>
+</tr>
+<tr>
+<td>落在己方半场</td>
+<td>1100</td>
+<td>970</td>
+</tr>
+<tr>
+<td>渣古攻击塔的出手次数</td>
+<td>32</td>
+<td>522</td>
+</tr>
+<tr>
+<td>击破塔总数</td>
+<td>36</td>
+<td>44</td>
+</tr>
+<tr>
+<td>有击破的局</td>
+<td>36</td>
+<td>42</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>偷塔有效果，但加时没降下来</strong>：渣古打塔次数多了十几倍，击破的塔也多了，但加时局数没变。原因是 AI 只在能量 ≥9（双倍能量时 ≥7）进攻时才偷塔，每局次数不多。对方 AI 也会用战术卡卡落地时机。</li>
+<li><strong>加时仍然偏多</strong>：要等卫星炮（P-009）和 AI 两路进攻（P-014A）。</li>
+<li><strong>卡死报告从 16 次降到 2 次</strong>：推测是因为一部分降下直接落到对方塔下，不再从桥上走，桥上的拥堵少了。没有逐局核对原因。剩下 2 次还是桥中线上的老问题，留给 P-010。</li>
+</ul>
+<h2>问题（需要策划端回答）</h2>
+<p>没有影响下一个包的问题。</p>
+<p>另外有一件事请 Aoi 知道：主工作目录里有另一份没提交的改动，是录像工具（P-013）的。</p>
+<ul>
+<li>涉及的文件：<code>DuelBattleLog.cs</code>、<code>DuelGame.cs</code>、<code>GameEditor.asmdef</code>、新文件 <code>DuelRecordSession.cs</code> 和 <code>FrontlineDuelRecordMenu.cs</code>、REPORT-013 和 REPORT-013b。</li>
+<li>本包没碰这些文件，也没把它们带进提交。</li>
+<li>离线编译时把它们一起编了，0 错误。</li>
+<li>轮到 P-013R 时，会在这份改动的基础上继续做。</li>
+</ul>
+<h2>需要 Aoi 在 Unity 里看的</h2>
+<ul>
+<li>拖渣古降下时，不再显示己方半场的部署区，可以拖到对方塔下。</li>
+<li>投到对方半场时，降下舱飞得明显比己方半场慢（1.8s 对 1.2s），预警圈全程可见。</li>
+<li>敌方 AI 偶尔会把渣古扔到我方侧塔脚下。</li>
+</ul><div class="pager"><a href="#report-005">← REPORT-005 数值与对拼</a><a href="#report-012">REPORT-012 表现验收场景 →</a></div></article><article id="doc-report-012"><h1>REPORT-012 对应 P-012（TASK-012 全部）</h1>
+<ul>
+<li>工位：表现（单 Agent 串行队列第 2 个包）</li>
+<li>分支：<code>feature/frontline-duel</code>，单独一个提交，提交说明以 P-012 开头</li>
+<li>日期：2026-11-16</li>
+<li>结果：完成。5 个场景的逻辑都已离线跑通；画面要 Aoi 照“验收场景入口清单”点一遍</li>
+</ul>
+<h2>三项“没看到”的原因</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>表现</th>
+<th>原因</th>
+<th>处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自由全弹发射的展开动作</td>
+<td><strong>触发了，但不明显</strong></td>
+<td>改用短一些的动作，并加扇形范围提示，见下文</td>
+</tr>
+<tr>
+<td>“冲锋中断”飘字</td>
+<td><strong>没触发</strong></td>
+<td>不用改，用验收场景确认能出</td>
+</tr>
+<tr>
+<td>能天使粒子耗尽变灰</td>
+<td><strong>有 bug，而且触发少</strong></td>
+<td>修了压暗，并加了三种一定看得出的提示</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>展开动作</strong>：</li>
+<li>借的 EX 技能动作原始时长 4.07 秒，前摇只给 1.0 秒（0.6 秒前摇加 0.4 秒余量），所以按 4.07 倍速播放，几乎是一闪。</li>
+<li>动作片段有加载，不是没播。</li>
+<li><strong>冲锋中断</strong>：</li>
+<li>只有全弹发射正好瘫痪冲锋中的夏亚渣古时才会出。100 局约 22 次，单局常常一次都没有。</li>
+<li>验收场景里逻辑上确认会出（日志是“冲锋 打断”且当时处于被控制状态，正是飘字的条件）。</li>
+<li>飘字代码没改。</li>
+<li><strong>粒子耗尽变灰</strong>：</li>
+<li><strong>压暗的 bug</strong>：机体用的角色着色器的颜色属性叫 <code>_MainColor</code>。原来只改 <code>_BaseColor</code> 和 <code>_Color</code>，这两个属性它没有，所以模型一点没变暗，只剩脚下一圈灰光环。已核对能天使的两个材质。</li>
+<li><strong>触发少</strong>：粒子耗尽要能天使活过 TRANS-AM，100 局里只有约五分之一做得到。</li>
+</ul>
+<h2>做了什么</h2>
+<h3>1. 验收场景（编辑器菜单）</h3>
+<ul>
+<li><strong>入口</strong>：「工具/MS战线对决/表现验收/」下面每种表现一个菜单项。</li>
+<li>没在 Play 时，点一下会新建空场景直接进入。</li>
+<li>已在 Play 时，点一下直接切换并重播。</li>
+<li><strong>场景环境</strong>：空场地，塔不开火，双方都不出 AI，跳过开场倒计时。计时不走、不判胜负，可以一直看。</li>
+<li><strong>只摆放、不改规则</strong>：场景只负责摆单位、在合适的时刻让技能冷却转好或补一次伤害。技能、状态、伤害都走正常结算，看到的就是正式对局里的表现。</li>
+<li><strong>重播</strong>：「重播当前场景」，快捷键 Ctrl+Shift+R。</li>
+<li><strong>回到正常对局</strong>：「回到正常对局」。</li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>场景</th>
+<th>怎么摆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全弹发射</td>
+<td>自由站在左路己方半场。3 台渣古落在对方半场后走过来，三台都进入 5.5 米时全弹发射冷却转好。实测一发打中 3 台</td>
+</tr>
+<tr>
+<td>冲锋中断</td>
+<td>自由站好。夏亚渣古从对方半场冲过来，冲锋中进入 6.5 米时全弹发射冷却转好</td>
+</tr>
+<tr>
+<td>TRANS-AM 全程</td>
+<td>能天使打一台不还手、不会死的靶子（高达X，血量一直补满）。部署完血量设到 51%，再受一次伤</td>
+</tr>
+<tr>
+<td>盾破</td>
+<td>满盾高达站好，1.6 秒后吃一发米加粒子炮击</td>
+</tr>
+<tr>
+<td>降下</td>
+<td>靶子（高达X）站在己方半场，渣古降下落在它旁边 1 米</td>
+</tr>
+</tbody>
+</table></div>
+<h3>2. 通用调试指令</h3>
+<ul>
+<li><strong>入口</strong>：</li>
+<li>游戏内：GM 面板输入。</li>
+<li>编辑器空场景：没有 GM 面板，用菜单「表现验收/调试指令…」打开一个小窗口输入。</li>
+<li><strong>单位怎么写</strong>：用对局日志里的编号，<code>7</code> 或 <code>P#7</code> 都行；<code>P</code> / <code>E</code> 表示这一方所有机体。</li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>duelhp 单位 百分比</code></td>
+<td>设置血量百分比。不触发受击事件，所以要再受一次伤，TRANS-AM 这类血量触发才会判</td>
+</tr>
+<tr>
+<td><code>duelcd 单位</code></td>
+<td>技能冷却清零（施放中的不动）</td>
+</tr>
+<tr>
+<td><code>duelbuff 单位 状态名 秒</code></td>
+<td>挂状态：冲锋 / TRANS-AM / 粒子耗尽 / 瘫痪 / 击晕 / 受伤加深。秒数填 0 用状态默认时长</td>
+</tr>
+<tr>
+<td><code>dueldmg 单位 伤害</code></td>
+<td>造成一次伤害，走正常结算（盾、受伤倍率、血量触发）。任务单没要求，验收 TRANS-AM 时需要，一起加了</td>
+</tr>
+<tr>
+<td><code>duelshow 场景名</code></td>
+<td>切换验收场景；<code>duelshow off</code> 回到正常对局</td>
+</tr>
+</tbody>
+</table></div>
+<h3>3. 改到看得出来</h3>
+<ul>
+<li><strong>自由展开</strong>：</li>
+<li><strong>扇形范围提示</strong>：前摇期间地面画出半透明蓝色扇形（100°、6 米），朝向和实际判定一致。双方都看得到，生效或被打断时消失。无论动作播不播都有。</li>
+<li><strong>动作换短的</strong>：自由的技能动作改为优先用 1 技能动作（原始 2.23 秒，约 2.2 倍速），没有再退到 EX 动作。还有更短的“StarPrepare”（0.77 秒）和“ChangeAB”（0.40 秒），名字看起来是准备动作和形态切换，但没在 Unity 里看过是什么样，没敢换，见“问题”。</li>
+<li><strong>粒子耗尽</strong>：</li>
+<li>压暗加上 <code>_MainColor</code>。</li>
+<li>脚下灰光环加粗到 1.5 倍，颜色更深。</li>
+<li>开始时飘字“粒子耗尽”。</li>
+<li><strong>走路动作按当前移速播放</strong>：粒子耗尽时脚步慢到七成。TRANS-AM 和冲锋时会相应变快，算顺带的效果。</li>
+<li><strong>飘字规范</strong>：三种状态飘字（瘫痪、冲锋中断、粒子耗尽）同一字号，停留 0.9 秒，敌我双方都显示。</li>
+</ul>
+<h3>4. 显示尺寸</h3>
+<ul>
+<li><strong>原因</strong>：模型出场时按包围盒缩放到目标高度，但那一刻还没摆待机姿势。摆好姿势后（举起武器、天线、翅膀）包围盒变高。日志里的“显示尺寸”是落地后量的，所以偏高。能天使最明显，可能是 GN 剑举过头。</li>
+<li><strong>改法</strong>：</li>
+<li>每台机体加一个“模型高度修正”系数，只乘在模型上。血条位置、光圈、特效大小仍按目标高度。</li>
+<li>系数 = 目标高度 ÷ 种子 1 录像日志里的实测高度。</li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>机体</th>
+<th>目标</th>
+<th>日志实测</th>
+<th>修正系数</th>
+<th>预期改后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高达</td>
+<td>2.50</td>
+<td>2.50</td>
+<td>1</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>夏亚专用渣古Ⅱ</td>
+<td>2.43</td>
+<td>2.61</td>
+<td>0.931</td>
+<td>2.43</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td>2.43</td>
+<td>2.49</td>
+<td>0.976</td>
+<td>2.43</td>
+</tr>
+<tr>
+<td>能天使高达</td>
+<td>2.54</td>
+<td>3.04</td>
+<td>0.836</td>
+<td>2.54</td>
+</tr>
+<tr>
+<td>自由高达</td>
+<td>2.50</td>
+<td>2.54</td>
+<td>0.984</td>
+<td>2.50</td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>2.38</td>
+<td>2.41</td>
+<td>0.988</td>
+<td>2.38</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>实测高度跟落地那一刻的姿势有关，这次是按一份日志标定的。如果 Aoi 进局后日志里还差超过 0.05，把新的实测值告诉我，改系数就行。</li>
+<li>没有做“找头部骨骼对齐头顶”：各机体骨骼命名不统一，而且我看不到画面，没法确认找对了骨骼。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[x] <strong>5 个验收场景都能一键进入、重播</strong>：逻辑上逐个跑过。</li>
+<li>全弹发射一发打中 3 台，3 台都被瘫痪。</li>
+<li>冲锋被瘫痪打断。</li>
+<li>TRANS-AM 6.00 秒后接粒子耗尽，4.02 秒后结束。</li>
+<li>盾破后盾 0、本体 760。</li>
+<li>降下的落地冲击打中靶子。</li>
+<li>塔满血，敌方能量没动（AI 没出牌）。</li>
+<li>菜单本身要在 Unity 里点。</li>
+<li>[x] <strong>三条通用 GM 指令可用</strong>：设血量、冷却清零、挂状态都验过。另加了造成伤害、切场景。</li>
+<li>[x] <strong>自由展开时有扇形范围提示</strong>：代码完成，画面要看。</li>
+<li>[ ] <strong>能天使粒子耗尽在画面上一眼能看出来</strong>：需要 Aoi 在 Unity 里看。</li>
+<li>[ ] <strong>6 台机体日志里的显示高度和目标误差不超过 0.05</strong>：按日志标定，预期满足，需要 Aoi 进一局看日志确认。</li>
+<li>[x] <strong>回报单里没有源码</strong></li>
+<li><strong>编译</strong>：改动的文件都用工程的程序集离线编译过，0 错误，包括编辑器菜单。GM 管理器单独编译时有 3 个和本包无关的老错误（分部类单独编译缺类型），不是本包引入的。</li>
+<li><strong>自检</strong>：TASK-002～006A 的自检全部通过，100 局正常对局和 P-006A 的结果逐位一致。本包不改战斗逻辑。</li>
+</ul>
+<h2>和策划案不一致的地方</h2>
+<p>没有。</p>
+<h2>问题（需要策划端回答）</h2>
+<ol>
+<li><strong>自由的展开动作用哪个？</strong> 现在是 1 技能动作，约 2.2 倍速。</li>
+<li>选项 A（推荐）：Aoi 用「表现验收/全弹发射」看一眼，再决定是否换成 0.77 秒的 StarPrepare 或 0.40 秒的 ChangeAB。换动作只改一行，不影响逻辑。</li>
+<li>选项 B：维持现状，靠扇形提示表达“正在展开”。</li>
+</ol>
+<h2>验收场景入口清单（给 Aoi 照着点）</h2>
+<p>菜单「工具/MS战线对决/表现验收/」：</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>菜单</th>
+<th>应该看到</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全弹发射</td>
+<td>自由停住，身前出现蓝色扇形 → 3 道光束 → 3 台渣古头顶出现瘫痪图标和“瘫痪”飘字</td>
+</tr>
+<tr>
+<td>冲锋中断</td>
+<td>夏亚渣古头顶出现冲锋图标、脚下黄光环 → 自由身前出现扇形 → 夏亚渣古被打中，飘“冲锋中断”，冲锋图标和黄光环消失</td>
+</tr>
+<tr>
+<td>TRANS-AM 全程</td>
+<td>能天使变红（TRANS-AM 图标、红光环）6 秒 → 飘“粒子耗尽”，模型变暗、脚下粗灰光环、属性降低图标、脚步变慢 4 秒 → 恢复</td>
+</tr>
+<tr>
+<td>盾破</td>
+<td>高达头上落下米加粒子炮击 → 盾条归零、破盾特效，血条掉一截</td>
+</tr>
+<tr>
+<td>降下</td>
+<td>预警圈 → 降下舱落地、靶子掉血 → 3 台渣古起身</td>
+</tr>
+<tr>
+<td>重播当前场景（Ctrl+Shift+R）</td>
+<td>当前场景从头再来</td>
+</tr>
+<tr>
+<td>回到正常对局</td>
+<td>下一局恢复成正常对战</td>
+</tr>
+<tr>
+<td>调试指令…</td>
+<td>打开输入窗口，可输入 duelhp / duelcd / duelbuff / dueldmg / duelshow</td>
+</tr>
+</tbody>
+</table></div>
+<p>另外请顺便看一下对局日志里每台机体的“显示尺寸”那一行，实测高度应在目标 ±0.05 内。</p><div class="pager"><a href="#report-006a">← REPORT-006A 渣古全场可投</a><a href="#report-006b">REPORT-006B 定位标签 →</a></div></article><article id="doc-report-006b"><h1>REPORT-006B 对应 P-006B（TASK-006 第 2 节）</h1>
+<ul>
+<li>工位：表现（单 Agent 串行队列。按 Aoi 的指示跳过了 P-013R，见文末）</li>
+<li>分支：<code>feature/frontline-duel</code>，单独一个提交，提交说明以 P-006B 开头</li>
+<li>日期：2026-11-16</li>
+<li>结果：完成。画面（字号、遮挡、竖屏下看不看得清）要 Aoi 在 Unity 里看</li>
+</ul>
+<h2>做了什么</h2>
+<ul>
+<li><strong>卡表加定位字段</strong>：</li>
+<li>定位是一个枚举，9 个值按策划端的词表：盾卫、突击、小队、刺客、清群、攻城、射手、狙击、支援。</li>
+<li>6 张机体卡已填好，战术卡不填。表现层只读这个字段，标签文字和颜色没有写死在卡上。</li>
+<li><strong>血条上的标签</strong>：每台机体血条上方一行，最左边是定位标签，状态图标依次排在它右边，整行居中，两者不会重叠。</li>
+<li>样式：圆角色块，46×24（按 1080 宽的参考分辨率），白色粗体两个字，19 号字，带黑描边。</li>
+<li>颜色按策划端建议：</li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>卡</th>
+<th>标签</th>
+<th>颜色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高达</td>
+<td>盾卫</td>
+<td>蓝</td>
+</tr>
+<tr>
+<td>夏亚专用渣古Ⅱ</td>
+<td>突击</td>
+<td>红</td>
+</tr>
+<tr>
+<td>渣古降下（每台）</td>
+<td>小队</td>
+<td>绿</td>
+</tr>
+<tr>
+<td>能天使高达</td>
+<td>刺客</td>
+<td>紫</td>
+</tr>
+<tr>
+<td>自由高达</td>
+<td>清群</td>
+<td>青</td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>攻城</td>
+<td>橙</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>另外三个先配好：射手 黄、狙击 粉、支援 灰。</li>
+<li><strong>双方都显示</strong>：机体现在一直显示血条，满血也显示，因为标签挂在血条上。原来满血、没盾、没状态的机体不显示血条。</li>
+<li><strong>小队只显示一次</strong>：选了“只在一台头顶显示”，没选“缩小字号”。</li>
+<li>同一张卡一起出场的几台记一个小队编号，标签只显示在队里编号最小、还活着的那一台头上。</li>
+<li>那一台阵亡后，标签移到下一台。</li>
+<li>小队编号只给表现层用，不影响战斗逻辑。</li>
+<li><strong>卡面文字和标签同一个词</strong>：卡面定位文字改成“标签·特点”。</li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>卡</th>
+<th>改动前</th>
+<th>现在</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高达</td>
+<td>盾卫·盾值先扣</td>
+<td>盾卫·盾值先扣（不变）</td>
+</tr>
+<tr>
+<td>夏亚专用渣古Ⅱ</td>
+<td>刺客·冲锋首击×2</td>
+<td>突击·冲锋首击×2</td>
+</tr>
+<tr>
+<td>渣古降下</td>
+<td>空投·近战×3</td>
+<td>小队·空投近战×3</td>
+</tr>
+<tr>
+<td>能天使高达</td>
+<td>单挑·半血TRANS-AM</td>
+<td>刺客·半血TRANS-AM</td>
+</tr>
+<tr>
+<td>自由高达</td>
+<td>清群 · 全弹发射</td>
+<td>清群·全弹发射</td>
+</tr>
+<tr>
+<td>高达X</td>
+<td>攻城·只打建筑</td>
+<td>攻城·只打建筑（不变）</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>图标</strong>：</li>
+<li>正式游戏的职业图标在 <code>_UIArt/Config/CareerIcon/</code>（Battle_CareerIcon_01～，按职业编号）。</li>
+<li>这次没用，先只显示文字加色块。原因有两个：正式的 6 种职业（强袭 / 突击 / 炮击 / 狙击 / 支援 / 守护）和我们的 9 个定位不是一一对应；而且编号和职业的对应关系我没法在画面上确认。见“问题”。</li>
+</ul>
+<p>改动的文件：</p>
+<ul>
+<li>卡表 <code>DuelDefs.cs</code>：定位枚举和字段。</li>
+<li><code>DuelText.cs</code>：标签文字、卡面文字。</li>
+<li><code>DuelHud.cs</code>：标签显示。</li>
+<li><code>DuelUnit.cs</code>、<code>DuelWorld.cs</code>：小队编号。只记录、不参与战斗。</li>
+</ul>
+<h2>验收</h2>
+<ul>
+<li>[ ] <strong>6 张机体卡在战场上都有定位标签，和卡面文字一致</strong>：</li>
+<li>逻辑上已核对，6 张卡的标签和卡面文字第一个词都一致，战术卡没有定位。</li>
+<li>3 台渣古同一个小队编号，单台机体没有。</li>
+<li>画面需要 Aoi 在 Unity 里看。</li>
+<li>[x] <strong>回报单里没有源码</strong></li>
+<li><strong>编译</strong>：改动的文件都用工程的程序集离线编译过，0 错误。</li>
+<li><strong>自检</strong>：之前各包的自检全部通过。100 局正常对局的结果和 P-006A 逐位一致，本包不改战斗逻辑。</li>
+</ul>
+<h2>和策划案不一致的地方</h2>
+<p>没有。</p>
+<h2>回报的信息</h2>
+<ul>
+<li><strong>手机竖屏下看不看得清</strong>：我看不到画面，给不出结论。按参考分辨率算，色块宽约占屏宽 4.3%，字高约 19 像素（1080 宽时）。如果太小，改字号和色块大小只是两个常数。</li>
+<li><strong>会不会遮挡血条</strong>：标签和状态图标在血条上方一行，不压在血条上。有盾值的高达，这一行在盾条再上面一点。</li>
+</ul>
+<h2>问题（需要策划端回答）</h2>
+<ol>
+<li><strong>要不要换成正式的职业图标？</strong></li>
+<li>选项 A（推荐）：先用文字色块。等策划端给出“9 个定位各借哪个职业图标”的对照（或者不借），再改。改的时候在文字左边加一个小图标即可。</li>
+<li>选项 B：只给能对上的几个（如盾卫 = 守护、狙击 = 狙击、支援 = 支援）配图标，其余仍是文字。需要 Aoi 确认图标编号对应哪个职业。</li>
+</ol>
+<h2>需要 Aoi 在 Unity 里看的</h2>
+<ul>
+<li>每台机体头顶一行：彩色两个字的定位标签，右边是状态图标（冲锋、TRANS-AM、瘫痪等）。</li>
+<li>3 台渣古只有一台头上有“小队”，打死它之后移到另一台。</li>
+<li>竖屏下标签是否看得清、是否太挤。最方便的入口是「表现验收/全弹发射」：自由和 3 台渣古都在，渣古被瘫痪后图标会排在标签右边。</li>
+</ul>
+<h2>关于 P-013R</h2>
+<p>队列第 3 个是 P-013R（录像工具补充）。Aoi 说过这个包不用我管，所以跳过了，直接做了第 4 个 P-006B。主目录里另一份录像工具的改动仍未提交，本包没有碰。</p><div class="pager"><a href="#report-012">← REPORT-012 表现验收场景</a><a href="#tpl-task">任务单模板 →</a></div></article><article id="doc-tpl-task"><h1>TASK-xxx 标题</h1>
 <ul>
 <li>状态：待开发</li>
 <li>依据：（列出要读的策划案和章节）</li>
@@ -7254,7 +7867,7 @@ figure.anim{background:var(--panel);padding:8px}
 <h2>需要回报的信息</h2>
 <ul>
 <li>除验收结果外，策划端还想知道的事（数值现状、实现方式选择等）。</li>
-</ul><div class="pager"><a href="#report-005">← REPORT-005 数值与对拼</a><a href="#tpl-report">回报单模板 →</a></div></article><article id="doc-tpl-report"><h1>REPORT-xxx 对应 TASK-xxx</h1>
+</ul><div class="pager"><a href="#report-006b">← REPORT-006B 定位标签</a><a href="#tpl-report">回报单模板 →</a></div></article><article id="doc-tpl-report"><h1>REPORT-xxx 对应 TASK-xxx</h1>
 <ul>
 <li>包 / 工位：（如 P-006A / 机制 A）</li>
 <li>日期：</li>
@@ -9136,7 +9749,7 @@ figure.anim{background:var(--panel);padding:8px}
 <li>待确认：现有 高达X 模型是否带可动的卫星炮和反射板。</li>
 </ul><div class="pager"><a href="#freedom">← 自由</a><span></span></div></article></main></div><script>
 (function(){
-  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'dispatch', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'task-004', 'task-005', 'task-006', 'task-007', 'task-008', 'task-009', 'task-010', 'task-011', 'task-012', 'task-013', 'task-014', 'report-001', 'report-002', 'report-003', 'report-004', 'report-005', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
+  var ids=['overview', 'ip-plan', 'counter', 'pool', 'deck', 'deck-spec', 'anim-spec', 'dispatch', 'workflow', 'agents', 'status', 'task-001', 'task-002', 'task-003', 'task-004', 'task-005', 'task-006', 'task-007', 'task-008', 'task-009', 'task-010', 'task-011', 'task-012', 'task-013', 'task-014', 'report-001', 'report-002', 'report-003', 'report-004', 'report-005', 'report-006a', 'report-012', 'report-006b', 'tpl-task', 'tpl-report', 'gundam', 'char', 'zaku', 'exia', 'freedom', 'dx'];
   function show(){
     var h=(location.hash||'').slice(1); if(ids.indexOf(h)<0) h=ids[0];
     ids.forEach(function(i){
