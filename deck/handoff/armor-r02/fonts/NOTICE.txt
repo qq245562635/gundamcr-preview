@@ -1,0 +1,4 @@
+© 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'.
+
+Subset derived from Noto Sans SC, renamed Armor UI Review. Font outlines remain under SIL OFL 1.1.
+Source: https://github.com/notofonts/noto-cjk/tree/main/Sans

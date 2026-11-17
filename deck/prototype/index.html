@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="robots" content="noindex,nofollow">
+<title>选卡组界面原型</title>
+<style>
+@font-face{font-family:Armor;src:url(../handoff/armor-r02/fonts/NotoSansSC-ArmorSubset.ttf);font-weight:100 900;font-display:block}
+:root{--ink:#111E2B;--cyan:#2FD3E0;--gold:#FFD45C;--navy:#1e2a3a}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:Armor,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+#wrap{position:absolute;left:50%;top:0;transform-origin:top left}
+#stage{position:relative;width:830px;height:1896px;background:url(base_clean.png) 0 0/830px 1896px;overflow:hidden;user-select:none}
+.t{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-weight:700;line-height:1;pointer-events:none}
+.hit{position:absolute;cursor:pointer}
+.hit:active{filter:brightness(.9)}
+/* tabs */
+.tabsel{position:absolute;width:186px;height:82px;background:url(tab_selected.png) 0 0/100% 100%;top:208px;transition:left .2s}
+/* filter strip */
+#filters{position:absolute;left:32px;top:1149px;width:766px;height:56px;background:var(--navy);overflow-x:auto;overflow-y:hidden;display:flex;align-items:center;scrollbar-width:none}
+#filters::-webkit-scrollbar{display:none}
+.chip{flex:0 0 126px;height:50px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:24px;position:relative;cursor:pointer}
+.chip+.chip::before{content:"";position:absolute;left:0;top:13px;height:26px;border-left:1.5px solid #c9d3dd}
+.chip.on{background:url(filter_selected.png) 0 0/100% 100%}
+.chip.on::before,.chip.on+.chip::before{display:none}
+.chip i{display:inline-block;width:8px;height:22px;margin-right:8px;border-radius:2px}
+/* cards */
+.card{position:absolute;transition:left .28s cubic-bezier(.3,.7,.3,1),top .28s cubic-bezier(.3,.7,.3,1),width .28s,height .28s,opacity .2s,transform .12s;cursor:pointer;z-index:2}
+.card canvas{width:100%;height:100%;display:block}
+.card:active{transform:scale(.95);filter:brightness(.9)}
+.card.sel{transform:scale(1.08);z-index:6}
+.card.sel::after,.card.cand::after{content:"";position:absolute;inset:-5px;border:4px solid var(--cyan);border-radius:10px;box-shadow:0 0 14px var(--cyan);pointer-events:none}
+.card.cand{animation:wob .4s ease-in-out infinite alternate;z-index:5}
+.card.cand:nth-child(2n){animation-delay:-.2s}
+@keyframes wob{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+.card.cand::after{animation:breath 1s ease-in-out infinite alternate}
+@keyframes breath{from{opacity:.45}to{opacity:1}}
+.card.hide{opacity:0;pointer-events:none}
+/* bubble */
+#bubble{position:absolute;z-index:8;display:none;padding:8px;gap:8px;background:#e9e5dc;border:2px solid #8d96a0;border-radius:8px;box-shadow:0 6px 18px #0009}
+#bubble::after{content:"";position:absolute;left:var(--ax,50%);margin-left:-11px;border:11px solid transparent}
+#bubble.up::after{top:100%;border-top-color:#e9e5dc}
+#bubble.down::after{bottom:100%;border-bottom-color:#e9e5dc}
+.bb{flex:1;height:58px;border:0;font:700 26px Armor,sans-serif;cursor:pointer;border-radius:6px;padding:0 14px}
+.bb.use{background:url(../handoff/armor-r02/sprites/UI_FDDeck_Btn_Primary.png) 0 0/100% 100%;color:var(--ink)}
+.bb.info{background:linear-gradient(#3f7fe8,#1f4fb8);color:#fff;border:2px solid #9cc0ff}
+/* replace mode */
+#dim{position:absolute;left:0;top:1062px;width:830px;height:620px;background:#000a;z-index:7;display:none}
+#float{position:absolute;z-index:9;display:none;left:320px;top:1150px;width:190px;height:272px;animation:pop .2s ease-out}
+#float canvas{width:100%;height:100%;filter:drop-shadow(0 10px 18px #000c)}
+#hint{position:absolute;z-index:9;display:none;left:415px;top:1470px;transform:translateX(-50%);color:#fff;font-weight:700;font-size:32px;text-shadow:0 2px 6px #000}
+#fclose{position:absolute;right:-22px;top:-22px;width:56px;height:56px;border-radius:50%;background:#D9483B;border:3px solid #fff;color:#fff;font:700 34px/48px Armor,sans-serif;text-align:center;cursor:pointer}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+/* modal */
+.mask{position:absolute;inset:0;background:#000b;z-index:20;display:none;align-items:center;justify-content:center}
+.mask.on{display:flex}
+.panel{position:relative;background:url(../handoff/armor-r02/sprites/UI_FDDeck_ArmorTexture.png) repeat #e7e3d9;border:3px solid #9aa2ab;border-radius:6px;clip-path:polygon(24px 0,100% 0,100% calc(100% - 24px),calc(100% - 24px) 100%,0 100%,0 24px);box-shadow:0 20px 60px #000;animation:pop .2s ease-out;color:var(--ink)}
+.panel h2{margin:0;font-size:44px}
+.panel .sub{color:#4b5968;font-size:22px;margin-top:8px;font-weight:500}
+.x{position:absolute;right:22px;top:22px;width:64px;height:64px;background:#e9e5dc;border:2px solid #8d96a0;border-radius:8px;font:700 36px/58px Armor,sans-serif;text-align:center;cursor:pointer}
+.navy{background:url(../handoff/armor-r02/sprites/UI_FDDeck_NavyTexture.png) repeat #1d2a3b;color:#fff;border-radius:6px}
+.row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #ffffff22;font-size:24px}
+.row b{font-weight:700}.row span{color:#9fb3cc;font-weight:500}
+.btn{height:96px;border:0;font:700 36px Armor,sans-serif;cursor:pointer;border-radius:8px}
+.btn.y{background:url(../handoff/armor-r02/sprites/UI_FDDeck_Btn_Primary.png) 0 0/100% 100%;color:var(--ink)}
+.btn.w{background:url(../handoff/armor-r02/sprites/UI_FDDeck_Btn_Secondary.png) 0 0/100% 100%;color:var(--ink)}
+.rtag{display:inline-block;padding:4px 12px;border-radius:6px;color:#fff;font-size:22px;font-weight:700;margin-right:8px}
+/* toast */
+#toast{position:absolute;left:50%;top:1600px;transform:translateX(-50%);background:#111e2bee;color:#fff;border:2px solid var(--cyan);padding:16px 30px;border-radius:8px;font-size:26px;font-weight:700;z-index:30;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast.on{opacity:1}
+/* presets */
+.preset{padding:22px;margin-bottom:22px}
+.minis{display:flex;gap:8px;margin:16px 0}
+.minis canvas{width:76px;height:109px}
+/* side note on wide screens */
+#note{position:fixed;left:16px;top:16px;width:260px;color:#9fb3cc;font:14px/1.6 system-ui,sans-serif;display:none}
+#note b{color:#fff}
+@media (min-width:1100px){#note{display:block}}
+</style>
+</head>
+<body>
+<div id="note"><b>MS战线对决 · 选卡组界面原型</b><br>用 Codex r02 装甲素材在网页里组装，可以点：<br>· 点下面的卡 → 使用 / 信息<br>· 使用后点上面一张卡互换<br>· 切换卡组 1/2/3、推荐卡组、重置、筛选、排序<br>换卡会存在本机浏览器里。<br>机体图是占位图，不是正式立绘。<br><br>需求：DesignDocs/30_选卡组界面_v1.0.md</div>
+<div id="wrap"><div id="stage">
+  <div class="t" style="left:72px;top:127px;font-size:54px;color:var(--ink)">‹</div>
+  <div class="hit" style="left:32px;top:98px;width:80px;height:62px" onclick="toast('Demo 原型：返回大厅')"></div>
+  <div class="t" style="left:415px;top:128px;font-size:50px;color:var(--ink)">出战卡组</div>
+  <div class="t" style="left:763px;top:128px;font-size:36px;color:var(--ink)">?</div>
+  <div class="hit" style="left:730px;top:96px;width:68px;height:62px" onclick="openHelp()"></div>
+
+  <div class="tabsel" id="tabsel"></div>
+  <div id="tabs"></div>
+  <div class="t" style="left:721px;top:250px;font-size:27px;color:var(--ink)">推荐卡组</div>
+  <div class="hit" style="left:640px;top:220px;width:162px;height:62px" onclick="openPresets()"></div>
+
+  <div class="t" style="left:231px;top:332px;font-size:23px;color:#fff">平均费用</div>
+  <div class="t" id="avg" style="left:326px;top:332px;font-size:35px;color:#fff">3.9</div>
+  <div class="t" style="left:573px;top:332px;font-size:23px;color:#fff">四卡循环</div>
+  <div class="t" id="cyc" style="left:673px;top:332px;font-size:35px;color:#fff">12</div>
+
+  <div class="t" style="left:126px;top:1110px;font-size:32px;color:#fff">卡牌收藏</div>
+  <div class="t" id="owned" style="left:307px;top:1110px;font-size:26px;color:#fff">已拥有 6 张</div>
+  <div class="t" id="sortlbl" style="left:680px;top:1111px;font-size:25px;color:var(--ink)">按费用</div>
+  <div class="hit" style="left:602px;top:1090px;width:198px;height:48px" onclick="cycleSort()"></div>
+  <div id="filters"></div>
+
+  <div id="cards"></div>
+  <div id="bubble"></div>
+  <div id="dim" onclick="cancelReplace()"></div>
+  <div id="float"><div id="fclose" onclick="cancelReplace()">×</div></div>
+  <div id="hint">点上面一张卡换下来</div>
+
+  <div class="t" style="left:172px;top:1759px;font-size:33px;color:var(--ink)">重置</div>
+  <div class="hit" style="left:90px;top:1716px;width:166px;height:88px" onclick="askReset()"></div>
+  <div class="t" style="left:519px;top:1758px;font-size:41px;color:var(--ink)">开始对战</div>
+  <div class="hit" style="left:292px;top:1712px;width:452px;height:94px" onclick="toast('Demo 原型：这里进入对战准备（S05）')"></div>
+
+  <div class="mask" id="mask" onclick="if(event.target===this)closeModal()"></div>
+  <div id="toast"></div>
+</div></div>
+
+<script>
+const ROLE={"盾卫":"#3D7BFF","突击":"#E8413C","小队":"#3DBE5A","刺客":"#9B5CFF","清群":"#22C7D6","攻城":"#FF8A1F","射手":"#F2C230","狙击":"#FF6FB1","支援":"#8C96A3","战术":"#E6EDF5"};
+const ROLE_ORDER=Object.keys(ROLE);
+// 卡表（数值以内网卡表为准；这里只放展示用文案）
+const CARDS={
+ missile:{name:"飞弹齐射",full:"飞弹齐射",cost:2,role:"战术",n:0,art:"missile",id:"",model:"战术卡",series:"",skill:"范围轰炸",desc:"对一片区域造成范围伤害，并击晕 0.5 秒，可以打断高达X 的卫星炮蓄力。"},
+ char:{name:"夏亚渣古",full:"夏亚专用渣古Ⅱ",cost:3,role:"突击",n:1,art:"red",id:"Card_Small_10010",model:"MS-06S",series:"机动战士高达",skill:"红色彗星",desc:"发现目标后以 2 倍速冲锋，第一击伤害翻倍。被击晕会打断冲锋。",lore:"夏亚·阿兹纳布尔的红色专用机，以“通常机三倍”的速度闻名。"},
+ drop:{name:"渣古降下",full:"渣古降下",cost:3,role:"小队",n:3,art:"green",id:"Character_100001",model:"MS-06F",series:"机动战士高达",skill:"大气圈降下",desc:"可以投放到全场任意位置，三台渣古落地时造成范围冲击。",lore:"吉翁军对地球降下作战中，渣古从轨道直接降落到战场。"},
+ gundam:{name:"高达",full:"高达",cost:4,role:"盾卫",n:1,art:"blue",id:"Card_Small_10001",model:"RX-78-2",series:"机动战士高达",skill:"盾牌防御",desc:"自带 330 点盾值，伤害先扣盾。敌人靠近 1 米内时从光束步枪切换成光束军刀。",lore:"一年战争中阿姆罗驾驶的联邦军试作 MS，以盾牌和光束军刀的组合迎战吉翁军。"},
+ freedom:{name:"自由",full:"自由高达",cost:4,role:"清群",n:1,art:"noart",id:"ZGMF-X10A",model:"ZGMF-X10A",series:"机动战士高达SEED",skill:"全弹发射",desc:"展开全部武装，同时锁定最多 5 个目标，造成伤害并瘫痪 0.5 秒。",lore:"基拉·大和的座机，以多重锁定全弹发射同时瘫痪多台敌机的“不杀”战法著称。"},
+ mega:{name:"米加粒子炮击",full:"米加粒子炮击",cost:4,role:"战术",n:0,art:"beam",id:"",model:"战术卡",series:"",skill:"舰炮支援",desc:"战舰的主炮从天而降，对一片区域造成高额伤害。"},
+ exia:{name:"能天使",full:"能天使高达",cost:5,role:"刺客",n:1,art:"purple",id:"Card_Small_10038",model:"GN-001",series:"机动战士高达00",skill:"TRANS-AM",desc:"生命首次低于一半时自动发动，6 秒内大幅加速；结束后粒子耗尽，减速 4 秒。",lore:"刹那·F·清英的座机，TRANS-AM 让机体短时间发挥数倍性能。"},
+ x:{name:"高达X",full:"高达X",cost:6,role:"攻城",n:1,art:"orange",id:"Card_Small_10032",model:"GX-9900",series:"机动新世纪高达X",skill:"卫星炮",desc:"只攻击建筑。展开蓄力后发射直线贯穿的卫星炮，蓄力期间受到的伤害增加，可以被打断。",lore:"接收月面微波发射的卫星炮，一击可以扫平一片战场。"},
+ guncannon:{name:"钢加农",full:"钢加农",cost:4,role:"射手",n:1,art:"red",id:"Card_Small_50006",model:"RX-77-2",series:"机动战士高达",skill:"240mm 加农炮",desc:"用肩部加农炮在中距离持续输出。",lore:"联邦军的中距离支援 MS，与高达一同在白色基地作战。"},
+ dynames:{name:"力天使",full:"力天使高达",cost:3,role:"狙击",n:1,art:"blue",id:"Card_Small_10007",model:"GN-002",series:"机动战士高达00",skill:"GN 狙击步枪",desc:"射程比侧塔更远，可以隔着河道狙击。对建筑伤害减半。",lore:"洛克昂·史特拉托斯的狙击型高达。"},
+ psycho:{name:"精神力",full:"精神力高达",cost:7,role:"盾卫",n:1,art:"noart",id:"MRX-009",model:"MRX-009",series:"机动战士Z高达",skill:"要塞降临",desc:"以移动要塞形态从天而降，落地冲击周围一片敌机；之后用全身的扩散米加粒子炮清扫身边。",lore:"新香港一战中以移动要塞形态飞入市区，40 米高的巨大 MS。"},
+ maganac:{name:"马格亚那克",full:"马格亚那克队",cost:3,role:"小队",n:8,art:"green",id:"Card_Small_19995",model:"WMS-03",series:"新机动战记高达W",skill:"人海围攻",desc:"一次出 8 台，围住单体大个子打。每台都很脆。",lore:"卡托尔麾下总是成群出场的马格亚那克队。"},
+ flag:{name:"旗帜式小队",full:"旗帜式小队",cost:2,role:"小队",n:3,art:"noart",id:"SVMS-01O",model:"SVMS-01O",series:"机动战士高达00",skill:"编队飞行",desc:"三台超限旗帜式直接飞过河道，速度全场最快。",lore:"联合军的可变 MS 以飞行形态编队出击。"},
+ geara:{name:"基拉·多加",full:"基拉·多加",cost:3,role:"射手",n:1,art:"noart",id:"AMS-119",model:"AMS-119",series:"机动战士高达 逆袭的夏亚",skill:"光束机枪",desc:"远距离快速连射，适合点掉小队。很脆。",lore:"新吉翁军在第二次新吉翁战争中使用的主力量产机。"}
+};
+const PRESETS=[
+ {name:"原版",line:"高达顶在前面，能天使和夏亚渣古切进去，高达X 在后面攻城。",cards:["missile","char","drop","gundam","freedom","mega","exia","x"]},
+ {name:"远程",line:"钢加农和力天使隔河输出，高达挡住冲上来的近战。",cards:["missile","dynames","drop","gundam","freedom","guncannon","mega","x"]},
+ {name:"诱饵套",line:"用便宜的小队骗掉对面的飞弹齐射，再把渣古降下扔到塔下。精神力高达负责防守反推。",cards:["flag","char","drop","maganac","geara","dynames","gundam","psycho"]}
+];
+const DECK_RECTS=[[26,434],[224,434],[422,434],[619,434],[26,729],[224,729],[422,729],[619,729]].map(([x,y])=>[x,y,187,268]);
+const COL_RECTS=[[31,1228],[230,1228],[429,1228],[628,1228],[31,1463],[230,1463],[429,1463],[628,1463]].map(([x,y])=>[x,y,181,214]);
+const TAB_X=[33,217,399];
+
+let state={slot:0,decks:PRESETS.map(p=>p.cards.slice()),custom:[false,false,false]};
+try{const s=JSON.parse(localStorage.getItem('fd_deck_proto')||'null');if(s&&s.decks&&s.decks.length===3)state=s}catch(e){}
+function save(){try{localStorage.setItem('fd_deck_proto',JSON.stringify(state))}catch(e){}}
+let sortMode=0,filter="全部",selected=null,replacing=null;
+const SORTS=["按费用","按定位","按名称"];
+
+// ---------- card rendering (same layout as handoff/armor-r02/layout.json) ----------
+const IMG={};
+function load(src){return new Promise((ok,no)=>{const i=new Image();i.onload=()=>{IMG[src]=i;ok()};i.onerror=()=>no(src);i.src=src})}
+const SP='../handoff/armor-r02/sprites/';
+function label(g,txt,x,y,size,color,align='center',w=700){g.font=`${w} ${size}px Armor`;g.fillStyle=color;g.textAlign=align;g.textBaseline='middle';g.fillText(txt,x,y+1)}
+function renderCard(key){
+  const c=CARDS[key],cv=document.createElement('canvas');cv.width=187*2;cv.height=268*2;const g=cv.getContext('2d');g.scale(2,2);
+  g.drawImage(IMG[SP+`UI_FDDeck_Art_${c.art}.png`],7,44);
+  g.drawImage(IMG[SP+'UI_FDDeck_CardFrame.png'],0,0);
+  label(g,String(c.cost),31,23,32,'#fff');
+  label(g,c.role,137,23,21,'#fff');
+  label(g,c.name,93,240,c.name.length>5?21:23,'#111E2B');
+  if(c.art==='noart'){label(g,'暂无图片',93,124,20,'#DAE1E7','center',500);label(g,c.model,20,195,11,'#fff','left',500)}
+  else if(c.id)label(g,c.id,16,189,11,'#fff','left',500);
+  if(c.n>1)label(g,'×'+c.n,174,184,26,'#fff','right');
+  return cv;
+}
+const CANVAS={};
+function cardCanvas(key){const src=CANVAS[key];const cv=document.createElement('canvas');cv.width=src.width;cv.height=src.height;cv.getContext('2d').drawImage(src,0,0);return cv}
+
+// ---------- layout ----------
+const cardEls={};
+function deck(){return state.decks[state.slot]}
+function collection(){
+  const d=deck();let rest=Object.keys(CARDS).filter(k=>!d.includes(k));
+  const by=[(a,b)=>CARDS[a].cost-CARDS[b].cost||CARDS[a].name.localeCompare(CARDS[b].name,'zh'),
+            (a,b)=>ROLE_ORDER.indexOf(CARDS[a].role)-ROLE_ORDER.indexOf(CARDS[b].role)||CARDS[a].cost-CARDS[b].cost,
+            (a,b)=>CARDS[a].name.localeCompare(CARDS[b].name,'zh')][sortMode];
+  return rest.sort(by);
+}
+function layout(){
+  const d=deck(),col=collection();
+  d.forEach((k,i)=>place(k,DECK_RECTS[i],false));
+  let j=0;col.forEach(k=>{const show=filter==="全部"||CARDS[k].role===filter;const r=COL_RECTS[show?j:Math.min(j,7)];place(k,r,!show);if(show)j++});
+  const avg=d.reduce((s,k)=>s+CARDS[k].cost,0)/8;
+  document.getElementById('avg').textContent=(Math.round(avg*10)/10).toFixed(1);
+  document.getElementById('cyc').textContent=d.map(k=>CARDS[k].cost).sort((a,b)=>a-b).slice(0,4).reduce((a,b)=>a+b,0);
+  document.getElementById('owned').textContent=`已拥有 ${col.length} 张`;
+  document.getElementById('tabsel').style.left=(TAB_X[state.slot]-5)+'px';
+  document.querySelectorAll('.tablbl').forEach((e,i)=>{e.style.color=i===state.slot?'#fff':'var(--ink)';e.textContent=`${i+1} ${state.custom[i]?'自定义':PRESETS[i].name}`});
+}
+function place(k,r,hide){const e=cardEls[k];e.style.left=r[0]+'px';e.style.top=r[1]+'px';e.style.width=r[2]+'px';e.style.height=r[3]+'px';e.classList.toggle('hide',hide)}
+
+// ---------- interactions ----------
+function clearSel(){if(selected)cardEls[selected].classList.remove('sel');selected=null;document.getElementById('bubble').style.display='none'}
+function tapCard(k){
+  if(replacing){if(deck().includes(k))doSwap(k);return}
+  if(selected===k){clearSel();return}
+  clearSel();selected=k;const e=cardEls[k];e.classList.add('sel');
+  const inDeck=deck().includes(k),b=document.getElementById('bubble');
+  b.innerHTML=(inDeck?'':`<button class="bb use" onclick="startReplace('${k}')">使用</button>`)+`<button class="bb info" onclick="openInfo('${k}')">信息</button>`;
+  b.style.display='flex';
+  const x=parseFloat(e.style.left),y=parseFloat(e.style.top),w=parseFloat(e.style.width),h=parseFloat(e.style.height);
+  const bw=inDeck?150:260;b.style.width=bw+'px';
+  let bx=Math.max(16,Math.min(830-bw-16,x+w/2-bw/2));b.style.left=bx+'px';
+  const up=!(inDeck&&y<600);b.className=up?'up':'down';
+  b.style.top=(up?y-96:y+h+22)+'px';
+  b.style.setProperty('--ax',(x+w/2-bx)+'px');
+}
+function startReplace(k){
+  clearSel();replacing=k;
+  document.getElementById('dim').style.display='block';
+  const f=document.getElementById('float');f.querySelector('canvas')?.remove();f.prepend(cardCanvas(k));f.style.display='block';
+  document.getElementById('hint').style.display='block';
+  cardEls[k].style.visibility='hidden';
+  deck().forEach(d=>cardEls[d].classList.add('cand'));
+}
+function cancelReplace(){
+  if(!replacing)return;cardEls[replacing].style.visibility='';
+  document.getElementById('dim').style.display='none';document.getElementById('float').style.display='none';document.getElementById('hint').style.display='none';
+  deck().forEach(d=>cardEls[d].classList.remove('cand'));replacing=null;
+}
+function doSwap(out){
+  const inn=replacing;deck().forEach(d=>cardEls[d].classList.remove('cand'));
+  const d=deck(),i=d.indexOf(out);
+  // 飞入的卡从浮卡位置出发
+  const e=cardEls[inn];e.style.transition='none';Object.assign(e.style,{left:'320px',top:'1150px',width:'190px',height:'272px',visibility:''});e.classList.remove('hide');e.offsetWidth;e.style.transition='';
+  d[i]=inn;state.custom[state.slot]=true;replacing=null;
+  document.getElementById('dim').style.display='none';document.getElementById('float').style.display='none';document.getElementById('hint').style.display='none';
+  if(filter!=="全部"&&CARDS[out].role!==filter)setFilter("全部",true);
+  layout();save();toast('卡组已保存');
+}
+function setSlot(i){if(replacing)cancelReplace();clearSel();state.slot=i;layout();save()}
+function cycleSort(){if(replacing)return;sortMode=(sortMode+1)%3;document.getElementById('sortlbl').textContent=SORTS[sortMode];clearSel();layout()}
+function setFilter(r,silent){filter=r;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.r===r));if(!silent){clearSel();layout()}}
+
+// ---------- modals ----------
+const mask=document.getElementById('mask');
+function closeModal(){mask.classList.remove('on');mask.innerHTML=''}
+function modal(html,w,h){mask.innerHTML=`<div class="panel" style="width:${w}px;${h?'height:'+h+'px;':''}padding:40px">${html}</div>`;mask.classList.add('on')}
+function openInfo(k){
+  const c=CARDS[k],inDeck=deck().includes(k);clearSel();
+  const tagc=c.role==='战术'?'#1B2A40':'#fff';
+  const rows=[["费用",c.cost],["定位",c.role],c.n>1?["数量","×"+c.n]:null,c.model&&c.model!=='战术卡'?["型号",c.model]:null,c.series?["作品",c.series]:null].filter(Boolean);
+  modal(`<div class="x" onclick="closeModal()">×</div>
+   <h2>${c.full}</h2><div class="sub">${c.model}${c.series?' · '+c.series:''}</div>
+   <div style="display:flex;gap:28px;margin-top:28px">
+     <div id="bigcard" style="width:300px;height:430px;flex:none"></div>
+     <div class="navy" style="flex:1;padding:18px 24px">
+       ${rows.map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')}
+       <div style="margin-top:16px;font-size:20px;color:#9fb3cc;font-weight:500">生命、伤害等数值接入时读内网卡表</div>
+     </div></div>
+   <div class="navy" style="margin-top:26px;padding:22px 26px">
+     <div style="font-size:32px;font-weight:700"><span class="rtag" style="background:${ROLE[c.role]};color:${tagc}">${c.role}</span>${c.skill}</div>
+     <div style="font-size:26px;line-height:1.6;margin-top:12px;font-weight:500;color:#dbe4ee">${c.desc}</div></div>
+   ${c.lore?`<div style="margin-top:22px;font-size:22px;line-height:1.6;color:#4b5968;font-weight:500"><b style="color:#B3261E">原作出处</b>　${c.lore}</div>`:''}
+   <div style="display:flex;gap:24px;margin-top:30px">
+     ${inDeck?'':`<button class="btn y" style="flex:1" onclick="closeModal();startReplace('${k}')">使用</button>`}
+     <button class="btn w" style="flex:1" onclick="closeModal()">关闭</button></div>`,760);
+  const cv=cardCanvas(k);cv.style.width='100%';cv.style.height='100%';document.getElementById('bigcard').append(cv);
+}
+function openPresets(){
+  if(replacing)cancelReplace();clearSel();
+  modal(`<div class="x" onclick="closeModal()">×</div><h2>推荐卡组</h2><div class="sub">用到当前的卡组 ${state.slot+1}</div><div style="margin-top:26px">`+
+   PRESETS.map((p,i)=>{const avg=(Math.round(p.cards.reduce((s,k)=>s+CARDS[k].cost,0)/8*10)/10).toFixed(1);
+     const sorted=p.cards.slice().sort((a,b)=>CARDS[a].cost-CARDS[b].cost);
+     return `<div class="navy preset"><div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:34px">${p.name}</b><span style="font-size:26px">平均费用 <b style="font-size:32px">${avg}</b></span></div>
+     <div style="font-size:22px;color:#9fb3cc;margin-top:8px;font-weight:500;line-height:1.5">${p.line}</div>
+     <div class="minis" data-p="${i}" data-c="${sorted.join(',')}"></div>
+     <div style="text-align:right"><button class="btn y" style="height:76px;width:300px;font-size:28px" onclick="askApply(${i})">用到卡组 ${state.slot+1}</button></div></div>`}).join('')+`</div>`,760);
+  mask.querySelectorAll('.minis').forEach(m=>m.dataset.c.split(',').forEach(k=>m.append(cardCanvas(k))));
+}
+function confirmBox(title,body,okText,ok){
+  modal(`<h2 style="text-align:center;margin-top:10px">${title}</h2><div style="text-align:center;font-size:28px;margin:30px 0 40px;font-weight:500;color:#2c3a4a">${body}</div>
+  <div style="display:flex;gap:24px"><button class="btn w" style="flex:1" onclick="closeModal()">取消</button><button class="btn y" style="flex:1" id="okb">${okText}</button></div>`,660);
+  document.getElementById('okb').onclick=()=>{closeModal();ok()};
+}
+function applyPreset(i){state.decks[state.slot]=PRESETS[i].cards.slice();state.custom[state.slot]=state.slot!==i;if(state.slot===i)state.custom[i]=false;layout();save();toast('卡组已保存')}
+function askApply(i){confirmBox(`覆盖卡组 ${state.slot+1}？`,`当前卡组会被替换成「${PRESETS[i].name}」。`,'覆盖',()=>applyPreset(i))}
+function askReset(){if(replacing)cancelReplace();clearSel();confirmBox('重置卡组？',`把卡组 ${state.slot+1} 恢复成推荐卡组「${PRESETS[state.slot].name}」。`,'重置',()=>applyPreset(state.slot))}
+function openHelp(){modal(`<div class="x" onclick="closeModal()">×</div><h2>怎么换卡</h2><div style="font-size:28px;line-height:1.8;margin-top:24px;font-weight:500">点下面的卡，选「使用」，再点上面一张卡换掉。<br>卡组固定 8 张，同一张卡只能放一次。<br>点「信息」看卡牌详情。</div><div style="display:flex;margin-top:30px"><button class="btn y" style="flex:1" onclick="closeModal()">知道了</button></div>`,660)}
+let tt;function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1500)}
+
+// ---------- boot ----------
+function fit(){const s=Math.min(innerWidth/830,innerHeight/1896);const w=document.getElementById('wrap');w.style.transform=`scale(${s})`;w.style.left=((innerWidth-830*s)/2)+'px'}
+addEventListener('resize',fit);fit();
+document.getElementById('stage').addEventListener('click',e=>{if(e.target.id==='stage')clearSel()});
+(async()=>{
+  await Promise.all([document.fonts.load('700 24px Armor'),document.fonts.load('500 20px Armor')]).catch(()=>{});
+  const arts=new Set(Object.values(CARDS).map(c=>SP+`UI_FDDeck_Art_${c.art}.png`));
+  await Promise.all([...arts,SP+'UI_FDDeck_CardFrame.png'].map(load));
+  const tabs=document.getElementById('tabs');
+  TAB_X.forEach((x,i)=>{tabs.insertAdjacentHTML('beforeend',`<div class="t tablbl" style="left:${x+88}px;top:250px;font-size:28px"></div><div class="hit" style="left:${x}px;top:215px;width:178px;height:68px" onclick="setSlot(${i})"></div>`)});
+  const fl=document.getElementById('filters');
+  ["全部",...ROLE_ORDER].forEach(r=>{const d=document.createElement('div');d.className='chip'+(r==='全部'?' on':'');d.dataset.r=r;d.innerHTML=(r==='全部'?'':`<i style="background:${ROLE[r]}"></i>`)+r;d.onclick=()=>{if(!replacing)setFilter(r)};fl.append(d)});
+  const box=document.getElementById('cards');
+  for(const k in CARDS){CANVAS[k]=renderCard(k);const e=document.createElement('div');e.className='card';e.append(cardCanvas(k));e.onclick=ev=>{ev.stopPropagation();tapCard(k)};box.append(e);cardEls[k]=e}
+  box.querySelectorAll('.card').forEach(e=>{e.style.transition='none'});layout();box.offsetWidth;box.querySelectorAll('.card').forEach(e=>{e.style.transition=''});
+})();
+</script>
+</body>
+</html>
