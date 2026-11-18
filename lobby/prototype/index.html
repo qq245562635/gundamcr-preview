@@ -246,7 +246,9 @@ function fit(){const s=Math.min(innerWidth/1080,innerHeight/2340),w=$('wrap');w.
 addEventListener('resize',fit);fit();
 $('mask').onclick=()=>{closePop();lobby()};
 document.fonts&&document.fonts.ready.then(()=>{});
-lobby();splash();
+lobby();
+if(location.hash==='#battle'){try{sessionStorage.setItem('fd_splash','1')}catch(e){}history.replaceState(null,'',location.pathname);startVS()}else splash();
+addEventListener('pageshow',e=>{if(e.persisted){try{const s=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');if(s&&s.decks)deckState=Object.assign(deckState,s)}catch(_){}lobby()}});
 </script>
 </body>
 </html>

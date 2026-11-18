@@ -84,7 +84,7 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 <div id="wrap"><div id="canvas">
  <div id="stage" class="native">
   <div class="t" style="left:72px;top:127px;font-size:54px;color:var(--ink)">‹</div>
-  <div class="hit" style="left:32px;top:98px;width:80px;height:62px" onclick="toast('Demo 原型：返回大厅')"></div>
+  <div class="hit" style="left:32px;top:98px;width:80px;height:62px" onclick="location.href='../../lobby/prototype/'"></div>
   <div class="t" style="left:415px;top:128px;font-size:50px;color:var(--ink)">出战卡组</div>
   <div class="t" style="left:763px;top:128px;font-size:36px;color:var(--ink)">?</div>
   <div class="hit" style="left:730px;top:96px;width:68px;height:62px" onclick="openHelp()"></div>
@@ -390,7 +390,7 @@ function renderPrep(){
   // 底栏
   h+=`<img src="${SP2}UI_FDDeck_FooterMaterial.png" style="position:absolute;left:0;top:1680px;width:830px;height:171px">`;
   h+=N(172,1759,'返回',33,'var(--ink)')+`<div class="hit" style="left:90px;top:1716px;width:166px;height:88px" onclick="closePrep()"></div>`;
-  h+=N(519,1758,'开始',41,'var(--ink)')+`<div class="hit" style="left:292px;top:1712px;width:452px;height:94px" onclick="toast('Demo 原型：进入对局（对手：'+PRESETS[state.opp].name+'，AI '+state.ai+'）')"></div>`;
+  h+=N(519,1758,'开始',41,'var(--ink)')+`<div class="hit" style="left:292px;top:1712px;width:452px;height:94px" onclick="save();location.href='../../lobby/prototype/#battle'"></div>`;
   P.innerHTML=h;P.querySelectorAll('.mini').forEach(m=>m.append(cardCanvas(m.dataset.k)));
 }
 function closePrep(){$('prep').classList.remove('on')}
