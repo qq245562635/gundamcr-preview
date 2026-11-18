@@ -42,28 +42,33 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 .sw span{position:absolute;top:50%;transform:translateY(-50%);font-size:22px;font-weight:700;color:#4a5566}
 #toast{position:absolute;left:50%;top:1900px;transform:translateX(-50%);background:#111e2bee;color:#fff;border:2px solid var(--cyan);padding:20px 36px;border-radius:8px;font-size:32px;font-weight:700;z-index:80;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
 #toast.on{opacity:1}
-/* L03 VS */
-#vs{position:absolute;inset:0;z-index:50;display:none;overflow:hidden;background:#0d1724}
-#vs.on{display:block}
-#vs .top{position:absolute;inset:0;background:linear-gradient(160deg,#7a2430,#4d1820);clip-path:polygon(0 0,100% 0,100% 44%,0 56%)}
-#vs .bot{position:absolute;inset:0;background:linear-gradient(200deg,#1d4f86,#12304f);clip-path:polygon(0 56.6%,100% 44.6%,100% 100%,0 100%)}
-#vs .cut{position:absolute;inset:0;background:#e9e5dc;clip-path:polygon(0 56%,100% 44%,100% 44.6%,0 56.6%)}
-#vs .grid{position:absolute;inset:0;background:repeating-linear-gradient(160deg,#ffffff08 0 2px,transparent 2px 40px)}
-.plate{position:absolute;left:90px;width:900px;height:300px;border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_White.png) 30 fill/30px stretch;border-style:solid;border-color:transparent}
-#vsWord{position:absolute;left:540px;top:1170px;transform:translate(-50%,-50%) rotate(-8deg);display:flex;gap:6px}
-#vsWord b{font-size:200px;font-weight:900;font-style:italic;line-height:1;background:linear-gradient(180deg,#ffffff 0%,#dfe6ee 40%,#8a97a8 52%,#f4f7fa 70%,#b9c4d1 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:6px #17263A;filter:drop-shadow(0 8px 0 #0b1420) drop-shadow(0 0 30px #fff8)}
-#vs.anim #vsV{animation:inL .3s cubic-bezier(.5,0,.8,.4) both}
-#vs.anim #vsS{animation:inR .3s cubic-bezier(.5,0,.8,.4) both}
-@keyframes inL{from{transform:translateX(-900px)}to{transform:none}}
-@keyframes inR{from{transform:translateX(900px)}to{transform:none}}
-#vs.anim .shake{animation:shake .25s .3s}
-@keyframes shake{0%,100%{transform:none}25%{transform:translate(-14px,8px)}50%{transform:translate(12px,-10px)}75%{transform:translate(-6px,4px)}}
-#spark{position:absolute;left:540px;top:1170px;width:10px;height:10px;opacity:0}
-#vs.anim #spark{animation:spark .45s .3s ease-out}
-@keyframes spark{0%{opacity:1;box-shadow:0 0 0 0 #fff,0 0 0 0 #2fd3e0}100%{opacity:0;box-shadow:0 0 120px 160px #fff0,0 0 200px 260px #2fd3e000}}
+/* L03 VS：厚装甲版（handoff/vs-armor-r01） */
+#vs{position:absolute;inset:0;z-index:50;display:none;overflow:hidden;background:#0d1724;transition:opacity .18s}
+#vs.on{display:block} #vs.out{opacity:0}
+#vs .g{position:absolute;left:0;top:0;width:1080px;height:2340px;pointer-events:none}
+#vs.anim .g-opp{animation:vsInL .34s cubic-bezier(.2,.7,.3,1) both}
+#vs.anim .g-me{animation:vsInR .34s .08s cubic-bezier(.2,.7,.3,1) both}
+#vs.anim .g-v{animation:vsV .24s .25s cubic-bezier(.6,0,.9,.5) both}
+#vs.anim .g-s{animation:vsS .24s .25s cubic-bezier(.6,0,.9,.5) both}
+#vs.anim .g-vs{transform-origin:540px 1000px;animation:vsShake .12s .49s linear}
+#vs.anim .g-flash{opacity:0;animation:vsFlash .16s .49s ease-out}
+#vs.anim .g-spark{opacity:0;animation:vsSpark .3s .49s ease-out}
+#vs.anim .g-deck{animation:vsUp .3s .55s cubic-bezier(.2,.7,.3,1) both;--up:24px}
+#vs.anim .g-card{animation:vsUp .22s cubic-bezier(.2,.7,.3,1) both;--up:16px}
+#vs.anim .g-load{animation:vsFade .25s .6s both}
+#vs.reduce *{animation:none!important}
+@keyframes vsInL{from{transform:translateX(-180px);opacity:0}to{transform:none;opacity:1}}
+@keyframes vsInR{from{transform:translateX(180px);opacity:0}to{transform:none;opacity:1}}
+@keyframes vsV{from{transform:translateX(-360px) scale(1.15);opacity:0;transform-origin:540px 1000px}to{transform:none;opacity:1;transform-origin:540px 1000px}}
+@keyframes vsS{from{transform:translateX(360px) scale(1.15);opacity:0;transform-origin:540px 1000px}to{transform:none;opacity:1;transform-origin:540px 1000px}}
+@keyframes vsShake{0%{transform:translate(4px,-3px)}33%{transform:translate(-3px,2px)}66%{transform:translate(2px,-1px)}100%{transform:none}}
+@keyframes vsFlash{from{opacity:1}to{opacity:0}}
+@keyframes vsSpark{from{opacity:1;transform:none}to{opacity:0;transform:translate(var(--dx),var(--dy))}}
+@keyframes vsUp{from{transform:translateY(var(--up));opacity:0}to{transform:none;opacity:1}}
+@keyframes vsFade{from{opacity:0}to{opacity:1}}
+/* L06 */
 .bar{position:absolute;left:90px;top:2050px;width:900px;height:44px;border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_White.png) 22 fill/22px stretch;border-style:solid;border-color:transparent}
 .bar i{position:absolute;left:4px;top:6px;bottom:6px;width:0;background:linear-gradient(90deg,#18b8c6,#5ff0fa);border-radius:3px}
-/* L06 */
 #splash{position:absolute;inset:0;z-index:90;background:#13202f;display:none;cursor:pointer}
 #splash.on{display:block}
 #splash .band{position:absolute;left:-200px;width:1500px;height:150px;background:#c9c6bd;transform:rotate(-14deg);box-shadow:inset 0 -8px 0 #8f8a80}
@@ -208,19 +213,34 @@ function openHist(){const x0=120,y0=380,n=hist.length,w=wins(),l=hist.filter(h=>
 
 // L03 VS 加载 → 模拟结算
 let vsTimer;
+const VSL='../handoff/vs-armor-r01/slices/UI_FDLobby_VS_';
+const vsp=(f,[x,y,w,h],ex='')=>`<div class="sp" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background-image:url(${VSL}${f}.png);${ex}"></div>`;
+const vtx=(t,x,y,size,color,it,anchor='mm',w=900)=>`<div class="t ${anchor}" style="left:${x}px;top:${y}px;font-size:${size}px;color:${color};font-weight:${w};${it?'font-style:italic;':''}">${t}</div>`;
+// 入场时间按 handoff/vs-armor-r01/MOTION.md
 function startVS(){const o=PRESETS[deckState.opp],d=myDeck(),V=$('vs');
-  let h=`<div class="shake" style="position:absolute;inset:0"><div class="top"></div><div class="bot"></div><div class="cut"></div><div class="grid"></div>`;
-  h+=`<div class="plate" style="top:300px;height:330px"></div>`+sp('Icon_Avatar',[150,350,200,200])+L('AI',250,450,70,'#EDF2F6',900)+
-     L('AI 指挥官',400,420,48,'#17263A',900,'lm')+L(`对手卡组：${o.name} · AI ${deckState.ai}`,400,500,28,'#4a5566',700,'lm');
-  h+=`<div class="plate" style="top:1400px;height:520px"></div>`+sp('Icon_Avatar',[150,1440,180,180])+L('指',240,1530,80,'#EDF2F6',900)+
-     L('指挥官',380,1500,48,'#17263A',900,'lm')+L(`我方卡组：${deckName(deckState.slot)}`,380,1574,28,'#4a5566',700,'lm');
-  d.forEach((k,i)=>h+=card(k,128+i*104,1660,96));
-  h+=`<div id="vsWord"><b id="vsV">V</b><b id="vsS">S</b></div><div id="spark"></div></div>`;
-  h+=L(TIPS[Math.floor(Math.random()*TIPS.length)],540,1990,28,'#EDF2F6',500)+`<div class="bar"><i id="barI"></i></div>`+L('0%',1000,2150,26,'#EDF2F6',700).replace('class="t mm','id="pct" class="t mm');
-  V.innerHTML=h;V.classList.add('on');V.classList.remove('anim');void V.offsetWidth;V.classList.add('anim');
-  let p=0;clearInterval(vsTimer);
-  vsTimer=setInterval(()=>{p=Math.min(100,p+Math.random()*6+2);$('barI').style.width=`calc(${p}% - 8px)`;$('pct').textContent=Math.floor(p)+'%';
-    if(p>=100){clearInterval(vsTimer);setTimeout(()=>{V.classList.remove('on');result()},350)}},90)}
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let h=vsp('Background',[0,0,1080,2340]);
+  h+=`<div class="g g-opp">`+vsp('OpponentPanel',[57,380,935,363])+vsp('OpponentBadge',[150,470,248,211])+
+     vtx('对手',241,417,41,'#fff',1)+vtx('AI',272,578,95,'#F5EFE3',1)+vtx('AI 指挥官',676,549,74,'#16243A',1)+vtx(`对手卡组：${o.name} · AI ${deckState.ai}`,631,630,37,'#16243A',0,'mm',700)+`</div>`;
+  h+=`<div class="g g-me">`+vsp('PlayerPanel',[56,1253,972,301])+vsp('PlayerBadge',[212,1315,221,179])+
+     vtx('指',318,1410,83,'#F5EFE3',0)+vtx('指挥官',662,1381,75,'#16243A',1)+vtx(`我方卡组：${deckName(deckState.slot)}`,657,1461,38,'#16243A',0,'mm',700)+`</div>`;
+  h+=`<div class="g g-deck">`+vsp('DeckPanel',[47,1572,985,293]);
+  d.forEach((k,i)=>{const c=CARDS[k],x=88+i*115;
+    h+=`<div class="g g-card" style="animation-delay:${650+i*35}ms">`+vsp('Art_'+c.art,[x+4,1656,97,106])+vsp('CardFrame',[x,1628,105,165])+
+       vtx(c.cost,x+17,1641,21,'#fff',0,'mm',700)+vtx(c.name,x+53,1776,c.name.length>5?13:15,'#16243A',0,'mm',700)+`</div>`});
+  h+=`</div><div class="g g-vs"><div class="g g-v">`+vsp('V',[255,850,361,310])+`</div><div class="g g-s">`+vsp('S',[475,829,356,333])+`</div></div>`;
+  h+=`<div class="g g-flash">`+vsp('FX_Flash',[275,852,543,321],'mix-blend-mode:screen')+`</div>`;
+  [[706,968,338],[713,1023,15],[648,1068,52],[537,1087,89],[425,1070,126],[357,1025,163],[360,971,200],[433,928,237],[547,914,274],[655,935,311]].forEach(([x,y,r])=>{
+    const rad=r*Math.PI/180;h+=`<div class="g g-spark" style="--dx:${Math.cos(rad)*70}px;--dy:${Math.sin(rad)*70}px">`+vsp('FX_Streak',[x,y,99,25],`transform:rotate(${r}deg);mix-blend-mode:screen`)+`</div>`});
+  h+=`<div class="g g-load">`+vtx(TIPS[Math.floor(Math.random()*TIPS.length)],540,1933,30,'#fff',1,'mm',700)+vtx('加载中…',103,2003,31,'#fff',1,'lm',700)+
+     vsp('LoadingBed',[103,2040,892,35])+`<div id="vsFill" style="position:absolute;left:114px;top:2041px;width:778px;height:32px;clip-path:inset(0 100% 0 0)">`+vsp('LoadingFill',[0,0,778,32])+`</div>`+
+     vsp('LoadingTrack',[71,2024,941,67])+`<div class="t mm" id="pct" style="left:941px;top:2058px;font-size:30px;color:#fff;font-weight:900;font-style:italic">0%</div></div>`;
+  V.innerHTML=h;V.classList.toggle('reduce',reduce);V.classList.add('on');V.classList.remove('anim');void V.offsetWidth;V.classList.add('anim');
+  // 模拟真实加载：进度只增不减，入场（1.25s）后才允许到 100%
+  let p=0;const t0=performance.now();clearInterval(vsTimer);
+  vsTimer=setInterval(()=>{const el=performance.now()-t0;p=Math.min(el<1250?.95:1,p+Math.random()*.03+.01);
+    $('vsFill').style.clipPath=`inset(0 ${(1-p)*100}% 0 0)`;$('pct').textContent=Math.floor(p*100)+'%';
+    if(p>=1){clearInterval(vsTimer);setTimeout(()=>{V.classList.add('out');setTimeout(()=>{V.classList.remove('on','out');result()},180)},120)}},90)}
 function result(){const o=PRESETS[deckState.opp],roll=Math.random(),r=roll<.55?'胜':roll<.9?'负':'平';
   const score=r==='胜'?(Math.random()<.3?'3 : 0':'2 : 1'):r==='负'?(Math.random()<.5?'0 : 1':'1 : 2'):'1 : 1';
   const ot=r==='平'||Math.random()<.4,sec=ot?180+Math.floor(Math.random()*60):120+Math.floor(Math.random()*60);
