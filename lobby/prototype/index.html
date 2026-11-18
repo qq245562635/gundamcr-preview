@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>大厅原型</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17263A;--cyan:#2FD3E0;--gold:#FFD45C;--F:"Noto Sans SC","PingFang SC",sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:var(--F)}
+#wrap{position:absolute;top:0;transform-origin:top left}
+#canvas{position:relative;width:1080px;height:2340px;overflow:hidden;user-select:none;background:#0d1724}
+.sp{position:absolute;background-size:100% 100%;background-repeat:no-repeat;pointer-events:none}
+.ti{position:absolute;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+.t{position:absolute;white-space:nowrap;line-height:1;font-weight:700;pointer-events:none}
+.t.mm{transform:translate(-50%,-50%)} .t.lm{transform:translateY(-50%)}
+.hit{position:absolute;cursor:pointer}
+#battleGrp{position:absolute;left:0;top:0;transition:transform .08s}
+#battleGrp.press{transform:translate(4px,10px)}
+#battleGrp.press .sp{filter:brightness(.9)}
+.title{font-weight:900;font-style:italic;text-shadow:0 4px 0 #0b1420,0 6px 16px #000c;letter-spacing:2px}
+.skin{border-style:solid;border-color:transparent}
+.b-yel{border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_Yellow.png) 30 fill/30px stretch}
+.b-wht{border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_White.png) 30 fill/30px stretch}
+.btn{position:absolute;display:flex;align-items:center;justify-content:center;font-weight:700;cursor:pointer;color:var(--ink)}
+.btn:active{filter:brightness(.92);transform:scale(.97)}
+.mask{position:absolute;inset:0;background:#000a;z-index:40;display:none}
+.mask.on{display:block}
+.mframe{position:absolute;border-style:solid;border-color:transparent;border-width:160px 40px 200px 40px;border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Modal_Tactic.png) 160 40 200 40 fill stretch;animation:pop .2s ease-out}
+@keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.lbl{position:absolute;white-space:nowrap;line-height:1}
+.seg{position:absolute;display:flex;border:3px solid #6f8197;border-radius:8px;overflow:hidden;background:#0f1a28}
+.seg div{flex:1;display:flex;align-items:center;justify-content:center;color:#c9d3dd;font-weight:700;cursor:pointer}
+.seg div+div{border-left:2px solid #6f8197}
+.seg div.on{background:#2b6fd6;color:#fff}
+.sw{position:absolute;width:120px;height:52px;border-radius:8px;background:#d9d4c8;border:3px solid #8f8a80;cursor:pointer}
+.sw::after{content:"";position:absolute;top:4px;left:4px;width:52px;height:38px;border-radius:5px;background:#8c96a3;transition:left .15s,background .15s}
+.sw.on::after{left:58px;background:#2b6fd6}
+.sw span{position:absolute;top:50%;transform:translateY(-50%);font-size:22px;font-weight:700;color:#4a5566}
+#toast{position:absolute;left:50%;top:1900px;transform:translateX(-50%);background:#111e2bee;color:#fff;border:2px solid var(--cyan);padding:20px 36px;border-radius:8px;font-size:32px;font-weight:700;z-index:80;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+#toast.on{opacity:1}
+/* L03 VS */
+#vs{position:absolute;inset:0;z-index:50;display:none;overflow:hidden;background:#0d1724}
+#vs.on{display:block}
+#vs .top{position:absolute;inset:0;background:linear-gradient(160deg,#7a2430,#4d1820);clip-path:polygon(0 0,100% 0,100% 44%,0 56%)}
+#vs .bot{position:absolute;inset:0;background:linear-gradient(200deg,#1d4f86,#12304f);clip-path:polygon(0 56.6%,100% 44.6%,100% 100%,0 100%)}
+#vs .cut{position:absolute;inset:0;background:#e9e5dc;clip-path:polygon(0 56%,100% 44%,100% 44.6%,0 56.6%)}
+#vs .grid{position:absolute;inset:0;background:repeating-linear-gradient(160deg,#ffffff08 0 2px,transparent 2px 40px)}
+.plate{position:absolute;left:90px;width:900px;height:300px;border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_White.png) 30 fill/30px stretch;border-style:solid;border-color:transparent}
+#vsWord{position:absolute;left:540px;top:1170px;transform:translate(-50%,-50%) rotate(-8deg);display:flex;gap:6px}
+#vsWord b{font-size:200px;font-weight:900;font-style:italic;line-height:1;background:linear-gradient(180deg,#ffffff 0%,#dfe6ee 40%,#8a97a8 52%,#f4f7fa 70%,#b9c4d1 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:6px #17263A;filter:drop-shadow(0 8px 0 #0b1420) drop-shadow(0 0 30px #fff8)}
+#vs.anim #vsV{animation:inL .3s cubic-bezier(.5,0,.8,.4) both}
+#vs.anim #vsS{animation:inR .3s cubic-bezier(.5,0,.8,.4) both}
+@keyframes inL{from{transform:translateX(-900px)}to{transform:none}}
+@keyframes inR{from{transform:translateX(900px)}to{transform:none}}
+#vs.anim .shake{animation:shake .25s .3s}
+@keyframes shake{0%,100%{transform:none}25%{transform:translate(-14px,8px)}50%{transform:translate(12px,-10px)}75%{transform:translate(-6px,4px)}}
+#spark{position:absolute;left:540px;top:1170px;width:10px;height:10px;opacity:0}
+#vs.anim #spark{animation:spark .45s .3s ease-out}
+@keyframes spark{0%{opacity:1;box-shadow:0 0 0 0 #fff,0 0 0 0 #2fd3e0}100%{opacity:0;box-shadow:0 0 120px 160px #fff0,0 0 200px 260px #2fd3e000}}
+.bar{position:absolute;left:90px;top:2050px;width:900px;height:44px;border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_White.png) 22 fill/22px stretch;border-style:solid;border-color:transparent}
+.bar i{position:absolute;left:4px;top:6px;bottom:6px;width:0;background:linear-gradient(90deg,#18b8c6,#5ff0fa);border-radius:3px}
+/* L06 */
+#splash{position:absolute;inset:0;z-index:90;background:#13202f;display:none;cursor:pointer}
+#splash.on{display:block}
+#splash .band{position:absolute;left:-200px;width:1500px;height:150px;background:#c9c6bd;transform:rotate(-14deg);box-shadow:inset 0 -8px 0 #8f8a80}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="canvas">
+  <div id="scene"></div>
+  <div id="vs"></div>
+  <div class="mask" id="mask"></div>
+  <div id="pop" style="position:absolute;inset:0;z-index:41;pointer-events:none"></div>
+  <div id="splash"></div>
+  <div id="toast"></div>
+</div></div>
+<script>
+const $=id=>document.getElementById(id);
+const SL='../handoff/asym-r01/slices/UI_FDLobby_';
+const DECK_URL='../../deck/prototype/';
+// 卡牌数据（与选卡组原型一致的子集）
+const CARDS={
+ missile:{name:"飞弹齐射",cost:2,role:"战术",art:"missile"}, char:{name:"夏亚渣古",cost:3,role:"突击",art:"red"},
+ drop:{name:"渣古降下",cost:3,role:"小队",art:"green"}, gundam:{name:"高达",cost:4,role:"盾卫",art:"blue"},
+ freedom:{name:"自由",cost:4,role:"清群",art:"noart"}, mega:{name:"米加粒子炮击",cost:4,role:"战术",art:"beam"},
+ exia:{name:"能天使",cost:5,role:"刺客",art:"purple"}, x:{name:"高达X",cost:6,role:"攻城",art:"orange"},
+ guncannon:{name:"钢加农",cost:4,role:"射手",art:"red"}, dynames:{name:"力天使",cost:3,role:"狙击",art:"blue"},
+ psycho:{name:"精神力",cost:7,role:"盾卫",art:"noart"}, maganac:{name:"马格亚那克",cost:3,role:"小队",art:"green"},
+ flag:{name:"旗帜式小队",cost:2,role:"小队",art:"noart"}, geara:{name:"基拉·多加",cost:3,role:"射手",art:"noart"}
+};
+const PRESETS=[
+ {name:"原版",cards:["missile","char","drop","gundam","freedom","mega","exia","x"]},
+ {name:"远程",cards:["missile","dynames","drop","gundam","freedom","guncannon","mega","x"]},
+ {name:"诱饵套",cards:["flag","char","drop","maganac","geara","dynames","gundam","psycho"]}
+];
+const TIPS=["自由的全弹发射能同时瘫痪 5 台机体","飞弹齐射能打断高达X 的卫星炮蓄力","渣古降下可以扔到全场任何地方","能天使血量低于一半会自动发动 TRANS-AM","马格亚那克队人多，正好克制单体刺客","高达的盾能挡下一次大伤害","最后 60 秒和加时阶段能量恢复翻倍"];
+// 共享选卡组原型的存储（卡组、对手、AI）
+let deckState={slot:0,decks:PRESETS.map(p=>p.cards.slice()),custom:[false,false,false],opp:1,ai:'新'};
+try{const s=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');if(s&&s.decks&&s.decks.length===3)deckState=Object.assign(deckState,s)}catch(e){}
+function saveDeck(){try{localStorage.setItem('fd_deck_proto2',JSON.stringify(deckState))}catch(e){}}
+let hist=[];try{hist=JSON.parse(localStorage.getItem('fd_lobby_hist')||'[]')}catch(e){}
+function saveHist(){try{localStorage.setItem('fd_lobby_hist',JSON.stringify(hist))}catch(e){}}
+let sets={music:true,sfx:true,vib:false,q:2};try{Object.assign(sets,JSON.parse(localStorage.getItem('fd_lobby_set')||'{}'))}catch(e){}
+function saveSets(){try{localStorage.setItem('fd_lobby_set',JSON.stringify(sets))}catch(e){}}
+
+const myDeck=()=>deckState.decks[deckState.slot];
+const deckName=i=>deckState.custom[i]?'自定义':PRESETS[i].name;
+const avg=cards=>(cards.reduce((a,k)=>a+CARDS[k].cost,0)/cards.length).toFixed(1);
+const wins=()=>hist.filter(h=>h.r==='胜').length;
+
+function sp(file,[x,y,w,h],extra=''){return `<div class="sp" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background-image:url(${SL}${file}.png);${extra}"></div>`}
+function ti(file,[x,y,w,h],c){return `<div class="ti" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${c};-webkit-mask-image:url(${SL}${file}.png);mask-image:url(${SL}${file}.png)"></div>`}
+function tx(t,x,y,size,color,anchor='mm',cls='',w=700){return `<div class="t ${anchor} ${cls}" style="left:${x}px;top:${y}px;font-size:${size}px;color:${color};font-weight:${w}">${t}</div>`}
+function hit(x,y,w,h,fn,id=''){return `<div class="hit" ${id?`id="${id}"`:''} style="left:${x}px;top:${y}px;width:${w}px;height:${h}px" onclick="${fn}"></div>`}
+// 一张卡：框 113×191 时美术区在 (4,32,105,122)，按比例缩放
+function card(k,x,y,w=113){const c=CARDS[k],s=w/113,h=191*s;
+  return sp('Art_'+c.art,[x+4*s,y+32*s,105*s,122*s])+sp('CardFrame',[x,y,w,h])+
+   tx(c.cost,x+19*s,y+17*s,21*s,'#EDF2F6')+tx(c.name,x+56*s,y+167*s,(c.name.length>5?14:17)*s,'#17263A')}
+
+function lobby(){
+  const d=myDeck(),o=PRESETS[deckState.opp];
+  let h=sp('Background',[0,0,1080,2340]);
+  h+=sp('PlayerPanel',[23,227,579,158])+sp('ResourcePanel',[711,230,344,145])+sp('SettingsButton',[956,392,96,70]);
+  h+=sp('RewardsPanel',[65,873,358,319]);
+  h+=`<div id="battleGrp">`+sp('BattleConsole',[527,747,532,510])+sp('BattleButton',[564,791,463,230])+
+     ti('Icon_Battle',[601,879,83,83],'#152337')+`<div class="sp" style="left:700px;top:870px;width:6px;height:100px;background:#17263a55;transform:skewX(-12deg)"></div>`+
+     tx('对战',860,913,96,'#17263A','mm','',900)+`</div>`;
+  h+=sp('OpponentButton',[629,1049,330,70])+sp('DeckPanel',[25,1535,1029,310]);
+  h+=sp('NavRail',[0,2023,1080,149])+sp('NavSelected',[423,2003,220,168]);
+  // 头像加金边
+  h+=`<div class="sp" style="left:46px;top:245px;width:125px;height:125px;background:#DCA822;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)"></div>`+sp('Icon_Avatar',[52,251,113,113]);
+  h+=ti('Icon_Gear',[975,406,56,56],'#17263A')+ti('Icon_Trophy',[345,313,30,30],'#DCA822');
+  h+=ti('Icon_Coin',[747,254,30,30],'#E0B43A')+ti('Icon_Diamond',[747,319,30,30],'#6FC3F5')+ti('Icon_Lock',[990,254,30,30],'#AEB9C7')+ti('Icon_Lock',[990,319,30,30],'#AEB9C7');
+  [[124,909],[286,909],[124,1049],[286,1049]].forEach(([x,y])=>h+=ti('Icon_Chest',[x,y,77,57],'#9aa8ba')+ti('Icon_Lock',[x+26,y+32,29,29],'#D4DCE5'));
+  const nav=[['Shop',67,'#8492A4'],['Deck',282,'#EDF2F6'],['Battle',480,'#17263A'],['Book',700,'#8492A4'],['Event',918,'#8492A4']];
+  nav.forEach(([f,x,c])=>h+=ti('Icon_'+f,[x,2054,73,73],c));
+  [141,780,988].forEach(x=>h+=ti('Icon_Lock',[x,2098,26,26],'#8492A4'));
+  // 文字
+  h+=tx('MS 战线对决',38,181,27,'#EDF2F6','lm','',900)+tx('指',108,305,58,'#EDF2F6')+tx('指挥官',231,275,42,'#17263A','lm','',900)+
+     tx('Lv.1',236,333,27,'#17263A','lm')+tx(wins()*30,399,335,27,'#17263A','lm')+tx('—',834,269,32,'#EDF2F6')+tx('—',834,335,32,'#EDF2F6');
+  h+=tx('竞技场 1',65,491,35,'#EDF2F6','lm','title')+tx('训练场',50,578,100,'#EDF2F6','lm','title',900)+tx('TRAINING HANGAR',56,659,30,'#ABB4C0','lm','',700);
+  h+=tx('对手设置',795,1084,37,'#17263A')+tx('对手：AI 指挥官',793,1152,31,'#17263A')+tx(`（${o.name} · AI ${deckState.ai}）`,793,1196,27,'#17263A');
+  [[163,993],[325,993],[163,1134],[325,1134]].forEach(([x,y])=>h+=tx('即将开放',x,y,23,'#B6C0CF'));
+  h+=tx(`卡组 ${deckState.slot+1} · ${deckName(deckState.slot)}`,161,1581,35,'#EDF2F6','lm','',900)+tx('平均费用',782,1581,30,'#EDF2F6','lm')+tx(avg(d),975,1581,40,'#2FD3E0','mm','',900);
+  d.forEach((k,i)=>h+=card(k,[51,174,296,419,542,664,787,910][i],1631));
+  [['商店',104,'#BCC5D0'],['卡组',318,'#EDF2F6'],['对战',533,'#17263A'],['图鉴',737,'#BCC5D0'],['活动',955,'#BCC5D0']].forEach(([t,x,c])=>h+=tx(t,x,2140,27,c));
+  // 点击区
+  h+=hit(23,227,579,158,'openHist()')+hit(956,392,96,70,'openSettings()')+hit(711,230,344,145,"toast('Demo 暂未开放')");
+  h+=hit(65,873,358,319,"toast('奖励箱：即将开放')");
+  h+=`<div class="hit" id="bb" style="left:564px;top:791px;width:463px;height:230px"></div>`;
+  h+=hit(629,1049,330,70,'openOpp()')+hit(25,1535,1029,310,'goDeck()');
+  h+=hit(0,2023,216,215,"toast('Demo 暂未开放')")+hit(216,2023,216,215,'goDeck()')+hit(432,2003,216,235,'')+hit(648,2023,216,215,"toast('Demo 暂未开放')")+hit(864,2023,216,215,"toast('Demo 暂未开放')");
+  $('scene').innerHTML=h;
+  const bb=$('bb'),g=$('battleGrp');
+  bb.onpointerdown=()=>g.classList.add('press');
+  bb.onpointerleave=()=>g.classList.remove('press');
+  bb.onpointerup=()=>{if(g.classList.contains('press')){g.classList.remove('press');startVS()}};
+}
+function goDeck(){location.href=DECK_URL}
+let tt;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
+function openPop(h){$('mask').classList.add('on');const p=$('pop');p.innerHTML=h;p.style.pointerEvents='auto'}
+function closePop(){$('mask').classList.remove('on');const p=$('pop');p.innerHTML='';p.style.pointerEvents='none'}
+const L=(t,x,y,size,color='#fff',w=700,anchor='mm')=>tx(t,x,y,size,color,anchor,'',w);
+
+// L02 对手设置
+let oppSel,aiSel;
+function openOpp(){oppSel=deckState.opp;aiSel=deckState.ai;renderOpp()}
+function renderOpp(){const x0=120,y0=560,c=PRESETS[oppSel].cards;
+  let h=`<div class="mframe" style="left:${x0}px;top:${y0}px;width:840px;height:1120px"></div>`+L('对手设置',540,y0+70,44,'#17263A',900);
+  h+=L('对手卡组',x0+70,y0+190,28,'#c9d3dd',700,'lm');
+  h+=`<div class="seg" style="left:${x0+70}px;top:${y0+220}px;width:700px;height:70px;font-size:28px">`+PRESETS.map((p,i)=>`<div class="${i===oppSel?'on':''}" onclick="oppSel=${i};renderOpp()">${p.name}</div>`).join('')+`</div>`;
+  c.forEach((k,i)=>h+=card(k,x0+64+(i%4)*182,y0+320+Math.floor(i/4)*196,150*0+113*1.0));
+  h+=L(`平均费用 <span style="color:#2FD3E0">${avg(c)}</span>`,540,y0+735,28,'#c9d3dd');
+  h+=L('AI',x0+70,y0+810,30,'#fff',700,'lm')+`<div class="seg" style="left:${x0+420}px;top:${y0+780}px;width:350px;height:62px;font-size:28px">`+['新','旧'].map(a=>`<div class="${a===aiSel?'on':''}" onclick="aiSel='${a}';renderOpp()">${a}</div>`).join('')+`</div>`;
+  h+=L('设置保存在本机，选卡组界面的对战准备也会同步',540,y0+880,22,'#8c96a3',500);
+  h+=`<div class="btn skin b-yel" style="left:${x0+220}px;top:${y0+975}px;width:400px;height:100px;font-size:40px" onclick="deckState.opp=oppSel;deckState.ai=aiSel;saveDeck();closePop();lobby();toast('对手已设置：'+PRESETS[oppSel].name+' · AI '+aiSel)">确定</div>`;
+  openPop(h)}
+
+// L04 设置
+function openSettings(){const x0=120,y0=560;
+  const row=(i,t)=>`<div style="position:absolute;left:${x0+60}px;top:${y0+190+i*120}px;width:720px;height:2px;background:#ffffff18"></div>`+L(t,x0+70,y0+250+i*120,32,'#fff',700,'lm');
+  const sw=(i,k)=>`<div class="sw ${sets[k]?'on':''}" style="left:${x0+650}px;top:${y0+224+i*120}px" onclick="sets.${k}=!sets.${k};saveSets();openSettings()"><span style="${sets[k]?'left:16px':'right:14px'}">${sets[k]?'开':'关'}</span></div>`;
+  let h=`<div class="mframe" style="left:${x0}px;top:${y0}px;width:840px;height:1100px"></div>`+L('设置',540,y0+70,44,'#17263A',900);
+  h+=row(0,'音乐')+sw(0,'music')+row(1,'音效')+sw(1,'sfx')+row(2,'震动')+sw(2,'vib')+row(3,'画质');
+  h+=`<div class="seg" style="left:${x0+420}px;top:${y0+582}px;width:350px;height:62px;font-size:28px">`+['低','中','高'].map((q,i)=>`<div class="${i===sets.q?'on':''}" onclick="sets.q=${i};saveSets();openSettings()">${q}</div>`).join('')+`</div>`;
+  h+=row(4,'<span style="color:#8c96a3">语言</span>')+`<div class="t" style="left:${x0+770}px;top:${y0+730}px;font-size:28px;color:#8c96a3;font-weight:500;transform:translate(-100%,-50%)">简体中文 🔒</div>`;
+  h+=L('Demo 0.1',540,y0+840,24,'#8c96a3',500);
+  h+=`<div class="btn skin b-wht" style="left:${x0+220}px;top:${y0+930}px;width:400px;height:100px;font-size:40px" onclick="closePop()">关闭</div>`;
+  openPop(h)}
+
+// L05 战绩
+function openHist(){const x0=120,y0=380,n=hist.length,w=wins(),l=hist.filter(h=>h.r==='负').length;
+  let h=`<div class="mframe" style="left:${x0}px;top:${y0}px;width:840px;height:1500px"></div>`+L('最近战绩',540,y0+70,44,'#17263A',900);
+  h+=`<div style="position:absolute;left:${x0+60}px;top:${y0+150}px;width:720px;height:76px;background:#0f1a28;border:2px solid #3b4d66"></div>`;
+  h+=L(`${w} 胜`,x0+180,y0+188,30,'#FFD45C')+L(`${l} 负`,540,y0+188,30,'#FFD45C')+L(n?`${Math.round(w/n*100)}% 胜率`:'— 胜率',x0+660,y0+188,30,'#FFD45C');
+  if(!n)h+=L('还没有对局记录',540,y0+640,34,'#c9d3dd',500)+L('点大厅的“对战”打一局（Demo 模拟结果）',540,y0+700,24,'#8c96a3',500);
+  hist.slice(0,10).forEach((r,i)=>{const y=y0+270+i*96,col={胜:'#3DBE5A',负:'#E8413C',平:'#8C96A3'}[r.r];
+    h+=`<div style="position:absolute;left:${x0+60}px;top:${y}px;width:720px;height:86px;border-bottom:2px solid #ffffff14"></div>`;
+    h+=`<div style="position:absolute;left:${x0+70}px;top:${y+20}px;width:48px;height:48px;background:${col};border-radius:4px"></div>`+L(r.r,x0+94,y+44,26,'#fff',900);
+    h+=L(r.score,x0+200,y+44,32,'#fff',900)+L(r.me,x0+290,y+30,26,'#fff',700,'lm')+L('对手 · '+r.opp,x0+290,y+64,20,'#8c96a3',500,'lm');
+    h+=L(r.t,x0+720,y+30,26,'#fff',700)+L(r.ot?'加时':'常规',x0+720,y+64,20,'#8c96a3',500)});
+  h+=`<div class="btn skin b-wht" style="left:${x0+220}px;top:${y0+1330}px;width:400px;height:100px;font-size:40px" onclick="closePop()">关闭</div>`;
+  openPop(h)}
+
+// L03 VS 加载 → 模拟结算
+let vsTimer;
+function startVS(){const o=PRESETS[deckState.opp],d=myDeck(),V=$('vs');
+  let h=`<div class="shake" style="position:absolute;inset:0"><div class="top"></div><div class="bot"></div><div class="cut"></div><div class="grid"></div>`;
+  h+=`<div class="plate" style="top:300px;height:330px"></div>`+sp('Icon_Avatar',[150,350,200,200])+L('AI',250,450,70,'#EDF2F6',900)+
+     L('AI 指挥官',400,420,48,'#17263A',900,'lm')+L(`对手卡组：${o.name} · AI ${deckState.ai}`,400,500,28,'#4a5566',700,'lm');
+  h+=`<div class="plate" style="top:1400px;height:520px"></div>`+sp('Icon_Avatar',[150,1440,180,180])+L('指',240,1530,80,'#EDF2F6',900)+
+     L('指挥官',380,1500,48,'#17263A',900,'lm')+L(`我方卡组：${deckName(deckState.slot)}`,380,1574,28,'#4a5566',700,'lm');
+  d.forEach((k,i)=>h+=card(k,128+i*104,1660,96));
+  h+=`<div id="vsWord"><b id="vsV">V</b><b id="vsS">S</b></div><div id="spark"></div></div>`;
+  h+=L(TIPS[Math.floor(Math.random()*TIPS.length)],540,1990,28,'#EDF2F6',500)+`<div class="bar"><i id="barI"></i></div>`+L('0%',1000,2150,26,'#EDF2F6',700).replace('class="t mm','id="pct" class="t mm');
+  V.innerHTML=h;V.classList.add('on');V.classList.remove('anim');void V.offsetWidth;V.classList.add('anim');
+  let p=0;clearInterval(vsTimer);
+  vsTimer=setInterval(()=>{p=Math.min(100,p+Math.random()*6+2);$('barI').style.width=`calc(${p}% - 8px)`;$('pct').textContent=Math.floor(p)+'%';
+    if(p>=100){clearInterval(vsTimer);setTimeout(()=>{V.classList.remove('on');result()},350)}},90)}
+function result(){const o=PRESETS[deckState.opp],roll=Math.random(),r=roll<.55?'胜':roll<.9?'负':'平';
+  const score=r==='胜'?(Math.random()<.3?'3 : 0':'2 : 1'):r==='负'?(Math.random()<.5?'0 : 1':'1 : 2'):'1 : 1';
+  const ot=r==='平'||Math.random()<.4,sec=ot?180+Math.floor(Math.random()*60):120+Math.floor(Math.random()*60);
+  hist.unshift({r,score,opp:o.name,me:deckName(deckState.slot),t:`${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`,ot});hist=hist.slice(0,10);saveHist();
+  const col={胜:'#FFD45C',负:'#E8413C',平:'#c9d3dd'}[r],x0=120,y0=780;
+  let h=`<div class="mframe" style="left:${x0}px;top:${y0}px;width:840px;height:880px"></div>`+L('对局结束（Demo 模拟）',540,y0+70,40,'#17263A',900);
+  h+=L({胜:'胜利',负:'失败',平:'平局'}[r],540,y0+260,110,col,900).replace('class="t mm','class="t mm title');
+  h+=L(score,540,y0+400,56,'#fff',900)+L(`对手：${o.name} · ${ot?'加时':'常规'} · ${hist[0].t}`,540,y0+470,26,'#c9d3dd',500);
+  if(r==='胜')h+=L('战功 +30',540,y0+530,30,'#DCA822',900);
+  h+=`<div class="btn skin b-yel" style="left:${x0+220}px;top:${y0+720}px;width:400px;height:100px;font-size:38px" onclick="closePop();lobby()">返回大厅</div>`;
+  openPop(h)}
+
+// L06 启动页（每个会话一次，点击可跳过）
+function splash(){let seen=false;try{seen=sessionStorage.getItem('fd_splash')}catch(e){}
+  if(seen)return;try{sessionStorage.setItem('fd_splash','1')}catch(e){}
+  const S=$('splash');S.innerHTML=`<div class="band" style="top:300px"></div><div class="band" style="top:1500px"></div>`+
+   L('MS 战线对决',540,1000,96,'#EDF2F6',900).replace('class="t mm','class="t mm title').replace('MS','<span style="color:#DCA822">MS</span>')+
+   L('MOBILE SUIT FRONTLINE DUEL',540,1110,30,'#ABB4C0',700)+L('加载中…',540,1990,28,'#EDF2F6',500)+`<div class="bar"><i id="sbar"></i></div>`+L('© 版权信息待定',540,2190,22,'#8c96a3',500);
+  S.classList.add('on');let p=0;const t=setInterval(()=>{p+=3;$('sbar').style.width=`calc(${Math.min(p,100)}% - 8px)`;if(p>=100){clearInterval(t);S.classList.remove('on')}},70);
+  S.onclick=()=>{clearInterval(t);S.classList.remove('on')}}
+
+function fit(){const s=Math.min(innerWidth/1080,innerHeight/2340),w=$('wrap');w.style.transform=`scale(${s})`;w.style.left=((innerWidth-1080*s)/2)+'px'}
+addEventListener('resize',fit);fit();
+$('mask').onclick=()=>{closePop();lobby()};
+document.fonts&&document.fonts.ready.then(()=>{});
+lobby();splash();
+</script>
+</body>
+</html>
