@@ -12,8 +12,14 @@
 :root{--ink:#111E2B;--cyan:#2FD3E0;--gold:#FFD45C;--navy:#1e2a3a;--F:Armor,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:var(--F)}
-#wrap{position:absolute;top:0;transform-origin:top left}
-#canvas{position:relative;width:1080px;height:2340px;overflow:hidden;user-select:none;touch-action:none}
+/* fixed：1080 宽的画布不撑大手机的布局视口（否则手机浏览器会缩小整页、fit 算错） */
+#wrap{position:fixed;left:0;top:0;width:1080px;height:2340px;transform-origin:top left}
+#canvas{position:relative;width:1080px;height:2340px;overflow:hidden;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:none;background:#1d2a3b}
+/* 底图、卡牌、字体都到齐后整屏一起显示，避免文字先出、底图后出 */
+#canvas.boot>*{visibility:hidden}
+#canvas.boot::after{content:"加载中…";position:absolute;left:0;right:0;top:1150px;text-align:center;color:#8c96a3;font:500 36px sans-serif}
+#canvas.reveal>*{animation:sceneIn .22s ease-out}
+@keyframes sceneIn{from{opacity:0}to{opacity:1}}
 /* 底板层：r02 原生 830×1896，按 r02 转换系数铺到 1080×2340 */
 .native{position:absolute;left:0;top:0;width:830px;height:1896px;transform:scale(1.3012048,1.2341772);transform-origin:0 0}
 #stage{background:url(base_clean.png) 0 0/830px 1896px}
@@ -81,7 +87,7 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 </head>
 <body>
 <div id="note"><b>MS战线对决 · 选卡组界面原型</b><br>用 Codex r02 / r03 装甲素材在网页里组装，可以点：<br>· 点下面的卡 → 使用 / 信息<br>· 使用后点上面一张卡互换<br>· 也可以按住下面的卡拖到上面一张卡上<br>· 卡组 1/2/3、推荐卡组、重置、筛选、排序<br>· 开始对战 → 对战准备（选对手卡组）<br>换卡会存在本机浏览器里。<br>机体图是占位图，不是正式立绘。<br><br>需求：DesignDocs/30_选卡组界面_v1.0.md</div>
-<div id="wrap"><div id="canvas">
+<div id="wrap"><div id="canvas" class="boot">
  <div id="stage" class="native">
   <div class="t" style="left:72px;top:127px;font-size:54px;color:var(--ink)">‹</div>
   <div class="hit" style="left:32px;top:98px;width:80px;height:62px" onclick="location.href='../../lobby/prototype/'"></div>
@@ -397,19 +403,31 @@ function closePrep(){$('prep').classList.remove('on')}
 let tt;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
 
 // ---------- 启动 ----------
-function fit(){const s=Math.min(innerWidth/1080,innerHeight/2340),w=$('wrap');w.style.transform=`scale(${s})`;w.style.left=((innerWidth-1080*s)/2)+'px'}
-addEventListener('resize',fit);fit();
+function fit(){const de=document.documentElement,W=de.clientWidth||innerWidth,H=de.clientHeight||innerHeight;
+  const s=Math.min(W/1080,H/2340),w=$('wrap');w.style.transform=`scale(${s})`;w.style.left=((W-1080*s)/2)+'px'}
+addEventListener('resize',fit);addEventListener('orientationchange',()=>setTimeout(fit,200));fit();
+// iOS Safari 需要 touchstart 监听，:active 按压态才会生效
+document.addEventListener('touchstart',()=>{},{passive:true});
+// 只预加载、不进 IMG 表的图（底图、页签、弹窗、对战准备的素材），等解码完
+function warm(src){return new Promise(r=>{const i=new Image();i.onload=()=>(i.decode?i.decode():Promise.resolve()).catch(()=>{}).then(r);i.onerror=()=>r();i.src=src})}
+const UI_IMGS=['base_clean.png','tab_selected.png','filter_selected.png',
+  ...['Button_Yellow','Button_White','Button_Blue','Bubble','Modal','Modal_Tactic','Inset_Skill','Inset_Source'].map(n=>SP3+'UI_FDDeck_'+n+'.png'),
+  ...['NavyTexture','HeaderMaterial','FooterMaterial','Tab'].map(n=>SP2+'UI_FDDeck_'+n+'.png')];
 $('canvas').addEventListener('click',e=>{if(e.target.id==='stage'||e.target.id==='canvas')clearSel()});
 (async()=>{
-  await Promise.all([document.fonts.load('700 24px Armor'),document.fonts.load('500 20px Armor'),document.fonts.load('700 24px "Noto Sans SC"')]).catch(()=>{});
+  const fonts=Promise.all([document.fonts.load('700 24px Armor'),document.fonts.load('500 20px Armor'),document.fonts.load('700 24px "Noto Sans SC"')]).catch(()=>{});
+  await Promise.race([fonts,new Promise(r=>setTimeout(r,3000))]);
   const arts=new Set(Object.values(CARDS).map(c=>SP2+`UI_FDDeck_Art_${c.art}.png`));
-  await Promise.all([...arts,SP2+'UI_FDDeck_CardFrame.png'].map(load));
+  const icons=new Set(Object.values(CARDS).flatMap(c=>[c.icon,...c.stats.map(s=>s[0])]).map(n=>SP3+`UI_FDDeck_Icon_${n}.png`));
+  await Promise.all([...[...arts,SP2+'UI_FDDeck_CardFrame.png'].map(load),...UI_IMGS.map(warm)]);
+  icons.forEach(warm);
   TAB_X.forEach((x,i)=>$('tabs').insertAdjacentHTML('beforeend',`<div class="t tablbl" style="left:${x+88}px;top:250px;font-size:28px"></div><div class="hit" style="left:${x}px;top:215px;width:178px;height:68px" onclick="setSlot(${i})"></div>`));
   ["全部",...ROLE_ORDER].forEach(r=>{const d=document.createElement('div');d.className='chip'+(r==='全部'?' on':'');d.dataset.r=r;d.innerHTML=(r==='全部'?'':`<i style="background:${ROLE[r]}"></i>`)+r;d.onclick=()=>{if(!replacing)setFilter(r)};$('filters').append(d)});
   for(const k in CARDS){CANVAS[k]=renderCard(k);const e=document.createElement('div');e.className='card';e.append(cardCanvas(k));
     e.addEventListener('pointerdown',ev=>onDown(k,ev));e.addEventListener('pointermove',ev=>onMove(k,ev));e.addEventListener('pointerup',ev=>onUp(k,ev));e.addEventListener('pointercancel',()=>{e.classList.remove('press');drag=null;layout()});
     $('cards').append(e);cardEls[k]=e}
   document.querySelectorAll('.card').forEach(e=>e.style.transition='none');layout();document.body.offsetWidth;document.querySelectorAll('.card').forEach(e=>e.style.transition='');
+  const cv=$('canvas');cv.classList.remove('boot');cv.classList.add('reveal');setTimeout(()=>cv.classList.remove('reveal'),300);
   const h=location.hash.slice(1);
   if(h==='prep')openPrep();else if(h==='presets')openPresets();else if(h.startsWith('info-'))openInfo(h.slice(5));
 })();

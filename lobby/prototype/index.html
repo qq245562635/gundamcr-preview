@@ -11,16 +11,23 @@
 :root{--ink:#17263A;--cyan:#2FD3E0;--gold:#FFD45C;--F:"Noto Sans SC","PingFang SC",sans-serif}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:var(--F)}
-#wrap{position:absolute;top:0;transform-origin:top left}
-#canvas{position:relative;width:1080px;height:2340px;overflow:hidden;user-select:none;background:#0d1724}
+/* fixed：1080 宽的画布不撑大手机的布局视口（否则手机浏览器会缩小整页、fit 算错） */
+#wrap{position:fixed;left:0;top:0;width:1080px;height:2340px;transform-origin:top left}
+#canvas{position:relative;width:1080px;height:2340px;overflow:hidden;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:manipulation;background:#0d1724}
+/* 图片和字体都到齐后整屏一起显示，避免元素先后蹦出来 */
+#canvas.boot>*{visibility:hidden}
+#canvas.boot::after{content:"加载中…";position:absolute;left:0;right:0;top:1150px;text-align:center;color:#8c96a3;font:500 36px sans-serif;visibility:visible}
+#canvas.reveal>#scene{animation:sceneIn .22s ease-out}
+@keyframes sceneIn{from{opacity:0}to{opacity:1}}
 .sp{position:absolute;background-size:100% 100%;background-repeat:no-repeat;pointer-events:none}
 .ti{position:absolute;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
 .t{position:absolute;white-space:nowrap;line-height:1;font-weight:700;pointer-events:none}
 .t.mm{transform:translate(-50%,-50%)} .t.lm{transform:translateY(-50%)}
 .hit{position:absolute;cursor:pointer}
-#battleGrp{position:absolute;left:0;top:0;transition:transform .08s}
-#battleGrp.press{transform:translate(4px,10px)}
-#battleGrp.press .sp{filter:brightness(.9)}
+/* 按压组：一个按钮的底图、图标、文字放在同一组里，按下时整组一起动 */
+.pg{position:absolute;left:0;top:0;width:1080px;height:2340px;pointer-events:none;transition:transform .08s ease-out,filter .08s}
+.pg.press{transform:scale(.96);filter:brightness(.9)}
+#battleGrp.press{transform:translate(4px,10px);filter:brightness(.92)}
 .title{font-weight:900;font-style:italic;text-shadow:0 4px 0 #0b1420,0 6px 16px #000c;letter-spacing:2px}
 .skin{border-style:solid;border-color:transparent}
 .b-yel{border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_Yellow.png) 30 fill/30px stretch}
@@ -70,12 +77,12 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 .bar{position:absolute;left:90px;top:2050px;width:900px;height:44px;border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_White.png) 22 fill/22px stretch;border-style:solid;border-color:transparent}
 .bar i{position:absolute;left:4px;top:6px;bottom:6px;width:0;background:linear-gradient(90deg,#18b8c6,#5ff0fa);border-radius:3px}
 #splash{position:absolute;inset:0;z-index:90;background:#13202f;display:none;cursor:pointer}
-#splash.on{display:block}
+#splash.on{display:block} #splash{transition:opacity .2s} #splash.out{opacity:0}
 #splash .band{position:absolute;left:-200px;width:1500px;height:150px;background:#c9c6bd;transform:rotate(-14deg);box-shadow:inset 0 -8px 0 #8f8a80}
 </style>
 </head>
 <body>
-<div id="wrap"><div id="canvas">
+<div id="wrap"><div id="canvas" class="boot">
   <div id="scene"></div>
   <div id="vs"></div>
   <div class="mask" id="mask"></div>
@@ -120,50 +127,71 @@ const wins=()=>hist.filter(h=>h.r==='胜').length;
 function sp(file,[x,y,w,h],extra=''){return `<div class="sp" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background-image:url(${SL}${file}.png);${extra}"></div>`}
 function ti(file,[x,y,w,h],c){return `<div class="ti" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background:${c};-webkit-mask-image:url(${SL}${file}.png);mask-image:url(${SL}${file}.png)"></div>`}
 function tx(t,x,y,size,color,anchor='mm',cls='',w=700){return `<div class="t ${anchor} ${cls}" style="left:${x}px;top:${y}px;font-size:${size}px;color:${color};font-weight:${w}">${t}</div>`}
-function hit(x,y,w,h,fn,id=''){return `<div class="hit" ${id?`id="${id}"`:''} style="left:${x}px;top:${y}px;width:${w}px;height:${h}px" onclick="${fn}"></div>`}
+function hit(x,y,w,h,fn,id='',press=''){return `<div class="hit" ${id?`id="${id}"`:''} ${press?`data-p="${press}" data-fn="${fn.replace(/"/g,'&quot;')}"`:`onclick="${fn}"`} style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"></div>`}
 // 一张卡：框 113×191 时美术区在 (4,32,105,122)，按比例缩放
 function card(k,x,y,w=113){const c=CARDS[k],s=w/113,h=191*s;
   return sp('Art_'+c.art,[x+4*s,y+32*s,105*s,122*s])+sp('CardFrame',[x,y,w,h])+
    tx(c.cost,x+19*s,y+17*s,21*s,'#EDF2F6')+tx(c.name,x+56*s,y+167*s,(c.name.length>5?14:17)*s,'#17263A')}
 
+// 按压组：grp(id,中心,内容)；hit 的 press 指向组 id
+const grp=(id,[cx,cy],inner)=>`<div class="pg" id="${id}" style="transform-origin:${cx}px ${cy}px">${inner}</div>`;
 function lobby(){
   const d=myDeck(),o=PRESETS[deckState.opp];
   let h=sp('Background',[0,0,1080,2340]);
-  h+=sp('PlayerPanel',[23,227,579,158])+sp('ResourcePanel',[711,230,344,145])+sp('SettingsButton',[956,392,96,70]);
-  h+=sp('RewardsPanel',[65,873,358,319]);
-  h+=`<div id="battleGrp">`+sp('BattleConsole',[527,747,532,510])+sp('BattleButton',[564,791,463,230])+
-     ti('Icon_Battle',[601,879,83,83],'#152337')+`<div class="sp" style="left:700px;top:870px;width:6px;height:100px;background:#17263a55;transform:skewX(-12deg)"></div>`+
-     tx('对战',860,913,96,'#17263A','mm','',900)+`</div>`;
-  h+=sp('OpponentButton',[629,1049,330,70])+sp('DeckPanel',[25,1535,1029,310]);
-  h+=sp('NavRail',[0,2023,1080,149])+sp('NavSelected',[423,2003,220,168]);
-  // 头像加金边
-  h+=`<div class="sp" style="left:46px;top:245px;width:125px;height:125px;background:#DCA822;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)"></div>`+sp('Icon_Avatar',[52,251,113,113]);
-  h+=ti('Icon_Gear',[975,406,56,56],'#17263A')+ti('Icon_Trophy',[345,313,30,30],'#DCA822');
-  h+=ti('Icon_Coin',[747,254,30,30],'#E0B43A')+ti('Icon_Diamond',[747,319,30,30],'#6FC3F5')+ti('Icon_Lock',[990,254,30,30],'#AEB9C7')+ti('Icon_Lock',[990,319,30,30],'#AEB9C7');
-  [[124,909],[286,909],[124,1049],[286,1049]].forEach(([x,y])=>h+=ti('Icon_Chest',[x,y,77,57],'#9aa8ba')+ti('Icon_Lock',[x+26,y+32,29,29],'#D4DCE5'));
-  const nav=[['Shop',67,'#8492A4'],['Deck',282,'#EDF2F6'],['Battle',480,'#17263A'],['Book',700,'#8492A4'],['Event',918,'#8492A4']];
-  nav.forEach(([f,x,c])=>h+=ti('Icon_'+f,[x,2054,73,73],c));
-  [141,780,988].forEach(x=>h+=ti('Icon_Lock',[x,2098,26,26],'#8492A4'));
-  // 文字
-  h+=tx('MS 战线对决',38,181,27,'#EDF2F6','lm','',900)+tx('指',108,305,58,'#EDF2F6')+tx('指挥官',231,275,42,'#17263A','lm','',900)+
-     tx('Lv.1',236,333,27,'#17263A','lm')+tx(wins()*30,399,335,27,'#17263A','lm')+tx('—',834,269,32,'#EDF2F6')+tx('—',834,335,32,'#EDF2F6');
+  h+=tx('MS 战线对决',38,181,27,'#EDF2F6','lm','',900);
+  // 玩家信息
+  h+=grp('pgPlayer',[312,306],sp('PlayerPanel',[23,227,579,158])+
+     `<div class="sp" style="left:46px;top:245px;width:125px;height:125px;background:#DCA822;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)"></div>`+sp('Icon_Avatar',[52,251,113,113])+
+     ti('Icon_Trophy',[345,313,30,30],'#DCA822')+tx('指',108,305,58,'#EDF2F6')+tx('指挥官',231,275,42,'#17263A','lm','',900)+
+     tx('Lv.1',236,333,27,'#17263A','lm')+tx(wins()*30,399,335,27,'#17263A','lm'));
+  h+=grp('pgRes',[883,302],sp('ResourcePanel',[711,230,344,145])+
+     ti('Icon_Coin',[747,254,30,30],'#E0B43A')+ti('Icon_Diamond',[747,319,30,30],'#6FC3F5')+ti('Icon_Lock',[990,254,30,30],'#AEB9C7')+ti('Icon_Lock',[990,319,30,30],'#AEB9C7')+
+     tx('—',834,269,32,'#EDF2F6')+tx('—',834,335,32,'#EDF2F6'));
+  h+=grp('pgSet',[1004,427],sp('SettingsButton',[956,392,96,70])+ti('Icon_Gear',[975,406,56,56],'#17263A'));
   h+=tx('竞技场 1',65,491,35,'#EDF2F6','lm','title')+tx('训练场',50,578,100,'#EDF2F6','lm','title',900)+tx('TRAINING HANGAR',56,659,30,'#ABB4C0','lm','',700);
-  h+=tx('对手设置',795,1084,37,'#17263A')+tx('对手：AI 指挥官',793,1152,31,'#17263A')+tx(`（${o.name} · AI ${deckState.ai}）`,793,1196,27,'#17263A');
-  [[163,993],[325,993],[163,1134],[325,1134]].forEach(([x,y])=>h+=tx('即将开放',x,y,23,'#B6C0CF'));
-  h+=tx(`卡组 ${deckState.slot+1} · ${deckName(deckState.slot)}`,161,1581,35,'#EDF2F6','lm','',900)+tx('平均费用',782,1581,30,'#EDF2F6','lm')+tx(avg(d),975,1581,40,'#2FD3E0','mm','',900);
-  d.forEach((k,i)=>h+=card(k,[51,174,296,419,542,664,787,910][i],1631));
-  [['商店',104,'#BCC5D0'],['卡组',318,'#EDF2F6'],['对战',533,'#17263A'],['图鉴',737,'#BCC5D0'],['活动',955,'#BCC5D0']].forEach(([t,x,c])=>h+=tx(t,x,2140,27,c));
-  // 点击区
-  h+=hit(23,227,579,158,'openHist()')+hit(956,392,96,70,'openSettings()')+hit(711,230,344,145,"toast('Demo 暂未开放')");
-  h+=hit(65,873,358,319,"toast('奖励箱：即将开放')");
-  h+=`<div class="hit" id="bb" style="left:564px;top:791px;width:463px;height:230px"></div>`;
-  h+=hit(629,1049,330,70,'openOpp()')+hit(25,1535,1029,310,'goDeck()');
-  h+=hit(0,2023,216,215,"toast('Demo 暂未开放')")+hit(216,2023,216,215,'goDeck()')+hit(432,2003,216,235,'')+hit(648,2023,216,215,"toast('Demo 暂未开放')")+hit(864,2023,216,215,"toast('Demo 暂未开放')");
+  // 奖励槽
+  let rw=sp('RewardsPanel',[65,873,358,319]);
+  [[124,909],[286,909],[124,1049],[286,1049]].forEach(([x,y])=>rw+=ti('Icon_Chest',[x,y,77,57],'#9aa8ba')+ti('Icon_Lock',[x+26,y+32,29,29],'#D4DCE5'));
+  [[163,993],[325,993],[163,1134],[325,1134]].forEach(([x,y])=>rw+=tx('即将开放',x,y,23,'#B6C0CF'));
+  h+=grp('pgReward',[244,1032],rw);
+  // 对战操作台：按“对战”时整块（底座、对战按钮、对手设置按钮、对手文字）一起下压
+  h+=`<div class="pg" id="battleGrp">`+sp('BattleConsole',[527,747,532,510])+sp('BattleButton',[564,791,463,230])+
+     ti('Icon_Battle',[601,879,83,83],'#152337')+`<div class="sp" style="left:700px;top:870px;width:6px;height:100px;background:#17263a55;transform:skewX(-12deg)"></div>`+
+     tx('对战',860,913,96,'#17263A','mm','',900)+
+     grp('pgOpp',[794,1084],sp('OpponentButton',[629,1049,330,70])+tx('对手设置',795,1084,37,'#17263A'))+
+     tx('对手：AI 指挥官',793,1152,31,'#17263A')+tx(`（${o.name} · AI ${deckState.ai}）`,793,1196,27,'#17263A')+`</div>`;
+  // 卡组
+  let dk=sp('DeckPanel',[25,1535,1029,310])+tx(`卡组 ${deckState.slot+1} · ${deckName(deckState.slot)}`,161,1581,35,'#EDF2F6','lm','',900)+tx('平均费用',782,1581,30,'#EDF2F6','lm')+tx(avg(d),975,1581,40,'#2FD3E0','mm','',900);
+  d.forEach((k,i)=>dk+=card(k,[51,174,296,419,542,664,787,910][i],1631));
+  h+=grp('pgDeck',[540,1690],dk);
+  // 底部导航
+  h+=sp('NavRail',[0,2023,1080,149])+sp('NavSelected',[423,2003,220,168]);
+  const nav=[['Shop','商店',67,104,'#8492A4','#BCC5D0',141],['Deck','卡组',282,318,'#EDF2F6','#EDF2F6',0],['Battle','对战',480,533,'#17263A','#17263A',0],['Book','图鉴',700,737,'#8492A4','#BCC5D0',780],['Event','活动',918,955,'#8492A4','#BCC5D0',988]];
+  nav.forEach(([f,t,x,tx0,c,tc,lock],i)=>h+=grp('pgNav'+i,[tx0,2100],ti('Icon_'+f,[x,2054,73,73],c)+(lock?ti('Icon_Lock',[lock,2098,26,26],'#8492A4'):'')+tx(t,tx0,2140,27,tc)));
+  // 点击区（press=按压组 id）
+  h+=hit(23,227,579,158,'openHist()','','pgPlayer')+hit(956,392,96,70,'openSettings()','','pgSet')+hit(711,230,344,145,"toast('Demo 暂未开放')",'','pgRes');
+  h+=hit(65,873,358,319,"toast('奖励箱：即将开放')",'','pgReward');
+  h+=hit(564,791,463,230,'startVS()','bb','battleGrp');
+  h+=hit(629,1049,330,70,'openOpp()','','pgOpp')+hit(25,1535,1029,310,'goDeck()','','pgDeck');
+  h+=hit(0,2023,216,215,"toast('Demo 暂未开放')",'','pgNav0')+hit(216,2023,216,215,'goDeck()','','pgNav1')+hit(432,2003,216,235,'')+hit(648,2023,216,215,"toast('Demo 暂未开放')",'','pgNav3')+hit(864,2023,216,215,"toast('Demo 暂未开放')",'','pgNav4');
   $('scene').innerHTML=h;
-  const bb=$('bb'),g=$('battleGrp');
-  bb.onpointerdown=()=>g.classList.add('press');
-  bb.onpointerleave=()=>g.classList.remove('press');
-  bb.onpointerup=()=>{if(g.classList.contains('press')){g.classList.remove('press');startVS()}};
+  $('scene').querySelectorAll('.hit[data-p]').forEach(bindPress);
+  return h;
+}
+// 按压：按下整组压下，手指移出按钮再松开不触发；短按也至少显示 90ms 压下态，松开回弹后再执行
+let pressBusy=false;
+function bindPress(el){
+  const g=$(el.dataset.p),fn=el.dataset.fn;let t0=0,on=false;
+  const inside=e=>{const r=el.getBoundingClientRect();return e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom};
+  el.addEventListener('pointerdown',e=>{if(pressBusy||(e.button&&e.button!==0))return;
+    try{el.releasePointerCapture(e.pointerId)}catch(_){}   // 触屏默认会捕获指针，释放后才能判断移出
+    on=true;t0=performance.now();g.classList.add('press')});
+  const cancel=()=>{if(!on)return;on=false;g.classList.remove('press')};
+  el.addEventListener('pointerleave',cancel);el.addEventListener('pointercancel',cancel);
+  el.addEventListener('pointerup',e=>{if(!on)return;on=false;
+    if(!inside(e)){g.classList.remove('press');return}
+    pressBusy=true;const wait=Math.max(0,90-(performance.now()-t0));
+    setTimeout(()=>{g.classList.remove('press');setTimeout(()=>{pressBusy=false;fn&&new Function(fn)()},70)},wait)});
 }
 function goDeck(){location.href=DECK_URL}
 let tt;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
@@ -217,7 +245,7 @@ const VSL='../handoff/vs-armor-r01/slices/UI_FDLobby_VS_';
 const vsp=(f,[x,y,w,h],ex='')=>`<div class="sp" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;background-image:url(${VSL}${f}.png);${ex}"></div>`;
 const vtx=(t,x,y,size,color,it,anchor='mm',w=900)=>`<div class="t ${anchor}" style="left:${x}px;top:${y}px;font-size:${size}px;color:${color};font-weight:${w};${it?'font-style:italic;':''}">${t}</div>`;
 // 入场时间按 handoff/vs-armor-r01/MOTION.md
-function startVS(){const o=PRESETS[deckState.opp],d=myDeck(),V=$('vs');
+function startVS(){if(vsRunning)return;vsRunning=true;const o=PRESETS[deckState.opp],d=myDeck(),V=$('vs');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let h=vsp('Background',[0,0,1080,2340]);
   h+=`<div class="g g-opp">`+vsp('OpponentPanel',[57,380,935,363])+vsp('OpponentBadge',[150,470,248,211])+
@@ -235,12 +263,16 @@ function startVS(){const o=PRESETS[deckState.opp],d=myDeck(),V=$('vs');
   h+=`<div class="g g-load">`+vtx(TIPS[Math.floor(Math.random()*TIPS.length)],540,1933,30,'#fff',1,'mm',700)+vtx('加载中…',103,2003,31,'#fff',1,'lm',700)+
      vsp('LoadingBed',[103,2040,892,35])+`<div id="vsFill" style="position:absolute;left:114px;top:2041px;width:778px;height:32px;clip-path:inset(0 100% 0 0)">`+vsp('LoadingFill',[0,0,778,32])+`</div>`+
      vsp('LoadingTrack',[71,2024,941,67])+`<div class="t mm" id="pct" style="left:941px;top:2058px;font-size:30px;color:#fff;font-weight:900;font-style:italic">0%</div></div>`;
+  // 先等这一屏的图片解码完再开始入场，否则面板会比文字晚出来
+  preload(urlsIn(h)).then(()=>runVS(V,h,reduce));}
+let vsReady=null,vsRunning=false;
+function runVS(V,h,reduce){
   V.innerHTML=h;V.classList.toggle('reduce',reduce);V.classList.add('on');V.classList.remove('anim');void V.offsetWidth;V.classList.add('anim');
   // 模拟真实加载：进度只增不减，入场（1.25s）后才允许到 100%
   let p=0;const t0=performance.now();clearInterval(vsTimer);
   vsTimer=setInterval(()=>{const el=performance.now()-t0;p=Math.min(el<1250?.95:1,p+Math.random()*.03+.01);
     $('vsFill').style.clipPath=`inset(0 ${(1-p)*100}% 0 0)`;$('pct').textContent=Math.floor(p*100)+'%';
-    if(p>=1){clearInterval(vsTimer);setTimeout(()=>{V.classList.add('out');setTimeout(()=>{V.classList.remove('on','out');result()},180)},120)}},90)}
+    if(p>=1){clearInterval(vsTimer);setTimeout(()=>{V.classList.add('out');setTimeout(()=>{V.classList.remove('on','out','anim');V.innerHTML='';vsRunning=false;result()},180)},120)}},90)}
 function result(){const o=PRESETS[deckState.opp],roll=Math.random(),r=roll<.55?'胜':roll<.9?'负':'平';
   const score=r==='胜'?(Math.random()<.3?'3 : 0':'2 : 1'):r==='负'?(Math.random()<.5?'0 : 1':'1 : 2'):'1 : 1';
   const ot=r==='平'||Math.random()<.4,sec=ot?180+Math.floor(Math.random()*60):120+Math.floor(Math.random()*60);
@@ -259,15 +291,41 @@ function splash(){let seen=false;try{seen=sessionStorage.getItem('fd_splash')}ca
   const S=$('splash');S.innerHTML=`<div class="band" style="top:300px"></div><div class="band" style="top:1500px"></div>`+
    L('MS 战线对决',540,1000,96,'#EDF2F6',900).replace('class="t mm','class="t mm title').replace('MS','<span style="color:#DCA822">MS</span>')+
    L('MOBILE SUIT FRONTLINE DUEL',540,1110,30,'#ABB4C0',700)+L('加载中…',540,1990,28,'#EDF2F6',500)+`<div class="bar"><i id="sbar"></i></div>`+L('© 版权信息待定',540,2190,22,'#8c96a3',500);
-  S.classList.add('on');let p=0;const t=setInterval(()=>{p+=3;$('sbar').style.width=`calc(${Math.min(p,100)}% - 8px)`;if(p>=100){clearInterval(t);S.classList.remove('on')}},70);
-  S.onclick=()=>{clearInterval(t);S.classList.remove('on')}}
+  S.classList.add('on');let p=0,ok=false;lobbyReady.then(()=>ok=true);
+  // 大厅资源没到齐前进度停在 90%，到齐后才走完并淡出
+  const t=setInterval(()=>{p=Math.min(ok?100:90,p+3);$('sbar').style.width=`calc(${p}% - 8px)`;if(p>=100){clearInterval(t);hide()}},70);
+  const hide=()=>{S.classList.add('out');setTimeout(()=>S.classList.remove('on','out'),200)};
+  S.onclick=()=>{if(!ok)return;clearInterval(t);hide()}}
 
-function fit(){const s=Math.min(innerWidth/1080,innerHeight/2340),w=$('wrap');w.style.transform=`scale(${s})`;w.style.left=((innerWidth-1080*s)/2)+'px'}
-addEventListener('resize',fit);fit();
+// 预加载：等图片下载并解码完
+const _loaded={};
+function preload(urls){return Promise.all([...new Set(urls)].map(u=>_loaded[u]||(_loaded[u]=new Promise(r=>{const i=new Image();
+  i.onload=()=>(i.decode?i.decode():Promise.resolve()).catch(()=>{}).then(r);i.onerror=()=>r();i.src=u}))))}
+const urlsIn=html=>[...html.matchAll(/url\(([^)]+)\)/g)].map(m=>m[1].replace(/["']|&quot;/g,''));
+const fontsReady=()=>Promise.race([document.fonts?document.fonts.ready:Promise.resolve(),new Promise(r=>setTimeout(r,3000))]);
+// 弹窗、按钮皮肤在 CSS 里，也一起预加载
+const SKIN=['UI_FDDeck_Button_Yellow','UI_FDDeck_Button_White','UI_FDDeck_Modal_Tactic'].map(n=>`../../deck/handoff/armor-r03/sprites/${n}.png`);
+const VS_FILES=['Background','OpponentPanel','OpponentBadge','PlayerPanel','PlayerBadge','DeckPanel','V','S','FX_Flash','FX_Streak','LoadingBed','LoadingFill','LoadingTrack'].map(n=>VSL+n+'.png');
+
+function fit(){const de=document.documentElement,W=de.clientWidth||innerWidth,H=de.clientHeight||innerHeight;
+  const s=Math.min(W/1080,H/2340),w=$('wrap');w.style.transform=`scale(${s})`;w.style.left=((W-1080*s)/2)+'px'}
+addEventListener('resize',fit);addEventListener('orientationchange',()=>setTimeout(fit,200));fit();
+// iOS Safari 需要 touchstart 监听，:active 按压态才会生效
+document.addEventListener('touchstart',()=>{},{passive:true});
 $('mask').onclick=()=>{closePop();lobby()};
-document.fonts&&document.fonts.ready.then(()=>{});
-lobby();
-if(location.hash==='#battle'){try{sessionStorage.setItem('fd_splash','1')}catch(e){}history.replaceState(null,'',location.pathname);startVS()}else splash();
+const lobbyHtml=lobby();
+const lobbyReady=Promise.all([preload(urlsIn(lobbyHtml)),fontsReady()]);
+const toBattle=location.hash==='#battle';
+if(toBattle){try{sessionStorage.setItem('fd_splash','1')}catch(e){}history.replaceState(null,'',location.pathname)}
+(async()=>{
+  // 启动页只依赖字体，先出启动页；没有启动页时等大厅全部到齐再整屏显示
+  let seen=toBattle;try{seen=seen||sessionStorage.getItem('fd_splash')}catch(e){}
+  if(!seen){await fontsReady();$('canvas').classList.remove('boot');splash();await lobbyReady}
+  else{await lobbyReady;if(toBattle){vsReady=preload(VS_FILES.concat(urlsIn(lobbyHtml)));await vsReady}
+    const c=$('canvas');c.classList.remove('boot');c.classList.add('reveal')}
+  if(toBattle)startVS();
+  preload(SKIN);if(!vsReady)vsReady=preload(VS_FILES.concat(Object.values(CARDS).map(c=>VSL+'Art_'+c.art+'.png'),[VSL+'CardFrame.png']));
+})();
 addEventListener('pageshow',e=>{if(e.persisted){try{const s=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');if(s&&s.decks)deckState=Object.assign(deckState,s)}catch(_){}lobby()}});
 </script>
 </body>
