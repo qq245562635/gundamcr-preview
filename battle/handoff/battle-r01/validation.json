@@ -1,0 +1,356 @@
+{
+  "pngCount": 31,
+  "mockupCount": 12,
+  "decodePass": true,
+  "tintMaskWhitePass": true,
+  "browserAcceptance": "not performed",
+  "deviceAcceptance": "not performed",
+  "sprites": [
+    {
+      "path": "UI_FDBattle_Banner.png",
+      "size": [
+        1000,
+        220
+      ],
+      "sha256": "04290a37d28656ca7134d56b8a8097f8f2b2d2140ab0f3e498e1f1587afd7f8a"
+    },
+    {
+      "path": "UI_FDBattle_BeamLine.png",
+      "size": [
+        80,
+        336
+      ],
+      "sha256": "1293634705080ff981ec2bfb911c1a6b412099d5d8a3d3c53e0e896931d094e3"
+    },
+    {
+      "path": "UI_FDBattle_BottomPanel.png",
+      "size": [
+        1080,
+        438
+      ],
+      "sha256": "942b2b9a5c1081e33347d2fccce8f256fc09d1315eddaa51af40fe83c02445ff"
+    },
+    {
+      "path": "UI_FDBattle_Crown_Blue.png",
+      "size": [
+        96,
+        80
+      ],
+      "sha256": "4f57c7e8772e643fe1997115c0d56f5808b1e13b8dccce4e5a20523c724c219d"
+    },
+    {
+      "path": "UI_FDBattle_Crown_Empty.png",
+      "size": [
+        96,
+        80
+      ],
+      "sha256": "b828a4cb8f439cefeafed446388ad4b74d9c61a309565317b6727d51f4c0dff5"
+    },
+    {
+      "path": "UI_FDBattle_Crown_Red.png",
+      "size": [
+        96,
+        80
+      ],
+      "sha256": "d12a6e787227bb430a6df8626145ea96cba71e2e23b322e48467e82d84158475"
+    },
+    {
+      "path": "UI_FDBattle_DeployGrid.png",
+      "size": [
+        96,
+        96
+      ],
+      "sha256": "8e4f277b181848e27f2950cfa3d07b1c8110f0b266db2cb38e95184edf2144b5"
+    },
+    {
+      "path": "UI_FDBattle_DeployRing.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "4a34c1f6a822c183bed6b052bc1855f156405c4b6ac9559a49f98115d233d21d"
+    },
+    {
+      "path": "UI_FDBattle_DropWarn.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "4a34c1f6a822c183bed6b052bc1855f156405c4b6ac9559a49f98115d233d21d"
+    },
+    {
+      "path": "UI_FDBattle_EnergyBar.png",
+      "size": [
+        912,
+        56
+      ],
+      "sha256": "5d87b5cc5178b35c38e6d6713abf3c57f3e81bb39335430bb170a32149ca360f"
+    },
+    {
+      "path": "UI_FDBattle_EnergyFill.png",
+      "size": [
+        85,
+        46
+      ],
+      "sha256": "58bc95a521143dc6f15001f06166752f7d1347dfc88591127fcda343c8905288"
+    },
+    {
+      "path": "UI_FDBattle_EnergyFill_Gold.png",
+      "size": [
+        85,
+        46
+      ],
+      "sha256": "58bc95a521143dc6f15001f06166752f7d1347dfc88591127fcda343c8905288"
+    },
+    {
+      "path": "UI_FDBattle_EnergyGem.png",
+      "size": [
+        96,
+        96
+      ],
+      "sha256": "baa63510ee80cae768501a66bfda7375db0c93c37efa9be15ea83196716c1d59"
+    },
+    {
+      "path": "UI_FDBattle_Fan100.png",
+      "size": [
+        576,
+        576
+      ],
+      "sha256": "f856ea36f952d699ebe2aa5ae0ce6ac173c96d793d4d2ef3a7f07234902dd8d6"
+    },
+    {
+      "path": "UI_FDBattle_HandCard_Shade.png",
+      "size": [
+        200,
+        287
+      ],
+      "sha256": "73e2996df52646f6285f69178ba95184bf210490f010617376cfd8da9e53391c"
+    },
+    {
+      "path": "UI_FDBattle_HpBar_Bg.png",
+      "size": [
+        92,
+        14
+      ],
+      "sha256": "f0e3cf7daf6f4b97394da4d64463cd6bce0e020a2a967794e0fb7b48a9f7a3e4"
+    },
+    {
+      "path": "UI_FDBattle_HpBar_Fill.png",
+      "size": [
+        88,
+        10
+      ],
+      "sha256": "0a818697d879660c3fdc98d3638b1d89f535edf6af87742d5d85d0c0f58c8009"
+    },
+    {
+      "path": "UI_FDBattle_NoDeploy.png",
+      "size": [
+        96,
+        96
+      ],
+      "sha256": "c65fc29cdad7e960a4202c66dce9a04e6889aa248498dedea1b082af5ba6bf5d"
+    },
+    {
+      "path": "UI_FDBattle_RangeCircle.png",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "f120393097706ef2869750936f5aa804bc243bacbfd2a370728180af274c9e9b"
+    },
+    {
+      "path": "UI_FDBattle_Result_Draw.png",
+      "size": [
+        900,
+        220
+      ],
+      "sha256": "0ec17c9792923b4d673f7c5e61f0d8e6afc17ed7cd7fbb3292ded5efba9c9baa"
+    },
+    {
+      "path": "UI_FDBattle_Result_Lose.png",
+      "size": [
+        900,
+        220
+      ],
+      "sha256": "0ec17c9792923b4d673f7c5e61f0d8e6afc17ed7cd7fbb3292ded5efba9c9baa"
+    },
+    {
+      "path": "UI_FDBattle_Result_Win.png",
+      "size": [
+        900,
+        220
+      ],
+      "sha256": "0ec17c9792923b4d673f7c5e61f0d8e6afc17ed7cd7fbb3292ded5efba9c9baa"
+    },
+    {
+      "path": "UI_FDBattle_Shield_Fill.png",
+      "size": [
+        88,
+        6
+      ],
+      "sha256": "1f0b48ca481201713fe4d6be1cab4eaa2632ef6e867d7298283218c978c20e3b"
+    },
+    {
+      "path": "UI_FDBattle_StatusIcon_Placeholder.png",
+      "size": [
+        44,
+        44
+      ],
+      "sha256": "994b9c22861682c94aaf5d9a37bd508f80a5864e758cc952afe11cd7979ee725"
+    },
+    {
+      "path": "UI_FDBattle_TimerFrame.png",
+      "size": [
+        240,
+        120
+      ],
+      "sha256": "fd8fcbead71e7f9f2a2ecd761f184105db1f62d95ff891a7750f1e992deb6d4c"
+    },
+    {
+      "path": "UI_FDBattle_TimerFrame_Overtime.png",
+      "size": [
+        240,
+        120
+      ],
+      "sha256": "8faaacef5d673127c2a4ef3c244135c92b6fd6f78813b7e1d722be01650dc161"
+    },
+    {
+      "path": "UI_FDBattle_TopBar.png",
+      "size": [
+        1080,
+        160
+      ],
+      "sha256": "82e99da79b7d9a60f48983d14332d30153723297676bc115b5341178e27284e6"
+    },
+    {
+      "path": "UI_FDBattle_TowerBar_Bg.png",
+      "size": [
+        160,
+        26
+      ],
+      "sha256": "e5fb2884e1812cbbfddd946ee481cfd558cf856a47ad2c36ecbb32d14fbca03c"
+    },
+    {
+      "path": "UI_FDBattle_TowerBar_Fill.png",
+      "size": [
+        154,
+        20
+      ],
+      "sha256": "badc71686d52f8bf6fdd2ba15d7f1636d4093d815f9e152796861d293faf238e"
+    },
+    {
+      "path": "UI_FDBattle_TowerLock.png",
+      "size": [
+        32,
+        40
+      ],
+      "sha256": "e2eb6f8f9e3c5479109bdf56282e1e09e3fa8b610e5db9beec6380c2aa2df44e"
+    },
+    {
+      "path": "UI_FDBattle_X2.png",
+      "size": [
+        64,
+        40
+      ],
+      "sha256": "4aa61f0e3337b25798915e3c16f02eb1c9ff2e20b6a22eec6f0d01d9da88dca0"
+    }
+  ],
+  "mockups": [
+    {
+      "path": "B03_countdown_1.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "592c02cc6fc17ce810818ca62bdbdb1aaaf480ee6f6e951d2e5658b770ea4803"
+    },
+    {
+      "path": "B03_countdown_2.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "2e1368991836aece6c911d7a27499d925b8293f3d5a9380cd137b11602e2da1c"
+    },
+    {
+      "path": "B03_countdown_3.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "742d16b2dce19f0af5c984c8bdd740391cd64f4799ede3d6b355bf9fa57c08e4"
+    },
+    {
+      "path": "B03_countdown_go.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "a000a5e1051ae3858e45eb6dc35a343bf6baa16d17b00829dbf01dfc35a8fd39"
+    },
+    {
+      "path": "B03a_double_energy.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "22765a7f3e41dc635c20562cc32f86fb0e9871ff3d8033e0a216bb52e324ed30"
+    },
+    {
+      "path": "B03b_overtime.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "4e551e5428cedd866ef075335231bb7ea7379aba90351eb108619bd488948931"
+    },
+    {
+      "path": "B03c_tower_destroyed.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "75aa3a1bb90ee18dbcfa91632528bd10a62482fc602411d3dc41e0a8a37faafd"
+    },
+    {
+      "path": "B04_draw.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "6163aa6d0c02c318e9e9ea5aba65223b9eba246eda0cd244d65d54cbdd9776ae"
+    },
+    {
+      "path": "B04_lose.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "b4da8a37670b330194e3478f38de212df67fdfeafbf4e2c3b188931a5f900f9e"
+    },
+    {
+      "path": "B04_win.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "c0458db46696afb28afac7d9c2eed9209ef49468cb8b5f41d1e9e3a9c388b0cf"
+    },
+    {
+      "path": "B05_exit_confirm.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "a17d956f547bbf1f5d4f0510a9ca9f92afc024217ff0c43ff864a404cc46ee74"
+    },
+    {
+      "path": "C13_ground_decals.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "sha256": "abd612f44fec472e8a8f896766fa0d2c9f3ccb8b6406f2b774984ddf086afc24"
+    }
+  ]
+}

@@ -27,24 +27,27 @@ html,body{margin:0;height:100%;background:#0d1724;overflow:hidden;font-family:va
 .btn{position:absolute;display:flex;align-items:center;justify-content:center;font-weight:900;cursor:pointer;color:var(--ink);transition:transform .08s,filter .08s}
 .btn.press,.btn:active{transform:scale(.95);filter:brightness(.9)}
 /* 顶栏 */
-#top{position:absolute;left:0;top:116px;width:1080px;height:168px;border-width:28px}
+#top{position:absolute;left:0;top:120px;width:1080px;height:160px;background:url(../handoff/battle-r01/UI_FDBattle_TopBar.png) 0 0/100% 100%}
 .crowns{position:absolute;display:flex;gap:10px}
-.crown{width:52px;height:44px;transition:color .2s,transform .2s}
+.crown{width:52px;height:44px;background:url(../handoff/battle-r01/UI_FDBattle_Crown_Empty.png) center/contain no-repeat;transition:transform .2s}
+.crown.b{background-image:url(../handoff/battle-r01/UI_FDBattle_Crown_Blue.png);filter:drop-shadow(0 0 6px #4AA3FF)}
+.crown.r{background-image:url(../handoff/battle-r01/UI_FDBattle_Crown_Red.png);filter:drop-shadow(0 0 6px #FF5A4E)}
 .crown svg{width:100%;height:100%;display:block}
-#timer{position:absolute;left:420px;top:128px;width:240px;height:128px;background:linear-gradient(#16263a,#0e1a29);border:4px solid #3d5470;border-radius:10px;box-shadow:inset 0 0 0 3px #0a1320,0 4px 0 #0a1320}
-#timer.ot{border-color:var(--red);box-shadow:inset 0 0 0 3px #3a0d0d,0 0 18px #e8413c88}
-#tval{position:absolute;left:120px;top:82px;font-size:60px;color:#fff;font-weight:900;transform:translate(-50%,-50%)}
+#timer{position:absolute;left:420px;top:132px;width:240px;height:120px;background:url(../handoff/battle-r01/UI_FDBattle_TimerFrame.png) 0 0/100% 100%}
+#timer.ot{background-image:url(../handoff/battle-r01/UI_FDBattle_TimerFrame_Overtime.png);box-shadow:0 0 18px #e8413c88}
+#tval{position:absolute;left:120px;top:78px;font-size:60px;color:#fff;font-weight:900;transform:translate(-50%,-50%)}
 #tval.warn{color:#FF5A4E}
 #tval.bump{animation:bump .35s ease-out}
 @keyframes bump{0%{transform:translate(-50%,-50%) scale(1.35)}100%{transform:translate(-50%,-50%) scale(1)}}
 #phase{position:absolute;left:540px;top:276px;transform:translate(-50%,-50%);font-size:28px;font-weight:900;padding:6px 22px;border-radius:6px;background:#0e1a29dd;display:none}
 /* 底栏 */
-#bot{position:absolute;left:0;top:1796px;width:1080px;height:444px;border-width:28px}
-#botIn{position:absolute;left:22px;top:1846px;width:1036px;height:370px;background:linear-gradient(#1b2a3d,#121e2d);border-radius:8px;box-shadow:inset 0 3px 0 #0a1320}
-.hc{position:absolute;width:186px;height:267px;top:1862px;transition:transform .12s,filter .15s;cursor:pointer;touch-action:none}
+#bot{position:absolute;left:0;top:1800px;width:1080px;height:438px;background:url(../handoff/battle-r01/UI_FDBattle_BottomPanel.png) 0 0/100% 100%}
+#botIn{display:none}
+.hc{position:absolute;width:200px;height:287px;top:1866px;transition:transform .12s,filter .15s;cursor:pointer;touch-action:none}
 .hc canvas{width:100%;height:100%;display:block;pointer-events:none}
 .hc .shade{position:absolute;left:4px;right:4px;bottom:4px;border-radius:0 0 6px 6px;background:linear-gradient(#d85bff55,#9b3bd955);pointer-events:none;height:0}
 .hc.poor canvas{filter:grayscale(1) brightness(.55)}
+.hc.poor::before{content:"";position:absolute;inset:0;background:url(../handoff/battle-r01/UI_FDBattle_HandCard_Shade.png) 0 0/100% 100%;z-index:1;pointer-events:none;opacity:.6}
 .hc.flash{animation:cflash .3s ease-out}
 @keyframes cflash{0%{filter:brightness(2.2)}100%{filter:none}}
 .hc.sel{transform:translateY(-18px) scale(1.06)}
@@ -52,21 +55,21 @@ html,body{margin:0;height:100%;background:#0d1724;overflow:hidden;font-family:va
 .hc.lift{opacity:.35}
 .hc.deal{animation:deal .26s cubic-bezier(.2,.8,.3,1) both}
 @keyframes deal{from{transform:translate(var(--dx),40px) scale(.55);opacity:0}to{transform:none;opacity:1}}
-#next{position:absolute;left:44px;top:1918px;width:116px;height:166px}
+#next{position:absolute;left:36px;top:1890px;width:124px;height:178px}
 #next canvas{width:100%;height:100%}
-#nextCd{position:absolute;left:102px;top:2000px;transform:translate(-50%,-50%);font-size:30px;color:#fff;font-weight:900;display:none}
-#gem{position:absolute;left:28px;top:2138px;width:100px;height:100px;clip-path:polygon(25% 4%,75% 4%,100% 50%,75% 96%,25% 96%,0 50%);background:linear-gradient(160deg,#f2a6ff,#c548f0 45%,#7d22b8);box-shadow:inset 0 0 0 4px #ffffff55}
-#gem.gold{background:linear-gradient(160deg,#fff1b8,#FFD45C 45%,#c98a12)}
-#gemN{position:absolute;left:78px;top:2190px;transform:translate(-50%,-50%);font-size:52px;color:#fff;font-weight:900;text-shadow:0 3px 0 #4a0f6a,0 0 6px #000}
-#x2{position:absolute;left:104px;top:2132px;font-size:26px;font-weight:900;color:#111E2B;background:var(--gold);border-radius:6px;padding:3px 8px;display:none}
-#ebar{position:absolute;left:140px;top:2160px;width:906px;height:58px;background:#0a1320;border:4px solid #3d5470;border-radius:10px;overflow:hidden}
-#efill{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(#e889ff,#b23be6 55%,#8a25c4)}
-#efill.gold{background:linear-gradient(#fff1b8,#FFD45C 55%,#d39614)}
-#esegs{position:absolute;inset:0;display:flex}
+#nextCd{position:absolute;left:98px;top:1979px;transform:translate(-50%,-50%);font-size:30px;color:#fff;font-weight:900;display:none}
+#gem{position:absolute;left:24px;top:2150px;width:96px;height:96px;background:url(../handoff/battle-r01/UI_FDBattle_EnergyGem.png) 0 0/100% 100%}
+#gem.gold{filter:hue-rotate(125deg) saturate(1.5) brightness(1.25)}
+#gemN{position:absolute;left:72px;top:2200px;transform:translate(-50%,-50%);font-size:52px;color:#fff;font-weight:900;text-shadow:0 3px 0 #4a0f6a,0 0 6px #000}
+#x2{position:absolute;left:92px;top:2124px;width:64px;height:40px;line-height:40px;text-align:center;font-size:26px;font-weight:900;color:var(--gold);background:url(../handoff/battle-r01/UI_FDBattle_X2.png) 0 0/100% 100%;display:none;z-index:2}
+#ebar{position:absolute;left:132px;top:2170px;width:912px;height:56px;background:url(../handoff/battle-r01/UI_FDBattle_EnergyBar.png) 0 0/100% 100%;border-radius:6px}
+#efill{display:none}
+#esegs{position:absolute;inset:0}
 #ebar.full{animation:efull .8s ease-in-out infinite alternate}
 @keyframes efull{from{box-shadow:0 0 0 #d85bff00}to{box-shadow:0 0 22px #f2a6ff;border-color:#f2a6ff}}
-#esegs i{flex:1;border-right:3px solid #0a1320}
-#esegs i:last-child{border-right:0}
+#esegs i{position:absolute;top:5px;height:46px;width:85px;overflow:hidden;border-radius:3px}
+#esegs i b{position:absolute;left:0;top:0;bottom:0;width:0;-webkit-mask:url(../handoff/battle-r01/UI_FDBattle_EnergyFill.png) 0 0/85px 46px;mask:url(../handoff/battle-r01/UI_FDBattle_EnergyFill.png) 0 0/85px 46px;background:linear-gradient(#e889ff,#b23be6 55%,#8a25c4)}
+#ebar.gold #esegs i b{background:linear-gradient(#fff1b8,#FFD45C 55%,#d39614)}
 #esegs i.blink{animation:eblink .35s ease-out}
 @keyframes eblink{0%{background:#fff9}100%{background:transparent}}
 /* 拖拽 */
@@ -74,8 +77,8 @@ html,body{margin:0;height:100%;background:#0d1724;overflow:hidden;font-family:va
 #drag canvas{width:100%;height:100%;filter:drop-shadow(0 12px 16px #000c)}
 #drag.mini{width:72px;height:103px;transform:translate(-50%,-230%);opacity:.9}
 /* 横幅 */
-#banner{position:absolute;left:-40px;top:960px;width:1160px;height:200px;z-index:25;display:none;border-width:30px;pointer-events:none}
-#banner .bt{position:absolute;left:580px;top:70px;transform:translate(-50%,-50%);font-size:96px;font-weight:900;font-style:italic;letter-spacing:4px;white-space:nowrap}
+#banner{position:absolute;left:40px;top:950px;width:1000px;height:220px;z-index:25;display:none;pointer-events:none;background:url(../handoff/battle-r01/UI_FDBattle_Banner.png) 0 0/100% 100%}
+#banner .bt{position:absolute;left:500px;top:110px;transform:translate(-50%,-50%);font-size:96px;font-weight:900;font-style:italic;letter-spacing:4px;white-space:nowrap}
 #banner.in{display:block;animation:bIn .2s cubic-bezier(.2,.8,.3,1.2) both}
 #banner.out{display:block;animation:bOut .2s ease-in both}
 @keyframes bIn{from{transform:scaleY(.1) translateX(-200px);opacity:0}to{transform:none;opacity:1}}
@@ -95,8 +98,8 @@ html,body{margin:0;height:100%;background:#0d1724;overflow:hidden;font-family:va
 #res{position:absolute;inset:0;z-index:45;display:none;background:#05090fb8}
 #res.on{display:block;animation:fadeIn .4s both}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.rtitle{position:absolute;left:-40px;width:1160px;height:230px;top:760px;border-width:30px;animation:bIn .3s .2s cubic-bezier(.2,.8,.3,1.2) both}
-.rbig{position:absolute;left:580px;top:85px;transform:translate(-50%,-50%);font-size:120px;font-weight:900;font-style:italic;letter-spacing:8px}
+.rtitle{position:absolute;left:90px;width:900px;height:220px;top:760px;background:url(../handoff/battle-r01/UI_FDBattle_Result_Win.png) 0 0/100% 100%;animation:bIn .3s .2s cubic-bezier(.2,.8,.3,1.2) both}
+.rbig{position:absolute;left:450px;top:110px;transform:translate(-50%,-50%);font-size:120px;font-weight:900;font-style:italic;letter-spacing:8px}
 .rrow{position:absolute;left:140px;width:800px;height:150px;background:#0e1a29e6;border:4px solid #3d5470;border-radius:12px;animation:fadeIn .3s both}
 .rc{display:flex;gap:18px;position:absolute;right:40px;top:40px}
 .rc .crown{width:84px;height:70px}
@@ -139,23 +142,23 @@ html,body{margin:0;height:100%;background:#0d1724;overflow:hidden;font-family:va
 <div id="note"><b>MS战线对决 · 战斗原型</b><br>按 31 文档布局做的简化对局（数值示意）。<br>· 按住手牌拖进战场出兵，或点卡再点地<br>· 机体只能放己方半场（蓝格），战术卡和渣古降下全场可放<br>· 最后 60 秒双倍能量，平局进加时<br>· 右上「退出」判负<br>参数：?speed=3 加速、?t=70 从 1:10 开始、?auto=1 我方也由 AI 出牌、?skip=1 跳过 VS</div>
 <div id="wrap"><div id="canvas" class="boot">
   <canvas id="fx" width="1080" height="2340"></canvas>
-  <div id="top" class="skin armor"></div>
-  <div class="t lm" style="left:44px;top:170px;font-size:34px;color:#17263A;font-weight:900" id="oppName">AI 指挥官</div>
-  <div class="crowns" id="eCrowns" style="left:44px;top:204px"></div>
+  <div id="top"></div>
+  <div class="t lm" style="left:36px;top:164px;font-size:32px;color:#17263A;font-weight:900" id="oppName">AI 指挥官</div>
+  <div class="crowns" id="eCrowns" style="left:36px;top:202px;gap:12px"></div>
   <div id="timer"><div class="t mm" style="left:120px;top:28px;font-size:22px;color:#9fb3cc">剩余时间</div><div id="tval">3:00</div></div>
-  <div class="btn skin b-wht" id="exitBtn" style="left:900px;top:146px;width:146px;height:92px;font-size:32px">退出</div>
+  <div class="btn skin b-wht" id="exitBtn" style="left:924px;top:140px;width:120px;height:80px;font-size:30px;border-width:20px">退出</div>
   <div id="phase"></div>
-  <div id="bot" class="skin armor"></div>
+  <div id="bot"></div>
   <div id="botIn"></div>
-  <div class="t lm" style="left:44px;top:1824px;font-size:28px;color:#17263A;font-weight:900">我方</div>
-  <div class="crowns" id="pCrowns" style="left:118px;top:1803px;transform:scale(.8);transform-origin:left center"></div>
-  <div class="t mm" style="left:102px;top:1890px;font-size:24px;color:#c9d3dd">下一张</div>
+  <div class="t lm" style="left:36px;top:1836px;font-size:26px;color:#17263A;font-weight:900">我方</div>
+  <div class="crowns" id="pCrowns" style="left:110px;top:1818px;gap:12px"></div>
+  <div class="t mm" style="left:98px;top:1872px;font-size:20px;color:#c9d3dd">下一张</div>
   <div id="next"></div><div id="nextCd"></div>
   <div id="hand"></div>
   <div id="gem"></div><div id="gemN">5</div><div id="x2">×2</div>
   <div id="ebar"><div id="efill"></div><div id="esegs"></div></div>
   <div id="drag"></div>
-  <div id="banner" class="skin armor"><div class="bt" id="btext"></div></div>
+  <div id="banner"><div class="bt" id="btext"></div></div>
   <div id="count"></div>
   <div id="res"></div>
   <div class="mask" id="mask"></div>
@@ -233,18 +236,18 @@ function cardEl(k){const s=CV[k]||(CV[k]=renderCard(k)),cv=document.createElemen
 
 // ---------- HUD ----------
 const CROWN='<svg viewBox="0 0 52 44"><path d="M4 14l11 9 11-17 11 17 11-9-4 24H8z" fill="currentColor" stroke="#0a1320" stroke-width="3" stroke-linejoin="round"/><rect x="8" y="36" width="36" height="6" rx="2" fill="currentColor" stroke="#0a1320" stroke-width="3"/></svg>';
-function crowns(id,n,col){$(id).innerHTML=[0,1,2].map(i=>`<div class="crown" style="color:${i<n?col:'#9aa6b4'};${i<n?'filter:drop-shadow(0 0 6px '+col+')':''}">${CROWN}</div>`).join('')}
-const HX=[198,412,626,840];
+function crowns(id,n,col){const k=id==='pCrowns'?'b':'r';$(id).innerHTML=[0,1,2].map(i=>`<div class="crown ${i<n?k:''}" style="${id==='pCrowns'?'width:34px;height:28px':'width:44px;height:37px'}"></div>`).join('')}
+const HX=[186,400,614,828];
 function buildHand(deal){let h='';$('hand').innerHTML='';
   G.P.hand.forEach((k,i)=>{const d=document.createElement('div');d.className='hc'+(deal?' deal':'');d.style.left=HX[i]+'px';d.dataset.i=i;
     if(deal){d.style.animationDelay=(i*100)+'ms';d.style.setProperty('--dx',(-HX[i]+60)+'px')}
     d.appendChild(cardEl(k));const s=document.createElement('div');s.className='shade';d.appendChild(s);$('hand').appendChild(d);bindCard(d)});
   setNext()}
 function setNext(){$('next').innerHTML='';$('next').appendChild(cardEl(G.P.next))}
-$('esegs').innerHTML='<i></i>'.repeat(10);
+$('esegs').innerHTML=[...Array(10)].map((_,i)=>`<i style="left:${4+i*90.6}px"><b></b></i>`).join('');
 let lastE=-1;
 function hud(){const e=G.P.e;
-  $('efill').style.width=(e*10)+'%';$('ebar').classList.toggle('full',e>=10&&G.phase==='play');const n=Math.floor(e);$('gemN').textContent=n;
+  [...$('esegs').children].forEach((el,i)=>el.firstChild.style.width=(Math.max(0,Math.min(1,e-i))*100)+'%');$('ebar').classList.toggle('gold',G.dbl||G.ot);$('gem').classList.toggle('gold',G.dbl||G.ot);$('x2').style.display=(G.dbl||G.ot)?'block':'none';$('ebar').classList.toggle('full',e>=10&&G.phase==='play');const n=Math.floor(e);$('gemN').textContent=n;
   document.querySelectorAll('.hc').forEach(d=>{const k=G.P.hand[+d.dataset.i],c=CARDS[k].cost,ok=e>=c,was=!d.classList.contains('poor');
     d.classList.toggle('poor',!ok);d.querySelector('.shade').style.height=ok?'0':(Math.min(1,e/c)*100*.93)+'%';
     if(ok&&!was&&lastE>=0){d.classList.remove('flash');void d.offsetWidth;d.classList.add('flash')}});
@@ -256,7 +259,7 @@ function blinkSegs(from,to){const segs=$('esegs').children;for(let i=Math.floor(
 let tt;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1400)}
 const wait=ms=>new Promise(r=>setTimeout(r,ms/ (SPEED>1?Math.min(SPEED,3):1)));
 async function banner(txt,col,hold=1200){const b=$('banner');$('btext').innerHTML=txt;$('btext').style.color=col;
-  b.className='skin armor in';await wait(200+hold);b.className='skin armor out';await wait(200);b.className='skin armor'}
+  b.className='in';await wait(200+hold);b.className='out';await wait(200);b.className=''}
 async function countdown(){const c=$('count');for(const n of ['3','2','1']){c.textContent=n;c.style.color='#fff';c.className='';void c.offsetWidth;c.className='pop';await wait(600)}
   c.className='';banner('出击！','#E0A800',700)}
 
@@ -297,9 +300,9 @@ function towerDown(t){const by=foe(t.side);G.crowns[by]+=t.king?3-G.crowns[by]:1
   flyCrown(t,by);
   banner('击破！',by==='P'?'#3D7BFF':'#E8413C',900);
   if(t.king||G.ot)setTimeout(()=>end(),900)}
-function flyCrown(t,by){const [sx,sy]=P(t.x,t.y),el=document.createElement('div');el.className='fly';el.style.color=by==='P'?'#4AA3FF':'#FF5A4E';el.innerHTML=CROWN;
+function flyCrown(t,by){const [sx,sy]=P(t.x,t.y),el=document.createElement('div');el.className='fly crown '+(by==='P'?'b':'r');
   el.style.left=(sx-32)+'px';el.style.top=(sy-27)+'px';el.style.transform='scale(1.6)';$('canvas').appendChild(el);
-  const n=G.crowns[by]-1,tx=by==='P'?118+Math.min(n,2)*50:44+Math.min(n,2)*62,ty=by==='P'?1806:206;
+  const n=G.crowns[by]-1,tx=by==='P'?110+Math.min(n,2)*46-15:36+Math.min(n,2)*56-10,ty=by==='P'?1806:196;
   requestAnimationFrame(()=>requestAnimationFrame(()=>{el.style.left=tx+'px';el.style.top=ty+'px';el.style.transform='scale(.9)'}));
   setTimeout(()=>{el.remove();crowns('pCrowns',G.crowns.P,'#4AA3FF');crowns('eCrowns',G.crowns.E,'#FF5A4E')},760)}
 
@@ -552,8 +555,8 @@ function end(){if(G.over)return;G.over=true;G.phase='over';clearSel();
     localStorage.setItem('fd_lobby_reward',JSON.stringify({r,at:Date.now()}))}catch(e){}
   setTimeout(()=>result(r,note),700)}
 function result(r,note){const R=$('res'),col={胜:'#FFD45C',负:'#E8413C',平:'#e9eef4'}[r],word={胜:'胜利',负:'失败',平:'平局'}[r];
-  const row=(top,name,n,c,delay)=>`<div class="rrow" style="top:${top}px;animation-delay:${delay}ms"><div class="t lm" style="left:40px;top:75px;font-size:44px;color:#fff;font-weight:900">${name}</div><div class="rc">${[0,1,2].map(i=>`<div class="crown" data-lit="${i<n?1:0}" style="color:#5b6472">${CROWN}</div>`).join('')}</div></div>`;
-  R.innerHTML=`<div class="rtitle skin armor"><div class="rbig" style="color:${col};text-shadow:0 6px 0 #0a1320">${word}</div></div>`+
+  const row=(top,name,n,c,delay)=>`<div class="rrow" style="top:${top}px;animation-delay:${delay}ms"><div class="t lm" style="left:40px;top:75px;font-size:44px;color:#fff;font-weight:900">${name}</div><div class="rc">${[0,1,2].map(i=>`<div class="crown" data-lit="${i<n?1:0}"></div>`).join('')}</div></div>`;
+  R.innerHTML=`<div class="rtitle" style="background-image:url(../handoff/battle-r01/UI_FDBattle_Result_${{胜:'Win',负:'Lose',平:'Draw'}[r]}.png)"><div class="rbig" style="color:${col};text-shadow:0 6px 0 #0a1320">${word}</div></div>`+
     row(1060,'AI 指挥官',G.crowns.E,'#FF5A4E',400)+`<div class="t mm" style="left:540px;top:1290px;font-size:84px;color:#fff;font-weight:900;font-style:italic">${G.crowns.P} : ${G.crowns.E}</div>`+row(1380,'我方',G.crowns.P,'#4AA3FF',500)+
     (note?`<div class="t mm" style="left:540px;top:1590px;font-size:28px;color:#c9d3dd;font-weight:500">${note}</div>`:'')+
     (r==='胜'?`<div class="t mm" id="rew" style="left:540px;top:1660px;font-size:40px;color:#DCA822;font-weight:900;opacity:0;transition:opacity .3s">战功 +30</div>`:'')+
@@ -562,7 +565,7 @@ function result(r,note){const R=$('res'),col={胜:'#FFD45C',负:'#E8413C',平:'#
   R.classList.add('on');
   // 皇冠逐个点亮：对手先，我方后，每个 0.3 秒
   const lits=[...R.querySelectorAll('.rrow')].flatMap((row,ri)=>[...row.querySelectorAll('.crown')].filter(c=>c.dataset.lit==='1').map(c=>[c,ri?'#4AA3FF':'#FF5A4E']));
-  lits.forEach(([c,co],i)=>setTimeout(()=>{c.style.color=co;c.style.filter=`drop-shadow(0 0 10px ${co})`;c.classList.add('lit')},800+i*300));
+  lits.forEach(([c,co],i)=>setTimeout(()=>{c.classList.add(co==='#4AA3FF'?'b':'r','lit')},800+i*300));
   setTimeout(()=>{['again','home'].forEach(id=>$(id).style.opacity=1);if($('rew'))$('rew').style.opacity=1},900+lits.length*300);
   pressable($('again'),()=>location.replace(location.pathname+location.search.replace(/[?&]skip=1/,'')+(location.search?'&':'?')+'skip=1'));
   pressable($('home'),goHome)}
@@ -607,7 +610,7 @@ let assetsOk=false;
 const fontsReady=()=>Promise.race([document.fonts?document.fonts.ready:Promise.resolve(),new Promise(r=>setTimeout(r,2500))]);
 const CARD_IMGS=[SP2+'UI_FDDeck_CardFrame.png'].concat(Object.values(CARDS).map(c=>SP2+`UI_FDDeck_Art_${c.art}.png`));
 const VS_IMGS=['Background','OpponentPanel','OpponentBadge','PlayerPanel','PlayerBadge','DeckPanel','V','S','FX_Flash','LoadingBed','LoadingFill','LoadingTrack','CardFrame'].map(n=>VSL+n+'.png').concat(myCards.map(k=>VSL+'Art_'+CARDS[k].art+'.png'));
-const SKIN=['Button_White','Button_Yellow','Modal_Tactic'].map(n=>SP3+`UI_FDDeck_${n}.png`);
+const SKIN=['Button_White','Button_Yellow','Modal_Tactic'].map(n=>SP3+`UI_FDDeck_${n}.png`).concat(['TopBar','BottomPanel','TimerFrame','TimerFrame_Overtime','Crown_Empty','Crown_Blue','Crown_Red','EnergyBar','EnergyFill','EnergyGem','X2','Banner','Result_Win','Result_Lose','Result_Draw','HandCard_Shade'].map(n=>'../handoff/battle-r01/UI_FDBattle_'+n+'.png'));
 (async()=>{
   await Promise.all((SKIP?[]:VS_IMGS).concat(SKIN).map(load).concat([fontsReady()]));
   $('canvas').classList.remove('boot');requestAnimationFrame(loop);

@@ -1,0 +1,650 @@
+{
+  "version": "battle-r01",
+  "canvas": [
+    1080,
+    2340
+  ],
+  "origin": "top-left",
+  "rectOrder": "x,y,width,height",
+  "safeArea": {
+    "top": 120,
+    "bottom": 102
+  },
+  "font": "Noto Sans CJK SC Bold / Noto Sans SC 700",
+  "nodes": [
+    {
+      "id": "top",
+      "rect": [
+        0,
+        120,
+        1080,
+        160
+      ],
+      "asset": "UI_FDBattle_TopBar.png"
+    },
+    {
+      "id": "bottom",
+      "rect": [
+        0,
+        1800,
+        1080,
+        438
+      ],
+      "asset": "UI_FDBattle_BottomPanel.png"
+    },
+    {
+      "id": "timer",
+      "rect": [
+        420,
+        132,
+        240,
+        120
+      ],
+      "asset": "UI_FDBattle_TimerFrame.png",
+      "variant": "UI_FDBattle_TimerFrame_Overtime.png"
+    },
+    {
+      "id": "opponentName",
+      "rect": [
+        36,
+        140,
+        360,
+        48
+      ],
+      "text": "AI 指挥官",
+      "fontSize": 32
+    },
+    {
+      "id": "timerLabel",
+      "rect": [
+        420,
+        140,
+        240,
+        34
+      ],
+      "text": "剩余时间",
+      "fontSize": 20
+    },
+    {
+      "id": "time",
+      "rect": [
+        420,
+        175,
+        240,
+        70
+      ],
+      "text": "3:00",
+      "fontSize": 56
+    },
+    {
+      "id": "phase",
+      "rect": [
+        300,
+        256,
+        480,
+        32
+      ],
+      "text": "",
+      "fontSize": 22
+    },
+    {
+      "id": "exit",
+      "rect": [
+        924,
+        140,
+        120,
+        80
+      ],
+      "text": "退出",
+      "dependency": "../../../deck/handoff/armor-r02/sprites/UI_FDDeck_Button_White.png"
+    },
+    {
+      "id": "opponentCrown0",
+      "rect": [
+        36,
+        202,
+        44,
+        36.666666666666664
+      ],
+      "asset": "UI_FDBattle_Crown_Empty.png",
+      "variants": [
+        "UI_FDBattle_Crown_Blue.png",
+        "UI_FDBattle_Crown_Red.png"
+      ]
+    },
+    {
+      "id": "opponentCrown1",
+      "rect": [
+        92,
+        202,
+        44,
+        36.666666666666664
+      ],
+      "asset": "UI_FDBattle_Crown_Empty.png",
+      "variants": [
+        "UI_FDBattle_Crown_Blue.png",
+        "UI_FDBattle_Crown_Red.png"
+      ]
+    },
+    {
+      "id": "opponentCrown2",
+      "rect": [
+        148,
+        202,
+        44,
+        36.666666666666664
+      ],
+      "asset": "UI_FDBattle_Crown_Empty.png",
+      "variants": [
+        "UI_FDBattle_Crown_Blue.png",
+        "UI_FDBattle_Crown_Red.png"
+      ]
+    },
+    {
+      "id": "selfCrown0",
+      "rect": [
+        110,
+        1818,
+        34,
+        28.333333333333332
+      ],
+      "asset": "UI_FDBattle_Crown_Empty.png",
+      "variants": [
+        "UI_FDBattle_Crown_Blue.png",
+        "UI_FDBattle_Crown_Red.png"
+      ]
+    },
+    {
+      "id": "selfCrown1",
+      "rect": [
+        156,
+        1818,
+        34,
+        28.333333333333332
+      ],
+      "asset": "UI_FDBattle_Crown_Empty.png",
+      "variants": [
+        "UI_FDBattle_Crown_Blue.png",
+        "UI_FDBattle_Crown_Red.png"
+      ]
+    },
+    {
+      "id": "selfCrown2",
+      "rect": [
+        202,
+        1818,
+        34,
+        28.333333333333332
+      ],
+      "asset": "UI_FDBattle_Crown_Empty.png",
+      "variants": [
+        "UI_FDBattle_Crown_Blue.png",
+        "UI_FDBattle_Crown_Red.png"
+      ]
+    },
+    {
+      "id": "selfLabel",
+      "rect": [
+        36,
+        1816,
+        200,
+        40
+      ],
+      "text": "我方",
+      "fontSize": 26
+    },
+    {
+      "id": "next",
+      "rect": [
+        36,
+        1890,
+        124,
+        178
+      ],
+      "dependency": "../../../deck/handoff/armor-r02/sprites/UI_FDDeck_CardFrame.png"
+    },
+    {
+      "id": "nextLabel",
+      "rect": [
+        36,
+        1858,
+        124,
+        28
+      ],
+      "text": "下一张",
+      "fontSize": 20
+    },
+    {
+      "id": "hand0",
+      "rect": [
+        186,
+        1866,
+        200,
+        287
+      ],
+      "dependency": "../../../deck/handoff/armor-r02/sprites/UI_FDDeck_CardFrame.png",
+      "shade": "UI_FDBattle_HandCard_Shade.png"
+    },
+    {
+      "id": "hand1",
+      "rect": [
+        400,
+        1866,
+        200,
+        287
+      ],
+      "dependency": "../../../deck/handoff/armor-r02/sprites/UI_FDDeck_CardFrame.png",
+      "shade": "UI_FDBattle_HandCard_Shade.png"
+    },
+    {
+      "id": "hand2",
+      "rect": [
+        614,
+        1866,
+        200,
+        287
+      ],
+      "dependency": "../../../deck/handoff/armor-r02/sprites/UI_FDDeck_CardFrame.png",
+      "shade": "UI_FDBattle_HandCard_Shade.png"
+    },
+    {
+      "id": "hand3",
+      "rect": [
+        828,
+        1866,
+        200,
+        287
+      ],
+      "dependency": "../../../deck/handoff/armor-r02/sprites/UI_FDDeck_CardFrame.png",
+      "shade": "UI_FDBattle_HandCard_Shade.png"
+    },
+    {
+      "id": "energyGem",
+      "rect": [
+        24,
+        2142,
+        96,
+        96
+      ],
+      "asset": "UI_FDBattle_EnergyGem.png"
+    },
+    {
+      "id": "energyValue",
+      "rect": [
+        24,
+        2154,
+        96,
+        80
+      ],
+      "text": "5",
+      "fontSize": 44
+    },
+    {
+      "id": "energyBar",
+      "rect": [
+        132,
+        2170,
+        912,
+        56
+      ],
+      "asset": "UI_FDBattle_EnergyBar.png"
+    },
+    {
+      "id": "x2",
+      "rect": [
+        112,
+        2118,
+        64,
+        40
+      ],
+      "asset": "UI_FDBattle_X2.png",
+      "text": "×2",
+      "fontSize": 25
+    },
+    {
+      "id": "energyCell0",
+      "rect": [
+        137.0,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell1",
+      "rect": [
+        227.4,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell2",
+      "rect": [
+        317.8,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell3",
+      "rect": [
+        408.20000000000005,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell4",
+      "rect": [
+        498.6,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell5",
+      "rect": [
+        589.0,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell6",
+      "rect": [
+        679.4000000000001,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell7",
+      "rect": [
+        769.8000000000001,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell8",
+      "rect": [
+        860.2,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "energyCell9",
+      "rect": [
+        950.6,
+        2175,
+        85,
+        46
+      ],
+      "asset": "UI_FDBattle_EnergyFill.png",
+      "tint": "#9B3BD9",
+      "doubleTint": "#FFD45C",
+      "reveal": "left-to-right"
+    },
+    {
+      "id": "enemyFlagHP",
+      "rect": [
+        440.0,
+        341.0,
+        200,
+        30
+      ],
+      "asset": "UI_FDBattle_TowerBar_Bg.png",
+      "fill": "UI_FDBattle_TowerBar_Fill.png",
+      "fillInset": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "tint": "#FF5A4E",
+      "valueCenter": [
+        540,
+        322
+      ],
+      "valueFontSize": 24
+    },
+    {
+      "id": "enemyLeftHP",
+      "rect": [
+        210.0,
+        471.0,
+        160,
+        26
+      ],
+      "asset": "UI_FDBattle_TowerBar_Bg.png",
+      "fill": "UI_FDBattle_TowerBar_Fill.png",
+      "fillInset": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "tint": "#FF5A4E",
+      "valueCenter": [
+        290,
+        450
+      ],
+      "valueFontSize": 24
+    },
+    {
+      "id": "enemyRightHP",
+      "rect": [
+        710.0,
+        471.0,
+        160,
+        26
+      ],
+      "asset": "UI_FDBattle_TowerBar_Bg.png",
+      "fill": "UI_FDBattle_TowerBar_Fill.png",
+      "fillInset": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "tint": "#FF5A4E",
+      "valueCenter": [
+        790,
+        450
+      ],
+      "valueFontSize": 24
+    },
+    {
+      "id": "selfLeftHP",
+      "rect": [
+        150.0,
+        1409.0,
+        160,
+        26
+      ],
+      "asset": "UI_FDBattle_TowerBar_Bg.png",
+      "fill": "UI_FDBattle_TowerBar_Fill.png",
+      "fillInset": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "tint": "#4AA3FF",
+      "valueCenter": [
+        230,
+        1388
+      ],
+      "valueFontSize": 24
+    },
+    {
+      "id": "selfRightHP",
+      "rect": [
+        770.0,
+        1409.0,
+        160,
+        26
+      ],
+      "asset": "UI_FDBattle_TowerBar_Bg.png",
+      "fill": "UI_FDBattle_TowerBar_Fill.png",
+      "fillInset": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "tint": "#4AA3FF",
+      "valueCenter": [
+        850,
+        1388
+      ],
+      "valueFontSize": 24
+    },
+    {
+      "id": "selfFlagHP",
+      "rect": [
+        440.0,
+        1539.0,
+        200,
+        30
+      ],
+      "asset": "UI_FDBattle_TowerBar_Bg.png",
+      "fill": "UI_FDBattle_TowerBar_Fill.png",
+      "fillInset": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "tint": "#4AA3FF",
+      "valueCenter": [
+        540,
+        1520
+      ],
+      "valueFontSize": 24
+    },
+    {
+      "id": "phaseBanner",
+      "rect": [
+        40,
+        930,
+        1000,
+        220
+      ],
+      "asset": "UI_FDBattle_Banner.png"
+    },
+    {
+      "id": "resultTitle",
+      "rect": [
+        90,
+        620,
+        900,
+        220
+      ],
+      "asset": "UI_FDBattle_Result_Win.png",
+      "variants": [
+        "UI_FDBattle_Result_Lose.png",
+        "UI_FDBattle_Result_Draw.png"
+      ]
+    },
+    {
+      "id": "rematch",
+      "rect": [
+        90,
+        1900,
+        420,
+        140
+      ],
+      "text": "再来一局"
+    },
+    {
+      "id": "returnLobby",
+      "rect": [
+        570,
+        1900,
+        420,
+        140
+      ],
+      "text": "返回大厅"
+    }
+  ],
+  "drawOrder": "background,arena,towers,unitProxies,top,bottom,cards,labels,phaseBanner/modal",
+  "timingsSeconds": {
+    "bannerIn": 0.2,
+    "bannerHold": 1.2,
+    "bannerOut": 0.2,
+    "dealInterval": 0.1,
+    "refill": 0.25,
+    "crownStep": 0.3,
+    "deploy": 1
+  },
+  "ground": {
+    "worldSizeMeters": [
+      18,
+      32
+    ],
+    "referencePixelsPerMeter": 48,
+    "fanDegrees": 100,
+    "beamMeters": [
+      1.6,
+      7
+    ],
+    "radiiMeters": {
+      "dropWarn": 1.6,
+      "largeDeploy": 2.2,
+      "missileAim": 3,
+      "beamAim": 2.5
+    }
+  },
+  "notes": [
+    "EnergyGem moved up 8 px from old table to preserve y<2238 safe area.",
+    "B03a/b use two lines to preserve readable banner type; words unchanged.",
+    "X2 sprite is a blank badge; draw the multiplication label live."
+  ]
+}
