@@ -1,0 +1,39 @@
+{
+  "spriteCount": 5,
+  "mockupCount": 4,
+  "nativeBaseSize": [
+    830,
+    1896
+  ],
+  "demoHeight": 300,
+  "selectedScale": 1.12,
+  "decodePass": true,
+  "baseDiffBounds": [
+    0,
+    94,
+    830,
+    1896
+  ],
+  "mockups": [
+    {
+      "path": "S01_tab.png",
+      "sha256": "397956f99a607c1cf7d2c98fab335b3af5a4e28a73060c967c0cb79947efc931"
+    },
+    {
+      "path": "S01c_card_menu.png",
+      "sha256": "abe3a8ab4e8c29693fe1e4da87baf2dbf78e33dc2088f92f3e0885e4fc5585a0"
+    },
+    {
+      "path": "S01c_deck_menu.png",
+      "sha256": "41e281e29313b9eb7304e2cf5e04cb60d2394657081f8e2c77fd788aae9a59c2"
+    },
+    {
+      "path": "S03b_detail_demo.png",
+      "sha256": "6b2240a88293e4c31414a187e1b2223572ad157726008f825a46d1fcbc78ece1"
+    }
+  ],
+  "browserAcceptance": false,
+  "deviceAcceptance": false,
+  "changesOutsideDeclaredBaseRegions": false,
+  "missingSvgReferences": 0
+}

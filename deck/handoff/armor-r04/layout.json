@@ -1,0 +1,554 @@
+{
+  "version": "armor-r04",
+  "nativeCanvas": [
+    830,
+    1896
+  ],
+  "reviewCanvas": [
+    1080,
+    2340
+  ],
+  "conversion": {
+    "xScale": 1.3012048192771084,
+    "yScale": 1.2341772151898733
+  },
+  "base": "base_tab.png",
+  "sourceBase": "../armor-r02/sprites/UI_FDDeck_ScreenBase.png",
+  "sourceLayout": "../armor-r02/layout.json",
+  "baseChangedRegionsNative": [
+    [
+      26,
+      94,
+      95,
+      72
+    ],
+    [
+      0,
+      1680,
+      830,
+      216
+    ]
+  ],
+  "removeTextIDs": [
+    "back",
+    "reset",
+    "battle"
+  ],
+  "layers": [
+    {
+      "id": "title",
+      "kind": "text",
+      "text": "出战卡组",
+      "center": [
+        415,
+        128
+      ],
+      "fontSize": 50,
+      "color": "#111E2B",
+      "weight": 700
+    },
+    {
+      "id": "help",
+      "kind": "text",
+      "text": "?",
+      "center": [
+        763,
+        128
+      ],
+      "fontSize": 36,
+      "color": "#111E2B",
+      "weight": 700
+    },
+    {
+      "id": "tab1",
+      "kind": "text",
+      "text": "1 原版",
+      "center": [
+        121,
+        250
+      ],
+      "fontSize": 28,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "tab2",
+      "kind": "text",
+      "text": "2 远程",
+      "center": [
+        304,
+        250
+      ],
+      "fontSize": 28,
+      "color": "#111E2B",
+      "weight": 700
+    },
+    {
+      "id": "tab3",
+      "kind": "text",
+      "text": "3 诱饵套",
+      "center": [
+        487,
+        250
+      ],
+      "fontSize": 28,
+      "color": "#111E2B",
+      "weight": 700
+    },
+    {
+      "id": "recommend",
+      "kind": "text",
+      "text": "推荐卡组",
+      "center": [
+        721,
+        250
+      ],
+      "fontSize": 27,
+      "color": "#111E2B",
+      "weight": 700
+    },
+    {
+      "id": "averageLabel",
+      "kind": "text",
+      "text": "平均费用",
+      "center": [
+        231,
+        332
+      ],
+      "fontSize": 23,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "average",
+      "kind": "text",
+      "text": "3.9",
+      "center": [
+        326,
+        332
+      ],
+      "fontSize": 35,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "cycleLabel",
+      "kind": "text",
+      "text": "四卡循环",
+      "center": [
+        573,
+        332
+      ],
+      "fontSize": 23,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "cycle",
+      "kind": "text",
+      "text": "12",
+      "center": [
+        673,
+        332
+      ],
+      "fontSize": 35,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "collectionTitle",
+      "kind": "text",
+      "text": "卡牌收藏",
+      "center": [
+        126,
+        1110
+      ],
+      "fontSize": 32,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "owned",
+      "kind": "text",
+      "text": "已拥有 6 张",
+      "center": [
+        307,
+        1110
+      ],
+      "fontSize": 26,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "sort",
+      "kind": "text",
+      "text": "按费用",
+      "center": [
+        694,
+        1111
+      ],
+      "fontSize": 25,
+      "color": "#111E2B",
+      "weight": 700
+    },
+    {
+      "id": "filter0",
+      "kind": "text",
+      "text": "全部",
+      "center": [
+        105,
+        1177
+      ],
+      "fontSize": 24,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "filter1",
+      "kind": "text",
+      "text": "盾卫",
+      "center": [
+        246,
+        1177
+      ],
+      "fontSize": 24,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "filter2",
+      "kind": "text",
+      "text": "突击",
+      "center": [
+        371,
+        1177
+      ],
+      "fontSize": 24,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "filter3",
+      "kind": "text",
+      "text": "小队",
+      "center": [
+        497,
+        1177
+      ],
+      "fontSize": 24,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "filter4",
+      "kind": "text",
+      "text": "刺客",
+      "center": [
+        622,
+        1177
+      ],
+      "fontSize": 24,
+      "color": "#FFFFFF",
+      "weight": 700
+    },
+    {
+      "id": "filter5",
+      "kind": "text",
+      "text": "清群",
+      "center": [
+        748,
+        1177
+      ],
+      "fontSize": 24,
+      "color": "#FFFFFF",
+      "weight": 700
+    }
+  ],
+  "cards": [
+    {
+      "index": 0,
+      "cardName": "飞弹齐射",
+      "cost": 2,
+      "role": "战术",
+      "count": 0,
+      "identifier": "",
+      "art": "missile",
+      "rect": [
+        26,
+        434,
+        187,
+        268
+      ]
+    },
+    {
+      "index": 1,
+      "cardName": "夏亚渣古",
+      "cost": 3,
+      "role": "突击",
+      "count": 1,
+      "identifier": "Card_Small_10010",
+      "art": "red",
+      "rect": [
+        224,
+        434,
+        187,
+        268
+      ]
+    },
+    {
+      "index": 2,
+      "cardName": "渣古降下",
+      "cost": 3,
+      "role": "小队",
+      "count": 3,
+      "identifier": "Character_100001",
+      "art": "green",
+      "rect": [
+        422,
+        434,
+        187,
+        268
+      ]
+    },
+    {
+      "index": 3,
+      "cardName": "高达",
+      "cost": 4,
+      "role": "盾卫",
+      "count": 1,
+      "identifier": "Card_Small_10001",
+      "art": "blue",
+      "rect": [
+        619,
+        434,
+        187,
+        268
+      ]
+    },
+    {
+      "index": 4,
+      "cardName": "自由",
+      "cost": 4,
+      "role": "清群",
+      "count": 1,
+      "identifier": "ZGMF-X10A",
+      "art": "noart",
+      "rect": [
+        26,
+        729,
+        187,
+        268
+      ]
+    },
+    {
+      "index": 5,
+      "cardName": "米加粒子炮击",
+      "cost": 4,
+      "role": "战术",
+      "count": 0,
+      "identifier": "",
+      "art": "beam",
+      "rect": [
+        224,
+        729,
+        187,
+        268
+      ]
+    },
+    {
+      "index": 6,
+      "cardName": "能天使",
+      "cost": 5,
+      "role": "刺客",
+      "count": 1,
+      "identifier": "Card_Small_10038",
+      "art": "purple",
+      "rect": [
+        422,
+        729,
+        187,
+        268
+      ]
+    },
+    {
+      "index": 7,
+      "cardName": "高达X",
+      "cost": 6,
+      "role": "攻城",
+      "count": 1,
+      "identifier": "Card_Small_10032",
+      "art": "orange",
+      "rect": [
+        619,
+        729,
+        187,
+        268
+      ]
+    },
+    {
+      "index": 8,
+      "cardName": "旗帜式小队",
+      "cost": 2,
+      "role": "小队",
+      "count": 3,
+      "identifier": "SVMS-01O",
+      "art": "noart",
+      "rect": [
+        31,
+        1228,
+        181,
+        214
+      ]
+    },
+    {
+      "index": 9,
+      "cardName": "力天使",
+      "cost": 3,
+      "role": "狙击",
+      "count": 1,
+      "identifier": "Card_Small_10007",
+      "art": "blue",
+      "rect": [
+        230,
+        1228,
+        181,
+        214
+      ]
+    },
+    {
+      "index": 10,
+      "cardName": "马格亚那克",
+      "cost": 3,
+      "role": "小队",
+      "count": 8,
+      "identifier": "Card_Small_19995",
+      "art": "green",
+      "rect": [
+        429,
+        1228,
+        181,
+        214
+      ]
+    },
+    {
+      "index": 11,
+      "cardName": "基拉·多加",
+      "cost": 3,
+      "role": "射手",
+      "count": 1,
+      "identifier": "AMS-119",
+      "art": "noart",
+      "rect": [
+        628,
+        1228,
+        181,
+        214
+      ]
+    },
+    {
+      "index": 12,
+      "cardName": "钢加农",
+      "cost": 4,
+      "role": "射手",
+      "count": 1,
+      "identifier": "Card_Small_50006",
+      "art": "red",
+      "rect": [
+        31,
+        1463,
+        181,
+        214
+      ]
+    },
+    {
+      "index": 13,
+      "cardName": "精神力",
+      "cost": 7,
+      "role": "盾卫",
+      "count": 1,
+      "identifier": "MRX-009",
+      "art": "noart",
+      "rect": [
+        230,
+        1463,
+        181,
+        214
+      ]
+    }
+  ],
+  "navigation": {
+    "rail": "../../../lobby/handoff/match-r01/UI_FDLobby_NavRail_Neutral.png",
+    "selected": "../../../lobby/handoff/asym-r01/slices/UI_FDLobby_NavSelected.png",
+    "railRect": [
+      40,
+      2100,
+      1000,
+      138
+    ],
+    "selectedRect": [
+      238,
+      2073,
+      204,
+      156
+    ],
+    "selectedIndex": 1,
+    "showLabelOnlyForSelected": true
+  },
+  "cardMenu": {
+    "selectedScale": 1.12,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "position": "below selected card",
+    "offsetY": 9,
+    "buttonHeight": 64,
+    "buttonWidth": "same as enlarged card",
+    "gap": 8,
+    "collectionLabels": [
+      "使用",
+      "信息"
+    ],
+    "deckLabels": [
+      "信息",
+      "替换"
+    ],
+    "colors": {
+      "使用": "Yellow",
+      "信息": "Blue",
+      "替换": "White"
+    },
+    "enterSeconds": 0.12,
+    "shadowOffset": [
+      8,
+      10
+    ]
+  },
+  "detailDemo": {
+    "rect": [
+      130,
+      1010,
+      820,
+      300
+    ],
+    "asset": "UI_FDDeck_DemoFrame.png",
+    "contentInset": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "label": "演示",
+    "loopSeconds": 1.5,
+    "placeholder": "geometric unit and shield; no robot image",
+    "statsSource": "DesignDocs/30_选卡组界面_v1.0.md §6"
+  },
+  "autosave": true,
+  "runtimeOnly": [
+    "selection animation",
+    "card replacement",
+    "demo loop",
+    "navigation",
+    "toast"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "borderOrder": "left,top,right,bottom",
+  "scale": 1,
+  "sprites": {
+    "UI_FDDeck_DemoFrame.png": {
+      "size": [
+        820,
+        300
+      ],
+      "borderLTRB": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "textBaked": false,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "sha256": "32fa3c2b3ac9c4fdd835606a38b79c09a8eb5972f3a90e235e01c9a1999d349c"
+    },
+    "UI_FDDeck_MenuButton_Blue.png": {
+      "size": [
+        240,
+        64
+      ],
+      "borderLTRB": [
+        24,
+        14,
+        24,
+        14
+      ],
+      "textBaked": false,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "sha256": "ad213d2c8d823e2c99166c2460c1273c1813b1dd973583ebf26d45589248de3c"
+    },
+    "UI_FDDeck_MenuButton_White.png": {
+      "size": [
+        240,
+        64
+      ],
+      "borderLTRB": [
+        24,
+        14,
+        24,
+        14
+      ],
+      "textBaked": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "5766b69a9079824562d53c39a54b10b35e851887dd11ea37c26fcfe59dd0728a"
+    },
+    "UI_FDDeck_MenuButton_Yellow.png": {
+      "size": [
+        240,
+        64
+      ],
+      "borderLTRB": [
+        24,
+        14,
+        24,
+        14
+      ],
+      "textBaked": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "sha256": "a23430b26b7d50835bff28916f3a3e0ff5a490c52ba30939dde4c496d727c9fd"
+    },
+    "base_tab.png": {
+      "size": [
+        830,
+        1896
+      ],
+      "borderLTRB": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "textBaked": false,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "sha256": "aa7e39eebc3b6aa3a2cd4eaf09d1219acc78fc4d99901d63de2c4e4819eb528d"
+    }
+  }
+}

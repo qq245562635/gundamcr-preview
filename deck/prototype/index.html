@@ -23,6 +23,7 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 /* 底板层：r02 原生 830×1896，按 r02 转换系数铺到 1080×2340 */
 .native{position:absolute;left:0;top:0;width:830px;height:1896px;transform:scale(1.3012048,1.2341772);transform-origin:0 0}
 #stage{background:url(base_clean.png) 0 0/830px 1896px}
+body.embed #stage{background-image:url(base_embed.png)}
 .t{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-weight:700;line-height:1;pointer-events:none}
 .hit{position:absolute;cursor:pointer}
 .tabsel{position:absolute;width:186px;height:82px;background:url(tab_selected.png) 0 0/100% 100%;top:208px;transition:left .2s}
@@ -82,11 +83,16 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 .mini canvas{width:100%;height:100%}
 /* 嵌入大厅壳（?embed=1）：去掉返回键和底栏，底部交给壳的导航 */
 .embedPatch{position:absolute;display:none;pointer-events:none}
-body.embed .embedPatch{display:block}
+/* 嵌入页签版改用 armor-r04 base_tab，不再用补丁 */
 body.embed .ne{display:none}
 /* CR 式点卡：卡放大浮起，正下方竖排按钮 */
 #cmenu{position:absolute;z-index:21;display:none}
-#cmenu .btn{position:relative;margin-bottom:10px;animation:mIn .12s ease-out both}
+#cmenu .btn{position:relative;margin-bottom:8px;animation:mIn .12s ease-out both;border-style:solid;border-color:transparent;border-width:14px 24px}
+#cmenu .m-yel{border-image:url(../handoff/armor-r04/UI_FDDeck_MenuButton_Yellow.png) 14 24 fill/14px 24px stretch}
+#cmenu .m-blu{border-image:url(../handoff/armor-r04/UI_FDDeck_MenuButton_Blue.png) 14 24 fill/14px 24px stretch;color:#fff}
+#cmenu .m-wht{border-image:url(../handoff/armor-r04/UI_FDDeck_MenuButton_White.png) 14 24 fill/14px 24px stretch}
+.card.outsel{outline:6px solid #FFD45C;outline-offset:-3px}
+#hint2{position:absolute;z-index:19;display:none;left:540px;top:1268px;transform:translate(-50%,-50%);padding:14px 30px;border-radius:8px;background:#111e2bee;border:2px solid #FFD45C;color:#fff;font-weight:700;font-size:32px;white-space:nowrap;cursor:pointer}
 #cmenu .btn+.btn{animation-delay:.03s}
 @keyframes mIn{from{transform:translateY(-14px) scale(.9);opacity:0}to{transform:none;opacity:1}}
 #note{position:fixed;left:16px;top:16px;width:260px;color:#9fb3cc;font:14px/1.6 system-ui,sans-serif;display:none}
@@ -129,6 +135,7 @@ body.embed .ne{display:none}
  <div id="dim" onclick="cancelReplace()"></div>
  <div id="float"><div class="btn b-wht skin" style="left:316px;top:-36px;width:72px;height:72px;font-size:48px" onclick="cancelReplace()">×</div></div>
  <div id="hint">点上面一张卡换下来</div>
+ <div id="hint2" onclick="cancelReplace()">点下面一张卡换上去 · 点这里取消</div>
 
  <div id="prep" class="native"></div>
  <div class="mask" id="mask" onclick="if(event.target===this)closeModal()"></div>
@@ -197,7 +204,7 @@ const SP2='../handoff/armor-r02/sprites/', SP3='../handoff/armor-r03/sprites/';
 let state={slot:0,decks:PRESETS.map(p=>p.cards.slice()),custom:[false,false,false],opp:1,ai:'新'};
 try{const s=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');if(s&&s.decks&&s.decks.length===3)state=Object.assign(state,s)}catch(e){}
 function save(){try{localStorage.setItem('fd_deck_proto2',JSON.stringify(state))}catch(e){}}
-let sortMode=0,filter="全部",selected=null,replacing=null;
+let sortMode=0,filter="全部",selected=null,replacing=null,replaceOut=null;
 const SORTS=["按费用","按定位","按名称"];
 const $=id=>document.getElementById(id);
 
@@ -248,14 +255,15 @@ const inDeck=k=>deck().includes(k);
 function clearSel(){if(selected)cardEls[selected].classList.remove('sel');selected=null;$('bubble').style.display='none';$('cmenu').style.display='none'}
 function tapCard(k){
   if(replacing){if(inDeck(k))doSwap(k);return}
+  if(replaceOut){if(inDeck(k)){cancelReplace();return}const o=replaceOut,e=cardEls[k];endOutUI();replacing=k;doSwap(o,[parseFloat(e.style.left),parseFloat(e.style.top),parseFloat(e.style.width),parseFloat(e.style.height)]);return}
   if(selected===k){clearSel();return}
   clearSel();selected=k;const e=cardEls[k];e.classList.add('sel');
   const dk=inDeck(k),m=$('cmenu');
   // 卡在 1080 坐标里的位置；按钮宽同卡宽，竖排在卡正下方（放不下就放上方）
   const x=parseFloat(e.style.left)*XS,y=parseFloat(e.style.top)*YS,w=parseFloat(e.style.width)*XS,h=parseFloat(e.style.height)*YS;
-  const bw=Math.max(w,170),items=dk?[['信息','b-blu',`openInfo('${k}')`]]:[['使用','b-yel',`startReplace('${k}')`],['信息','b-blu',`openInfo('${k}')`]];
-  const mh=items.length*74,bottom=document.body.classList.contains('embed')?2040:2320,below=y+h*1.06+10+mh<=bottom;
-  m.innerHTML=items.map(([t,c,f])=>`<div class="btn ${c} skin" style="width:${bw}px;height:64px;font-size:30px;border-width:${c==='b-blu'?22:30}px" onclick="${f}">${t}</div>`).join('');
+  const bw=Math.max(w*1.12,170),items=dk?[['信息','m-blu',`openInfo('${k}')`],['替换','m-wht',`startReplaceOut('${k}')`]]:[['使用','m-yel',`startReplace('${k}')`],['信息','m-blu',`openInfo('${k}')`]];
+  const mh=items.length*72,bottom=document.body.classList.contains('embed')?2040:2320,below=y+h*1.06+10+mh<=bottom;
+  m.innerHTML=items.map(([t,c,f])=>`<div class="btn ${c}" style="width:${bw}px;height:64px;font-size:30px" onclick="${f}">${t}</div>`).join('');
   m.style.display='block';m.style.left=Math.max(12,Math.min(1080-bw-12,x+w/2-bw/2))+'px';m.style.top=(below?y+h*1.06+10:y-h*.06-mh-4)+'px';
 }
 // ---------- S02 替换 ----------
@@ -266,7 +274,9 @@ function startReplace(k){
   deck().forEach(d=>cardEls[d].classList.add('cand'));
 }
 function endReplaceUI(){$('dim').style.display='none';$('float').style.display='none';$('hint').style.display='none';deck().forEach(d=>cardEls[d].classList.remove('cand','tgt'))}
-function cancelReplace(){if(!replacing)return;cardEls[replacing].style.visibility='';endReplaceUI();replacing=null}
+function startReplaceOut(k){clearSel();replaceOut=k;cardEls[k].classList.add('outsel');Object.keys(cardEls).forEach(c=>{if(!inDeck(c))cardEls[c].classList.add('cand')});$('hint2').style.display='block'}
+function endOutUI(){if(replaceOut)cardEls[replaceOut].classList.remove('outsel');Object.values(cardEls).forEach(e=>e.classList.remove('cand'));$('hint2').style.display='none';replaceOut=null}
+function cancelReplace(){if(replaceOut){endOutUI();return}if(!replacing)return;cardEls[replacing].style.visibility='';endReplaceUI();replacing=null}
 function doSwap(out,from){
   const inn=replacing;endReplaceUI();
   const d=deck(),i=d.indexOf(out),e=cardEls[inn];
@@ -305,7 +315,7 @@ function onUp(k,ev){
   else{toast('拖到上面一张卡上松手即可互换');layout()}
   drag=null;
 }
-function setSlot(i){if(replacing)cancelReplace();clearSel();state.slot=i;layout();save()}
+function setSlot(i){if(replacing||replaceOut)cancelReplace();clearSel();state.slot=i;layout();save()}
 function cycleSort(){if(replacing)return;sortMode=(sortMode+1)%3;$('sortlbl').textContent=SORTS[sortMode];clearSel();layout()}
 function setFilter(r,silent){filter=r;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c.dataset.r===r));if(!silent){clearSel();layout()}}
 
@@ -348,7 +358,8 @@ function openInfo(k){
   // CR 式单位演示：打开详情 0.6 秒后卡面淡出、播放技能演示小场景；点一下切回卡面
   const dm=document.createElement('canvas');dm.width=360;dm.height=516;dm.style.cssText='width:100%;height:100%;position:absolute;left:0;top:0;opacity:0;transition:opacity .25s;border-radius:10px';
   const tag=document.createElement('div');tag.style.cssText='position:absolute;right:10px;top:10px;padding:4px 12px;border-radius:6px;background:#111e2bcc;color:#2FD3E0;font:700 22px var(--F);opacity:0;transition:opacity .25s';tag.textContent='演示';
-  $('bigcard').append(dm,tag);let showDemo=false;const set=v=>{showDemo=v;cv.style.opacity=v?0:1;dm.style.opacity=v?1:0;tag.style.opacity=v?1:0};
+  const fr=document.createElement('div');fr.style.cssText='position:absolute;inset:0;pointer-events:none;border:14px solid transparent;border-image:url(../handoff/armor-r04/UI_FDDeck_DemoFrame.png) 14/14px stretch;opacity:0;transition:opacity .25s';
+  $('bigcard').append(dm,fr,tag);let showDemo=false;const set=v=>{showDemo=v;cv.style.opacity=v?0:1;dm.style.opacity=v?1:0;fr.style.opacity=v?1:0;tag.style.opacity=v?1:0};
   $('bigcard').onclick=()=>set(!showDemo);setTimeout(()=>{if(dm.isConnected)set(true)},600);
   const t0=performance.now();(function fr(){if(!dm.isConnected)return;demo(dm.getContext('2d'),k,((performance.now()-t0)/1000)%3.2);requestAnimationFrame(fr)})();
 }
@@ -396,7 +407,7 @@ function demo(g,k,t){const c=CARDS[k],W=360,H=516;g.clearRect(0,0,W,H);
 }
 // ---------- S04 推荐卡组 + S04a 确认 ----------
 function openPresets(){
-  if(replacing)cancelReplace();clearSel();let h='';
+  if(replacing||replaceOut)cancelReplace();clearSel();let h='';
   h+=`<div class="mframe" style="left:60px;top:200px;width:960px;height:1940px"></div>`;
   h+=L(96,256,'推荐卡组',48,'#111E2B')+L(96,310,`用到当前的卡组 ${state.slot+1}`,26,'#546473','lm',500)+B(904,236,80,80,'×','b-wht','closeModal()',48)+B(620,236,260,80,'恢复推荐','b-wht','askReset()',30);
   PRESETS.forEach((p,i)=>{const y=420+i*560;
@@ -417,7 +428,7 @@ function confirmBox(title,body,okText,ok){
 }
 function applyPreset(i){state.decks[state.slot]=PRESETS[i].cards.slice();state.custom[state.slot]=state.slot!==i;layout();save();toast('卡组已保存')}
 function askApply(i){confirmBox(`覆盖卡组 ${state.slot+1}？`,`当前卡组会被替换成「${PRESETS[i].name}」。`,'覆盖',()=>applyPreset(i))}
-function askReset(){if(replacing)cancelReplace();clearSel();confirmBox('重置卡组？',`恢复成推荐卡组「${PRESETS[state.slot].name}」。`,'重置',()=>applyPreset(state.slot))}
+function askReset(){if(replacing||replaceOut)cancelReplace();clearSel();confirmBox('重置卡组？',`恢复成推荐卡组「${PRESETS[state.slot].name}」。`,'重置',()=>applyPreset(state.slot))}
 function openHelp(){
   let h=`<div class="mframe" style="left:120px;top:760px;width:840px;height:820px"></div>`;
   h+=L(160,840,'怎么换卡',44,'#111E2B');
@@ -425,7 +436,7 @@ function openHelp(){
   h+=B(168,1425,744,110,'知道了','b-yel','closeModal()',36);mask.innerHTML=h;mask.classList.add('on');
 }
 // ---------- S05 对战准备（Demo 专用） ----------
-function openPrep(){if(replacing)cancelReplace();clearSel();renderPrep();$('prep').classList.add('on')}
+function openPrep(){if(replacing||replaceOut)cancelReplace();clearSel();renderPrep();$('prep').classList.add('on')}
 function renderPrep(){
   const P=$('prep'),opp=PRESETS[state.opp].cards,me=deck();
   const N=(x,y,txt,size,color,a='mm',w=700)=>`<div class="t" style="left:${x}px;top:${y}px;font-size:${size}px;color:${color};font-weight:${w};${a==='lm'?'transform:translate(0,-50%)':''}">${txt}</div>`;
@@ -464,7 +475,7 @@ if(EMBED){document.body.classList.add('embed');let sw=null;const k=()=>document.
   const end=e=>{if(!sw)return;if(sw.on)parent.postMessage({fd:'panEnd',dx:(e.clientX-sw.x)/k()},'*');sw=null};
   addEventListener('pointerup',end);addEventListener('pointercancel',end);
   addEventListener('message',e=>{const d=e.data||{};if(d.fd==='refresh'){try{const s=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');if(s&&s.decks)state=Object.assign(state,s)}catch(_){}if(!replacing){clearSel();layout()}}
-    if(d.fd==='hide'){if(replacing)cancelReplace();clearSel();closeModal()}})}
+    if(d.fd==='hide'){if(replacing||replaceOut)cancelReplace();clearSel();closeModal()}})}
 
 // ---------- 启动 ----------
 function fit(){const de=document.documentElement,W=de.clientWidth||innerWidth,H=de.clientHeight||innerHeight;
@@ -474,7 +485,7 @@ addEventListener('resize',fit);addEventListener('orientationchange',()=>setTimeo
 document.addEventListener('touchstart',()=>{},{passive:true});
 // 只预加载、不进 IMG 表的图（底图、页签、弹窗、对战准备的素材），等解码完
 function warm(src){return new Promise(r=>{const i=new Image();i.onload=()=>(i.decode?i.decode():Promise.resolve()).catch(()=>{}).then(r);i.onerror=()=>r();i.src=src})}
-const UI_IMGS=['base_clean.png','tab_selected.png','filter_selected.png',
+const UI_IMGS=[EMBED?'base_embed.png':'base_clean.png',...['Yellow','Blue','White'].map(n=>'../handoff/armor-r04/UI_FDDeck_MenuButton_'+n+'.png'),'../handoff/armor-r04/UI_FDDeck_DemoFrame.png','tab_selected.png','filter_selected.png',
   ...['Button_Yellow','Button_White','Button_Blue','Bubble','Modal','Modal_Tactic','Inset_Skill','Inset_Source'].map(n=>SP3+'UI_FDDeck_'+n+'.png'),
   ...['NavyTexture','HeaderMaterial','FooterMaterial','Tab'].map(n=>SP2+'UI_FDDeck_'+n+'.png')];
 $('canvas').addEventListener('click',e=>{if(e.target.id==='stage'||e.target.id==='canvas')clearSel()});
