@@ -577,7 +577,7 @@ pressable($('exitBtn'),()=>{if(G.phase!=='play')return;$('mask').classList.add('
   p.innerHTML=`<div class="mframe" style="left:140px;top:860px;width:800px;height:620px"></div><div class="t mm" style="left:540px;top:930px;font-size:44px;color:#17263A;font-weight:900">退出对局？</div>
    <div class="t mm" style="left:540px;top:1130px;font-size:36px;color:#fff;font-weight:700">退出会判负。</div>
    <div class="btn skin b-wht" id="cx" style="left:200px;top:1300px;width:320px;height:110px;font-size:38px">取消</div>
-   <div class="btn skin b-wht" id="qx" style="left:560px;top:1300px;width:320px;height:110px;font-size:38px;color:#fff;background:#c9332e;border-radius:10px;border-image:none;border:6px solid #e9e5dc">退出</div>`;
+   <div class="btn skin b-wht" id="qx" style="left:560px;top:1300px;width:320px;height:110px;font-size:38px;color:#fff;border-style:solid;border-color:transparent;border-image:url(../../lobby/handoff/match-r01/UI_FDLobby_Button_Red.png) 24 18 24 18 fill/24px 18px stretch;text-shadow:0 3px 0 #6b1713">退出</div>`;
   const close=()=>{$('mask').classList.remove('on');p.innerHTML='';p.style.pointerEvents='none'};
   pressable($('cx'),close);pressable($('qx'),()=>{close();G.quit=true;end()})});
 

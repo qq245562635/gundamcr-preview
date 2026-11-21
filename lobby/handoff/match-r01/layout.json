@@ -1,0 +1,107 @@
+{
+  "canvas": [
+    1080,
+    2340
+  ],
+  "origin": "top-left",
+  "background": "../vs-armor-r01/slices/UI_FDLobby_VS_Background.png",
+  "backgroundTintOverlay": "#082540BB",
+  "nodes": [
+    {
+      "id": "title",
+      "asset": "UI_FDLobby_Match_TitleBar.png",
+      "rect": [
+        90,
+        220,
+        900,
+        160
+      ],
+      "text": "搜索对手…"
+    },
+    {
+      "id": "radar",
+      "asset": "UI_FDLobby_Match_Radar.png",
+      "rect": [
+        220,
+        650,
+        640,
+        640
+      ]
+    },
+    {
+      "id": "sweep",
+      "asset": "UI_FDLobby_Match_Radar_Sweep.png",
+      "rect": [
+        220,
+        650,
+        640,
+        640
+      ],
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "rotateDegrees": [
+        0,
+        360
+      ]
+    },
+    {
+      "id": "cancel",
+      "asset": "UI_FDLobby_Button_Red.png",
+      "rect": [
+        330,
+        1600,
+        420,
+        140
+      ],
+      "text": "取消"
+    },
+    {
+      "id": "tip",
+      "asset": "UI_FDLobby_Match_TipBox.png",
+      "rect": [
+        90,
+        1910,
+        900,
+        260
+      ]
+    }
+  ],
+  "navigation": {
+    "rail": "UI_FDLobby_NavRail_Neutral.png",
+    "selected": "../asym-r01/slices/UI_FDLobby_NavSelected.png",
+    "centersX": [
+      140,
+      340,
+      540,
+      740,
+      940
+    ],
+    "selectedSize": [
+      204,
+      156
+    ],
+    "selectedLabelOnly": true,
+    "activeIconSize": 70,
+    "inactiveIconSize": 60,
+    "midpointCenterX": 440,
+    "durationSeconds": 0.28,
+    "lockedIndices": [
+      0,
+      3,
+      4
+    ]
+  },
+  "cancelPressed": {
+    "scale": 0.96,
+    "offsetY": 6
+  },
+  "runtimeOnly": [
+    "dot cycling",
+    "random match duration 1.6–2.6 s",
+    "scan rotation",
+    "cancel action",
+    "navigation slide"
+  ]
+}

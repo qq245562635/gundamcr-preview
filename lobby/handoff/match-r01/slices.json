@@ -1,0 +1,114 @@
+{
+  "borderOrder": "left,top,right,bottom",
+  "scale": 1,
+  "sprites": {
+    "UI_FDLobby_Button_Red.png": {
+      "size": [
+        420,
+        140
+      ],
+      "borderLTRB": [
+        24,
+        18,
+        24,
+        18
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "textBaked": false,
+      "sha256": "d4a0ceccbb018dead4a568c385eb25e346bfb66ee1d3e31f28e8b7715989f3bf"
+    },
+    "UI_FDLobby_Match_Radar.png": {
+      "size": [
+        640,
+        640
+      ],
+      "borderLTRB": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "textBaked": false,
+      "sha256": "f720312d98116f53173f7a4ea24a9786948c20966185bff1de895fc1019e7c34"
+    },
+    "UI_FDLobby_Match_Radar_Sweep.png": {
+      "size": [
+        640,
+        640
+      ],
+      "borderLTRB": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "textBaked": false,
+      "sha256": "70fb9a94324d64463704356fe0048fe08a342fa76abe167426ee175885c11533"
+    },
+    "UI_FDLobby_Match_TipBox.png": {
+      "size": [
+        900,
+        260
+      ],
+      "borderLTRB": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "textBaked": false,
+      "sha256": "78a3a88de862f9b3d33248a79b3488a5ad1d06f3d886d08cb25fcff2f007ca2a"
+    },
+    "UI_FDLobby_Match_TitleBar.png": {
+      "size": [
+        900,
+        160
+      ],
+      "borderLTRB": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "textBaked": false,
+      "sha256": "99817c2bf102adebd10cb3e81808bd1995406df5d5bc19bcb53f3b5b2f64a339"
+    },
+    "UI_FDLobby_NavRail_Neutral.png": {
+      "size": [
+        907,
+        125
+      ],
+      "borderLTRB": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "textBaked": false,
+      "sha256": "e6d1a38a36a7900b92433a302bfec8f6a6b7537e63f2fe0e798c53f04985f3b1"
+    }
+  }
+}

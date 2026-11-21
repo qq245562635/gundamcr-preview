@@ -12,32 +12,33 @@ const css=`
 .fdm.out{animation:fdmOut .2s ease-in both}
 @keyframes fdmIn{from{opacity:0}to{opacity:1}}
 @keyframes fdmOut{from{opacity:1}to{opacity:0}}
-.fdm .bg{position:absolute;inset:0;background:url(${VS}Background.png) 0 0/100% 100%;filter:brightness(.55) saturate(.8)}
-.fdm .bar{position:absolute;left:-30px;top:250px;width:1140px;height:150px;border-style:solid;border-color:transparent;border-width:30px;border-image:url(${SP3}UI_FDDeck_Button_White.png) 30 fill/30px stretch;animation:fdmBar .3s cubic-bezier(.2,.8,.3,1.2) both}
+.fdm .bg{position:absolute;inset:0;background:url(${VS}Background.png) 0 0/100% 100%}
+.fdm .bg::after{content:"";position:absolute;inset:0;background:#082540bb}
+.fdm .bar{position:absolute;left:90px;top:220px;width:900px;height:160px;background:url(${MATCH}UI_FDLobby_Match_TitleBar.png) 0 0/100% 100%;animation:fdmBar .3s cubic-bezier(.2,.8,.3,1.2) both}
 @keyframes fdmBar{from{transform:translateX(-300px);opacity:0}to{transform:none;opacity:1}}
-.fdm .ttl{position:absolute;left:140px;top:325px;transform:translateY(-50%);font-size:64px;font-weight:900;font-style:italic;color:#17263A;letter-spacing:4px;white-space:nowrap}
-.fdm .lens{position:absolute;left:44px;top:262px;width:126px;height:126px}
-.fdm .radar{position:absolute;left:190px;top:640px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,#123a4d 0,#0c2232 60%,#0a1824 100%);box-shadow:0 0 0 10px #c9c6bd,0 0 0 18px #2a3b52,0 20px 60px #000c;overflow:hidden}
+.fdm .ttl{position:absolute;left:250px;top:300px;transform:translateY(-50%);font-size:64px;font-weight:900;font-style:italic;color:#17263A;letter-spacing:4px;white-space:nowrap}
+.fdm .lens{position:absolute;left:120px;top:246px;width:108px;height:108px}
+.fdm .radar{position:absolute;left:220px;top:650px;width:640px;height:640px;background:url(${MATCH}UI_FDLobby_Match_Radar.png) 0 0/100% 100%}
 .fdm .ring{position:absolute;border:3px solid #2FD3E055;border-radius:50%}
-.fdm .sweep{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,#2FD3E000 0deg,#2FD3E000 280deg,#2FD3E066 350deg,#5ff0fa 360deg);animation:fdmSpin 1.6s linear infinite}
+.fdm .sweep{position:absolute;inset:0;background:url(${MATCH}UI_FDLobby_Match_Radar_Sweep.png) 0 0/100% 100%;animation:fdmSpin 1.6s linear infinite}
 @keyframes fdmSpin{to{transform:rotate(360deg)}}
 .fdm .cross{position:absolute;background:#2FD3E033}
 .fdm .blip{position:absolute;width:26px;height:26px;margin:-13px;border-radius:50%;background:#FF5A4E;box-shadow:0 0 18px #FF5A4E;opacity:0}
 .fdm .blip.on{animation:fdmBlip 1.6s ease-out infinite}
 @keyframes fdmBlip{0%{opacity:1;transform:scale(1.4)}70%{opacity:.5;transform:scale(1)}100%{opacity:0}}
 .fdm .core{position:absolute;left:470px;top:920px;width:140px;height:140px;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);background:linear-gradient(160deg,#e9e5dc,#b7b2a7);display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:900;color:#17263A}
-.fdm .st{position:absolute;left:540px;top:1430px;transform:translate(-50%,-50%);font-size:40px;font-weight:900;color:#fff;white-space:nowrap;text-shadow:0 3px 0 #0a1320}
-.fdm .sub{position:absolute;left:540px;top:1490px;transform:translate(-50%,-50%);font-size:28px;font-weight:700;color:#9fb3cc;white-space:nowrap}
+.fdm .st{position:absolute;left:540px;top:1400px;transform:translate(-50%,-50%);font-size:40px;font-weight:900;color:#fff;white-space:nowrap;text-shadow:0 3px 0 #0a1320}
+.fdm .sub{position:absolute;left:540px;top:1462px;transform:translate(-50%,-50%);font-size:28px;font-weight:700;color:#9fb3cc;white-space:nowrap}
 .fdm .cancel{position:absolute;left:330px;top:1600px;width:420px;height:140px;display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:900;color:#fff;cursor:pointer;
   background:linear-gradient(#ef5a4f,#c9332e 60%,#a92521);border:7px solid #e9e5dc;border-radius:14px;box-shadow:0 8px 0 #5f1512,0 0 0 4px #1a1010 inset;transition:transform .08s,box-shadow .08s,filter .08s;text-shadow:0 3px 0 #6b1713}
-.fdm .cancel.skin{background:none;border-style:solid;border-color:transparent;border-width:30px;border-radius:0;box-shadow:none;border-image:url(${MATCH}UI_FDLobby_Button_Red.png) 30 fill/30px stretch}
+.fdm .cancel.skin{background:none;border-style:solid;border-color:transparent;border-width:30px;border-radius:0;box-shadow:none;border-image:url(${MATCH}UI_FDLobby_Button_Red.png) 24 18 24 18 fill/24px 18px stretch}
 .fdm .cancel.press{transform:translateY(6px);box-shadow:0 2px 0 #5f1512,0 0 0 4px #1a1010 inset;filter:brightness(.92)}
 .fdm .cancel.gone{opacity:0;pointer-events:none;transition:opacity .15s}
-.fdm .tip{position:absolute;left:70px;top:1880px;width:940px;height:200px;background:#e9e5dcf2;border:5px solid #8f8a80;border-radius:10px;box-shadow:0 8px 0 #0a1320}
-.fdm .tip b{position:absolute;left:470px;top:-26px;transform:translateX(-50%);background:#17263A;color:#fff;font-size:28px;padding:8px 28px;border-radius:8px}
-.fdm .tip span{position:absolute;left:40px;right:40px;top:56px;font-size:32px;line-height:1.5;font-weight:700;color:#17263A}
+.fdm .tip{position:absolute;left:90px;top:1910px;width:900px;height:260px;background:url(${MATCH}UI_FDLobby_Match_TipBox.png) 0 0/100% 100%}
+.fdm .tip b{position:absolute;left:60px;top:44px;color:#FFD45C;font-size:30px}
+.fdm .tip span{position:absolute;left:60px;right:60px;top:100px;font-size:32px;line-height:1.5;font-weight:700;color:#e9eef4;text-align:center}
 .fdm .found .ttl{color:#B57C00}
-.fdm.found .radar{box-shadow:0 0 0 10px #FFD45C,0 0 0 18px #2a3b52,0 0 80px #FFD45C99}
+.fdm.found .radar{filter:drop-shadow(0 0 40px #FFD45C)}
 .fdm.found .sweep{animation-duration:.5s}
 `;
 let styled=false;
@@ -45,12 +46,11 @@ function show(root,o={}){
   if(!styled){const s=document.createElement('style');s.textContent=css;document.head.appendChild(s);styled=true}
   const el=document.createElement('div');el.className='fdm';
   const rings=[120,240,360,480,600].map(d=>`<div class="ring" style="left:${350-d/2}px;top:${350-d/2}px;width:${d}px;height:${d}px"></div>`).join('');
-  const blips=[[210,180],[520,240],[150,470],[560,520]].map(([x,y],i)=>`<div class="blip" style="left:${x}px;top:${y}px;animation-delay:${i*.4}s"></div>`).join('');
+  const blips=[[190,170],[470,220],[140,430],[500,470]].map(([x,y],i)=>`<div class="blip" style="left:${x}px;top:${y}px;animation-delay:${i*.4}s"></div>`).join('');
   el.innerHTML=`<div class="bg"></div><div class="bar"></div>
    <svg class="lens" viewBox="0 0 126 126"><circle cx="52" cy="52" r="34" fill="#2FD3E033" stroke="#17263A" stroke-width="10"/><path d="M78 78l32 32" stroke="#17263A" stroke-width="16" stroke-linecap="round"/></svg>
    <div class="ttl">搜索对手<span class="dots"></span></div>
-   <div class="radar">${rings}<div class="cross" style="left:348px;top:0;width:4px;height:700px"></div><div class="cross" style="left:0;top:348px;width:700px;height:4px"></div><div class="sweep"></div>${blips}</div>
-   <div class="core">AI</div>
+   <div class="radar"><div class="sweep"></div>${blips}</div>
    <div class="st">正在匹配 AI 指挥官</div><div class="sub">${o.sub||''}</div>
    <div class="cancel">取消</div>
    <div class="tip"><b>提示</b><span>${TIPS[Math.floor(Math.random()*TIPS.length)]}</span></div>`;

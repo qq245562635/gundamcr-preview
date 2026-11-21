@@ -1,0 +1,21 @@
+{
+  "spriteCount": 6,
+  "mockupCount": 2,
+  "decodePass": true,
+  "radarPivot": [
+    320,
+    320
+  ],
+  "mockups": [
+    {
+      "path": "L07_matching.png",
+      "sha256": "bc5c51a9e656b18e980177149783896e087bcbc414ccc7c9e39fad29415f38c1"
+    },
+    {
+      "path": "C20b_nav_states.png",
+      "sha256": "1b7c1ce50f382d2c70d3f32a87f28e7ee1d2ab42beabc9a4f12b0463f3824c18"
+    }
+  ],
+  "browserAcceptance": false,
+  "deviceAcceptance": false
+}
