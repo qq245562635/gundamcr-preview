@@ -63,6 +63,8 @@ html,body{margin:0;height:100%;background:#0d1724;overflow:hidden;font-family:va
 #efill{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(#e889ff,#b23be6 55%,#8a25c4)}
 #efill.gold{background:linear-gradient(#fff1b8,#FFD45C 55%,#d39614)}
 #esegs{position:absolute;inset:0;display:flex}
+#ebar.full{animation:efull .8s ease-in-out infinite alternate}
+@keyframes efull{from{box-shadow:0 0 0 #d85bff00}to{box-shadow:0 0 22px #f2a6ff;border-color:#f2a6ff}}
 #esegs i{flex:1;border-right:3px solid #0a1320}
 #esegs i:last-child{border-right:0}
 #esegs i.blink{animation:eblink .35s ease-out}
@@ -242,7 +244,7 @@ function setNext(){$('next').innerHTML='';$('next').appendChild(cardEl(G.P.next)
 $('esegs').innerHTML='<i></i>'.repeat(10);
 let lastE=-1;
 function hud(){const e=G.P.e;
-  $('efill').style.width=(e*10)+'%';const n=Math.floor(e);$('gemN').textContent=n;
+  $('efill').style.width=(e*10)+'%';$('ebar').classList.toggle('full',e>=10&&G.phase==='play');const n=Math.floor(e);$('gemN').textContent=n;
   document.querySelectorAll('.hc').forEach(d=>{const k=G.P.hand[+d.dataset.i],c=CARDS[k].cost,ok=e>=c,was=!d.classList.contains('poor');
     d.classList.toggle('poor',!ok);d.querySelector('.shade').style.height=ok?'0':(Math.min(1,e/c)*100*.93)+'%';
     if(ok&&!was&&lastE>=0){d.classList.remove('flash');void d.offsetWidth;d.classList.add('flash')}});
@@ -399,7 +401,7 @@ function play(side,i,x,y){const S=G[side],k=S.hand[i],c=CARDS[k];if(S.e<c.cost||
   if(k==='drop'||k==='psycho')G.fx.push({k:'warn',x,y,r:c.land.r,t:0,d:k==='drop'?(side==='P'?(y>0?1.8:1.2):(y<0?1.8:1.2)):1.5,col:side==='P'?'#4AA3FF':'#FF5A4E'});
   if(c.tac)G.fx.push({k:'aim',x,y,r:c.tac.r,t:0,d:c.tac.delay,col:'#ffffff'});
   S.hand[i]=S.next;S.queue.push(k);S.next=S.queue.shift();
-  if(side==='P'){blinkSegs(e0,S.e);refill(i)}
+  if(side==='P'){blinkSegs(e0,S.e);refill(i);txt(x,y,'-'+c.cost,'#e889ff')}
   return true}
 function refill(i){const d=document.querySelector(`.hc[data-i="${i}"]`);if(!d)return;
   d.innerHTML='';d.appendChild(cardEl(G.P.hand[i]));const s=document.createElement('div');s.className='shade';d.appendChild(s);

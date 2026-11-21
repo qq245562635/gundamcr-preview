@@ -28,6 +28,10 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 .pg{position:absolute;left:0;top:0;width:1080px;height:2340px;pointer-events:none;transition:transform .08s ease-out,filter .08s}
 .pg.press{transform:scale(.96);filter:brightness(.9)}
 #battleGrp.press{transform:translate(4px,10px);filter:brightness(.92)}
+/* CR 式：对战按钮待机时有一道扫光 */
+#shine{position:absolute;left:564px;top:791px;width:463px;height:230px;pointer-events:none;overflow:hidden;-webkit-mask:url(../handoff/asym-r01/slices/UI_FDLobby_BattleButton.png) 0 0/100% 100%;mask:url(../handoff/asym-r01/slices/UI_FDLobby_BattleButton.png) 0 0/100% 100%}
+#shine::after{content:"";position:absolute;top:-20px;bottom:-20px;width:90px;left:-160px;background:linear-gradient(90deg,#fff0,#fff9,#fff0);transform:skewX(-20deg);animation:shine 3.2s ease-in-out 1.2s infinite}
+@keyframes shine{0%{left:-160px}30%,100%{left:620px}}
 .title{font-weight:900;font-style:italic;text-shadow:0 4px 0 #0b1420,0 6px 16px #000c;letter-spacing:2px}
 .skin{border-style:solid;border-color:transparent}
 .b-yel{border-image:url(../../deck/handoff/armor-r03/sprites/UI_FDDeck_Button_Yellow.png) 30 fill/30px stretch}
@@ -161,7 +165,7 @@ function lobby(){
   // 对战操作台：按“对战”时整块（底座、对战按钮、对手设置按钮、对手文字）一起下压
   h+=`<div class="pg" id="battleGrp">`+sp('BattleConsole',[527,747,532,510])+sp('BattleButton',[564,791,463,230])+
      ti('Icon_Battle',[601,879,83,83],'#152337')+`<div class="sp" style="left:700px;top:870px;width:6px;height:100px;background:#17263a55;transform:skewX(-12deg)"></div>`+
-     tx('对战',860,913,96,'#17263A','mm','',900)+
+     tx('对战',860,913,96,'#17263A','mm','',900)+`<div id="shine"></div>`+
      grp('pgOpp',[794,1084],sp('OpponentButton',[629,1049,330,70])+tx('对手设置',795,1084,37,'#17263A'))+
      tx('对手：AI 指挥官',793,1152,31,'#17263A')+tx(`（${o.name} · AI ${deckState.ai}）`,793,1196,27,'#17263A')+`</div>`;
   // 卡组
