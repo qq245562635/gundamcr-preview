@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>MS 战线对决原型</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--F:"Noto Sans SC","PingFang SC",sans-serif}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:var(--F)}
+#wrap{position:fixed;left:0;top:0;width:1080px;height:2340px;transform-origin:top left}
+#canvas{position:relative;width:1080px;height:2340px;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:none;background:#0d1724}
+#canvas.boot>*{visibility:hidden}
+#canvas.boot::after{content:"加载中…";position:absolute;left:0;right:0;top:1150px;text-align:center;color:#8c96a3;font:500 36px sans-serif;visibility:visible}
+/* 页签横排：0 商店 1 卡组 2 对战 3 图鉴 4 活动（商店/图鉴/活动锁定，没有页面） */
+#track{position:absolute;left:0;top:0;width:5400px;height:2340px;will-change:transform}
+#track.anim{transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+#track iframe{position:absolute;top:0;width:1080px;height:2340px;border:0;background:#0d1724}
+/* 底部导航（asym-r01 切图） */
+#nav{position:absolute;left:0;top:0;width:1080px;height:2340px;pointer-events:none;z-index:10}
+.sp{position:absolute;background-size:100% 100%;background-repeat:no-repeat;pointer-events:none}
+.ti{position:absolute;pointer-events:none;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
+#navSel{transition:left .28s cubic-bezier(.2,.8,.2,1)}
+.tab{position:absolute;top:2080px;width:216px;height:160px;pointer-events:auto;cursor:pointer}
+.tab .ic{position:absolute;left:72px;top:30px;width:73px;height:73px;transition:transform .2s cubic-bezier(.2,.8,.3,1.3),top .2s,background .2s;-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.tab .lb{position:absolute;left:108px;top:118px;transform:translate(-50%,-50%);font-size:28px;font-weight:900;color:#17263A;white-space:nowrap;opacity:0;transition:opacity .15s}
+.tab .lk{position:absolute;left:128px;top:72px;width:28px;height:28px;background:#8492A4;-webkit-mask-size:100% 100%;mask-size:100% 100%}
+.tab.on .ic{top:10px;transform:scale(1.15)}
+.tab.on .lb{opacity:1}
+.tab.press .ic{transform:scale(.9)}
+.tab.on.press .ic{transform:scale(1.05)}
+.tab.shake .ic{animation:shake .3s}
+@keyframes shake{0%,100%{margin-left:0}25%{margin-left:-10px}75%{margin-left:10px}}
+#toast{position:absolute;left:50%;top:1930px;transform:translateX(-50%);background:#111e2bee;color:#fff;border:2px solid #2FD3E0;padding:20px 36px;border-radius:8px;font-size:32px;font-weight:700;z-index:90;opacity:0;transition:opacity .2s;pointer-events:none;white-space:nowrap}
+#toast.on{opacity:1}
+#note{position:fixed;left:16px;top:16px;width:260px;color:#9fb3cc;font:14px/1.6 system-ui,sans-serif;display:none}
+#note b{color:#fff}
+@media (min-width:1100px){#note{display:block}}
+</style>
+</head>
+<body>
+<div id="note"><b>MS战线对决 · 原型入口</b><br>按 CR 的交互做的一个壳：<br>· 底部导航点「卡组 / 对战」，或在空白处左右划，整页横滑切换<br>· 对战 → 搜索对手（可取消）→ VS → 战斗<br>· 战斗结算「返回大厅」回到这里，赢了有战功飞入<br>商店 / 图鉴 / 活动 Demo 锁定</div>
+<div id="wrap"><div id="canvas" class="boot">
+  <div id="track">
+    <iframe id="fDeck" style="left:1080px" title="卡组"></iframe>
+    <iframe id="fLobby" style="left:2160px" title="对战"></iframe>
+  </div>
+  <div id="nav"></div>
+  <div id="toast"></div>
+</div></div>
+<script src="../shared/match.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+const SL='../lobby/handoff/asym-r01/slices/UI_FDLobby_';
+const TABS=[['Shop','商店',104,1],['Deck','卡组',318,0],['Battle','对战',533,0],['Book','图鉴',737,1],['Event','活动',955,1]];
+const FRAMES={1:'fDeck',2:'fLobby'};
+let cur=location.hash==='#deck'?1:2;
+const fromBattle=location.hash==='#battle-back';
+history.replaceState(null,'',location.pathname);
+
+function fit(){const de=document.documentElement,W=de.clientWidth||innerWidth,H=de.clientHeight||innerHeight;
+  const s=Math.min(W/1080,H/2340),w=$('wrap');w.style.transform=`scale(${s})`;w.style.left=((W-1080*s)/2)+'px'}
+addEventListener('resize',fit);addEventListener('orientationchange',()=>setTimeout(fit,200));fit();
+document.addEventListener('touchstart',()=>{},{passive:true});
+
+// 导航
+function buildNav(){let h=`<div class="sp" style="left:0;top:2080px;width:1080px;height:149px;background-image:url(${SL}NavRail.png)"></div>`+
+  `<div class="sp" id="navSel" style="left:${TABS[cur][2]-110}px;top:2060px;width:220px;height:168px;background-image:url(${SL}NavSelected.png)"></div>`;
+  TABS.forEach(([f,t,cx,lock],i)=>{h+=`<div class="tab" data-i="${i}" style="left:${cx-108}px"><div class="ic" style="-webkit-mask-image:url(${SL}Icon_${f}.png);mask-image:url(${SL}Icon_${f}.png)"></div>`+
+    (lock?`<div class="lk" style="-webkit-mask-image:url(${SL}Icon_Lock.png);mask-image:url(${SL}Icon_Lock.png)"></div>`:'')+`<div class="lb">${t}</div></div>`});
+  $('nav').innerHTML=h;
+  document.querySelectorAll('.tab').forEach(el=>{const i=+el.dataset.i;
+    el.addEventListener('pointerdown',()=>el.classList.add('press'));el.addEventListener('pointerleave',()=>el.classList.remove('press'));
+    el.addEventListener('pointerup',()=>{el.classList.remove('press');go(i)})});
+  paintNav()}
+function paintNav(){document.querySelectorAll('.tab').forEach(el=>{const i=+el.dataset.i,on=i===cur,lock=TABS[i][3];el.classList.toggle('on',on);
+  el.querySelector('.ic').style.background=on?'#17263A':lock?'#6f7d8f':'#C9D3DD'});
+  $('navSel').style.left=(TABS[cur][2]-110)+'px'}
+let tt;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1500)}
+function locked(i){const el=document.querySelector(`.tab[data-i="${i}"]`);if(el){el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake')}toast('Demo 暂未开放')}
+function setX(x,anim){const t=$('track');t.classList.toggle('anim',!!anim);t.style.transform=`translateX(${x}px)`}
+function go(i,silent){if(TABS[i][3]){locked(i);setX(-cur*1080,true);return}
+  const prev=cur;cur=i;setX(-cur*1080,true);paintNav();
+  if(prev!==cur){post(prev,{fd:'hide'});post(cur,{fd:'refresh'})}}
+function post(i,msg){const f=FRAMES[i]&&$(FRAMES[i]);try{f&&f.contentWindow.postMessage(msg,'*')}catch(e){}}
+
+// 子页面发来的消息
+let matching=false;
+addEventListener('message',e=>{const d=e.data||{};
+  if(d.fd==='tab')go(d.i);
+  if(d.fd==='pan'){let dx=d.dx;const want=dx<0?cur+1:cur-1;if(want<0||want>4||TABS[want][3])dx*=.3;
+    setX(-cur*1080+dx,false);$('navSel').style.transition='none';$('navSel').style.left=(TABS[cur][2]-110-dx*(TABS[1][2]-TABS[2][2])/1080*(TABS[want]&&!TABS[want][3]?1:0))+'px'}
+  if(d.fd==='panEnd'){$('navSel').style.transition='';const want=d.dx<0?cur+1:cur-1;
+    if(Math.abs(d.dx)>180&&want>=0&&want<=4)go(want);else{setX(-cur*1080,true);paintNav()}}
+  if(d.fd==='battle'&&!matching){matching=true;let s='';try{const st=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');const N=['原版','远程','诱饵套'];if(st)s=`我方卡组：${st.custom&&st.custom[st.slot]?'自定义':N[st.slot]} · 对手：${N[st.opp]||''}`}catch(_){}
+    FDMatch.show($('canvas'),{sub:s,onDone:el=>{el.classList.add('out');setTimeout(()=>location.href='../battle/prototype/?from=app',180)},onCancel:()=>matching=false})}});
+
+// 启动：两个页签都加载完再整屏显示
+const warm=src=>new Promise(r=>{const i=new Image();i.onload=()=>(i.decode?i.decode():Promise.resolve()).catch(()=>{}).then(r);i.onerror=()=>r();i.src=src});
+const frameReady=(f,src)=>new Promise(r=>{f.addEventListener('load',()=>setTimeout(r,250),{once:true});f.src=src;setTimeout(r,6000)});
+buildNav();setX(-cur*1080,false);
+(async()=>{
+  await Promise.all([frameReady($('fLobby'),'../lobby/prototype/?embed=1'),frameReady($('fDeck'),'../deck/prototype/?embed=1'),
+    ...['NavRail','NavSelected','Icon_Lock',...TABS.map(t=>'Icon_'+t[0])].map(n=>warm(SL+n+'.png'))]);
+  $('canvas').classList.remove('boot');
+  if(fromBattle)setTimeout(()=>post(2,{fd:'reward'}),500);
+})();
+addEventListener('pageshow',e=>{if(e.persisted){matching=false;document.querySelectorAll('.fdm').forEach(n=>n.remove());post(2,{fd:'refresh'})}});
+</script>
+</body>
+</html>

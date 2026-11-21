@@ -90,8 +90,12 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
   <div id="splash"></div>
   <div id="toast"></div>
 </div></div>
+<script src="../../shared/match.js"></script>
 <script>
 const $=id=>document.getElementById(id);
+// 被大厅壳（ui/app/）嵌入时：导航由壳画，对战/卡组交给壳处理
+const EMBED=new URLSearchParams(location.search).get('embed')==='1';
+const BATTLE_URL='../../battle/prototype/';
 const SL='../handoff/asym-r01/slices/UI_FDLobby_';
 const DECK_URL='../../deck/prototype/';
 // 卡牌数据（与选卡组原型一致的子集）
@@ -143,7 +147,7 @@ function lobby(){
   h+=grp('pgPlayer',[312,306],sp('PlayerPanel',[23,227,579,158])+
      `<div class="sp" style="left:46px;top:245px;width:125px;height:125px;background:#DCA822;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%)"></div>`+sp('Icon_Avatar',[52,251,113,113])+
      ti('Icon_Trophy',[345,313,30,30],'#DCA822')+tx('指',108,305,58,'#EDF2F6')+tx('指挥官',231,275,42,'#17263A','lm','',900)+
-     tx('Lv.1',236,333,27,'#17263A','lm')+tx(wins()*30,399,335,27,'#17263A','lm'));
+     tx('Lv.1',236,333,27,'#17263A','lm')+tx(`<span id="trophyN">${wins()*30}</span>`,399,335,27,'#17263A','lm'));
   h+=grp('pgRes',[883,302],sp('ResourcePanel',[711,230,344,145])+
      ti('Icon_Coin',[747,254,30,30],'#E0B43A')+ti('Icon_Diamond',[747,319,30,30],'#6FC3F5')+ti('Icon_Lock',[990,254,30,30],'#AEB9C7')+ti('Icon_Lock',[990,319,30,30],'#AEB9C7')+
      tx('—',834,269,32,'#EDF2F6')+tx('—',834,335,32,'#EDF2F6'));
@@ -165,15 +169,15 @@ function lobby(){
   d.forEach((k,i)=>dk+=card(k,[51,174,296,419,542,664,787,910][i],1631));
   h+=grp('pgDeck',[540,1690],dk);
   // 底部导航
-  h+=sp('NavRail',[0,2023,1080,149])+sp('NavSelected',[423,2003,220,168]);
+  if(!EMBED){h+=sp('NavRail',[0,2023,1080,149])+sp('NavSelected',[423,2003,220,168]);
   const nav=[['Shop','商店',67,104,'#8492A4','#BCC5D0',141],['Deck','卡组',282,318,'#EDF2F6','#EDF2F6',0],['Battle','对战',480,533,'#17263A','#17263A',0],['Book','图鉴',700,737,'#8492A4','#BCC5D0',780],['Event','活动',918,955,'#8492A4','#BCC5D0',988]];
-  nav.forEach(([f,t,x,tx0,c,tc,lock],i)=>h+=grp('pgNav'+i,[tx0,2100],ti('Icon_'+f,[x,2054,73,73],c)+(lock?ti('Icon_Lock',[lock,2098,26,26],'#8492A4'):'')+tx(t,tx0,2140,27,tc)));
+  nav.forEach(([f,t,x,tx0,c,tc,lock],i)=>h+=grp('pgNav'+i,[tx0,2100],ti('Icon_'+f,[x,2054,73,73],c)+(lock?ti('Icon_Lock',[lock,2098,26,26],'#8492A4'):'')+tx(t,tx0,2140,27,tc)));}
   // 点击区（press=按压组 id）
   h+=hit(23,227,579,158,'openHist()','','pgPlayer')+hit(956,392,96,70,'openSettings()','','pgSet')+hit(711,230,344,145,"toast('Demo 暂未开放')",'','pgRes');
   h+=hit(65,873,358,319,"toast('奖励箱：即将开放')",'','pgReward');
-  h+=hit(564,791,463,230,'startVS()','bb','battleGrp');
+  h+=hit(564,791,463,230,'goBattle()','bb','battleGrp');
   h+=hit(629,1049,330,70,'openOpp()','','pgOpp')+hit(25,1535,1029,310,'goDeck()','','pgDeck');
-  h+=hit(0,2023,216,215,"toast('Demo 暂未开放')",'','pgNav0')+hit(216,2023,216,215,'goDeck()','','pgNav1')+hit(432,2003,216,235,'')+hit(648,2023,216,215,"toast('Demo 暂未开放')",'','pgNav3')+hit(864,2023,216,215,"toast('Demo 暂未开放')",'','pgNav4');
+  if(!EMBED)h+=hit(0,2023,216,215,"toast('Demo 暂未开放')",'','pgNav0')+hit(216,2023,216,215,'goDeck()','','pgNav1')+hit(432,2003,216,235,'')+hit(648,2023,216,215,"toast('Demo 暂未开放')",'','pgNav3')+hit(864,2023,216,215,"toast('Demo 暂未开放')",'','pgNav4');
   $('scene').innerHTML=h;
   $('scene').querySelectorAll('.hit[data-p]').forEach(bindPress);
   return h;
@@ -193,7 +197,36 @@ function bindPress(el){
     pressBusy=true;const wait=Math.max(0,90-(performance.now()-t0));
     setTimeout(()=>{g.classList.remove('press');setTimeout(()=>{pressBusy=false;fn&&new Function(fn)()},70)},wait)});
 }
-function goDeck(){location.href=DECK_URL}
+function goDeck(){if(EMBED)parent.postMessage({fd:'tab',i:1},'*');else location.href=DECK_URL}
+// 对战：L07 匹配中 → 战斗原型（VS 在战斗页里，加载完上下分开露出战场）
+let matching=false;
+function goBattle(){if(matching)return;
+  if(EMBED){parent.postMessage({fd:'battle'},'*');return}
+  matching=true;FDMatch.show($('canvas'),{sub:`我方卡组：${deckName(deckState.slot)} · 对手：${PRESETS[deckState.opp].name}`,onDone:el=>{el.classList.add('out');setTimeout(()=>location.href=BATTLE_URL,180)},onCancel:()=>matching=false})}
+// 打完回来：胜利时奖杯从屏幕中间飞到顶栏，战功数字滚上去
+function rewardAnim(){let rw=null;try{rw=JSON.parse(localStorage.getItem('fd_lobby_reward')||'null')}catch(e){}
+  if(!rw||rw.done||Date.now()-rw.at>10*60e3)return;rw.done=1;try{localStorage.setItem('fd_lobby_reward',JSON.stringify(rw))}catch(e){}
+  try{hist=JSON.parse(localStorage.getItem('fd_lobby_hist')||'[]')}catch(e){}
+  if(rw.r!=='胜'){setTimeout(()=>toast(rw.r==='负'?'这局输了，调整卡组再来':'平局，战功不变'),300);return}
+  const el=$('trophyN');if(!el)return;const to=wins()*30,from=Math.max(0,to-30);el.textContent=from;
+  const f=document.createElement('div');f.innerHTML=ti('Icon_Trophy',[0,0,180,180],'#DCA822');const fi=f.firstChild;
+  Object.assign(fi.style,{left:'450px',top:'1000px',zIndex:70,transition:'left .6s cubic-bezier(.5,0,.3,1),top .6s cubic-bezier(.5,-.5,.3,1),width .6s,height .6s',filter:'drop-shadow(0 0 16px #ffd45c)'});
+  $('canvas').appendChild(fi);const big=tx('战功 +30',540,1250,84,'#FFD45C','mm','title',900);const bd=document.createElement('div');bd.innerHTML=big;const b=bd.firstChild;b.style.zIndex=70;b.style.transition='opacity .3s';$('canvas').appendChild(b);
+  setTimeout(()=>{Object.assign(fi.style,{left:'345px',top:'313px',width:'30px',height:'30px'});b.style.opacity=0},500);
+  setTimeout(()=>{fi.remove();b.remove();const t0=performance.now();const tick=()=>{const p=Math.min(1,(performance.now()-t0)/800);el.textContent=Math.round(from+(to-from)*p);
+    if(p<1)requestAnimationFrame(tick);else{const g=$('pgPlayer');g.classList.add('press');setTimeout(()=>g.classList.remove('press'),120)}};tick()},1120)}
+// 壳发来的消息：刷新（卡组可能改了）、奖励动画
+addEventListener('message',e=>{const d=e.data||{};if(d.fd==='refresh'){try{const s=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');if(s&&s.decks)deckState=Object.assign(deckState,s)}catch(_){}
+  try{hist=JSON.parse(localStorage.getItem('fd_lobby_hist')||'[]')}catch(_){}lobby()}
+  if(d.fd==='reward')rewardAnim()});
+// 嵌入时：在空白处左右划，交给壳切页签（跟手）
+if(EMBED){let sw=null;
+  addEventListener('pointerdown',e=>{if(e.target.closest('.hit,.btn,#pop,.mask.on,.fdm'))return;sw={x:e.clientX,y:e.clientY,on:false,id:e.pointerId}});
+  addEventListener('pointermove',e=>{if(!sw)return;const dx=e.clientX-sw.x,dy=e.clientY-sw.y;
+    if(!sw.on&&Math.abs(dx)>14&&Math.abs(dx)>Math.abs(dy)*1.4){sw.on=true}
+    if(sw.on)parent.postMessage({fd:'pan',dx:dx/(document.documentElement.clientWidth/1080)},'*')});
+  const end=e=>{if(!sw)return;if(sw.on)parent.postMessage({fd:'panEnd',dx:(e.clientX-sw.x)/(document.documentElement.clientWidth/1080)},'*');sw=null};
+  addEventListener('pointerup',end);addEventListener('pointercancel',end);$('canvas').style.touchAction='none'}
 let tt;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
 function openPop(h){$('mask').classList.add('on');const p=$('pop');p.innerHTML=h;p.style.pointerEvents='auto'}
 function closePop(){$('mask').classList.remove('on');const p=$('pop');p.innerHTML='';p.style.pointerEvents='none'}
@@ -319,11 +352,12 @@ const toBattle=location.hash==='#battle';
 if(toBattle){try{sessionStorage.setItem('fd_splash','1')}catch(e){}history.replaceState(null,'',location.pathname)}
 (async()=>{
   // 启动页只依赖字体，先出启动页；没有启动页时等大厅全部到齐再整屏显示
-  let seen=toBattle;try{seen=seen||sessionStorage.getItem('fd_splash')}catch(e){}
+  let seen=toBattle||EMBED;try{seen=seen||sessionStorage.getItem('fd_splash')}catch(e){}
   if(!seen){await fontsReady();$('canvas').classList.remove('boot');splash();await lobbyReady}
   else{await lobbyReady;if(toBattle){vsReady=preload(VS_FILES.concat(urlsIn(lobbyHtml)));await vsReady}
     const c=$('canvas');c.classList.remove('boot');c.classList.add('reveal')}
-  if(toBattle)startVS();
+  if(toBattle)goBattle();
+  if(!EMBED)rewardAnim();
   preload(SKIN);if(!vsReady)vsReady=preload(VS_FILES.concat(Object.values(CARDS).map(c=>VSL+'Art_'+c.art+'.png'),[VSL+'CardFrame.png']));
 })();
 addEventListener('pageshow',e=>{if(e.persisted){try{const s=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');if(s&&s.decks)deckState=Object.assign(deckState,s)}catch(_){}lobby()}});

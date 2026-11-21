@@ -36,7 +36,7 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 .card{position:absolute;transition:left .25s cubic-bezier(.3,.7,.3,1),top .25s cubic-bezier(.3,.7,.3,1),width .25s,height .25s,opacity .2s,transform .12s;cursor:pointer;z-index:2;touch-action:none}
 .card canvas{width:100%;height:100%;display:block;pointer-events:none}
 .card.press{transform:scale(.95);filter:brightness(.9)}
-.card.sel{transform:scale(1.08);z-index:6}
+.card.sel{transform:scale(1.12) translateY(-6px);z-index:6;filter:drop-shadow(0 14px 14px #000b)}
 .card.sel::after,.card.cand::after{content:"";position:absolute;inset:-5px;border:4px solid var(--cyan);border-radius:10px;box-shadow:0 0 14px var(--cyan);pointer-events:none}
 .card.cand{animation:wob .4s ease-in-out infinite alternate;z-index:5}
 @keyframes wob{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
@@ -80,6 +80,15 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 .ptab.on{background-image:url(tab_selected.png);color:#fff;height:72px;margin-top:-5px}
 .mini{position:absolute;width:166px;height:238px}
 .mini canvas{width:100%;height:100%}
+/* 嵌入大厅壳（?embed=1）：去掉返回键和底栏，底部交给壳的导航 */
+.embedPatch{position:absolute;display:none;pointer-events:none}
+body.embed .embedPatch{display:block}
+body.embed .ne{display:none}
+/* CR 式点卡：卡放大浮起，正下方竖排按钮 */
+#cmenu{position:absolute;z-index:21;display:none}
+#cmenu .btn{position:relative;margin-bottom:10px;animation:mIn .12s ease-out both}
+#cmenu .btn+.btn{animation-delay:.03s}
+@keyframes mIn{from{transform:translateY(-14px) scale(.9);opacity:0}to{transform:none;opacity:1}}
 #note{position:fixed;left:16px;top:16px;width:260px;color:#9fb3cc;font:14px/1.6 system-ui,sans-serif;display:none}
 #note b{color:#fff}
 @media (min-width:1100px){#note{display:block}}
@@ -89,8 +98,8 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
 <div id="note"><b>MS战线对决 · 选卡组界面原型</b><br>用 Codex r02 / r03 装甲素材在网页里组装，可以点：<br>· 点下面的卡 → 使用 / 信息<br>· 使用后点上面一张卡互换<br>· 也可以按住下面的卡拖到上面一张卡上<br>· 卡组 1/2/3、推荐卡组、重置、筛选、排序<br>· 开始对战 → 对战准备（选对手卡组）<br>换卡会存在本机浏览器里。<br>机体图是占位图，不是正式立绘。<br><br>需求：DesignDocs/30_选卡组界面_v1.0.md</div>
 <div id="wrap"><div id="canvas" class="boot">
  <div id="stage" class="native">
-  <div class="t" style="left:72px;top:127px;font-size:54px;color:var(--ink)">‹</div>
-  <div class="hit" style="left:32px;top:98px;width:80px;height:62px" onclick="location.href='../../lobby/prototype/'"></div>
+  <div class="t ne" style="left:72px;top:127px;font-size:54px;color:var(--ink)">‹</div>
+  <div class="hit ne" style="left:32px;top:98px;width:80px;height:62px" onclick="location.href='../../lobby/prototype/'"></div>
   <div class="t" style="left:415px;top:128px;font-size:50px;color:var(--ink)">出战卡组</div>
   <div class="t" style="left:763px;top:128px;font-size:36px;color:var(--ink)">?</div>
   <div class="hit" style="left:730px;top:96px;width:68px;height:62px" onclick="openHelp()"></div>
@@ -108,13 +117,15 @@ html,body{margin:0;height:100%;background:#0a121d;overflow:hidden;font-family:va
   <div class="hit" style="left:602px;top:1090px;width:198px;height:48px" onclick="cycleSort()"></div>
   <div id="filters"></div>
   <div id="cards"></div>
-  <div class="t" style="left:172px;top:1759px;font-size:33px;color:var(--ink)">重置</div>
-  <div class="hit" style="left:90px;top:1716px;width:166px;height:88px" onclick="askReset()"></div>
-  <div class="t" style="left:519px;top:1758px;font-size:41px;color:var(--ink)">开始对战</div>
-  <div class="hit" style="left:292px;top:1712px;width:452px;height:94px" onclick="openPrep()"></div>
+  <div class="t ne" style="left:172px;top:1759px;font-size:33px;color:var(--ink)">重置</div>
+  <div class="hit ne" style="left:90px;top:1716px;width:166px;height:88px" onclick="askReset()"></div>
+  <div class="t ne" style="left:519px;top:1758px;font-size:41px;color:var(--ink)">开始对战</div>
+  <div class="hit ne" style="left:292px;top:1712px;width:452px;height:94px" onclick="openPrep()"></div>
+  <div class="embedPatch" style="left:30px;top:96px;width:86px;height:66px;background:linear-gradient(#ebe4dc,#e2dbd2);border-radius:4px"></div>
+  <div class="embedPatch" style="left:0;top:1662px;width:830px;height:234px;background:url(../handoff/armor-r02/sprites/UI_FDDeck_NavyTexture.png) repeat #1d2a3b;box-shadow:inset 0 6px 10px #0008"></div>
  </div>
 
- <div id="bubble"></div>
+ <div id="bubble"></div><div id="cmenu"></div>
  <div id="dim" onclick="cancelReplace()"></div>
  <div id="float"><div class="btn b-wht skin" style="left:316px;top:-36px;width:72px;height:72px;font-size:48px" onclick="cancelReplace()">×</div></div>
  <div id="hint">点上面一张卡换下来</div>
@@ -234,24 +245,18 @@ function place(k,r,hide){const e=cardEls[k];Object.assign(e.style,{left:r[0]+'px
 const inDeck=k=>deck().includes(k);
 
 // ---------- S01a / S01b 选中 + 气泡 ----------
-function clearSel(){if(selected)cardEls[selected].classList.remove('sel');selected=null;$('bubble').style.display='none'}
+function clearSel(){if(selected)cardEls[selected].classList.remove('sel');selected=null;$('bubble').style.display='none';$('cmenu').style.display='none'}
 function tapCard(k){
   if(replacing){if(inDeck(k))doSwap(k);return}
   if(selected===k){clearSel();return}
   clearSel();selected=k;const e=cardEls[k];e.classList.add('sel');
-  const dk=inDeck(k),b=$('bubble');
-  // 卡在 1080 坐标里的位置
+  const dk=inDeck(k),m=$('cmenu');
+  // 卡在 1080 坐标里的位置；按钮宽同卡宽，竖排在卡正下方（放不下就放上方）
   const x=parseFloat(e.style.left)*XS,y=parseFloat(e.style.top)*YS,w=parseFloat(e.style.width)*XS,h=parseFloat(e.style.height)*YS;
-  const bw=w+24,bh=100;
-  b.innerHTML=dk?`<div class="btn b-blu skin" style="left:0;top:0;width:${bw-28}px;height:64px;font-size:30px" onclick="openInfo('${k}')">信息</div>`
-    :`<div class="btn b-yel skin" style="left:0;top:0;width:${(bw-28-8)/2}px;height:64px;font-size:30px" onclick="startReplace('${k}')">使用</div><div class="btn b-blu skin" style="left:${(bw-28-8)/2+8}px;top:0;width:${(bw-28-8)/2}px;height:64px;font-size:30px" onclick="openInfo('${k}')">信息</div>`;
-  b.style.cssText=`display:block;width:${bw}px;height:${bh}px;padding:0;border-width:22px;`;
-  b.querySelectorAll('.btn').forEach(n=>{n.style.left=(parseFloat(n.style.left)-8)+'px';n.style.top='-4px'});
-  const bx=Math.max(16,Math.min(1080-bw-16,x+w/2-bw/2));
-  const firstRow=dk?parseFloat(e.style.top)<600:parseFloat(e.style.top)<1300;
-  const below=firstRow;b.className=below?'down':'up';
-  b.style.left=bx+'px';b.style.top=(below?y+h*1.04+14:y-h*0.04-bh-14)+'px';
-  b.style.setProperty('--ax',(x+w/2-bx-22)+'px');
+  const bw=Math.max(w,170),items=dk?[['信息','b-blu',`openInfo('${k}')`]]:[['使用','b-yel',`startReplace('${k}')`],['信息','b-blu',`openInfo('${k}')`]];
+  const mh=items.length*74,bottom=document.body.classList.contains('embed')?2040:2320,below=y+h*1.06+10+mh<=bottom;
+  m.innerHTML=items.map(([t,c,f])=>`<div class="btn ${c} skin" style="width:${bw}px;height:64px;font-size:30px;border-width:${c==='b-blu'?22:30}px" onclick="${f}">${t}</div>`).join('');
+  m.style.display='block';m.style.left=Math.max(12,Math.min(1080-bw-12,x+w/2-bw/2))+'px';m.style.top=(below?y+h*1.06+10:y-h*.06-mh-4)+'px';
 }
 // ---------- S02 替换 ----------
 function startReplace(k){
@@ -345,7 +350,7 @@ function openInfo(k){
 function openPresets(){
   if(replacing)cancelReplace();clearSel();let h='';
   h+=`<div class="mframe" style="left:60px;top:200px;width:960px;height:1940px"></div>`;
-  h+=L(96,256,'推荐卡组',48,'#111E2B')+L(96,310,`用到当前的卡组 ${state.slot+1}`,26,'#546473','lm',500)+B(904,236,80,80,'×','b-wht','closeModal()',48);
+  h+=L(96,256,'推荐卡组',48,'#111E2B')+L(96,310,`用到当前的卡组 ${state.slot+1}`,26,'#546473','lm',500)+B(904,236,80,80,'×','b-wht','closeModal()',48)+B(620,236,260,80,'恢复推荐','b-wht','askReset()',30);
   PRESETS.forEach((p,i)=>{const y=420+i*560;
     h+=`<div class="inset" style="left:96px;top:${y}px;width:888px;height:530px;border-width:26px"></div>`;
     h+=L(130,y+56,p.name,40,'#fff')+L(950,y+56,`平均费用 <b style="font-size:40px">${avgOf(p.cards)}</b>`,28,'#fff','rm');
@@ -401,6 +406,17 @@ function renderPrep(){
 }
 function closePrep(){$('prep').classList.remove('on')}
 let tt;function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),1600)}
+
+// ---------- 嵌入大厅壳 ----------
+const EMBED=new URLSearchParams(location.search).get('embed')==='1';
+if(EMBED){document.body.classList.add('embed');let sw=null;const k=()=>document.documentElement.clientWidth/1080;
+  addEventListener('pointerdown',e=>{if(e.target.closest('.card,.chip,#filters,.hit,.btn,.mask.on,#prep.on,#cmenu')||replacing)return;sw={x:e.clientX,y:e.clientY,on:false}});
+  addEventListener('pointermove',e=>{if(!sw)return;const dx=e.clientX-sw.x,dy=e.clientY-sw.y;if(!sw.on&&Math.abs(dx)>14&&Math.abs(dx)>Math.abs(dy)*1.4){sw.on=true;clearSel()}
+    if(sw.on)parent.postMessage({fd:'pan',dx:dx/k()},'*')});
+  const end=e=>{if(!sw)return;if(sw.on)parent.postMessage({fd:'panEnd',dx:(e.clientX-sw.x)/k()},'*');sw=null};
+  addEventListener('pointerup',end);addEventListener('pointercancel',end);
+  addEventListener('message',e=>{const d=e.data||{};if(d.fd==='refresh'){try{const s=JSON.parse(localStorage.getItem('fd_deck_proto2')||'null');if(s&&s.decks)state=Object.assign(state,s)}catch(_){}if(!replacing){clearSel();layout()}}
+    if(d.fd==='hide'){if(replacing)cancelReplace();clearSel();closeModal()}})}
 
 // ---------- 启动 ----------
 function fit(){const de=document.documentElement,W=de.clientWidth||innerWidth,H=de.clientHeight||innerHeight;
