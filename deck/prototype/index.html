@@ -344,7 +344,55 @@ function openInfo(k){
   const by=tac?1500:1740;
   h+=dk?B(96,by,888,140,'关闭','b-wht','closeModal()'):B(96,by,420,140,'使用','b-yel',`closeModal();startReplace('${k}')`)+B(564,by,420,140,'关闭','b-wht','closeModal()');
   mask.innerHTML=h;mask.classList.add('on');
-  const cv=cardCanvas(k);cv.style.cssText='width:100%;height:100%';$('bigcard').append(cv);
+  const cv=cardCanvas(k);cv.style.cssText='width:100%;height:100%;position:absolute;left:0;top:0;transition:opacity .25s';$('bigcard').append(cv);
+  // CR 式单位演示：打开详情 0.6 秒后卡面淡出、播放技能演示小场景；点一下切回卡面
+  const dm=document.createElement('canvas');dm.width=360;dm.height=516;dm.style.cssText='width:100%;height:100%;position:absolute;left:0;top:0;opacity:0;transition:opacity .25s;border-radius:10px';
+  const tag=document.createElement('div');tag.style.cssText='position:absolute;right:10px;top:10px;padding:4px 12px;border-radius:6px;background:#111e2bcc;color:#2FD3E0;font:700 22px var(--F);opacity:0;transition:opacity .25s';tag.textContent='演示';
+  $('bigcard').append(dm,tag);let showDemo=false;const set=v=>{showDemo=v;cv.style.opacity=v?0:1;dm.style.opacity=v?1:0;tag.style.opacity=v?1:0};
+  $('bigcard').onclick=()=>set(!showDemo);setTimeout(()=>{if(dm.isConnected)set(true)},600);
+  const t0=performance.now();(function fr(){if(!dm.isConnected)return;demo(dm.getContext('2d'),k,((performance.now()-t0)/1000)%3.2);requestAnimationFrame(fr)})();
+}
+// 技能演示小场景（示意，正式版接 40 文档技能动画）
+function demo(g,k,t){const c=CARDS[k],W=360,H=516;g.clearRect(0,0,W,H);
+  g.fillStyle='#14233a';g.fillRect(0,0,W,H);g.strokeStyle='#ffffff12';g.lineWidth=1;for(let x=0;x<=W;x+=30){g.beginPath();g.moveTo(x,0);g.lineTo(x,H);g.stroke()}for(let y=0;y<=H;y+=30){g.beginPath();g.moveTo(0,y);g.lineTo(W,y);g.stroke()}
+  g.fillStyle='#4a263066';g.fillRect(0,0,W,200);g.fillStyle='#1aa3b4';g.fillRect(0,200,W,26);
+  const tok=(x,y,r,col,lbl,a=1)=>{g.globalAlpha=a;g.fillStyle='#0008';g.beginPath();g.ellipse(x,y+r*.5,r,r*.5,0,0,7);g.fill();g.fillStyle=col;g.beginPath();g.arc(x,y,r,0,7);g.fill();g.strokeStyle='#0a1320';g.lineWidth=3;g.stroke();
+    if(lbl){g.fillStyle='#fff';g.font='700 18px "Noto Sans SC",sans-serif';g.textAlign='center';g.fillText(lbl,x,y+r+20)}g.globalAlpha=1};
+  const txt=(s,x,y,col,a=1)=>{g.globalAlpha=Math.max(0,a);g.font='900 26px "Noto Sans SC",sans-serif';g.textAlign='center';g.lineWidth=5;g.strokeStyle='#0a1320';g.strokeText(s,x,y);g.fillStyle=col;g.fillText(s,x,y);g.globalAlpha=1};
+  const ring=(x,y,r,col,a=1,fill)=>{g.globalAlpha=a;g.beginPath();g.arc(x,y,r,0,7);if(fill){g.fillStyle=fill;g.fill()}g.strokeStyle=col;g.lineWidth=4;g.stroke();g.globalAlpha=1};
+  const tower=(x,y)=>{g.fillStyle='#5d6878';g.fillRect(x-28,y-30,56,40);g.fillStyle='#E8413C';g.fillRect(x-28,y-6,56,16);g.fillStyle='#d9d4c8';g.beginPath();g.ellipse(x,y-30,28,12,0,0,7);g.fill()};
+  const B='#3D7BFF',R='#E8413C',e=t=>t<0?0:t>1?1:t;
+  const name=c.name;
+  if(c.role==='战术'){[[150,110],[210,130],[180,80]].forEach(([x,y])=>tok(x,y,16,R));
+    if(k==='missile'){for(let i=0;i<6;i++){const p=e((t-.3-i*.08)/.6),sx=60+i*40,sy=470;g.strokeStyle='#ffd27a';g.lineWidth=4;g.beginPath();g.moveTo(sx+(180-sx)*p,sy+(110-sy)*p-140*Math.sin(p*Math.PI));g.lineTo(sx+(180-sx)*(p-.05),sy+(110-sy)*(p-.05)-140*Math.sin((p-.05)*Math.PI));g.stroke()}
+      if(t>1.1){ring(180,110,70,'#ffd27a',1-e((t-1.1)/1),'#ffd27a22');txt('击晕',180,60,'#FFD45C',1-e((t-1.3)/1.5))}}
+    else{ring(180,110,62,'#9ff6ff',t<1?.6:0,'#ffffff11');if(t>.9&&t<1.6){const a=1-e((t-.9)/.7),gr=g.createLinearGradient(0,0,0,110);gr.addColorStop(0,'#9ff6ff00');gr.addColorStop(1,`rgba(220,255,255,${a})`);g.fillStyle=gr;g.fillRect(140,0,80,110);ring(180,110,62,'#fff',a,'#ffffff33')}}
+    return}
+  tower(180,70);
+  const n=c.n||1;
+  if(k==='drop'||k==='psycho'){const r=k==='drop'?50:72,p=e(t/1.2);ring(180,320,r,B,1,'#3D7BFF22');ring(180,320,r*(1-p)+4,B,1);
+    if(t>1.2){const land=e((t-1.2)/.3);(k==='drop'?[[180,300],[155,335],[205,335]]:[[180,320]]).forEach(([x,y])=>tok(x,y-(1-land)*200,k==='drop'?14:30,B,'',land));if(t<1.7)ring(180,320,r*1.2,'#cfe9ff',1-e((t-1.2)/.5));txt(k==='drop'?'大气圈降下':'要塞降临',180,250,'#cfe9ff',1-e((t-1.4)/1.2))}
+    return}
+  if(k==='maganac'||k==='flag'){const units=Array.from({length:n},(_,i)=>i);
+    if(k==='flag'){units.forEach(i=>{const x=130+i*50,y=440-e(t/2.2)*330;tok(x,y,13,B)});txt('飞过河道',180,250,'#cfe9ff',t>.8&&t<2?1:0)}
+    else{tok(180,150,30,R,'大型机');units.forEach(i=>{const a=i/n*Math.PI*2,p=e(t/1.6),x0=60+(i%4)*80,y0=440+(i>3?40:0),x1=180+Math.cos(a)*58,y1=150+Math.sin(a)*40;tok(x0+(x1-x0)*p,y0+(y1-y0)*p,11,B)});if(t>1.6)txt('人海围攻',180,90,'#cfe9ff',1-e((t-1.8)/1.2))}
+    return}
+  const me={x:180,y:430},foe2={x:180,y:150};
+  if(c.skill==='红色彗星'){const p=e(t/1.6),y=430-p*240;tok(180,y,22,B,name);if(p>.4){g.strokeStyle='#ff9a8a';g.lineWidth=6;g.beginPath();g.moveTo(180,y+30);g.lineTo(180,y+90);g.stroke()}tok(180,150,22,R);if(t>1.6){txt('冲锋 ×2',180,110,'#ff9a8a',1-e((t-1.8)/1.2))}return}
+  if(c.skill==='全弹发射'){tok(180,400,22,B,name);[[90,180],[150,150],[210,140],[270,170],[180,110]].forEach(([x,y])=>tok(x,y,14,R));
+    if(t>.4){const p=e((t-.4)/.6);g.fillStyle='#4AA3FF33';g.strokeStyle='#4AA3FF';g.lineWidth=3;g.beginPath();g.moveTo(180,400);g.arc(180,400,320*p,-Math.PI/2-.87,-Math.PI/2+.87);g.closePath();g.fill();g.stroke()}
+    if(t>1){[[90,180],[150,150],[210,140],[270,170],[180,110]].forEach(([x,y])=>{g.strokeStyle='#c9f7ff';g.lineWidth=3;g.globalAlpha=1-e((t-1)/.5);g.beginPath();g.moveTo(180,390);g.lineTo(x,y);g.stroke();g.globalAlpha=1;txt('瘫痪',x,y-22,'#FFD45C',1-e((t-1.2)/1.5))})}return}
+  if(c.skill==='TRANS-AM'){const tr=t>.6&&t<2.2,y=430-e(t/2.4)*260;if(tr)for(let i=1;i<4;i++)tok(180,y+i*24,22,'#ff6fb1','',.25);tok(180,y,22,tr?'#ff4f9a':t>=2.2?'#7d6b96':B,name);
+    if(t>.6)txt(t<2.2?'TRANS-AM':'粒子耗尽',180,y-40,t<2.2?'#5ff0fa':'#b9a7d9',1);return}
+  if(c.skill==='卫星炮'){tok(180,400,30,B,name);const p=e(t/2);g.strokeStyle='#FFD45C55';g.lineWidth=20;g.beginPath();g.moveTo(180,370);g.lineTo(180,80);g.stroke();g.strokeStyle='#FFD45C';g.lineWidth=6;g.beginPath();g.moveTo(180,370);g.lineTo(180,370-290*p);g.stroke();
+    if(t>2){g.strokeStyle=`rgba(255,240,180,${1-e((t-2)/.6)})`;g.lineWidth=46;g.beginPath();g.moveTo(180,370);g.lineTo(180,60);g.stroke();txt('卫星炮',180,40,'#FFD45C',1-e((t-2.2)/1))}else txt('蓄力',230,250,'#FFD45C',1);return}
+  if(c.skill==='盾牌防御'){tok(180,330,24,B,name);tok(180,140,18,R);const sh=Math.max(0,1-e(t/2.2));g.fillStyle='#0a1320';g.fillRect(130,280,100,10);g.fillStyle='#d9f0ff';g.fillRect(132,282,96*sh,6);
+    for(let i=0;i<4;i++){const p=e((t-i*.5)/.4);if(p>0&&p<1){g.fillStyle='#ffb0a8';g.beginPath();g.arc(180,140+p*170,6,0,7);g.fill()}}if(t>2.2)txt('破盾',180,270,'#cfe9ff',1-e((t-2.3)/.8));return}
+  // 远程：射程圈 + 连射
+  const rng=(c.stats.find(s=>s[0]==='Range')||[0,0,'近战'])[2];const ranged=!/近战/.test(rng);
+  tok(180,ranged?380:430-e(t/1.4)*230,22,B,name);tok(180,150,20,R);
+  if(ranged){g.setLineDash([10,8]);ring(180,380,230,'#7cc4ff',.8);g.setLineDash([]);const per=k==='geara'?.25:k==='dynames'?1.2:.6;const ph=(t%per)/per;g.fillStyle='#9fd0ff';g.beginPath();g.arc(180,360-ph*190,7,0,7);g.fill()}
+  else if(t>1.4&&Math.floor(t*4)%2===0){g.strokeStyle='#fff';g.lineWidth=5;g.beginPath();g.arc(180,170,24,-.6,1.2);g.stroke()}
 }
 // ---------- S04 推荐卡组 + S04a 确认 ----------
 function openPresets(){

@@ -1,0 +1,853 @@
+{
+  "canvas": [
+    1080,
+    2340
+  ],
+  "sourceCanvas": [
+    907,
+    1734
+  ],
+  "mapping": {
+    "scale": 1.1907386990077178,
+    "offsetY": 137,
+    "description": "uniform scale, safe areas added; no anisotropic stretch"
+  },
+  "safeArea": [
+    0,
+    120,
+    1080,
+    2118
+  ],
+  "nodes": [
+    {
+      "file": "UI_FDLobby_Background.png",
+      "rect": [
+        0,
+        0,
+        1080,
+        2340
+      ]
+    },
+    {
+      "file": "UI_FDLobby_PlayerPanel.png",
+      "rect": [
+        23,
+        227,
+        579,
+        158
+      ]
+    },
+    {
+      "file": "UI_FDLobby_ResourcePanel.png",
+      "rect": [
+        711,
+        230,
+        344,
+        145
+      ]
+    },
+    {
+      "file": "UI_FDLobby_SettingsButton.png",
+      "rect": [
+        956,
+        392,
+        96,
+        70
+      ]
+    },
+    {
+      "file": "UI_FDLobby_RewardsPanel.png",
+      "rect": [
+        65,
+        873,
+        358,
+        319
+      ]
+    },
+    {
+      "file": "UI_FDLobby_BattleConsole.png",
+      "rect": [
+        527,
+        747,
+        532,
+        510
+      ]
+    },
+    {
+      "file": "UI_FDLobby_BattleButton.png",
+      "rect": [
+        564,
+        791,
+        463,
+        230
+      ]
+    },
+    {
+      "file": "UI_FDLobby_OpponentButton.png",
+      "rect": [
+        629,
+        1049,
+        330,
+        70
+      ]
+    },
+    {
+      "file": "UI_FDLobby_DeckPanel.png",
+      "rect": [
+        25,
+        1535,
+        1029,
+        310
+      ]
+    },
+    {
+      "file": "UI_FDLobby_NavRail.png",
+      "rect": [
+        0,
+        2023,
+        1080,
+        149
+      ]
+    },
+    {
+      "file": "UI_FDLobby_NavSelected.png",
+      "rect": [
+        423,
+        2003,
+        220,
+        168
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Icon_Avatar.png",
+      "rect": [
+        52,
+        251,
+        113,
+        113
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Icon_Gear.png",
+      "rect": [
+        975,
+        406,
+        56,
+        56
+      ],
+      "tint": "#17263A"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Trophy.png",
+      "rect": [
+        345,
+        313,
+        30,
+        30
+      ],
+      "tint": "#DCA822"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Coin.png",
+      "rect": [
+        747,
+        254,
+        30,
+        30
+      ],
+      "tint": "#AEB9C7"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Diamond.png",
+      "rect": [
+        747,
+        319,
+        30,
+        30
+      ],
+      "tint": "#AEB9C7"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        990,
+        254,
+        30,
+        30
+      ],
+      "tint": "#AEB9C7"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        990,
+        319,
+        30,
+        30
+      ],
+      "tint": "#AEB9C7"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Chest.png",
+      "rect": [
+        124,
+        909,
+        77,
+        57
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        150,
+        941,
+        29,
+        29
+      ],
+      "tint": "#C4CDD7"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Chest.png",
+      "rect": [
+        286,
+        909,
+        77,
+        57
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        312,
+        941,
+        29,
+        29
+      ],
+      "tint": "#C4CDD7"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Chest.png",
+      "rect": [
+        124,
+        1049,
+        77,
+        57
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        150,
+        1081,
+        29,
+        29
+      ],
+      "tint": "#C4CDD7"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Chest.png",
+      "rect": [
+        286,
+        1049,
+        77,
+        57
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        312,
+        1081,
+        29,
+        29
+      ],
+      "tint": "#C4CDD7"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Battle.png",
+      "rect": [
+        601,
+        879,
+        83,
+        83
+      ],
+      "tint": "#152337"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Shop.png",
+      "rect": [
+        67,
+        2054,
+        73,
+        73
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Deck.png",
+      "rect": [
+        282,
+        2054,
+        73,
+        73
+      ],
+      "tint": "#EDF2F6"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Battle.png",
+      "rect": [
+        480,
+        2054,
+        73,
+        73
+      ],
+      "tint": "#17263A"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Book.png",
+      "rect": [
+        700,
+        2054,
+        73,
+        73
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Event.png",
+      "rect": [
+        918,
+        2054,
+        73,
+        73
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        141,
+        2098,
+        26,
+        26
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        780,
+        2098,
+        26,
+        26
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "rect": [
+        988,
+        2098,
+        26,
+        26
+      ],
+      "tint": "#8492A4"
+    },
+    {
+      "file": "UI_FDLobby_Art_blue.png",
+      "rect": [
+        55,
+        1663,
+        105,
+        122
+      ]
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "rect": [
+        51,
+        1631,
+        113,
+        191
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Art_red.png",
+      "rect": [
+        178,
+        1663,
+        105,
+        122
+      ]
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "rect": [
+        174,
+        1631,
+        113,
+        191
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Art_green.png",
+      "rect": [
+        301,
+        1663,
+        105,
+        122
+      ]
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "rect": [
+        296,
+        1631,
+        113,
+        191
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Art_purple.png",
+      "rect": [
+        423,
+        1663,
+        105,
+        122
+      ]
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "rect": [
+        419,
+        1631,
+        113,
+        191
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Art_noart.png",
+      "rect": [
+        546,
+        1663,
+        105,
+        122
+      ]
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "rect": [
+        542,
+        1631,
+        113,
+        191
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Art_orange.png",
+      "rect": [
+        669,
+        1663,
+        105,
+        122
+      ]
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "rect": [
+        664,
+        1631,
+        113,
+        191
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Art_missile.png",
+      "rect": [
+        791,
+        1663,
+        105,
+        122
+      ]
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "rect": [
+        787,
+        1631,
+        113,
+        191
+      ]
+    },
+    {
+      "file": "UI_FDLobby_Art_beam.png",
+      "rect": [
+        914,
+        1663,
+        105,
+        122
+      ]
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "rect": [
+        910,
+        1631,
+        113,
+        191
+      ]
+    }
+  ],
+  "texts": [
+    {
+      "text": "MS 战线对决",
+      "x": 38,
+      "y": 181,
+      "size": 27,
+      "color": "#EDF2F6",
+      "anchor": "lm"
+    },
+    {
+      "text": "指",
+      "x": 108,
+      "y": 305,
+      "size": 58,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "指挥官",
+      "x": 231,
+      "y": 275,
+      "size": 42,
+      "color": "#17263A",
+      "anchor": "lm"
+    },
+    {
+      "text": "Lv.1",
+      "x": 236,
+      "y": 333,
+      "size": 27,
+      "color": "#17263A",
+      "anchor": "lm"
+    },
+    {
+      "text": "0",
+      "x": 399,
+      "y": 335,
+      "size": 27,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "—",
+      "x": 834,
+      "y": 269,
+      "size": 32,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "—",
+      "x": 834,
+      "y": 335,
+      "size": 32,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "竞技场 1",
+      "x": 65,
+      "y": 491,
+      "size": 35,
+      "color": "#EDF2F6",
+      "anchor": "lm"
+    },
+    {
+      "text": "训练场",
+      "x": 54,
+      "y": 578,
+      "size": 90,
+      "color": "#EDF2F6",
+      "anchor": "lm"
+    },
+    {
+      "text": "TRAINING HANGAR",
+      "x": 56,
+      "y": 659,
+      "size": 30,
+      "color": "#ABB4C0",
+      "anchor": "lm"
+    },
+    {
+      "text": "对战",
+      "x": 849,
+      "y": 913,
+      "size": 90,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "对手设置",
+      "x": 795,
+      "y": 1082,
+      "size": 37,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "对手：AI 指挥官",
+      "x": 793,
+      "y": 1152,
+      "size": 31,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "（远程）",
+      "x": 793,
+      "y": 1196,
+      "size": 27,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "即将开放",
+      "x": 163,
+      "y": 993,
+      "size": 23,
+      "color": "#B6C0CF",
+      "anchor": "mm"
+    },
+    {
+      "text": "即将开放",
+      "x": 325,
+      "y": 993,
+      "size": 23,
+      "color": "#B6C0CF",
+      "anchor": "mm"
+    },
+    {
+      "text": "即将开放",
+      "x": 163,
+      "y": 1134,
+      "size": 23,
+      "color": "#B6C0CF",
+      "anchor": "mm"
+    },
+    {
+      "text": "即将开放",
+      "x": 325,
+      "y": 1134,
+      "size": 23,
+      "color": "#B6C0CF",
+      "anchor": "mm"
+    },
+    {
+      "text": "卡组 1 · 原版",
+      "x": 161,
+      "y": 1581,
+      "size": 35,
+      "color": "#EDF2F6",
+      "anchor": "lm"
+    },
+    {
+      "text": "平均费用",
+      "x": 782,
+      "y": 1581,
+      "size": 30,
+      "color": "#EDF2F6",
+      "anchor": "lm"
+    },
+    {
+      "text": "3.9",
+      "x": 975,
+      "y": 1581,
+      "size": 40,
+      "color": "#2FD3E0",
+      "anchor": "mm"
+    },
+    {
+      "text": "4",
+      "x": 70,
+      "y": 1648,
+      "size": 21,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "高达",
+      "x": 107,
+      "y": 1798,
+      "size": 17,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "3",
+      "x": 193,
+      "y": 1648,
+      "size": 21,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "夏亚渣古",
+      "x": 230,
+      "y": 1798,
+      "size": 17,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "3",
+      "x": 315,
+      "y": 1648,
+      "size": 21,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "渣古降下",
+      "x": 352,
+      "y": 1798,
+      "size": 17,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "5",
+      "x": 438,
+      "y": 1648,
+      "size": 21,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "能天使",
+      "x": 475,
+      "y": 1798,
+      "size": 17,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "4",
+      "x": 560,
+      "y": 1648,
+      "size": 21,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "自由",
+      "x": 598,
+      "y": 1798,
+      "size": 17,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "6",
+      "x": 683,
+      "y": 1648,
+      "size": 21,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "高达X",
+      "x": 720,
+      "y": 1798,
+      "size": 17,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "2",
+      "x": 806,
+      "y": 1648,
+      "size": 21,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "飞弹齐射",
+      "x": 843,
+      "y": 1798,
+      "size": 17,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "4",
+      "x": 928,
+      "y": 1648,
+      "size": 21,
+      "color": "#EDF2F6",
+      "anchor": "mm"
+    },
+    {
+      "text": "米加粒子炮击",
+      "x": 966,
+      "y": 1798,
+      "size": 17,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "商店",
+      "x": 104,
+      "y": 2140,
+      "size": 27,
+      "color": "#BCC5D0",
+      "anchor": "mm"
+    },
+    {
+      "text": "卡组",
+      "x": 318,
+      "y": 2140,
+      "size": 27,
+      "color": "#BCC5D0",
+      "anchor": "mm"
+    },
+    {
+      "text": "对战",
+      "x": 516,
+      "y": 2140,
+      "size": 27,
+      "color": "#17263A",
+      "anchor": "mm"
+    },
+    {
+      "text": "图鉴",
+      "x": 737,
+      "y": 2140,
+      "size": 27,
+      "color": "#BCC5D0",
+      "anchor": "mm"
+    },
+    {
+      "text": "活动",
+      "x": 955,
+      "y": 2140,
+      "size": 27,
+      "color": "#BCC5D0",
+      "anchor": "mm"
+    }
+  ],
+  "importSettings": {
+    "spriteMode": "Single",
+    "mesh": "FullRect",
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "mipmaps": false,
+    "sRGB": true
+  },
+  "status": "first slicing review; no Unity or 9:16 validation"
+}

@@ -1,0 +1,14 @@
+{
+  "spriteCount": 21,
+  "spriteDimensionsVerified": true,
+  "allSpritesRGBA": true,
+  "transparentCardWindowVerified": true,
+  "fontGlyphCoverageVerified": true,
+  "repeatBuildIdentical": true,
+  "comparisonDetectsHeaderChange": true,
+  "comparisonRejectsWrongSize": true,
+  "browserLoaded": true,
+  "browserErrorCount": 0,
+  "browserScreenshot": "preview-browser.png",
+  "unityScreenshotVerified": false
+}

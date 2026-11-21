@@ -1,0 +1,475 @@
+{
+  "pngs": [
+    {
+      "file": "UI_FDLobby_PlayerPanel.png",
+      "size": [
+        486,
+        133
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 72799,
+      "sha256": "2f1a551e61e32cf71679fbbe1c75d84f9735e9ea9d588deb333adb5ea3364c6c"
+    },
+    {
+      "file": "UI_FDLobby_ResourcePanel.png",
+      "size": [
+        289,
+        122
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 41771,
+      "sha256": "4821ba774d4d348bae53499a225f896a73202351c87644ce2acdeeed7840c649"
+    },
+    {
+      "file": "UI_FDLobby_SettingsButton.png",
+      "size": [
+        81,
+        59
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        254
+      ],
+      "bytes": 7829,
+      "sha256": "0ceae32d396d1c61f97998cfe878db4680193a4716b9137ca986162901cc2f67"
+    },
+    {
+      "file": "UI_FDLobby_RewardsPanel.png",
+      "size": [
+        301,
+        268
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        254
+      ],
+      "bytes": 84524,
+      "sha256": "49ad4d7d841a815514dc1061f84e0299b2aea7a760b89e4f0d7c1d41444b732e"
+    },
+    {
+      "file": "UI_FDLobby_BattleConsole.png",
+      "size": [
+        447,
+        428
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 216005,
+      "sha256": "32fa7a012ab53c865fdf54462588f08c397eaf577ad736772eb47b40b8e543ba"
+    },
+    {
+      "file": "UI_FDLobby_BattleButton.png",
+      "size": [
+        389,
+        193
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        254
+      ],
+      "bytes": 89140,
+      "sha256": "557f3941f6e15d2e68f8bc4fd85c62d5fbd70603fd3e75f21818b4fbc96909ab"
+    },
+    {
+      "file": "UI_FDLobby_OpponentButton.png",
+      "size": [
+        277,
+        59
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        254
+      ],
+      "bytes": 18618,
+      "sha256": "7a6e760dab5ee0482ea0499af1e942c75db41b8d6c487a5d2d29426db3611eaa"
+    },
+    {
+      "file": "UI_FDLobby_DeckPanel.png",
+      "size": [
+        864,
+        260
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        254
+      ],
+      "bytes": 208113,
+      "sha256": "9fff2c6ab991fb04daaf38cb65f0c62e6554c17b3e6324a6be721cc736896bb0"
+    },
+    {
+      "file": "UI_FDLobby_NavRail.png",
+      "size": [
+        907,
+        125
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 119385,
+      "sha256": "49ee90895d72069a8adf1ace10edc2c1277f720044f46f0549697d8c60b56443"
+    },
+    {
+      "file": "UI_FDLobby_NavSelected.png",
+      "size": [
+        185,
+        141
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        254
+      ],
+      "bytes": 31505,
+      "sha256": "f43459bced283e64a07a1aa638a83ccac51f69acae0cc77173465134a61f0944"
+    },
+    {
+      "file": "UI_FDLobby_Background.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 3685337,
+      "sha256": "12f3444c4990dc88a680ad3fd3755e28addc92f22d2cd1e542c0ab35d08e4c9c"
+    },
+    {
+      "file": "UI_FDLobby_CardFrame.png",
+      "size": [
+        187,
+        268
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 26520,
+      "sha256": "e2a316047d81eba4c8e83738d2a665dd7687621bcc247efff145b6d06ab8c48f"
+    },
+    {
+      "file": "UI_FDLobby_CostPlate.png",
+      "size": [
+        58,
+        41
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 4022,
+      "sha256": "dc73b0f1859e7a84c957634feda5163a016684f94b8b8a93338bbdedb3f832e6"
+    },
+    {
+      "file": "UI_FDLobby_Art_blue.png",
+      "size": [
+        173,
+        172
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 40281,
+      "sha256": "1117266c729bcab7495e8c4a612391085f78c3dc440a3e5bb11e1c0fcc857173"
+    },
+    {
+      "file": "UI_FDLobby_Art_red.png",
+      "size": [
+        173,
+        172
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 44058,
+      "sha256": "ece0a8ab01a05733f8ad116726c04ffb73269905bc51046014884fd505dd264e"
+    },
+    {
+      "file": "UI_FDLobby_Art_green.png",
+      "size": [
+        173,
+        172
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 34869,
+      "sha256": "1696ddda699313548cda22d6eaaf8953b1b8e78813411a2c9af987b48ccc560e"
+    },
+    {
+      "file": "UI_FDLobby_Art_purple.png",
+      "size": [
+        173,
+        172
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 41525,
+      "sha256": "556ccba41e5213513d37d3e26835347408d8614a95b79d359fb7ed3105e56cee"
+    },
+    {
+      "file": "UI_FDLobby_Art_orange.png",
+      "size": [
+        173,
+        172
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 38716,
+      "sha256": "282fe102ad0da12080eb230d986fe47774eedfd31d944cab24bff554cbd2aeeb"
+    },
+    {
+      "file": "UI_FDLobby_Art_missile.png",
+      "size": [
+        173,
+        172
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 39189,
+      "sha256": "64508735248c6c8d983578c3e0fef3bfdf023bc05b9930a60fb42e5bacbd8995"
+    },
+    {
+      "file": "UI_FDLobby_Art_beam.png",
+      "size": [
+        173,
+        172
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 37580,
+      "sha256": "8a51af3847462e4fc07c2e21ee48470f7f310fca5dc1ea10bdd39dd3ae2d9b14"
+    },
+    {
+      "file": "UI_FDLobby_Art_noart.png",
+      "size": [
+        173,
+        172
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        255,
+        255
+      ],
+      "bytes": 29398,
+      "sha256": "0d6c9987f264c840a0e9b0758dc26ab7495ac3670fe91d8d63670355af3c6bba"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Lock.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 1772,
+      "sha256": "c5d7cdbd838545d9c3c3d07520a1e60064769e7f0bbe1c426eda24438c11cc69"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Chest.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 1330,
+      "sha256": "f4a9d56a6a6064841b494d6a517106f30a2556d87144199a9c12f183af03fa5c"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Battle.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 1081,
+      "sha256": "79ed62aadd8d73b9297577e4579d6cf05fd55471bd33f5523f06f2174ab59b53"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Deck.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 1191,
+      "sha256": "b40250b9c76ae08aef8dcb4864006e298a7ad4609a621e7708d0a1a7255e0866"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Shop.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 1493,
+      "sha256": "538f09e6c6cebfe84a134567133fb11fd75754ee9551b4abf691bf182cc408ef"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Book.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 1831,
+      "sha256": "71a38eb478fe2339be45fe9cd0b0a3a4145cdc754319b1b64b5eff30a7f8394a"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Event.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 1614,
+      "sha256": "2d8fa61112850be4e4337800ba98247df8fb26f8431d05c30add7c192b89f2fa"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Gear.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 3677,
+      "sha256": "1741c9314234509245aa67aadedc381478b3eb00bcb61b131100190cd31b5147"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Trophy.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 2344,
+      "sha256": "ba7926e7dc402dcfee1b2b7331e4a5ee970fc5be8efddd2d220737f4f9c1b89c"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Coin.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 3159,
+      "sha256": "cc404aae289c7b34e20a41cafd646d1bab7a3f41cbef3fd65110f37aa82fdb77"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Diamond.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 1391,
+      "sha256": "192bddb6ced184ae3f1abd11d66e0d7ad0855f2954c520bb3629568da8899103"
+    },
+    {
+      "file": "UI_FDLobby_Icon_Avatar.png",
+      "size": [
+        96,
+        96
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bytes": 2197,
+      "sha256": "b53ecf043b2acfe57ef00fa9ecaf085a6dc2cd7a31b00c03a61155843f0fb91c"
+    }
+  ],
+  "spriteCount": 33,
+  "canvas": [
+    1080,
+    2340
+  ],
+  "allNodeBoundsPass": true,
+  "unityVerified": false,
+  "responsiveVerified": false,
+  "pixelIdenticalToConcept": false
+}

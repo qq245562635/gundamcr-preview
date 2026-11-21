@@ -1,0 +1,317 @@
+[
+  {
+    "file": "UI_FDDeck_ScreenBase.png",
+    "w": 830,
+    "h": 1896,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "fixed background, no cards or readable text"
+  },
+  {
+    "file": "UI_FDDeck_NavyTexture.png",
+    "w": 163,
+    "h": 162,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "repeatable collection/background texture"
+  },
+  {
+    "file": "UI_FDDeck_ArmorTexture.png",
+    "w": 165,
+    "h": 28,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "repeatable armor fill"
+  },
+  {
+    "file": "UI_FDDeck_CardFrame.png",
+    "w": 187,
+    "h": 268,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "native-size card frame with transparent artwork window; do not 9-slice"
+  },
+  {
+    "file": "UI_FDDeck_Art_missile.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "art inset; no words/digits; replace unit placeholders locally"
+  },
+  {
+    "file": "UI_FDDeck_Art_red.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "art inset; no words/digits; replace unit placeholders locally"
+  },
+  {
+    "file": "UI_FDDeck_Art_green.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "art inset; no words/digits; replace unit placeholders locally"
+  },
+  {
+    "file": "UI_FDDeck_Art_blue.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "art inset; no words/digits; replace unit placeholders locally"
+  },
+  {
+    "file": "UI_FDDeck_Art_noart.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "art inset; no words/digits; replace unit placeholders locally"
+  },
+  {
+    "file": "UI_FDDeck_Art_beam.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "art inset; no words/digits; replace unit placeholders locally"
+  },
+  {
+    "file": "UI_FDDeck_Art_purple.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "art inset; no words/digits; replace unit placeholders locally"
+  },
+  {
+    "file": "UI_FDDeck_Art_orange.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "art inset; no words/digits; replace unit placeholders locally"
+  },
+  {
+    "file": "UI_FDDeck_Tab_Selected.png",
+    "w": 180,
+    "h": 72,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  },
+  {
+    "file": "UI_FDDeck_Tab.png",
+    "w": 177,
+    "h": 63,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  },
+  {
+    "file": "UI_FDDeck_Btn_Recommend.png",
+    "w": 165,
+    "h": 63,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  },
+  {
+    "file": "UI_FDDeck_Btn_Primary.png",
+    "w": 454,
+    "h": 93,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  },
+  {
+    "file": "UI_FDDeck_Btn_Secondary.png",
+    "w": 171,
+    "h": 83,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  },
+  {
+    "file": "UI_FDDeck_Filter_Selected.png",
+    "w": 138,
+    "h": 53,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  },
+  {
+    "file": "UI_FDDeck_CostPlate.png",
+    "w": 58,
+    "h": 41,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  },
+  {
+    "file": "UI_FDDeck_HeaderMaterial.png",
+    "w": 830,
+    "h": 205,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  },
+  {
+    "file": "UI_FDDeck_FooterMaterial.png",
+    "w": 830,
+    "h": 171,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "purpose": "material"
+  }
+]

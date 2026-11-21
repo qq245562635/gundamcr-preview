@@ -1,0 +1,376 @@
+[
+  {
+    "file": "UI_FDLobby_VS_Background.png",
+    "w": 1080,
+    "h": 2340,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Clean static background, no baked sparks/VS/UI",
+    "sha256": "35301a30e9a6d8111b8b63739729c0226da02502db784189acdde775bbe38b68"
+  },
+  {
+    "file": "UI_FDLobby_VS_OpponentPanel.png",
+    "w": 935,
+    "h": 363,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Blank opponent panel, badge alpha hole",
+    "sha256": "3ee4e059dfde77b38918c2ab90d38b3e631bd5347f6915c97c219438c0575b42"
+  },
+  {
+    "file": "UI_FDLobby_VS_OpponentBadge.png",
+    "w": 248,
+    "h": 211,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Blank replaceable geometric avatar badge",
+    "sha256": "bf6a8b2eeb48967d60633202abcd7f514305df1fbd0764194c03069ac6010faf"
+  },
+  {
+    "file": "UI_FDLobby_VS_PlayerPanel.png",
+    "w": 972,
+    "h": 301,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Blank player panel, badge alpha hole",
+    "sha256": "13817658e9917ce7d4b45a8ed65b01bce37f82e6978892288a0f4d5424060db5"
+  },
+  {
+    "file": "UI_FDLobby_VS_PlayerBadge.png",
+    "w": 221,
+    "h": 179,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Blank replaceable geometric avatar badge",
+    "sha256": "ef694b0272311cfe137baecfdfeae166b61b4c1306fa1662c29524013208644a"
+  },
+  {
+    "file": "UI_FDLobby_VS_DeckPanel.png",
+    "w": 985,
+    "h": 293,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Empty deck tray; cards and text separate",
+    "sha256": "6f31e74ea145e0d465c68ce55fa1e47f730bc0de28d114c8d39f098ec736a441"
+  },
+  {
+    "file": "UI_FDLobby_VS_V.png",
+    "w": 361,
+    "h": 310,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Decorative V left impact piece; no surrounding spark halo",
+    "sha256": "97e5ceb4ec171bb8d52f893aab66f2faa9257627e685eab684238b804cef85b3"
+  },
+  {
+    "file": "UI_FDLobby_VS_S.png",
+    "w": 356,
+    "h": 333,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Decorative S right impact piece; no surrounding spark halo",
+    "sha256": "4eaef322d293154b2d50dfdf459696ecd3ceae84ec0d0e214cf81ec4dc4f5eff"
+  },
+  {
+    "file": "UI_FDLobby_VS_LoadingTrack.png",
+    "w": 941,
+    "h": 67,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Loading rail; center hole for independent track bed and fill",
+    "sha256": "f1d0470ab5fc65a1880ca6dcc6c23161e00cd0eea67be88a8e7648f80101f4bd"
+  },
+  {
+    "file": "UI_FDLobby_VS_LoadingBed.png",
+    "w": 892,
+    "h": 35,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Track interior behind progress",
+    "sha256": "fe3a12bf41f3a7e9f3c065bd4c22d6ca617bef40fbc12f7fdb9ae829c70823e9"
+  },
+  {
+    "file": "UI_FDLobby_VS_LoadingFill.png",
+    "w": 778,
+    "h": 32,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0,
+      0.5
+    ],
+    "purpose": "Horizontal left-pivot clipped progress fill",
+    "sha256": "c3842d57bfafd174d627310885343fef28698f3ff080700a60c1359850075c62"
+  },
+  {
+    "file": "UI_FDLobby_VS_CardFrame.png",
+    "w": 187,
+    "h": 268,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_CardFrame.png unchanged",
+    "sha256": "e2a316047d81eba4c8e83738d2a665dd7687621bcc247efff145b6d06ab8c48f"
+  },
+  {
+    "file": "UI_FDLobby_VS_Art_blue.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_Art_blue.png unchanged",
+    "sha256": "1117266c729bcab7495e8c4a612391085f78c3dc440a3e5bb11e1c0fcc857173"
+  },
+  {
+    "file": "UI_FDLobby_VS_Art_red.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_Art_red.png unchanged",
+    "sha256": "ece0a8ab01a05733f8ad116726c04ffb73269905bc51046014884fd505dd264e"
+  },
+  {
+    "file": "UI_FDLobby_VS_Art_green.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_Art_green.png unchanged",
+    "sha256": "1696ddda699313548cda22d6eaaf8953b1b8e78813411a2c9af987b48ccc560e"
+  },
+  {
+    "file": "UI_FDLobby_VS_Art_purple.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_Art_purple.png unchanged",
+    "sha256": "556ccba41e5213513d37d3e26835347408d8614a95b79d359fb7ed3105e56cee"
+  },
+  {
+    "file": "UI_FDLobby_VS_Art_noart.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_Art_noart.png unchanged",
+    "sha256": "0d6c9987f264c840a0e9b0758dc26ab7495ac3670fe91d8d63670355af3c6bba"
+  },
+  {
+    "file": "UI_FDLobby_VS_Art_orange.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_Art_orange.png unchanged",
+    "sha256": "282fe102ad0da12080eb230d986fe47774eedfd31d944cab24bff554cbd2aeeb"
+  },
+  {
+    "file": "UI_FDLobby_VS_Art_missile.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_Art_missile.png unchanged",
+    "sha256": "64508735248c6c8d983578c3e0fef3bfdf023bc05b9930a60fb42e5bacbd8995"
+  },
+  {
+    "file": "UI_FDLobby_VS_Art_beam.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Reuse armor-r02/UI_FDDeck_Art_beam.png unchanged",
+    "sha256": "8a51af3847462e4fc07c2e21ee48470f7f310fca5dc1ea10bdd39dd3ae2d9b14"
+  },
+  {
+    "file": "UI_FDLobby_VS_FX_Flash.png",
+    "w": 256,
+    "h": 256,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "Transient impact flash; additive blend suggested, duration 160ms",
+    "sha256": "506d3ef3f985f896e3ad8f7fa4d05adb304617e6b512f0ba8ce3fcce7fb549c1"
+  },
+  {
+    "file": "UI_FDLobby_VS_FX_Streak.png",
+    "w": 192,
+    "h": 48,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "purpose": "One reusable particle streak; deterministic particle positions, not a baked burst",
+    "sha256": "f13736b9435055aec53eb0660466ea7bfde1231f3409329c195324ec8d1f4fa5"
+  }
+]

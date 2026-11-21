@@ -1,0 +1,304 @@
+{
+  "sprites": [
+    {
+      "file": "UI_FDLobby_VS_Background.png",
+      "size": [
+        1080,
+        2340
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "35301a30e9a6d8111b8b63739729c0226da02502db784189acdde775bbe38b68"
+    },
+    {
+      "file": "UI_FDLobby_VS_OpponentPanel.png",
+      "size": [
+        935,
+        363
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "3ee4e059dfde77b38918c2ab90d38b3e631bd5347f6915c97c219438c0575b42"
+    },
+    {
+      "file": "UI_FDLobby_VS_OpponentBadge.png",
+      "size": [
+        248,
+        211
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "bf6a8b2eeb48967d60633202abcd7f514305df1fbd0764194c03069ac6010faf"
+    },
+    {
+      "file": "UI_FDLobby_VS_PlayerPanel.png",
+      "size": [
+        972,
+        301
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "13817658e9917ce7d4b45a8ed65b01bce37f82e6978892288a0f4d5424060db5"
+    },
+    {
+      "file": "UI_FDLobby_VS_PlayerBadge.png",
+      "size": [
+        221,
+        179
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "ef694b0272311cfe137baecfdfeae166b61b4c1306fa1662c29524013208644a"
+    },
+    {
+      "file": "UI_FDLobby_VS_DeckPanel.png",
+      "size": [
+        985,
+        293
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "6f31e74ea145e0d465c68ce55fa1e47f730bc0de28d114c8d39f098ec736a441"
+    },
+    {
+      "file": "UI_FDLobby_VS_V.png",
+      "size": [
+        361,
+        310
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "97e5ceb4ec171bb8d52f893aab66f2faa9257627e685eab684238b804cef85b3"
+    },
+    {
+      "file": "UI_FDLobby_VS_S.png",
+      "size": [
+        356,
+        333
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "4eaef322d293154b2d50dfdf459696ecd3ceae84ec0d0e214cf81ec4dc4f5eff"
+    },
+    {
+      "file": "UI_FDLobby_VS_LoadingTrack.png",
+      "size": [
+        941,
+        67
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f1d0470ab5fc65a1880ca6dcc6c23161e00cd0eea67be88a8e7648f80101f4bd"
+    },
+    {
+      "file": "UI_FDLobby_VS_LoadingBed.png",
+      "size": [
+        892,
+        35
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "fe3a12bf41f3a7e9f3c065bd4c22d6ca617bef40fbc12f7fdb9ae829c70823e9"
+    },
+    {
+      "file": "UI_FDLobby_VS_LoadingFill.png",
+      "size": [
+        778,
+        32
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "c3842d57bfafd174d627310885343fef28698f3ff080700a60c1359850075c62"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "size": [
+        187,
+        268
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "e2a316047d81eba4c8e83738d2a665dd7687621bcc247efff145b6d06ab8c48f"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_blue.png",
+      "size": [
+        173,
+        172
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "1117266c729bcab7495e8c4a612391085f78c3dc440a3e5bb11e1c0fcc857173"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_red.png",
+      "size": [
+        173,
+        172
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "ece0a8ab01a05733f8ad116726c04ffb73269905bc51046014884fd505dd264e"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_green.png",
+      "size": [
+        173,
+        172
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "1696ddda699313548cda22d6eaaf8953b1b8e78813411a2c9af987b48ccc560e"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_purple.png",
+      "size": [
+        173,
+        172
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "556ccba41e5213513d37d3e26835347408d8614a95b79d359fb7ed3105e56cee"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_noart.png",
+      "size": [
+        173,
+        172
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "0d6c9987f264c840a0e9b0758dc26ab7495ac3670fe91d8d63670355af3c6bba"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_orange.png",
+      "size": [
+        173,
+        172
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "282fe102ad0da12080eb230d986fe47774eedfd31d944cab24bff554cbd2aeeb"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_missile.png",
+      "size": [
+        173,
+        172
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "64508735248c6c8d983578c3e0fef3bfdf023bc05b9930a60fb42e5bacbd8995"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_beam.png",
+      "size": [
+        173,
+        172
+      ],
+      "alpha": [
+        255,
+        255
+      ],
+      "sha256": "8a51af3847462e4fc07c2e21ee48470f7f310fca5dc1ea10bdd39dd3ae2d9b14"
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Flash.png",
+      "size": [
+        256,
+        256
+      ],
+      "alpha": [
+        0,
+        207
+      ],
+      "sha256": "506d3ef3f985f896e3ad8f7fa4d05adb304617e6b512f0ba8ce3fcce7fb549c1"
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "size": [
+        192,
+        48
+      ],
+      "alpha": [
+        0,
+        255
+      ],
+      "sha256": "f13736b9435055aec53eb0660466ea7bfde1231f3409329c195324ec8d1f4fa5"
+    }
+  ],
+  "count": 22,
+  "canvas": [
+    1080,
+    2340
+  ],
+  "unityVerified": false,
+  "browserVerified": true,
+  "browserErrors": [],
+  "progressChecks": [
+    {
+      "t": 1.25,
+      "p": 0.7,
+      "percent": "70%",
+      "clip": "inset(0px 30% 0px 0px)"
+    },
+    {
+      "t": 0.49,
+      "p": 0,
+      "percent": "0%",
+      "clip": "inset(0px 100% 0px 0px)"
+    },
+    {
+      "t": 1.25,
+      "p": 0,
+      "percent": "0%",
+      "clip": "inset(0px 100% 0px 0px)"
+    },
+    {
+      "t": 1.25,
+      "p": 1,
+      "percent": "100%",
+      "clip": "inset(0px 0% 0px 0px)"
+    }
+  ],
+  "deterministicSeek": true,
+  "reducedMotionEffectsSuppressed": true
+}

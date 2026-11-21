@@ -1,0 +1,70 @@
+{
+  "masterSize": [
+    830,
+    1896
+  ],
+  "s01Size": [
+    1080,
+    2340
+  ],
+  "approvedSha256": "2b94c36bf482c04672c7aa82bf14c9c8e1fac4c6f7d69b0299d13f668693d3d0",
+  "cards": 14,
+  "deckCount": 8,
+  "collectionCount": 6,
+  "average": 3.875,
+  "cycle": 12,
+  "flagModel": "SVMS-01O",
+  "roleSwatches": {
+    "盾卫": [
+      61,
+      123,
+      255
+    ],
+    "突击": [
+      232,
+      65,
+      60
+    ],
+    "小队": [
+      61,
+      190,
+      90
+    ],
+    "刺客": [
+      155,
+      92,
+      255
+    ],
+    "清群": [
+      34,
+      199,
+      214
+    ],
+    "攻城": [
+      255,
+      138,
+      31
+    ],
+    "射手": [
+      242,
+      194,
+      48
+    ],
+    "狙击": [
+      255,
+      111,
+      177
+    ],
+    "支援": [
+      140,
+      150,
+      163
+    ],
+    "战术": [
+      230,
+      237,
+      245
+    ]
+  },
+  "note": "Asset and composition checks only. Unity screenshot verification pending."
+}

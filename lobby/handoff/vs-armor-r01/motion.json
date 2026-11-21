@@ -1,0 +1,65 @@
+{
+  "durationSeconds": 1.25,
+  "seekable": true,
+  "opponent": {
+    "start": 0,
+    "end": 0.34,
+    "fromX": -180,
+    "easing": "cubicOut"
+  },
+  "player": {
+    "start": 0.08,
+    "end": 0.42,
+    "fromX": 180,
+    "easing": "cubicOut"
+  },
+  "v": {
+    "start": 0.25,
+    "end": 0.55,
+    "fromX": -360,
+    "scaleKeys": [
+      [
+        0.25,
+        1.15
+      ],
+      [
+        0.49,
+        1.03
+      ],
+      [
+        0.55,
+        1
+      ]
+    ]
+  },
+  "s": {
+    "start": 0.25,
+    "end": 0.55,
+    "fromX": 360
+  },
+  "impact": {
+    "at": 0.49,
+    "flashDuration": 0.16,
+    "particleDuration": 0.3,
+    "shakePixels": 4,
+    "shakeDuration": 0.12,
+    "scope": "VS pieces only; percent and labels stable"
+  },
+  "deck": {
+    "start": 0.55,
+    "end": 0.85,
+    "fromY": 24
+  },
+  "cards": {
+    "start": 0.65,
+    "stagger": 0.035,
+    "duration": 0.22
+  },
+  "loading": {
+    "start": 0.6,
+    "end": 0.85
+  },
+  "reducedMotion": "Skip translations/scale/flash/shake; reveal immediately. Progress remains tied to real value.",
+  "exit": "After actual completion and intro, hold100 for120ms, fade entire UI180ms; skip intro may bypass intro hold.",
+  "layers": "Background static; panel+badge+text parented; V/S independent; FX independent; progress clipped; card frame/art/text parented"
+}

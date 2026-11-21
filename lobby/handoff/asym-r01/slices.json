@@ -1,0 +1,563 @@
+[
+  {
+    "file": "UI_FDLobby_PlayerPanel.png",
+    "w": 486,
+    "h": 133,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Blank pilot identity panel",
+    "sha256": "2f1a551e61e32cf71679fbbe1c75d84f9735e9ea9d588deb333adb5ea3364c6c",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_ResourcePanel.png",
+    "w": 289,
+    "h": 122,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Two locked resource rows; icons and values separate",
+    "sha256": "4821ba774d4d348bae53499a225f896a73202351c87644ce2acdeeed7840c649",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_SettingsButton.png",
+    "w": 81,
+    "h": 59,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Blank gear button",
+    "sha256": "0ceae32d396d1c61f97998cfe878db4680193a4716b9137ca986162901cc2f67",
+    "alpha": [
+      0,
+      254
+    ]
+  },
+  {
+    "file": "UI_FDLobby_RewardsPanel.png",
+    "w": 301,
+    "h": 268,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Four recessed slots; locks and chest icons separate",
+    "sha256": "49ad4d7d841a815514dc1061f84e0299b2aea7a760b89e4f0d7c1d41444b732e",
+    "alpha": [
+      0,
+      254
+    ]
+  },
+  {
+    "file": "UI_FDLobby_BattleConsole.png",
+    "w": 447,
+    "h": 428,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Console backing with real alpha openings for both buttons",
+    "sha256": "32fa7a012ab53c865fdf54462588f08c397eaf577ad736772eb47b40b8e543ba",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_BattleButton.png",
+    "w": 389,
+    "h": 193,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent yellow battle button",
+    "sha256": "557f3941f6e15d2e68f8bc4fd85c62d5fbd70603fd3e75f21818b4fbc96909ab",
+    "alpha": [
+      0,
+      254
+    ]
+  },
+  {
+    "file": "UI_FDLobby_OpponentButton.png",
+    "w": 277,
+    "h": 59,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent opponent button",
+    "sha256": "7a6e760dab5ee0482ea0499af1e942c75db41b8d6c487a5d2d29426db3611eaa",
+    "alpha": [
+      0,
+      254
+    ]
+  },
+  {
+    "file": "UI_FDLobby_DeckPanel.png",
+    "w": 864,
+    "h": 260,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Blank deck tray; cards and text separate",
+    "sha256": "9fff2c6ab991fb04daaf38cb65f0c62e6554c17b3e6324a6be721cc736896bb0",
+    "alpha": [
+      0,
+      254
+    ]
+  },
+  {
+    "file": "UI_FDLobby_NavRail.png",
+    "w": 907,
+    "h": 125,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Navigation rail with selected tab opening",
+    "sha256": "49ee90895d72069a8adf1ace10edc2c1277f720044f46f0549697d8c60b56443",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_NavSelected.png",
+    "w": 185,
+    "h": 141,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent selected tab",
+    "sha256": "f43459bced283e64a07a1aa638a83ccac51f69acae0cc77173465134a61f0944",
+    "alpha": [
+      0,
+      254
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Background.png",
+    "w": 1080,
+    "h": 2340,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Opaque hangar restoration; uniform scale with navy safe-area padding",
+    "sha256": "12f3444c4990dc88a680ad3fd3755e28addc92f22d2cd1e542c0ab35d08e4c9c",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_CardFrame.png",
+    "w": 187,
+    "h": 268,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_CardFrame.png",
+    "sha256": "e2a316047d81eba4c8e83738d2a665dd7687621bcc247efff145b6d06ab8c48f",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_CostPlate.png",
+    "w": 58,
+    "h": 41,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_CostPlate.png",
+    "sha256": "dc73b0f1859e7a84c957634feda5163a016684f94b8b8a93338bbdedb3f832e6",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Art_blue.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_Art_blue.png",
+    "sha256": "1117266c729bcab7495e8c4a612391085f78c3dc440a3e5bb11e1c0fcc857173",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Art_red.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_Art_red.png",
+    "sha256": "ece0a8ab01a05733f8ad116726c04ffb73269905bc51046014884fd505dd264e",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Art_green.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_Art_green.png",
+    "sha256": "1696ddda699313548cda22d6eaaf8953b1b8e78813411a2c9af987b48ccc560e",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Art_purple.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_Art_purple.png",
+    "sha256": "556ccba41e5213513d37d3e26835347408d8614a95b79d359fb7ed3105e56cee",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Art_orange.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_Art_orange.png",
+    "sha256": "282fe102ad0da12080eb230d986fe47774eedfd31d944cab24bff554cbd2aeeb",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Art_missile.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_Art_missile.png",
+    "sha256": "64508735248c6c8d983578c3e0fef3bfdf023bc05b9930a60fb42e5bacbd8995",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Art_beam.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_Art_beam.png",
+    "sha256": "8a51af3847462e4fc07c2e21ee48470f7f310fca5dc1ea10bdd39dd3ae2d9b14",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Art_noart.png",
+    "w": 173,
+    "h": 172,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Reused unchanged from armor-r02/UI_FDDeck_Art_noart.png",
+    "sha256": "0d6c9987f264c840a0e9b0758dc26ab7495ac3670fe91d8d63670355af3c6bba",
+    "alpha": [
+      255,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Lock.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "c5d7cdbd838545d9c3c3d07520a1e60064769e7f0bbe1c426eda24438c11cc69",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Chest.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "f4a9d56a6a6064841b494d6a517106f30a2556d87144199a9c12f183af03fa5c",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Battle.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "79ed62aadd8d73b9297577e4579d6cf05fd55471bd33f5523f06f2174ab59b53",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Deck.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "b40250b9c76ae08aef8dcb4864006e298a7ad4609a621e7708d0a1a7255e0866",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Shop.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "538f09e6c6cebfe84a134567133fb11fd75754ee9551b4abf691bf182cc408ef",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Book.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "71a38eb478fe2339be45fe9cd0b0a3a4145cdc754319b1b64b5eff30a7f8394a",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Event.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "2d8fa61112850be4e4337800ba98247df8fb26f8431d05c30add7c192b89f2fa",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Gear.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "1741c9314234509245aa67aadedc381478b3eb00bcb61b131100190cd31b5147",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Trophy.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "ba7926e7dc402dcfee1b2b7331e4a5ee970fc5be8efddd2d220737f4f9c1b89c",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Coin.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "cc404aae289c7b34e20a41cafd646d1bab7a3f41cbef3fd65110f37aa82fdb77",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Diamond.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "192bddb6ced184ae3f1abd11d66e0d7ad0855f2954c520bb3629568da8899103",
+    "alpha": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "UI_FDLobby_Icon_Avatar.png",
+    "w": 96,
+    "h": 96,
+    "border": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "purpose": "Independent monochrome icon, tint at runtime",
+    "sha256": "b53ecf043b2acfe57ef00fa9ecaf085a6dc2cd7a31b00c03a61155843f0fb91c",
+    "alpha": [
+      0,
+      255
+    ]
+  }
+]

@@ -1,0 +1,726 @@
+{
+  "canvas": [
+    1080,
+    2340
+  ],
+  "sourceCanvas": [
+    830,
+    1895
+  ],
+  "mapping": {
+    "scale": 1.2348284960422165,
+    "offsetX": 27.54617414248014
+  },
+  "nodes": [
+    {
+      "file": "UI_FDLobby_VS_Background.png",
+      "rect": [
+        0,
+        0,
+        1080,
+        2340
+      ],
+      "group": "static"
+    },
+    {
+      "file": "UI_FDLobby_VS_OpponentPanel.png",
+      "rect": [
+        57,
+        380,
+        935,
+        363
+      ],
+      "group": "opponent"
+    },
+    {
+      "file": "UI_FDLobby_VS_OpponentBadge.png",
+      "rect": [
+        150,
+        470,
+        248,
+        211
+      ],
+      "group": "opponent"
+    },
+    {
+      "file": "UI_FDLobby_VS_PlayerPanel.png",
+      "rect": [
+        56,
+        1253,
+        972,
+        301
+      ],
+      "group": "player"
+    },
+    {
+      "file": "UI_FDLobby_VS_PlayerBadge.png",
+      "rect": [
+        212,
+        1315,
+        221,
+        179
+      ],
+      "group": "player"
+    },
+    {
+      "file": "UI_FDLobby_VS_DeckPanel.png",
+      "rect": [
+        47,
+        1572,
+        985,
+        293
+      ],
+      "group": "deck"
+    },
+    {
+      "file": "UI_FDLobby_VS_V.png",
+      "rect": [
+        255,
+        850,
+        361,
+        310
+      ],
+      "group": "v"
+    },
+    {
+      "file": "UI_FDLobby_VS_S.png",
+      "rect": [
+        475,
+        829,
+        356,
+        333
+      ],
+      "group": "s"
+    },
+    {
+      "file": "UI_FDLobby_VS_LoadingTrack.png",
+      "rect": [
+        71,
+        2024,
+        941,
+        67
+      ],
+      "group": "loading"
+    },
+    {
+      "file": "UI_FDLobby_VS_LoadingBed.png",
+      "rect": [
+        103,
+        2040,
+        892,
+        35
+      ],
+      "group": "loading",
+      "orderBefore": "LoadingTrack"
+    },
+    {
+      "file": "UI_FDLobby_VS_LoadingFill.png",
+      "rect": [
+        114,
+        2041,
+        778,
+        32
+      ],
+      "group": "loading",
+      "progress": true
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_blue.png",
+      "rect": [
+        92,
+        1656,
+        97,
+        106
+      ],
+      "group": "card0"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "rect": [
+        88,
+        1628,
+        105,
+        165
+      ],
+      "group": "card0"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_red.png",
+      "rect": [
+        207,
+        1656,
+        97,
+        106
+      ],
+      "group": "card1"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "rect": [
+        203,
+        1628,
+        105,
+        165
+      ],
+      "group": "card1"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_green.png",
+      "rect": [
+        322,
+        1656,
+        97,
+        106
+      ],
+      "group": "card2"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "rect": [
+        318,
+        1628,
+        105,
+        165
+      ],
+      "group": "card2"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_purple.png",
+      "rect": [
+        437,
+        1656,
+        97,
+        106
+      ],
+      "group": "card3"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "rect": [
+        433,
+        1628,
+        105,
+        165
+      ],
+      "group": "card3"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_noart.png",
+      "rect": [
+        551,
+        1656,
+        97,
+        106
+      ],
+      "group": "card4"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "rect": [
+        547,
+        1628,
+        105,
+        165
+      ],
+      "group": "card4"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_orange.png",
+      "rect": [
+        666,
+        1656,
+        97,
+        106
+      ],
+      "group": "card5"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "rect": [
+        662,
+        1628,
+        105,
+        165
+      ],
+      "group": "card5"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_missile.png",
+      "rect": [
+        781,
+        1656,
+        97,
+        106
+      ],
+      "group": "card6"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "rect": [
+        777,
+        1628,
+        105,
+        165
+      ],
+      "group": "card6"
+    },
+    {
+      "file": "UI_FDLobby_VS_Art_beam.png",
+      "rect": [
+        896,
+        1656,
+        97,
+        106
+      ],
+      "group": "card7"
+    },
+    {
+      "file": "UI_FDLobby_VS_CardFrame.png",
+      "rect": [
+        892,
+        1628,
+        105,
+        165
+      ],
+      "group": "card7"
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Flash.png",
+      "rect": [
+        275,
+        852,
+        543,
+        321
+      ],
+      "group": "flash"
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        706,
+        968,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 338,
+      "particleIndex": 0
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        713,
+        1023,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 15,
+      "particleIndex": 1
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        648,
+        1068,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 52,
+      "particleIndex": 2
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        537,
+        1087,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 89,
+      "particleIndex": 3
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        425,
+        1070,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 126,
+      "particleIndex": 4
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        357,
+        1025,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 163,
+      "particleIndex": 5
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        360,
+        971,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 200,
+      "particleIndex": 6
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        433,
+        928,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 237,
+      "particleIndex": 7
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        547,
+        914,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 274,
+      "particleIndex": 8
+    },
+    {
+      "file": "UI_FDLobby_VS_FX_Streak.png",
+      "rect": [
+        655,
+        935,
+        99,
+        25
+      ],
+      "group": "spark",
+      "rotation": 311,
+      "particleIndex": 9
+    }
+  ],
+  "texts": [
+    {
+      "text": "对手",
+      "x": 241,
+      "y": 417,
+      "size": 41,
+      "group": "opponent",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": true
+    },
+    {
+      "text": "AI",
+      "x": 272,
+      "y": 578,
+      "size": 95,
+      "group": "opponent",
+      "color": "#F5EFE3",
+      "anchor": "middle",
+      "italic": true
+    },
+    {
+      "text": "AI 指挥官",
+      "x": 676,
+      "y": 549,
+      "size": 74,
+      "group": "opponent",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": true
+    },
+    {
+      "text": "对手卡组：远程",
+      "x": 631,
+      "y": 630,
+      "size": 37,
+      "group": "opponent",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "指",
+      "x": 318,
+      "y": 1410,
+      "size": 83,
+      "group": "player",
+      "color": "#F5EFE3",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "指挥官",
+      "x": 662,
+      "y": 1381,
+      "size": 75,
+      "group": "player",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": true
+    },
+    {
+      "text": "我方卡组：原版",
+      "x": 657,
+      "y": 1461,
+      "size": 38,
+      "group": "player",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "4",
+      "x": 105,
+      "y": 1641,
+      "size": 21,
+      "group": "card0",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "高达",
+      "x": 141,
+      "y": 1776,
+      "size": 15,
+      "group": "card0",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "3",
+      "x": 220,
+      "y": 1641,
+      "size": 21,
+      "group": "card1",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "夏亚渣古",
+      "x": 255,
+      "y": 1776,
+      "size": 15,
+      "group": "card1",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "3",
+      "x": 335,
+      "y": 1641,
+      "size": 21,
+      "group": "card2",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "渣古降下",
+      "x": 370,
+      "y": 1776,
+      "size": 15,
+      "group": "card2",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "5",
+      "x": 450,
+      "y": 1641,
+      "size": 21,
+      "group": "card3",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "能天使",
+      "x": 485,
+      "y": 1776,
+      "size": 15,
+      "group": "card3",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "4",
+      "x": 565,
+      "y": 1641,
+      "size": 21,
+      "group": "card4",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "自由",
+      "x": 600,
+      "y": 1776,
+      "size": 15,
+      "group": "card4",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "6",
+      "x": 680,
+      "y": 1641,
+      "size": 21,
+      "group": "card5",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "高达X",
+      "x": 715,
+      "y": 1776,
+      "size": 15,
+      "group": "card5",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "2",
+      "x": 794,
+      "y": 1641,
+      "size": 21,
+      "group": "card6",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "飞弹齐射",
+      "x": 830,
+      "y": 1776,
+      "size": 15,
+      "group": "card6",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "4",
+      "x": 909,
+      "y": 1641,
+      "size": 21,
+      "group": "card7",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "米加粒子炮击",
+      "x": 944,
+      "y": 1776,
+      "size": 15,
+      "group": "card7",
+      "color": "#16243A",
+      "anchor": "middle",
+      "italic": false
+    },
+    {
+      "text": "自由的全弹发射能同时瘫痪 5 台机体",
+      "x": 540,
+      "y": 1933,
+      "size": 30,
+      "group": "loading",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": true
+    },
+    {
+      "text": "加载中…",
+      "x": 103,
+      "y": 2003,
+      "size": 31,
+      "group": "loading",
+      "color": "#FFFFFF",
+      "anchor": "start",
+      "italic": true
+    },
+    {
+      "text": "{progress}%",
+      "x": 941,
+      "y": 2058,
+      "size": 30,
+      "group": "loading",
+      "color": "#FFFFFF",
+      "anchor": "middle",
+      "italic": true
+    }
+  ],
+  "groupPivotPixels": {
+    "v": [
+      540,
+      1000
+    ],
+    "s": [
+      540,
+      1000
+    ]
+  },
+  "groups": [
+    "opponent",
+    "player",
+    "deck",
+    "v",
+    "s",
+    "loading",
+    "card0",
+    "card1",
+    "card2",
+    "card3",
+    "card4",
+    "card5",
+    "card6",
+    "card7"
+  ],
+  "progress": {
+    "laneRect": [
+      114,
+      2041,
+      778,
+      32
+    ],
+    "min": 0,
+    "max": 1,
+    "percent": "floor(clamp(progress,0,1)*100)",
+    "fillMethod": "horizontal clip from left; no scaleX",
+    "completion": "100 only when actual scene/resources ready"
+  },
+  "importSettings": {
+    "mesh": "FullRect",
+    "ppu": 100,
+    "filter": "Bilinear",
+    "compression": "None",
+    "mipmaps": false
+  }
+}
